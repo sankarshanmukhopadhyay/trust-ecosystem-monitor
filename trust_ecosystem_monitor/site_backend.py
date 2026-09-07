@@ -73,6 +73,8 @@ def render_site(root: str | Path = ".") -> None:
     findings = snapshot.get("findings", [])
     changes = snapshot.get("lifecycle_changes", [])
     seams = snapshot.get("cross_portfolio_seams", [])
+    review_seams = [seam for seam in seams if seam.get("review_required", True)]
+    tooling_observations = [seam for seam in seams if not seam.get("review_required", True)]
     open_findings = [f for f in findings if f.get("status") == "open"]
     critical = [f for f in open_findings if int(f.get("materiality", 0)) >= 4]
     unclassified = [r for r in repositories if r.get("portfolio") == "Unclassified" and r.get("lifecycle") == "active"]
@@ -103,8 +105,8 @@ def render_site(root: str | Path = ".") -> None:
         )
     material_table = _table(["Portfolio", "Repository", "Change", "Materiality", "Evidence"], material_rows, 5, "No material change units in this observation.")
 
-    explicit_count = sum(s.get("strength") == "explicit-reference" for s in seams)
-    movement_count = sum(s.get("strength") == "related-co-movement" for s in seams)
+    explicit_count = sum(s.get("strength") == "explicit-reference" for s in review_seams)
+    movement_count = sum(s.get("strength") == "related-co-movement" for s in review_seams)
     overview = (
         f"<h1>Weekly organization brief · {esc(week_label)}</h1>"
         '<p class="lede">A decision-first view of material movement across public repositories in the <code>trustoverip</code> GitHub organization. Raw activity remains available as auditable evidence, while the overview prioritizes findings, lifecycle changes, and cross-portfolio review seams.</p>'
@@ -115,11 +117,11 @@ def render_site(root: str | Path = ".") -> None:
         f"<div class='metric'><strong>{len(units)}</strong><span>change units</span></div>"
         f"<div class='metric'><strong>{len(open_findings)}</strong><span>open findings</span></div>"
         f"<div class='metric'><strong>{len(changes)}</strong><span>lifecycle deltas</span></div>"
-        f"<div class='metric'><strong>{len(seams)}</strong><span>review seams</span></div></div>"
+        f"<div class='metric'><strong>{len(review_seams)}</strong><span>review seams</span></div></div>"
         f"<h2>What needs attention</h2><div class='grid'>{''.join(priority_cards)}</div>"
         '<h2>Organization pulse</h2><div class="grid">'
         f"<div class='card'><h3>Lifecycle movement</h3><p><strong>{len(changes)}</strong> repository-state changes detected against the prior retained observation.</p><p><a href='lifecycle.html'>Review lifecycle deltas →</a></p></div>"
-        f"<div class='card'><h3>Cross-portfolio review</h3><p><strong>{explicit_count}</strong> explicit cross-portfolio references and <strong>{movement_count}</strong> weaker co-movement signals.</p><p><a href='seams.html'>Review seams →</a></p></div>"
+        f"<div class='card'><h3>Cross-portfolio review</h3><p><strong>{explicit_count}</strong> explicit cross-portfolio references and <strong>{movement_count}</strong> weaker co-movement signals. <strong>{len(tooling_observations)}</strong> tooling/publication observations are retained separately and do not inflate the review count.</p><p><a href='seams.html'>Review seams →</a></p></div>"
         f"<div class='card'><h3>Classification hygiene</h3><p><strong>{len(unclassified)}</strong> active repositories remain explicitly unclassified.</p><p><a href='portfolios.html'>Inspect portfolio registry →</a></p></div></div>"
         f"<h2>Material change units</h2>{material_table}"
     )
@@ -187,17 +189,29 @@ def render_site(root: str | Path = ".") -> None:
     (docs / "lifecycle.html").write_text(page("Lifecycle movement", lifecycle_body, generated), encoding="utf-8")
 
     seam_rows: list[str] = []
-    for seam in seams:
+    for seam in review_seams:
         seam_rows.append(
             "<tr>"
             f"<td><span class='pill'>{esc(seam['strength'])}</span></td>"
+            f"<td>{esc(seam.get('relationship_class', 'cross-portfolio'))}</td>"
             f"<td>{esc(seam['source_portfolio'])} → {esc(seam['target_portfolio'])}</td>"
             f"<td>{esc(seam['source_repository'])}<br>{esc(seam['target_repository'])}</td>"
             f"<td>{esc(seam['summary'])}</td><td>{_evidence_links(seam.get('evidence', []))}</td></tr>"
         )
+    tooling_rows: list[str] = []
+    for seam in tooling_observations:
+        tooling_rows.append(
+            "<tr>"
+            f"<td><span class='pill'>{esc(seam['strength'])}</span></td>"
+            f"<td>{esc(seam.get('relationship_class', 'tooling-publication'))}</td>"
+            f"<td>{esc(seam['source_repository'])}<br>{esc(seam['target_repository'])}</td>"
+            f"<td>{esc(seam['summary'])}</td><td>{_evidence_links(seam.get('evidence', []))}</td></tr>"
+        )
     seams_body = (
-        '<h1>Cross-portfolio review seams</h1><p class="lede">A seam is a reason to review across portfolio boundaries, not a claim that a formal technical dependency exists. <code>explicit-reference</code> is stronger evidence than <code>related-co-movement</code>.</p>'
-        + _table(["Strength", "Portfolios", "Repositories", "Why surfaced", "Evidence"], seam_rows, 5, "No cross-portfolio seams surfaced.")
+        '<h1>Cross-portfolio review seams</h1><p class="lede">A seam is a reason to review across portfolio boundaries, not a claim that a formal technical dependency exists. <code>explicit-reference</code> is stronger evidence than <code>related-co-movement</code>. Tooling/publication references are observed evidence but are not material review seams unless separate evidence establishes normative, semantic, conformance, governance, protocol, or machine-consumable impact.</p>'
+        + _table(["Strength", "Class", "Portfolios", "Repositories", "Why surfaced", "Evidence"], seam_rows, 6, "No material cross-portfolio seams surfaced.")
+        + '<h2>Tooling / publication observations</h2><p class="muted">Retained for auditability. These observations do not contribute to the review-seam count by default.</p>'
+        + _table(["Strength", "Class", "Repositories", "Why retained", "Evidence"], tooling_rows, 5, "No tooling/publication observations surfaced.")
     )
     (docs / "seams.html").write_text(page("Cross-portfolio review seams", seams_body, generated), encoding="utf-8")
 
@@ -222,7 +236,7 @@ def render_site(root: str | Path = ".") -> None:
         '<div class="card"><h3>Discovery</h3><p>Public repositories are dynamically enumerated from <code>trustoverip</code>. New repositories cannot silently fall outside a hand-maintained watch list.</p></div>'
         '<div class="card"><h3>Evidence</h3><p>Commits, issues, pull requests, releases, and repository metadata are normalized into auditable source records.</p></div>'
         '<div class="card"><h3>Interpretation</h3><p>Materiality and classification are deterministic. Change units intentionally favor false separation over accidental over-merging.</p></div>'
-        '<div class="card"><h3>Review seams</h3><p>Explicit references and related co-movement are evidence-graded. A seam requests cross-review; it does not assert a dependency.</p></div>'
+        '<div class="card"><h3>Review seams</h3><p>Explicit references and related co-movement are evidence-graded. A seam requests cross-review; it does not assert a dependency. Tooling/publication references remain observable but are excluded from material review counts unless stronger impact evidence exists.</p></div>'
         '<div class="card"><h3>Disposition</h3><p>Accepting, resolving, or suppressing a finding requires explicit authority, rationale, timestamp, and evidence in the durable ledger.</p></div>'
         '<div class="card"><h3>Upstream boundary</h3><p>The monitor observes public activity but does not automatically open issues, comment, merge changes, or otherwise modify TrustOverIP repositories.</p></div>'
         f'</div><h2>Snapshot provenance</h2><pre>{provenance}</pre>'
@@ -240,7 +254,8 @@ def render_site(root: str | Path = ".") -> None:
             "findings": len(findings),
             "open_findings": len(open_findings),
             "lifecycle_changes": len(changes),
-            "cross_portfolio_seams": len(seams),
+            "cross_portfolio_seams": len(review_seams),
+            "tooling_publication_observations": len(tooling_observations),
         },
     }
     (docs / "data" / "site-manifest.json").write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")

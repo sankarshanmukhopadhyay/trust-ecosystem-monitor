@@ -76,6 +76,26 @@ class ClassificationTests(unittest.TestCase):
         explicit = [s for s in seams if s["strength"] == "explicit-reference"]
         self.assertEqual(len(explicit), 1)
         self.assertEqual(explicit[0]["target_portfolio"], "TSWG")
+        self.assertTrue(explicit[0]["review_required"])
+        self.assertEqual(explicit[0]["relationship_class"], "cross-portfolio")
+        self.assertEqual(explicit[0]["materiality"], 4)
+
+    def test_spec_up_reference_is_tooling_observation_not_material_review_seam(self):
+        repos = [
+            {"name": "dtgwg-cred-spec", "full_name": "trustoverip/dtgwg-cred-spec", "portfolio": "DTG"},
+            {"name": "spec-up-t", "full_name": "trustoverip/spec-up-t", "portfolio": "TSWG"},
+        ]
+        units = [{"id": "u1", "repository": "trustoverip/dtgwg-cred-spec", "portfolio": "DTG", "title": "Update spec-up-t rendering", "materiality": 5, "evidence": ["https://example.test/u1"], "events": []}]
+        seams = detect_cross_portfolio_seams(units, repos)
+        explicit = [s for s in seams if s["strength"] == "explicit-reference"]
+        self.assertEqual(len(explicit), 1)
+        observation = explicit[0]
+        self.assertFalse(observation["review_required"])
+        self.assertEqual(observation["relationship_class"], "tooling-publication")
+        self.assertEqual(observation["review_materiality"], "low")
+        self.assertEqual(observation["materiality"], 1)
+        self.assertEqual(observation["observed_materiality"], 5)
+        self.assertIn("no material cross-portfolio review is inferred", observation["summary"])
 
     def test_non_open_disposition_requires_governance_fields(self):
         with self.assertRaises(ValueError):

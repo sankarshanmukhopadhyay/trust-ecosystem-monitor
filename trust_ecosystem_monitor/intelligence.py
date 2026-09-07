@@ -16,6 +16,8 @@ PORTFOLIO_RELATIONSHIPS = {
     "Governance": {"TSWG", "AIMWG"},
 }
 
+TOOLING_REPOSITORIES = {"spec-up", "spec-up-t"}
+
 
 def _unit_id(repository: str, key: str) -> str:
     digest = hashlib.sha256(f"{repository}|{key}".encode()).hexdigest()[:12]
@@ -91,6 +93,23 @@ def _repo_mentions(unit: dict[str, Any], repositories: list[dict[str, Any]]) -> 
     return [repo for repo in repositories if repo["full_name"].lower() != source and (repo["name"].lower() in text or repo["full_name"].lower() in text)]
 
 
+def _explicit_reference_metadata(target: dict[str, Any], source_materiality: int) -> dict[str, Any]:
+    if target.get("name", "").lower() in TOOLING_REPOSITORIES:
+        return {
+            "relationship_class": "tooling-publication",
+            "review_materiality": "low",
+            "review_required": False,
+            "materiality": 1,
+            "observed_materiality": source_materiality,
+        }
+    return {
+        "relationship_class": "cross-portfolio",
+        "review_materiality": "derived",
+        "review_required": True,
+        "materiality": source_materiality,
+    }
+
+
 def detect_cross_portfolio_seams(units: list[dict[str, Any]], repositories: list[dict[str, Any]]) -> list[dict[str, Any]]:
     seams: list[dict[str, Any]] = []
     seen: set[str] = set()
@@ -101,7 +120,21 @@ def detect_cross_portfolio_seams(units: list[dict[str, Any]], repositories: list
             sid = _seam_id(unit["portfolio"], target["portfolio"], unit["id"] + target["full_name"])
             if sid not in seen:
                 seen.add(sid)
-                seams.append({"id": sid, "strength": "explicit-reference", "source_portfolio": unit["portfolio"], "target_portfolio": target["portfolio"], "source_repository": unit["repository"], "target_repository": target["full_name"], "summary": f"{unit['repository']} references {target['full_name']} in a current change unit.", "materiality": unit["materiality"], "evidence": unit.get("evidence", [])})
+                metadata = _explicit_reference_metadata(target, int(unit["materiality"]))
+                summary = f"{unit['repository']} references {target['full_name']} in a current change unit."
+                if not metadata["review_required"]:
+                    summary += " Classified as tooling/publication evidence; no material cross-portfolio review is inferred from the reference alone."
+                seams.append({
+                    "id": sid,
+                    "strength": "explicit-reference",
+                    "source_portfolio": unit["portfolio"],
+                    "target_portfolio": target["portfolio"],
+                    "source_repository": unit["repository"],
+                    "target_repository": target["full_name"],
+                    "summary": summary,
+                    "evidence": unit.get("evidence", []),
+                    **metadata,
+                })
     material_by_portfolio: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for unit in units:
         if unit.get("materiality", 0) >= 4:
@@ -116,7 +149,7 @@ def detect_cross_portfolio_seams(units: list[dict[str, Any]], repositories: list
             sid = _seam_id(left, right, "co-movement")
             if sid not in seen:
                 seen.add(sid)
-                seams.append({"id": sid, "strength": "related-co-movement", "source_portfolio": left, "target_portfolio": right, "source_repository": left_unit["repository"], "target_repository": right_unit["repository"], "summary": f"Related portfolios {left} and {right} both contain material change units in this observation window; cross-review may be warranted.", "materiality": min(left_unit["materiality"], right_unit["materiality"]), "evidence": list(dict.fromkeys(left_unit.get("evidence", [])[:1] + right_unit.get("evidence", [])[:1]))})
+                seams.append({"id": sid, "strength": "related-co-movement", "relationship_class": "cross-portfolio", "review_materiality": "derived", "review_required": True, "source_portfolio": left, "target_portfolio": right, "source_repository": left_unit["repository"], "target_repository": right_unit["repository"], "summary": f"Related portfolios {left} and {right} both contain material change units in this observation window; cross-review may be warranted.", "materiality": min(left_unit["materiality"], right_unit["materiality"]), "evidence": list(dict.fromkeys(left_unit.get("evidence", [])[:1] + right_unit.get("evidence", [])[:1]))})
     return sorted(seams, key=lambda s: (-s["materiality"], s["strength"], s["source_portfolio"], s["target_portfolio"]))
 
 
