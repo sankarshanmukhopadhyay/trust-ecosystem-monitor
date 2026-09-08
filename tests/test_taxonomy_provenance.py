@@ -14,12 +14,32 @@ from trust_ecosystem_monitor.site import render_catalog
 class TaxonomyProvenanceTests(unittest.TestCase):
     def setUp(self) -> None:
         self.dif = load_profile("organizations/decentralized-identity/profile.toml")
+        self.toip = load_profile("organizations/trustoverip/profile.toml")
 
     def test_override_precedes_pattern_rules(self) -> None:
         detail = classify_portfolio_details("credential-schemas", self.dif)
         self.assertEqual(detail["portfolio"], "Claims & Credentials")
         self.assertEqual(detail["method"], "override")
         self.assertEqual(detail["rule"], "credential-schemas")
+
+    def test_toip_admin_repositories_are_explicit_overrides(self) -> None:
+        repositories = (
+            "EasyCLA",
+            "iso-template",
+            "logo-assets",
+            "mega",
+            "mkdocs-material",
+            "next-deliverable-num",
+            "PDF-Deliverable-Review",
+            "SC",
+            "specification-template",
+        )
+        for repository in repositories:
+            with self.subTest(repository=repository):
+                detail = classify_portfolio_details(repository, self.toip)
+                self.assertEqual(detail["portfolio"], "Admin-Governance")
+                self.assertEqual(detail["method"], "override")
+                self.assertEqual(detail["rule"], repository.lower())
 
     def test_creator_assertions_rule(self) -> None:
         detail = classify_portfolio_details("cawg-identity-assertion", self.dif)
