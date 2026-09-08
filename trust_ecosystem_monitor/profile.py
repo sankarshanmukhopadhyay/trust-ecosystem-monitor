@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 DEFAULT_PROFILE_PATH = Path("organizations/trustoverip/profile.toml")
+SUPPORTED_DISCOVERY_SOURCE_TYPES = frozenset({"github_organization", "explicit_repository"})
 
 
 @dataclass(frozen=True)
@@ -13,6 +14,12 @@ class PortfolioRule:
     portfolio: str
     prefixes: tuple[str, ...] = ()
     contains: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class DiscoverySource:
+    type: str
+    value: str
 
 
 @dataclass(frozen=True)
@@ -26,10 +33,34 @@ class OrganizationProfile:
     disclaimer: str
     portfolio_rules: tuple[PortfolioRule, ...]
     repository_overrides: tuple[tuple[str, str], ...] = ()
+    discovery_sources: tuple[DiscoverySource, ...] = ()
 
     @property
     def overrides(self) -> dict[str, str]:
         return dict(self.repository_overrides)
+
+
+def _load_discovery_sources(payload: dict[str, Any], path: Path) -> tuple[DiscoverySource, ...]:
+    raw_sources = payload.get("discovery_sources")
+    if raw_sources is None:
+        # Schema v1 compatibility: the historical organization field is an
+        # explicit GitHub discovery source, not an implicit monitoring policy.
+        return (DiscoverySource(type="github_organization", value=str(payload["organization"])),)
+    if not isinstance(raw_sources, list) or not raw_sources:
+        raise ValueError(f"organization profile {path} discovery_sources must be a non-empty array of tables")
+
+    sources: list[DiscoverySource] = []
+    for raw in raw_sources:
+        if not isinstance(raw, dict):
+            raise ValueError(f"organization profile {path} contains an invalid discovery source")
+        source_type = str(raw.get("type", "")).strip()
+        value = str(raw.get("value", "")).strip()
+        if source_type not in SUPPORTED_DISCOVERY_SOURCE_TYPES:
+            raise ValueError(f"organization profile {path} contains unsupported discovery source type: {source_type or '<empty>'}")
+        if not value:
+            raise ValueError(f"organization profile {path} contains a discovery source without a value")
+        sources.append(DiscoverySource(type=source_type, value=value))
+    return tuple(sources)
 
 
 def load_profile(path: str | Path = DEFAULT_PROFILE_PATH) -> OrganizationProfile:
@@ -77,6 +108,7 @@ def load_profile(path: str | Path = DEFAULT_PROFILE_PATH) -> OrganizationProfile
         disclaimer=str(payload["disclaimer"]),
         portfolio_rules=tuple(rules),
         repository_overrides=tuple(sorted(overrides)),
+        discovery_sources=_load_discovery_sources(payload, path),
     )
 
 
@@ -119,4 +151,7 @@ def profile_metadata(profile: OrganizationProfile) -> dict[str, Any]:
         "weekly_brief_title": profile.weekly_brief_title,
         "disclaimer": profile.disclaimer,
         "repository_override_count": len(profile.repository_overrides),
+        "discovery_sources": [
+            {"type": source.type, "value": source.value} for source in profile.discovery_sources
+        ],
     }
