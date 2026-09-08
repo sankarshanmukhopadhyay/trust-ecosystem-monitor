@@ -7,18 +7,27 @@ import tempfile
 import urllib.error
 import urllib.parse
 import urllib.request
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
 from . import core_backend as core
+from .admission import unresolved_admission
+from .admission_policy import load_admission_policy
 from .profile import (
     DEFAULT_PROFILE_PATH,
     OrganizationProfile,
+    admission_decision,
     classify_portfolio_details,
     load_profile,
     profile_metadata,
 )
 from .site import render_catalog, render_site
+
+_BASE_REPO_RECORD = core.repo_record
+_BASE_COLLECT_REPO_ACTIVITY = core.collect_repo_activity
+_ACTIVE_PROFILE: OrganizationProfile | None = None
+_EXTERNAL_ADMISSION: dict[str, Any] | None = None
 
 
 class GitHubClient(core.GitHubClient):
@@ -42,14 +51,143 @@ class GitHubClient(core.GitHubClient):
             body = exc.read().decode("utf-8", errors="replace")
             raise RuntimeError(f"GitHub API {exc.code} for {path}: {body[:300]}") from exc
 
+    def org_repositories(self) -> list[dict[str, Any]]:
+        """Resolve declared discovery sources and retain source provenance.
 
-def configure_core(profile: OrganizationProfile) -> None:
+        The method name is retained for compatibility with the historical
+        backend. Its semantics are now ecosystem discovery rather than
+        unconditional enumeration of one GitHub organization.
+        """
+        if _ACTIVE_PROFILE is None:
+            return super().org_repositories()
+
+        discovered: dict[str, dict[str, Any]] = {}
+        for source in _ACTIVE_PROFILE.discovery_sources:
+            candidates: list[dict[str, Any]] = []
+            if source.type == "github_organization":
+                page = 1
+                while True:
+                    batch = self.get(
+                        f"/orgs/{source.value}/repos",
+                        {"type": "public", "per_page": 100, "page": page},
+                    )
+                    candidates.extend(batch)
+                    if len(batch) < 100:
+                        break
+                    page += 1
+            elif source.type == "explicit_repository":
+                candidates.append(self.get(f"/repos/{source.value}"))
+            else:  # load_profile rejects this; keep runtime fail-closed too.
+                raise RuntimeError(f"unsupported discovery source type: {source.type}")
+
+            for candidate in candidates:
+                full_name = str(candidate.get("full_name", "")).strip()
+                if not full_name:
+                    raise RuntimeError(
+                        f"discovery source {source.type}:{source.value} returned a repository without full_name"
+                    )
+                key = full_name.lower()
+                provenance = {"type": source.type, "value": source.value}
+                if key not in discovered:
+                    discovered[key] = dict(candidate)
+                    discovered[key]["_discovery_sources"] = [provenance]
+                elif provenance not in discovered[key]["_discovery_sources"]:
+                    discovered[key]["_discovery_sources"].append(provenance)
+
+        for repository in discovered.values():
+            repository["_admission"] = _admission_for(str(repository["full_name"]))
+        return list(discovered.values())
+
+
+def _admission_for(repository: str) -> dict[str, Any]:
+    key = repository.strip().lower()
+    if _EXTERNAL_ADMISSION is not None:
+        decision = _EXTERNAL_ADMISSION.get(key) or unresolved_admission(
+            rationale="repository was discovered but has no repository-specific admission evidence"
+        )
+        return decision.as_dict()
+
+    if _ACTIVE_PROFILE is None:
+        return {
+            "state": "included",
+            "tier": "core",
+            "rationale": ["Legacy collector compatibility."],
+            "evidence": [],
+            "method": "legacy",
+            "deep_collection_allowed": True,
+        }
+
+    decision = admission_decision(key, _ACTIVE_PROFILE)
+    return {
+        "state": decision.state,
+        "tier": decision.tier,
+        "rationale": [decision.rationale],
+        "evidence": list(decision.evidence),
+        "method": decision.method,
+        "deep_collection_allowed": decision.state == "included" and decision.tier in {"core", "related"},
+    }
+
+
+def _repo_record(repo: dict[str, Any], now: datetime) -> dict[str, Any]:
+    record = _BASE_REPO_RECORD(repo, now)
+    record["discovery"] = {"sources": list(repo.get("_discovery_sources", []))}
+    record["admission"] = dict(repo.get("_admission") or _admission_for(str(repo["full_name"])))
+    return record
+
+
+def _watch_activity(client: GitHubClient, repo: dict[str, Any], since: datetime) -> tuple[list[dict[str, Any]], list[str]]:
+    """Collect the bounded watch-tier evidence set.
+
+    Watch retains repository metadata through the repository record and release
+    events as an explicit material-lifecycle signal. It intentionally excludes
+    commits, issues and pull requests.
+    """
+    owner_repo = repo["full_name"]
+    path = f"/repos/{owner_repo}/releases"
+    events: list[dict[str, Any]] = []
+    errors: list[str] = []
+    try:
+        for item in client.get(path, {"per_page": 100}):
+            event = core.normalize_event("release", repo, item)
+            timestamp = core.parse_dt(event.get("timestamp"))
+            if timestamp and timestamp >= since:
+                events.append(event)
+    except Exception as exc:
+        errors.append(f"{owner_repo}:release: {exc}")
+    return events, errors
+
+
+def _collect_repo_activity(
+    client: GitHubClient,
+    repo: dict[str, Any],
+    since: datetime,
+) -> tuple[list[dict[str, Any]], list[str]]:
+    admission = repo.get("admission") or {}
+    tier = str(admission.get("tier", "core"))
+    state = str(admission.get("state", "included"))
+
+    if tier == "inventory" or state in {"review", "excluded"}:
+        return [], []
+    if tier == "watch" or state == "watch":
+        return _watch_activity(client, repo, since)
+    if tier in {"core", "related"} and state == "included":
+        return _BASE_COLLECT_REPO_ACTIVITY(client, repo, since)
+    raise RuntimeError(f"unsupported admission/tier combination for {repo.get('full_name')}: {state}/{tier}")
+
+
+def configure_core(profile: OrganizationProfile, profile_path: str | Path = DEFAULT_PROFILE_PATH) -> None:
     """Configure the organization-neutral collection backend from a profile.
 
-    The backend retains its historical collector API, while classification is
-    delegated to the selected profile so exact overrides stay exact and pattern
-    rules retain their documented order.
+    The backend retains its historical collector API, while discovery,
+    admission, classification and collection intensity are delegated to the
+    selected ecosystem profile and its evidence-bearing admission policy.
     """
+    global _ACTIVE_PROFILE, _EXTERNAL_ADMISSION
+    _ACTIVE_PROFILE = profile
+
+    policy_path = Path(profile_path).with_name("admission.toml")
+    _EXTERNAL_ADMISSION = load_admission_policy(policy_path) if policy_path.exists() else None
+
     core.ORG = profile.organization
     core.RULES = tuple(
         core.Rule(rule.portfolio, prefixes=rule.prefixes, contains=rule.contains)
@@ -61,6 +199,8 @@ def configure_core(profile: OrganizationProfile) -> None:
 
     core.classify_portfolio = profile_classifier
     core.GitHubClient = GitHubClient
+    core.repo_record = _repo_record
+    core.collect_repo_activity = _collect_repo_activity
 
 
 def _normalize_project_identity(snapshot: dict[str, Any], profile: OrganizationProfile) -> None:
@@ -161,8 +301,9 @@ def collect(
     profile_path: str | Path = DEFAULT_PROFILE_PATH,
 ) -> Path:
     """Collect one ecosystem into profile-scoped durable state and Pages output."""
+    profile_path = Path(profile_path)
     profile = load_profile(profile_path)
-    configure_core(profile)
+    configure_core(profile, profile_path)
     root = Path(output_root).resolve()
 
     with tempfile.TemporaryDirectory(prefix=f"trust-monitor-{profile.id}-") as temporary:
