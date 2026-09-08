@@ -7,6 +7,9 @@ from typing import Any
 
 DEFAULT_PROFILE_PATH = Path("organizations/trustoverip/profile.toml")
 SUPPORTED_DISCOVERY_SOURCE_TYPES = frozenset({"github_organization", "explicit_repository"})
+SUPPORTED_ADMISSION_MODES = frozenset({"all_discovered", "governed"})
+SUPPORTED_ADMISSION_STATES = frozenset({"included", "watch", "review", "excluded"})
+SUPPORTED_COLLECTION_TIERS = frozenset({"core", "related", "watch", "inventory"})
 
 
 @dataclass(frozen=True)
@@ -23,6 +26,36 @@ class DiscoverySource:
 
 
 @dataclass(frozen=True)
+class AdmissionOverride:
+    repository: str
+    state: str
+    tier: str
+    rationale: str
+    evidence: tuple[str, ...] = ()
+
+
+@dataclass(frozen=True)
+class AdmissionPolicy:
+    mode: str = "all_discovered"
+    default_state: str = "included"
+    default_tier: str = "core"
+    repository_overrides: tuple[AdmissionOverride, ...] = ()
+
+    @property
+    def overrides(self) -> dict[str, AdmissionOverride]:
+        return {override.repository: override for override in self.repository_overrides}
+
+
+@dataclass(frozen=True)
+class AdmissionDecision:
+    state: str
+    tier: str
+    rationale: str
+    evidence: tuple[str, ...]
+    method: str
+
+
+@dataclass(frozen=True)
 class OrganizationProfile:
     schema_version: str
     id: str
@@ -34,6 +67,7 @@ class OrganizationProfile:
     portfolio_rules: tuple[PortfolioRule, ...]
     repository_overrides: tuple[tuple[str, str], ...] = ()
     discovery_sources: tuple[DiscoverySource, ...] = ()
+    admission_policy: AdmissionPolicy = AdmissionPolicy()
 
     @property
     def overrides(self) -> dict[str, str]:
@@ -61,6 +95,113 @@ def _load_discovery_sources(payload: dict[str, Any], path: Path) -> tuple[Discov
             raise ValueError(f"organization profile {path} contains a discovery source without a value")
         sources.append(DiscoverySource(type=source_type, value=value))
     return tuple(sources)
+
+
+def _load_admission_policy(payload: dict[str, Any], path: Path) -> AdmissionPolicy:
+    raw_policy = payload.get("admission")
+    if raw_policy is None:
+        # Backward compatibility is explicit: existing profiles continue to
+        # monitor every discovered repository at the historical collection depth.
+        return AdmissionPolicy()
+    if not isinstance(raw_policy, dict):
+        raise ValueError(f"organization profile {path} admission must be a TOML table")
+
+    mode = str(raw_policy.get("mode", "governed")).strip()
+    if mode not in SUPPORTED_ADMISSION_MODES:
+        raise ValueError(f"organization profile {path} contains unsupported admission mode: {mode or '<empty>'}")
+
+    if mode == "all_discovered":
+        default_state = str(raw_policy.get("default_state", "included")).strip()
+        default_tier = str(raw_policy.get("default_tier", "core")).strip()
+    else:
+        # Governed admission is fail-closed with respect to monitoring scope:
+        # missing evidence creates a review item, never implicit inclusion.
+        default_state = str(raw_policy.get("default_state", "review")).strip()
+        default_tier = str(raw_policy.get("default_tier", "inventory")).strip()
+
+    if default_state not in SUPPORTED_ADMISSION_STATES:
+        raise ValueError(f"organization profile {path} contains unsupported default admission state: {default_state or '<empty>'}")
+    if default_tier not in SUPPORTED_COLLECTION_TIERS:
+        raise ValueError(f"organization profile {path} contains unsupported default collection tier: {default_tier or '<empty>'}")
+    if mode == "governed" and (default_state != "review" or default_tier != "inventory"):
+        raise ValueError(
+            f"organization profile {path} governed admission must default to state=review and tier=inventory"
+        )
+
+    raw_overrides = raw_policy.get("repositories", [])
+    if not isinstance(raw_overrides, list):
+        raise ValueError(f"organization profile {path} admission.repositories must be an array of tables")
+
+    overrides: list[AdmissionOverride] = []
+    seen: set[str] = set()
+    for raw in raw_overrides:
+        if not isinstance(raw, dict):
+            raise ValueError(f"organization profile {path} contains an invalid admission repository override")
+        repository = str(raw.get("repository", "")).strip().lower()
+        state = str(raw.get("state", "")).strip()
+        tier = str(raw.get("tier", "")).strip()
+        rationale = str(raw.get("rationale", "")).strip()
+        raw_evidence = raw.get("evidence", [])
+        if not repository or not rationale:
+            raise ValueError(f"organization profile {path} admission override requires repository and rationale")
+        if repository in seen:
+            raise ValueError(f"organization profile {path} contains duplicate admission override for {repository}")
+        if state not in SUPPORTED_ADMISSION_STATES:
+            raise ValueError(f"organization profile {path} contains unsupported admission state for {repository}: {state or '<empty>'}")
+        if tier not in SUPPORTED_COLLECTION_TIERS:
+            raise ValueError(f"organization profile {path} contains unsupported collection tier for {repository}: {tier or '<empty>'}")
+        if not isinstance(raw_evidence, list) or any(not str(item).strip() for item in raw_evidence):
+            raise ValueError(f"organization profile {path} admission evidence for {repository} must be an array of non-empty strings")
+        evidence = tuple(str(item).strip() for item in raw_evidence)
+        if mode == "governed" and state in {"included", "watch"} and not evidence:
+            raise ValueError(f"organization profile {path} governed admission for {repository} requires evidence")
+        seen.add(repository)
+        overrides.append(
+            AdmissionOverride(
+                repository=repository,
+                state=state,
+                tier=tier,
+                rationale=rationale,
+                evidence=evidence,
+            )
+        )
+
+    return AdmissionPolicy(
+        mode=mode,
+        default_state=default_state,
+        default_tier=default_tier,
+        repository_overrides=tuple(sorted(overrides, key=lambda item: item.repository)),
+    )
+
+
+def admission_decision(repository: str, profile: OrganizationProfile) -> AdmissionDecision:
+    repository_name = repository.strip().lower()
+    override = profile.admission_policy.overrides.get(repository_name)
+    if override:
+        return AdmissionDecision(
+            state=override.state,
+            tier=override.tier,
+            rationale=override.rationale,
+            evidence=override.evidence,
+            method="override",
+        )
+
+    policy = profile.admission_policy
+    if policy.mode == "all_discovered":
+        return AdmissionDecision(
+            state=policy.default_state,
+            tier=policy.default_tier,
+            rationale="Legacy-compatible policy admits every discovered repository.",
+            evidence=(),
+            method="all_discovered",
+        )
+    return AdmissionDecision(
+        state=policy.default_state,
+        tier=policy.default_tier,
+        rationale="No repository-specific admission evidence has been recorded; maintainer review is required.",
+        evidence=(),
+        method="default_review",
+    )
 
 
 def load_profile(path: str | Path = DEFAULT_PROFILE_PATH) -> OrganizationProfile:
@@ -109,6 +250,7 @@ def load_profile(path: str | Path = DEFAULT_PROFILE_PATH) -> OrganizationProfile
         portfolio_rules=tuple(rules),
         repository_overrides=tuple(sorted(overrides)),
         discovery_sources=_load_discovery_sources(payload, path),
+        admission_policy=_load_admission_policy(payload, path),
     )
 
 
@@ -154,4 +296,10 @@ def profile_metadata(profile: OrganizationProfile) -> dict[str, Any]:
         "discovery_sources": [
             {"type": source.type, "value": source.value} for source in profile.discovery_sources
         ],
+        "admission": {
+            "mode": profile.admission_policy.mode,
+            "default_state": profile.admission_policy.default_state,
+            "default_tier": profile.admission_policy.default_tier,
+            "repository_override_count": len(profile.admission_policy.repository_overrides),
+        },
     }
