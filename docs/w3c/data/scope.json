@@ -1,0 +1,226 @@
+{
+  "schema_version": "1",
+  "ecosystem": {
+    "schema_version": "1",
+    "id": "w3c",
+    "organization": "w3c",
+    "display_name": "World Wide Web Consortium",
+    "monitor_title": "Trust Ecosystem Monitor",
+    "weekly_brief_title": "W3C Trust Standards Brief",
+    "disclaimer": "Independent observatory; not an official W3C publication. Scope is a governed trust-standards portfolio, not the complete W3C GitHub organization.",
+    "repository_override_count": 6,
+    "discovery_sources": [
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-data-model"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-data-integrity"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-bitstring-status-list"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/cid"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-di-bbs"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/webauthn"
+      }
+    ],
+    "admission": {
+      "mode": "all_discovered",
+      "default_state": "included",
+      "default_tier": "core",
+      "repository_override_count": 0
+    }
+  },
+  "generated_at": "2026-09-08T14:26:53.183958+00:00",
+  "counts": {
+    "discovered": 6,
+    "included": 6,
+    "watch": 0,
+    "review": 0,
+    "excluded": 0,
+    "deep_monitored": 6,
+    "watch_monitored": 0,
+    "inventory_only": 0
+  },
+  "repositories": [
+    {
+      "repository": "w3c/webauthn",
+      "url": "https://github.com/w3c/webauthn",
+      "portfolio": "Authentication",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Normative strong public-key authentication standard with direct trust-system composition relevance"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/webauthn/",
+          "https://www.w3.org/groups/wg/webauthn/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/webauthn"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "w3c/cid",
+      "url": "https://github.com/w3c/cid",
+      "portfolio": "Identifiers & Control",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Controlled Identifier Documents are a VCWG deliverable with direct controller/key relationship relevance"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/cid"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "w3c/vc-di-bbs",
+      "url": "https://github.com/w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "VCWG BBS cryptosuite work provides selective-disclosure and zero-knowledge disclosure capability"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-di-bbs"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "w3c/vc-bitstring-status-list",
+      "url": "https://github.com/w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative privacy-preserving credential status and revocation mechanism"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-bitstring-status-list"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "w3c/vc-data-integrity",
+      "url": "https://github.com/w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative authenticity and integrity mechanisms for Verifiable Credentials"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-data-integrity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "w3c/vc-data-model",
+      "url": "https://github.com/w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative Verifiable Credentials data-model work"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-data-model/all/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-data-model"
+          }
+        ]
+      }
+    }
+  ],
+  "interpretation": {
+    "discovered": "Repository was found through a declared discovery source; discovery alone does not authorize deep monitoring.",
+    "deep_monitored": "Repository is admitted as included at core or related tier and receives full activity collection.",
+    "watch_monitored": "Repository is admitted at watch tier and receives repository metadata plus release signals only.",
+    "inventory_only": "Repository is retained for scope provenance but receives no routine activity collection."
+  }
+}

@@ -2,6 +2,13 @@ name: Collect and publish weekly ecosystem briefs
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/collect-weekly.yml'
+      - 'organizations/**'
+      - 'trust_ecosystem_monitor/**'
   schedule:
     - cron: '30 21 * * 0'
 
@@ -29,6 +36,10 @@ jobs:
           python-version: '3.11'
       - name: Run tests
         run: python -m unittest discover -s tests
+      - name: Restore generated observation state
+        run: |
+          git fetch origin generated-observations
+          git checkout origin/generated-observations -- data docs
       - name: Collect TrustOverIP evidence
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -60,14 +71,18 @@ jobs:
         run: python -m trust_ecosystem_monitor site
       - name: Validate current generated state
         run: python -m trust_ecosystem_monitor validate --require-generated
-      - name: Persist generated evidence and publication
+      - name: Persist generated observation state
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin generated-observations
           git add data docs
-          if ! git diff --cached --quiet; then
-            git commit -m "chore(monitor): update weekly ecosystem observations"
-            git push
+          tree=$(git write-tree)
+          parent=$(git rev-parse origin/generated-observations)
+          parent_tree=$(git rev-parse "${parent}^{tree}")
+          if [ "$tree" != "$parent_tree" ]; then
+            commit=$(printf '%s\n' "chore(monitor): update weekly ecosystem observations" | git commit-tree "$tree" -p "$parent")
+            git push origin "$commit:refs/heads/generated-observations"
           fi
       - uses: actions/configure-pages@v6
       - uses: actions/upload-pages-artifact@v5

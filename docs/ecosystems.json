@@ -5,12 +5,12 @@
       "id": "decentralized-identity",
       "display_name": "Decentralized Identity Foundation",
       "organization": "decentralized-identity",
-      "generated_at": "2026-09-07T02:11:40.082253+00:00",
+      "generated_at": "2026-09-08T14:25:57.312776+00:00",
       "repositories": 269,
       "active": 64,
-      "material_changes": 5,
+      "material_changes": 6,
       "priority_findings": 6,
-      "substantive_open": 21,
+      "substantive_open": 17,
       "taxonomy_review": 5,
       "unclassified": 5,
       "observation_state": "stateful observation"
@@ -19,15 +19,29 @@
       "id": "trustoverip",
       "display_name": "Trust Over IP Foundation",
       "organization": "trustoverip",
-      "generated_at": "2026-09-07T02:11:23.204285+00:00",
+      "generated_at": "2026-09-08T14:25:40.968660+00:00",
       "repositories": 116,
       "active": 47,
-      "material_changes": 109,
-      "priority_findings": 53,
+      "material_changes": 139,
+      "priority_findings": 57,
       "substantive_open": 91,
       "taxonomy_review": 5,
       "unclassified": 5,
       "observation_state": "stateful observation"
+    },
+    {
+      "id": "w3c",
+      "display_name": "World Wide Web Consortium",
+      "organization": "w3c",
+      "generated_at": "2026-09-08T14:26:53.183958+00:00",
+      "repositories": 6,
+      "active": 6,
+      "material_changes": 5,
+      "priority_findings": 0,
+      "substantive_open": 0,
+      "taxonomy_review": 0,
+      "unclassified": 0,
+      "observation_state": "first baseline"
     }
   ]
 }

@@ -1,0 +1,1989 @@
+{
+  "schema_version": "0.2",
+  "organization": "w3c",
+  "generated_at": "2026-09-08T14:26:53.183958+00:00",
+  "period": {
+    "since": "2026-09-01T14:26:53.183958+00:00",
+    "until": "2026-09-08T14:26:53.183958+00:00",
+    "lookback_days": 7
+  },
+  "provenance": {
+    "source": "GitHub REST API",
+    "collector": "trust-ecosystem-monitor",
+    "deterministic_classification": true,
+    "previous_snapshot": null
+  },
+  "repositories": [
+    {
+      "id": 51303856,
+      "name": "webauthn",
+      "full_name": "w3c/webauthn",
+      "url": "https://github.com/w3c/webauthn",
+      "description": "Web Authentication: An API for accessing Public Key Credentials",
+      "created_at": "2016-02-08T14:51:38Z",
+      "updated_at": "2026-09-08T08:17:01Z",
+      "pushed_at": "2026-09-03T19:34:57Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Authentication",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/webauthn"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Normative strong public-key authentication standard with direct trust-system composition relevance"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/webauthn/",
+          "https://www.w3.org/groups/wg/webauthn/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "webauthn",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 713003014,
+      "name": "cid",
+      "full_name": "w3c/cid",
+      "url": "https://github.com/w3c/cid",
+      "description": "Controlled Identifier Documents",
+      "created_at": "2023-11-01T16:34:26Z",
+      "updated_at": "2026-08-28T15:11:58Z",
+      "pushed_at": "2026-08-24T10:34:42Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Identifiers & Control",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/cid"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Controlled Identifier Documents are a VCWG deliverable with direct controller/key relationship relevance"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "cid",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 250393085,
+      "name": "vc-di-bbs",
+      "full_name": "w3c/vc-di-bbs",
+      "url": "https://github.com/w3c/vc-di-bbs",
+      "description": "A linked data proof suite specification for BBS+ signatures",
+      "created_at": "2020-03-26T23:17:09Z",
+      "updated_at": "2026-09-02T18:48:28Z",
+      "pushed_at": "2026-09-02T18:48:24Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Privacy & Applied Cryptography",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-di-bbs"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "VCWG BBS cryptosuite work provides selective-disclosure and zero-knowledge disclosure capability"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-di-bbs",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 334233799,
+      "name": "vc-bitstring-status-list",
+      "full_name": "w3c/vc-bitstring-status-list",
+      "url": "https://github.com/w3c/vc-bitstring-status-list",
+      "description": "A privacy-preserving mechanism to publish status information for Verifiable Credentials.",
+      "created_at": "2021-01-29T18:46:03Z",
+      "updated_at": "2026-08-24T10:33:41Z",
+      "pushed_at": "2026-08-24T10:33:36Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-bitstring-status-list"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative privacy-preserving credential status and revocation mechanism"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-bitstring-status-list",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 130575803,
+      "name": "vc-data-integrity",
+      "full_name": "w3c/vc-data-integrity",
+      "url": "https://github.com/w3c/vc-data-integrity",
+      "description": "W3C Data Integrity Specification",
+      "created_at": "2018-04-22T14:35:06Z",
+      "updated_at": "2026-09-01T20:48:40Z",
+      "pushed_at": "2026-09-01T20:48:36Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-data-integrity"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative authenticity and integrity mechanisms for Verifiable Credentials"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-data-integrity",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 73851409,
+      "name": "vc-data-model",
+      "full_name": "w3c/vc-data-model",
+      "url": "https://github.com/w3c/vc-data-model",
+      "description": "W3C Verifiable Credentials v2.0 Specification",
+      "created_at": "2016-11-15T20:14:42Z",
+      "updated_at": "2026-09-07T10:09:35Z",
+      "pushed_at": "2026-09-05T21:08:25Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-data-model"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative Verifiable Credentials data-model work"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-data-model/all/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-data-model",
+        "profile": "w3c"
+      }
+    }
+  ],
+  "events": [
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-07T18:25:43Z",
+      "title": "Technical Decisions and Options",
+      "url": "https://github.com/w3c/vc-data-integrity/issues/362",
+      "number": 362,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-07T15:00:22Z",
+      "title": "Export definition of language value object; revise prose.",
+      "url": "https://github.com/w3c/vc-data-model/pull/1646",
+      "number": 1646,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-07T14:53:19Z",
+      "title": "Add an example of a mixed array of strings and language value objects",
+      "url": "https://github.com/w3c/vc-data-model/pull/1647",
+      "number": 1647,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-07T10:22:30Z",
+      "title": "https://www.w3.org/2018/credentials redirect missing Access-Control-Allow-Origin",
+      "url": "https://github.com/w3c/vc-data-model/issues/1644",
+      "number": 1644,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-06T15:55:52Z",
+      "title": "[PQ] Back up and restore overridden credentials",
+      "url": "https://github.com/w3c/webauthn/pull/2475",
+      "number": 2475,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T21:08:13Z",
+      "title": "Fix some header information in static threat model generation.",
+      "url": "https://github.com/w3c/vc-data-model/commit/28545b3f884daa2920adb7ef71efe08837f29006",
+      "number": null,
+      "sha": "28545b3f884daa2920adb7ef71efe08837f29006",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T20:51:59Z",
+      "title": "Fix Echidna publish action for threat model build.",
+      "url": "https://github.com/w3c/vc-data-model/commit/424fc301a342d8d68a85ab9c2285abbb6f829584",
+      "number": null,
+      "sha": "424fc301a342d8d68a85ab9c2285abbb6f829584",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T20:42:53Z",
+      "title": "Add Threat Model appendix to VCDM.",
+      "url": "https://github.com/w3c/vc-data-model/commit/8852b59ea8c154efd7cc4f3910e54f120f8dd320",
+      "number": null,
+      "sha": "8852b59ea8c154efd7cc4f3910e54f120f8dd320",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T20:26:09Z",
+      "title": "Update Echidna publication action to publish static threat model.",
+      "url": "https://github.com/w3c/vc-data-model/commit/5a698f1f10e2952192afaa7e906c7db516031ca6",
+      "number": null,
+      "sha": "5a698f1f10e2952192afaa7e906c7db516031ca6",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T20:07:23Z",
+      "title": "Add links to related specifications and meeting schedule.",
+      "url": "https://github.com/w3c/vc-data-model/commit/874513a7a2bf17098dd55a41cbccf31da9bd9232",
+      "number": null,
+      "sha": "874513a7a2bf17098dd55a41cbccf31da9bd9232",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:56:55Z",
+      "title": "Remove all duplicated threats in VCDM. Fix broken threats refs.",
+      "url": "https://github.com/w3c/vc-data-model/commit/62258ed6db9b0b0ca937dbbdba2076a08f319258",
+      "number": null,
+      "sha": "62258ed6db9b0b0ca937dbbdba2076a08f319258",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:32:27Z",
+      "title": "Invalid JSON and @context in Example #31",
+      "url": "https://github.com/w3c/vc-data-model/issues/1642",
+      "number": 1642,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:31:42Z",
+      "title": "Fix BBS example 30 and 31.",
+      "url": "https://github.com/w3c/vc-data-model/commit/d4f177e9f57f462d9fbebe3af5a4de89de79091a",
+      "number": null,
+      "sha": "d4f177e9f57f462d9fbebe3af5a4de89de79091a",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:07:39Z",
+      "title": "Rephrase securing requirement as constraint on securing (vs conformance).",
+      "url": "https://github.com/w3c/vc-data-model/pull/1645",
+      "number": 1645,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:06:43Z",
+      "title": "multiple comments on the introduction section",
+      "url": "https://github.com/w3c/vc-data-model/issues/1592",
+      "number": 1592,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "title": "Add suggestion for physical credentials by @dlongley.",
+      "url": "https://github.com/w3c/vc-data-model/commit/fc6ae4fe083b98a14d14102ea33733439e19925b",
+      "number": null,
+      "sha": "fc6ae4fe083b98a14d14102ea33733439e19925b",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "title": "Fix grammar in intro sections.",
+      "url": "https://github.com/w3c/vc-data-model/commit/965e39a670a9c54f7b8d32e8da1cc86b25473b08",
+      "number": null,
+      "sha": "965e39a670a9c54f7b8d32e8da1cc86b25473b08",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "title": "Apply TallTed's / dlongleys change suggestions.",
+      "url": "https://github.com/w3c/vc-data-model/commit/d3af681332b0c9a0e028f66034f74bb47495816a",
+      "number": null,
+      "sha": "d3af681332b0c9a0e028f66034f74bb47495816a",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "title": "Fix typo.",
+      "url": "https://github.com/w3c/vc-data-model/commit/0fcbdd8b7e48224d26b1b42b854a470f56a6dee3",
+      "number": null,
+      "sha": "0fcbdd8b7e48224d26b1b42b854a470f56a6dee3",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "title": "Apply suggestions from code review from TallTed",
+      "url": "https://github.com/w3c/vc-data-model/commit/72544ecaeadf0ffb5b71eb913fc01b4b26bb5d63",
+      "number": null,
+      "sha": "72544ecaeadf0ffb5b71eb913fc01b4b26bb5d63",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "title": "Update introduction sections for clarity.",
+      "url": "https://github.com/w3c/vc-data-model/commit/067bc775ce8201bc118066415c21a5fe0c0fd754",
+      "number": null,
+      "sha": "067bc775ce8201bc118066415c21a5fe0c0fd754",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "title": "Update introduction sections for clarity.",
+      "url": "https://github.com/w3c/vc-data-model/pull/1636",
+      "number": 1636,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T16:46:29Z",
+      "title": "Suggestion: Show mixed localized/non-localized arrays in i18n examples",
+      "url": "https://github.com/w3c/vc-data-model/issues/1643",
+      "number": 1643,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-05T16:13:16Z",
+      "title": "Add a \"localizeable value\" term to address i18n concerns",
+      "url": "https://github.com/w3c/vc-data-model/issues/1641",
+      "number": 1641,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T22:41:10Z",
+      "title": "5.4.3 \"the user handle ought not be\" -> RFC 2119 Terminology",
+      "url": "https://github.com/w3c/webauthn/issues/2431",
+      "number": 2431,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T22:30:47Z",
+      "title": "Credential Backup clarification (note about older authenticators)",
+      "url": "https://github.com/w3c/webauthn/issues/2477",
+      "number": 2477,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T18:58:35Z",
+      "title": "Refactor  to use  Common SD  Algorithms",
+      "url": "https://github.com/w3c/vc-di-bbs/pull/206",
+      "number": 206,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T05:18:49Z",
+      "title": "Should a CTAP2 virtual authenticator support CTAP1/U2F?",
+      "url": "https://github.com/w3c/webauthn/issues/2468",
+      "number": 2468,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-03T21:38:18Z",
+      "title": "Add Cross Device Fallback URL extension for hybrid transport authentication",
+      "url": "https://github.com/w3c/webauthn/pull/2380",
+      "number": 2380,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-03T19:33:26Z",
+      "title": "Update alg upgrade explainer",
+      "url": "https://github.com/w3c/webauthn/pull/2476",
+      "number": 2476,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-03T19:33:25Z",
+      "title": "Merge pull request #2476 from nsatragno/20_update_alg_explainer",
+      "url": "https://github.com/w3c/webauthn/commit/413f4efbcac5d29cfffbff0e4efd8f802da6d434",
+      "number": null,
+      "sha": "413f4efbcac5d29cfffbff0e4efd8f802da6d434",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-03T13:31:16Z",
+      "title": "Update alg upgrade explainer",
+      "url": "https://github.com/w3c/webauthn/commit/4a1c2bffac224f23f7407b2624a17691f46c4571",
+      "number": null,
+      "sha": "4a1c2bffac224f23f7407b2624a17691f46c4571",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-02T18:48:22Z",
+      "title": "Editorial: Fix href for Blind BBS Signatures (#205)",
+      "url": "https://github.com/w3c/vc-di-bbs/commit/d2f50397d84b157b54e1f7fd0627711ad39997f5",
+      "number": null,
+      "sha": "d2f50397d84b157b54e1f7fd0627711ad39997f5",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-02T18:48:22Z",
+      "title": "Editorial: Fix href for Blind BBS Signatures",
+      "url": "https://github.com/w3c/vc-di-bbs/pull/205",
+      "number": 205,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-02T17:57:02Z",
+      "title": "Merge pull request #2474 from nsatragno/update_alg_upgrade_explainer",
+      "url": "https://github.com/w3c/webauthn/commit/75e11749616a409fc8c34e8ab76cf62f0593a80b",
+      "number": null,
+      "sha": "75e11749616a409fc8c34e8ab76cf62f0593a80b",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-02T17:57:02Z",
+      "title": "Update algorithm upgrades explainer",
+      "url": "https://github.com/w3c/webauthn/pull/2474",
+      "number": 2474,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-02T16:18:56Z",
+      "title": "Update algorithm upgrades explainer",
+      "url": "https://github.com/w3c/webauthn/commit/73a957b7c3e99d63f2c9cb1b8a8f6ceaaee5e6af",
+      "number": null,
+      "sha": "73a957b7c3e99d63f2c9cb1b8a8f6ceaaee5e6af",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-01T20:48:34Z",
+      "title": "Remove outdated calls to clean up terminology sections.",
+      "url": "https://github.com/w3c/vc-data-integrity/commit/57d0a5a82494d7c1f7f21f3bcb02108b35698b49",
+      "number": null,
+      "sha": "57d0a5a82494d7c1f7f21f3bcb02108b35698b49",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-01T20:48:34Z",
+      "title": "Attempts to get rid of the js issues",
+      "url": "https://github.com/w3c/vc-data-integrity/pull/364",
+      "number": 364,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    }
+  ],
+  "assertions": [],
+  "collection_errors": [],
+  "change_units": [
+    {
+      "id": "toip-change-a58cfd2ec2ee",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Technical Decisions and Options",
+      "timestamp": "2026-09-07T18:25:43Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/issues/362"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-07T18:25:43Z",
+          "title": "Technical Decisions and Options",
+          "url": "https://github.com/w3c/vc-data-integrity/issues/362",
+          "number": 362,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-91a250a2e88d",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Export definition of language value object; revise prose.",
+      "timestamp": "2026-09-07T15:00:22Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1646"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-07T15:00:22Z",
+          "title": "Export definition of language value object; revise prose.",
+          "url": "https://github.com/w3c/vc-data-model/pull/1646",
+          "number": 1646,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-497090b0c277",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add an example of a mixed array of strings and language value objects",
+      "timestamp": "2026-09-07T14:53:19Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1647"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-07T14:53:19Z",
+          "title": "Add an example of a mixed array of strings and language value objects",
+          "url": "https://github.com/w3c/vc-data-model/pull/1647",
+          "number": 1647,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-e0f5c510914a",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "https://www.w3.org/2018/credentials redirect missing Access-Control-Allow-Origin",
+      "timestamp": "2026-09-07T10:22:30Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/issues/1644"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-07T10:22:30Z",
+          "title": "https://www.w3.org/2018/credentials redirect missing Access-Control-Allow-Origin",
+          "url": "https://github.com/w3c/vc-data-model/issues/1644",
+          "number": 1644,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-e1bfcf66e4bd",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "[PQ] Back up and restore overridden credentials",
+      "timestamp": "2026-09-06T15:55:52Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/pull/2475"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-06T15:55:52Z",
+          "title": "[PQ] Back up and restore overridden credentials",
+          "url": "https://github.com/w3c/webauthn/pull/2475",
+          "number": 2475,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-6829139814b9",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Fix some header information in static threat model generation.",
+      "timestamp": "2026-09-05T21:08:13Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/28545b3f884daa2920adb7ef71efe08837f29006"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T21:08:13Z",
+          "title": "Fix some header information in static threat model generation.",
+          "url": "https://github.com/w3c/vc-data-model/commit/28545b3f884daa2920adb7ef71efe08837f29006",
+          "number": null,
+          "sha": "28545b3f884daa2920adb7ef71efe08837f29006",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-50af5a728aa4",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Fix Echidna publish action for threat model build.",
+      "timestamp": "2026-09-05T20:51:59Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/424fc301a342d8d68a85ab9c2285abbb6f829584"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T20:51:59Z",
+          "title": "Fix Echidna publish action for threat model build.",
+          "url": "https://github.com/w3c/vc-data-model/commit/424fc301a342d8d68a85ab9c2285abbb6f829584",
+          "number": null,
+          "sha": "424fc301a342d8d68a85ab9c2285abbb6f829584",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-631927478f3b",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add Threat Model appendix to VCDM.",
+      "timestamp": "2026-09-05T20:42:53Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/8852b59ea8c154efd7cc4f3910e54f120f8dd320"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T20:42:53Z",
+          "title": "Add Threat Model appendix to VCDM.",
+          "url": "https://github.com/w3c/vc-data-model/commit/8852b59ea8c154efd7cc4f3910e54f120f8dd320",
+          "number": null,
+          "sha": "8852b59ea8c154efd7cc4f3910e54f120f8dd320",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-1d874f41b5fe",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Update Echidna publication action to publish static threat model.",
+      "timestamp": "2026-09-05T20:26:09Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/5a698f1f10e2952192afaa7e906c7db516031ca6"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T20:26:09Z",
+          "title": "Update Echidna publication action to publish static threat model.",
+          "url": "https://github.com/w3c/vc-data-model/commit/5a698f1f10e2952192afaa7e906c7db516031ca6",
+          "number": null,
+          "sha": "5a698f1f10e2952192afaa7e906c7db516031ca6",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-fa4fc79b1874",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add links to related specifications and meeting schedule.",
+      "timestamp": "2026-09-05T20:07:23Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/874513a7a2bf17098dd55a41cbccf31da9bd9232"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T20:07:23Z",
+          "title": "Add links to related specifications and meeting schedule.",
+          "url": "https://github.com/w3c/vc-data-model/commit/874513a7a2bf17098dd55a41cbccf31da9bd9232",
+          "number": null,
+          "sha": "874513a7a2bf17098dd55a41cbccf31da9bd9232",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-cb2450cf3340",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Remove all duplicated threats in VCDM. Fix broken threats refs.",
+      "timestamp": "2026-09-05T17:56:55Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/62258ed6db9b0b0ca937dbbdba2076a08f319258"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:56:55Z",
+          "title": "Remove all duplicated threats in VCDM. Fix broken threats refs.",
+          "url": "https://github.com/w3c/vc-data-model/commit/62258ed6db9b0b0ca937dbbdba2076a08f319258",
+          "number": null,
+          "sha": "62258ed6db9b0b0ca937dbbdba2076a08f319258",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-3846bd95fd6e",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Invalid JSON and @context in Example #31",
+      "timestamp": "2026-09-05T17:32:27Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/issues/1642"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:32:27Z",
+          "title": "Invalid JSON and @context in Example #31",
+          "url": "https://github.com/w3c/vc-data-model/issues/1642",
+          "number": 1642,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-f648e9794c8a",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Fix BBS example 30 and 31.",
+      "timestamp": "2026-09-05T17:31:42Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/d4f177e9f57f462d9fbebe3af5a4de89de79091a"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:31:42Z",
+          "title": "Fix BBS example 30 and 31.",
+          "url": "https://github.com/w3c/vc-data-model/commit/d4f177e9f57f462d9fbebe3af5a4de89de79091a",
+          "number": null,
+          "sha": "d4f177e9f57f462d9fbebe3af5a4de89de79091a",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-0a4ce990a1a7",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Rephrase securing requirement as constraint on securing (vs conformance).",
+      "timestamp": "2026-09-05T17:07:39Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1645"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:07:39Z",
+          "title": "Rephrase securing requirement as constraint on securing (vs conformance).",
+          "url": "https://github.com/w3c/vc-data-model/pull/1645",
+          "number": 1645,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-ce8a3f5117ef",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "multiple comments on the introduction section",
+      "timestamp": "2026-09-05T17:06:43Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/issues/1592"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:06:43Z",
+          "title": "multiple comments on the introduction section",
+          "url": "https://github.com/w3c/vc-data-model/issues/1592",
+          "number": 1592,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-90ee1863d2cb",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add suggestion for physical credentials by @dlongley.",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/fc6ae4fe083b98a14d14102ea33733439e19925b"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:05:01Z",
+          "title": "Add suggestion for physical credentials by @dlongley.",
+          "url": "https://github.com/w3c/vc-data-model/commit/fc6ae4fe083b98a14d14102ea33733439e19925b",
+          "number": null,
+          "sha": "fc6ae4fe083b98a14d14102ea33733439e19925b",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-cb8f69b1787b",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Fix grammar in intro sections.",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/965e39a670a9c54f7b8d32e8da1cc86b25473b08"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:05:01Z",
+          "title": "Fix grammar in intro sections.",
+          "url": "https://github.com/w3c/vc-data-model/commit/965e39a670a9c54f7b8d32e8da1cc86b25473b08",
+          "number": null,
+          "sha": "965e39a670a9c54f7b8d32e8da1cc86b25473b08",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-f9acd5d1a45d",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Apply TallTed's / dlongleys change suggestions.",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/d3af681332b0c9a0e028f66034f74bb47495816a"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:05:01Z",
+          "title": "Apply TallTed's / dlongleys change suggestions.",
+          "url": "https://github.com/w3c/vc-data-model/commit/d3af681332b0c9a0e028f66034f74bb47495816a",
+          "number": null,
+          "sha": "d3af681332b0c9a0e028f66034f74bb47495816a",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-42bddde41a02",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Fix typo.",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/0fcbdd8b7e48224d26b1b42b854a470f56a6dee3"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:05:01Z",
+          "title": "Fix typo.",
+          "url": "https://github.com/w3c/vc-data-model/commit/0fcbdd8b7e48224d26b1b42b854a470f56a6dee3",
+          "number": null,
+          "sha": "0fcbdd8b7e48224d26b1b42b854a470f56a6dee3",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-7eb5557c7539",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Apply suggestions from code review from TallTed",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/72544ecaeadf0ffb5b71eb913fc01b4b26bb5d63"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:05:01Z",
+          "title": "Apply suggestions from code review from TallTed",
+          "url": "https://github.com/w3c/vc-data-model/commit/72544ecaeadf0ffb5b71eb913fc01b4b26bb5d63",
+          "number": null,
+          "sha": "72544ecaeadf0ffb5b71eb913fc01b4b26bb5d63",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-8f6b8cf8df73",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Update introduction sections for clarity.",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/067bc775ce8201bc118066415c21a5fe0c0fd754"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:05:01Z",
+          "title": "Update introduction sections for clarity.",
+          "url": "https://github.com/w3c/vc-data-model/commit/067bc775ce8201bc118066415c21a5fe0c0fd754",
+          "number": null,
+          "sha": "067bc775ce8201bc118066415c21a5fe0c0fd754",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-d233ae1e0cc9",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Update introduction sections for clarity.",
+      "timestamp": "2026-09-05T17:05:01Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1636"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T17:05:01Z",
+          "title": "Update introduction sections for clarity.",
+          "url": "https://github.com/w3c/vc-data-model/pull/1636",
+          "number": 1636,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ]
+    },
+    {
+      "id": "toip-change-7cbe10979944",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Suggestion: Show mixed localized/non-localized arrays in i18n examples",
+      "timestamp": "2026-09-05T16:46:29Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/issues/1643"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T16:46:29Z",
+          "title": "Suggestion: Show mixed localized/non-localized arrays in i18n examples",
+          "url": "https://github.com/w3c/vc-data-model/issues/1643",
+          "number": 1643,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-4f04a3c06593",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add a \"localizeable value\" term to address i18n concerns",
+      "timestamp": "2026-09-05T16:13:16Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/issues/1641"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-05T16:13:16Z",
+          "title": "Add a \"localizeable value\" term to address i18n concerns",
+          "url": "https://github.com/w3c/vc-data-model/issues/1641",
+          "number": 1641,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-0ee197d4b0ab",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "5.4.3 \"the user handle ought not be\" -> RFC 2119 Terminology",
+      "timestamp": "2026-09-04T22:41:10Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2431"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T22:41:10Z",
+          "title": "5.4.3 \"the user handle ought not be\" -> RFC 2119 Terminology",
+          "url": "https://github.com/w3c/webauthn/issues/2431",
+          "number": 2431,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-82a7cc9d038f",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Credential Backup clarification (note about older authenticators)",
+      "timestamp": "2026-09-04T22:30:47Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2477"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T22:30:47Z",
+          "title": "Credential Backup clarification (note about older authenticators)",
+          "url": "https://github.com/w3c/webauthn/issues/2477",
+          "number": 2477,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-74742e978a10",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "title": "Refactor  to use  Common SD  Algorithms",
+      "timestamp": "2026-09-04T18:58:35Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-di-bbs/pull/206"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-di-bbs",
+          "portfolio": "Privacy & Applied Cryptography",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T18:58:35Z",
+          "title": "Refactor  to use  Common SD  Algorithms",
+          "url": "https://github.com/w3c/vc-di-bbs/pull/206",
+          "number": 206,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-0b42ed2a2ac4",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Should a CTAP2 virtual authenticator support CTAP1/U2F?",
+      "timestamp": "2026-09-04T05:18:49Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2468"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T05:18:49Z",
+          "title": "Should a CTAP2 virtual authenticator support CTAP1/U2F?",
+          "url": "https://github.com/w3c/webauthn/issues/2468",
+          "number": 2468,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-3ba3d5bccbe3",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Add Cross Device Fallback URL extension for hybrid transport authentication",
+      "timestamp": "2026-09-03T21:38:18Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/pull/2380"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-03T21:38:18Z",
+          "title": "Add Cross Device Fallback URL extension for hybrid transport authentication",
+          "url": "https://github.com/w3c/webauthn/pull/2380",
+          "number": 2380,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-0b08976e26f6",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Update alg upgrade explainer",
+      "timestamp": "2026-09-03T19:33:26Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/w3c/webauthn/pull/2476",
+        "https://github.com/w3c/webauthn/commit/413f4efbcac5d29cfffbff0e4efd8f802da6d434"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-03T19:33:26Z",
+          "title": "Update alg upgrade explainer",
+          "url": "https://github.com/w3c/webauthn/pull/2476",
+          "number": 2476,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-03T19:33:25Z",
+          "title": "Merge pull request #2476 from nsatragno/20_update_alg_explainer",
+          "url": "https://github.com/w3c/webauthn/commit/413f4efbcac5d29cfffbff0e4efd8f802da6d434",
+          "number": null,
+          "sha": "413f4efbcac5d29cfffbff0e4efd8f802da6d434",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-c628eb5d8840",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Update alg upgrade explainer",
+      "timestamp": "2026-09-03T13:31:16Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/commit/4a1c2bffac224f23f7407b2624a17691f46c4571"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-03T13:31:16Z",
+          "title": "Update alg upgrade explainer",
+          "url": "https://github.com/w3c/webauthn/commit/4a1c2bffac224f23f7407b2624a17691f46c4571",
+          "number": null,
+          "sha": "4a1c2bffac224f23f7407b2624a17691f46c4571",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-0925ee956227",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "title": "Editorial: Fix href for Blind BBS Signatures",
+      "timestamp": "2026-09-02T18:48:22Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/w3c/vc-di-bbs/commit/d2f50397d84b157b54e1f7fd0627711ad39997f5",
+        "https://github.com/w3c/vc-di-bbs/pull/205"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-di-bbs",
+          "portfolio": "Privacy & Applied Cryptography",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-02T18:48:22Z",
+          "title": "Editorial: Fix href for Blind BBS Signatures (#205)",
+          "url": "https://github.com/w3c/vc-di-bbs/commit/d2f50397d84b157b54e1f7fd0627711ad39997f5",
+          "number": null,
+          "sha": "d2f50397d84b157b54e1f7fd0627711ad39997f5",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-di-bbs",
+          "portfolio": "Privacy & Applied Cryptography",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-02T18:48:22Z",
+          "title": "Editorial: Fix href for Blind BBS Signatures",
+          "url": "https://github.com/w3c/vc-di-bbs/pull/205",
+          "number": 205,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ]
+    },
+    {
+      "id": "toip-change-2bb4ff5014f5",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Update algorithm upgrades explainer",
+      "timestamp": "2026-09-02T17:57:02Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/w3c/webauthn/commit/75e11749616a409fc8c34e8ab76cf62f0593a80b",
+        "https://github.com/w3c/webauthn/pull/2474"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-02T17:57:02Z",
+          "title": "Merge pull request #2474 from nsatragno/update_alg_upgrade_explainer",
+          "url": "https://github.com/w3c/webauthn/commit/75e11749616a409fc8c34e8ab76cf62f0593a80b",
+          "number": null,
+          "sha": "75e11749616a409fc8c34e8ab76cf62f0593a80b",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-02T17:57:02Z",
+          "title": "Update algorithm upgrades explainer",
+          "url": "https://github.com/w3c/webauthn/pull/2474",
+          "number": 2474,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ]
+    },
+    {
+      "id": "toip-change-590f90d7a1d1",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Update algorithm upgrades explainer",
+      "timestamp": "2026-09-02T16:18:56Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/commit/73a957b7c3e99d63f2c9cb1b8a8f6ceaaee5e6af"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-02T16:18:56Z",
+          "title": "Update algorithm upgrades explainer",
+          "url": "https://github.com/w3c/webauthn/commit/73a957b7c3e99d63f2c9cb1b8a8f6ceaaee5e6af",
+          "number": null,
+          "sha": "73a957b7c3e99d63f2c9cb1b8a8f6ceaaee5e6af",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-7d699b17552a",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Remove outdated calls to clean up terminology sections.",
+      "timestamp": "2026-09-01T20:48:34Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/commit/57d0a5a82494d7c1f7f21f3bcb02108b35698b49"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-01T20:48:34Z",
+          "title": "Remove outdated calls to clean up terminology sections.",
+          "url": "https://github.com/w3c/vc-data-integrity/commit/57d0a5a82494d7c1f7f21f3bcb02108b35698b49",
+          "number": null,
+          "sha": "57d0a5a82494d7c1f7f21f3bcb02108b35698b49",
+          "state": null,
+          "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-d726329e88cd",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Attempts to get rid of the js issues",
+      "timestamp": "2026-09-01T20:48:34Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/pull/364"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-01T20:48:34Z",
+          "title": "Attempts to get rid of the js issues",
+          "url": "https://github.com/w3c/vc-data-integrity/pull/364",
+          "number": 364,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ]
+    }
+  ],
+  "lifecycle_changes": [],
+  "cross_portfolio_seams": [],
+  "findings": [],
+  "ecosystem_profile": {
+    "schema_version": "1",
+    "id": "w3c",
+    "organization": "w3c",
+    "display_name": "World Wide Web Consortium",
+    "monitor_title": "Trust Ecosystem Monitor",
+    "weekly_brief_title": "W3C Trust Standards Brief",
+    "disclaimer": "Independent observatory; not an official W3C publication. Scope is a governed trust-standards portfolio, not the complete W3C GitHub organization.",
+    "repository_override_count": 6,
+    "discovery_sources": [
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-data-model"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-data-integrity"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-bitstring-status-list"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/cid"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-di-bbs"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/webauthn"
+      }
+    ],
+    "admission": {
+      "mode": "all_discovered",
+      "default_state": "included",
+      "default_tier": "core",
+      "repository_override_count": 0
+    }
+  }
+}

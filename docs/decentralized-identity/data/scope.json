@@ -1,0 +1,6500 @@
+{
+  "schema_version": "1",
+  "ecosystem": {
+    "schema_version": "1",
+    "id": "decentralized-identity",
+    "organization": "decentralized-identity",
+    "display_name": "Decentralized Identity Foundation",
+    "monitor_title": "Trust Ecosystem Monitor",
+    "weekly_brief_title": "DIF Weekly Ecosystem Brief",
+    "disclaimer": "Independent observatory; not an official Decentralized Identity Foundation publication.",
+    "repository_override_count": 10,
+    "discovery_sources": [
+      {
+        "type": "github_organization",
+        "value": "decentralized-identity"
+      }
+    ],
+    "admission": {
+      "mode": "all_discovered",
+      "default_state": "included",
+      "default_tier": "core",
+      "repository_override_count": 0
+    }
+  },
+  "generated_at": "2026-09-08T14:25:57.312776+00:00",
+  "counts": {
+    "discovered": 269,
+    "included": 269,
+    "watch": 0,
+    "review": 0,
+    "excluded": 0,
+    "deep_monitored": 269,
+    "watch_monitored": 0,
+    "inventory_only": 0
+  },
+  "repositories": [
+    {
+      "repository": "decentralized-identity/bbs-signature",
+      "url": "https://github.com/decentralized-identity/bbs-signature",
+      "portfolio": "Applied Crypto",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/crypto-data-encoding",
+      "url": "https://github.com/decentralized-identity/crypto-data-encoding",
+      "portfolio": "Applied Crypto",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/crypto-service-protocol",
+      "url": "https://github.com/decentralized-identity/crypto-service-protocol",
+      "portfolio": "Applied Crypto",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/crypto-wg",
+      "url": "https://github.com/decentralized-identity/crypto-wg",
+      "portfolio": "Applied Crypto",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/zkp-presentations",
+      "url": "https://github.com/decentralized-identity/zkp-presentations",
+      "portfolio": "Applied Crypto",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/claims-credentials",
+      "url": "https://github.com/decentralized-identity/claims-credentials",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/credential-manifest",
+      "url": "https://github.com/decentralized-identity/credential-manifest",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/credential-schemas",
+      "url": "https://github.com/decentralized-identity/credential-schemas",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-jwt-vc",
+      "url": "https://github.com/decentralized-identity/did-jwt-vc",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/presentation-exchange",
+      "url": "https://github.com/decentralized-identity/presentation-exchange",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/presentation-exchange-implementations",
+      "url": "https://github.com/decentralized-identity/presentation-exchange-implementations",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/presentation-exchange-tests",
+      "url": "https://github.com/decentralized-identity/presentation-exchange-tests",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/waci-presentation-exchange",
+      "url": "https://github.com/decentralized-identity/waci-presentation-exchange",
+      "portfolio": "Claims & Credentials",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-consent-assertion",
+      "url": "https://github.com/decentralized-identity/cawg-consent-assertion",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-definitions",
+      "url": "https://github.com/decentralized-identity/cawg-definitions",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-endorsement-assertion",
+      "url": "https://github.com/decentralized-identity/cawg-endorsement-assertion",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-identity-assertion",
+      "url": "https://github.com/decentralized-identity/cawg-identity-assertion",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-metadata-assertion",
+      "url": "https://github.com/decentralized-identity/cawg-metadata-assertion",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-organizational-identity-profile",
+      "url": "https://github.com/decentralized-identity/cawg-organizational-identity-profile",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-training-and-data-mining-assertion",
+      "url": "https://github.com/decentralized-identity/cawg-training-and-data-mining-assertion",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-ux-guidance",
+      "url": "https://github.com/decentralized-identity/cawg-ux-guidance",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-method-enum",
+      "url": "https://github.com/decentralized-identity/did-method-enum",
+      "portfolio": "DID Methods",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-method-registry",
+      "url": "https://github.com/decentralized-identity/did-method-registry",
+      "portfolio": "DID Methods",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-methods",
+      "url": "https://github.com/decentralized-identity/did-methods",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-methods-archive",
+      "url": "https://github.com/decentralized-identity/did-methods-archive",
+      "portfolio": "DID Methods",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-peer-2",
+      "url": "https://github.com/decentralized-identity/did-peer-2",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-peer-4",
+      "url": "https://github.com/decentralized-identity/did-peer-4",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh",
+      "url": "https://github.com/decentralized-identity/didwebvh",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-dart",
+      "url": "https://github.com/decentralized-identity/didwebvh-dart",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-implementations",
+      "url": "https://github.com/decentralized-identity/didwebvh-implementations",
+      "portfolio": "DID Methods",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-info",
+      "url": "https://github.com/decentralized-identity/didwebvh-info",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-java",
+      "url": "https://github.com/decentralized-identity/didwebvh-java",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-py",
+      "url": "https://github.com/decentralized-identity/didwebvh-py",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-rs",
+      "url": "https://github.com/decentralized-identity/didwebvh-rs",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-rs-v0.5",
+      "url": "https://github.com/decentralized-identity/didwebvh-rs-v0.5",
+      "portfolio": "DID Methods",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-server-py",
+      "url": "https://github.com/decentralized-identity/didwebvh-server-py",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-test-suite",
+      "url": "https://github.com/decentralized-identity/didwebvh-test-suite",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-ts",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-watcher-py",
+      "url": "https://github.com/decentralized-identity/didwebvh-watcher-py",
+      "portfolio": "DID Methods",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm",
+      "url": "https://github.com/decentralized-identity/didcomm",
+      "portfolio": "DIDComm",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm-bluetooth",
+      "url": "https://github.com/decentralized-identity/didcomm-bluetooth",
+      "portfolio": "DIDComm",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm-book",
+      "url": "https://github.com/decentralized-identity/didcomm-book",
+      "portfolio": "DIDComm",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm-demo",
+      "url": "https://github.com/decentralized-identity/didcomm-demo",
+      "portfolio": "DIDComm",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/DIDComm-js",
+      "url": "https://github.com/decentralized-identity/DIDComm-js",
+      "portfolio": "DIDComm",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm-messaging",
+      "url": "https://github.com/decentralized-identity/didcomm-messaging",
+      "portfolio": "DIDComm",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm-rs",
+      "url": "https://github.com/decentralized-identity/didcomm-rs",
+      "portfolio": "DIDComm",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm-usergroup",
+      "url": "https://github.com/decentralized-identity/didcomm-usergroup",
+      "portfolio": "DIDComm",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didcomm.org",
+      "url": "https://github.com/decentralized-identity/didcomm.org",
+      "portfolio": "DIDComm",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/waci-didcomm",
+      "url": "https://github.com/decentralized-identity/waci-didcomm",
+      "portfolio": "DIDComm",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hatpro-schema-htwg",
+      "url": "https://github.com/decentralized-identity/hatpro-schema-htwg",
+      "portfolio": "Hospitality & Travel",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/Hospitality-and-Travel-SIG",
+      "url": "https://github.com/decentralized-identity/Hospitality-and-Travel-SIG",
+      "portfolio": "Hospitality & Travel",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-resolver",
+      "url": "https://github.com/decentralized-identity/did-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-traits",
+      "url": "https://github.com/decentralized-identity/did-traits",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/identifiers-discovery",
+      "url": "https://github.com/decentralized-identity/identifiers-discovery",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/peer-did-method-spec",
+      "url": "https://github.com/decentralized-identity/peer-did-method-spec",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/thisdid",
+      "url": "https://github.com/decentralized-identity/thisdid",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-registrar-driver-did-btcr",
+      "url": "https://github.com/decentralized-identity/uni-registrar-driver-did-btcr",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-registrar-driver-did-ebsi",
+      "url": "https://github.com/decentralized-identity/uni-registrar-driver-did-ebsi",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-registrar-driver-did-ion",
+      "url": "https://github.com/decentralized-identity/uni-registrar-driver-did-ion",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-registrar-driver-did-key",
+      "url": "https://github.com/decentralized-identity/uni-registrar-driver-did-key",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-registrar-driver-did-sov",
+      "url": "https://github.com/decentralized-identity/uni-registrar-driver-did-sov",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-registrar-driver-did-v1",
+      "url": "https://github.com/decentralized-identity/uni-registrar-driver-did-v1",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-registrar-driver-did-web",
+      "url": "https://github.com/decentralized-identity/uni-registrar-driver-did-web",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-btcr",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-btcr",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-ccp",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-ccp",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-dom",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-dom",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-erc725",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-erc725",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-indy",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-indy",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-ion",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-ion",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-key",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-key",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-sov",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-sov",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-stack",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-stack",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-webvh",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-webvh",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-did-work",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-work",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/uni-resolver-driver-dns",
+      "url": "https://github.com/decentralized-identity/uni-resolver-driver-dns",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-registrar",
+      "url": "https://github.com/decentralized-identity/universal-registrar",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-registrar-frontend",
+      "url": "https://github.com/decentralized-identity/universal-registrar-frontend",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-resolver",
+      "url": "https://github.com/decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-resolver-frontend",
+      "url": "https://github.com/decentralized-identity/universal-resolver-frontend",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-resolver-java",
+      "url": "https://github.com/decentralized-identity/universal-resolver-java",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-resolver-lint-dashboard",
+      "url": "https://github.com/decentralized-identity/universal-resolver-lint-dashboard",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-resolver-python",
+      "url": "https://github.com/decentralized-identity/universal-resolver-python",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/well-known-did-configuration",
+      "url": "https://github.com/decentralized-identity/well-known-did-configuration",
+      "portfolio": "Identifiers & Discovery",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-common-dotnet",
+      "url": "https://github.com/decentralized-identity/did-common-dotnet",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-common-java",
+      "url": "https://github.com/decentralized-identity/did-common-java",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-common-typescript",
+      "url": "https://github.com/decentralized-identity/did-common-typescript",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-jwt",
+      "url": "https://github.com/decentralized-identity/did-jwt",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ethr-did-resolver",
+      "url": "https://github.com/decentralized-identity/ethr-did-resolver",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/helm-charts",
+      "url": "https://github.com/decentralized-identity/helm-charts",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hub-sdk-js",
+      "url": "https://github.com/decentralized-identity/hub-sdk-js",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hub-sdk-js-sample",
+      "url": "https://github.com/decentralized-identity/hub-sdk-js-sample",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/interoperability",
+      "url": "https://github.com/decentralized-identity/interoperability",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/jsonld-common-java",
+      "url": "https://github.com/decentralized-identity/jsonld-common-java",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/veramo",
+      "url": "https://github.com/decentralized-identity/veramo",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/veramo-agent-deploy",
+      "url": "https://github.com/decentralized-identity/veramo-agent-deploy",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/veramo-plugin",
+      "url": "https://github.com/decentralized-identity/veramo-plugin",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/veramo-usergroup",
+      "url": "https://github.com/decentralized-identity/veramo-usergroup",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web-did-resolver",
+      "url": "https://github.com/decentralized-identity/web-did-resolver",
+      "portfolio": "Implementations & Tooling",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/labs",
+      "url": "https://github.com/decentralized-identity/labs",
+      "portfolio": "Labs",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials",
+      "url": "https://github.com/decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials",
+      "portfolio": "Labs",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/labs-legally-binding-proof-of-personhood-for-verifiable-credentials",
+      "url": "https://github.com/decentralized-identity/labs-legally-binding-proof-of-personhood-for-verifiable-credentials",
+      "portfolio": "Labs",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/labs-linkedclaims",
+      "url": "https://github.com/decentralized-identity/labs-linkedclaims",
+      "portfolio": "Labs",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/labs-ordinals-plus",
+      "url": "https://github.com/decentralized-identity/labs-ordinals-plus",
+      "portfolio": "Labs",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/labs-privacy-preserving-revocation-mechanisms",
+      "url": "https://github.com/decentralized-identity/labs-privacy-preserving-revocation-mechanisms",
+      "portfolio": "Labs",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/labs-veranon",
+      "url": "https://github.com/decentralized-identity/labs-veranon",
+      "portfolio": "Labs",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/.github",
+      "url": "https://github.com/decentralized-identity/.github",
+      "portfolio": "Organization & Governance",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/decentralized-identity.github.io",
+      "url": "https://github.com/decentralized-identity/decentralized-identity.github.io",
+      "portfolio": "Organization & Governance",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/governance-of-delegated-authority-report",
+      "url": "https://github.com/decentralized-identity/governance-of-delegated-authority-report",
+      "portfolio": "Organization & Governance",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/org",
+      "url": "https://github.com/decentralized-identity/org",
+      "portfolio": "Organization & Governance",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/decentralized-web-node",
+      "url": "https://github.com/decentralized-identity/decentralized-web-node",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-aws-packages",
+      "url": "https://github.com/decentralized-identity/dwn-aws-packages",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-gcp-packages",
+      "url": "https://github.com/decentralized-identity/dwn-gcp-packages",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-proxy-js",
+      "url": "https://github.com/decentralized-identity/dwn-proxy-js",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-relay",
+      "url": "https://github.com/decentralized-identity/dwn-relay",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-sdk-js",
+      "url": "https://github.com/decentralized-identity/dwn-sdk-js",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-server",
+      "url": "https://github.com/decentralized-identity/dwn-server",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-sql-store",
+      "url": "https://github.com/decentralized-identity/dwn-sql-store",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwn-user-guide",
+      "url": "https://github.com/decentralized-identity/dwn-user-guide",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/edv-sample-implementation",
+      "url": "https://github.com/decentralized-identity/edv-sample-implementation",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/edv-spec",
+      "url": "https://github.com/decentralized-identity/edv-spec",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/edv-test-suite",
+      "url": "https://github.com/decentralized-identity/edv-test-suite",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/edv-use-cases",
+      "url": "https://github.com/decentralized-identity/edv-use-cases",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-dart",
+      "url": "https://github.com/decentralized-identity/web5-dart",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-docs",
+      "url": "https://github.com/decentralized-identity/web5-docs",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-go",
+      "url": "https://github.com/decentralized-identity/web5-go",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-js",
+      "url": "https://github.com/decentralized-identity/web5-js",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-kt",
+      "url": "https://github.com/decentralized-identity/web5-kt",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-react-native-metro-config",
+      "url": "https://github.com/decentralized-identity/web5-react-native-metro-config",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-react-native-polyfills",
+      "url": "https://github.com/decentralized-identity/web5-react-native-polyfills",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-rs",
+      "url": "https://github.com/decentralized-identity/web5-rs",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-spec",
+      "url": "https://github.com/decentralized-identity/web5-spec",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-swift",
+      "url": "https://github.com/decentralized-identity/web5-swift",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web5-wallet",
+      "url": "https://github.com/decentralized-identity/web5-wallet",
+      "portfolio": "Secure Data Storage / DWN",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ion",
+      "url": "https://github.com/decentralized-identity/ion",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ion-cli",
+      "url": "https://github.com/decentralized-identity/ion-cli",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ion-integration-test",
+      "url": "https://github.com/decentralized-identity/ion-integration-test",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ion-pow-sdk",
+      "url": "https://github.com/decentralized-identity/ion-pow-sdk",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ion-sdk",
+      "url": "https://github.com/decentralized-identity/ion-sdk",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ion-tools",
+      "url": "https://github.com/decentralized-identity/ion-tools",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/sidetree",
+      "url": "https://github.com/decentralized-identity/sidetree",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/sidetree-ethereum",
+      "url": "https://github.com/decentralized-identity/sidetree-ethereum",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/sidetree-ipfs-datastores",
+      "url": "https://github.com/decentralized-identity/sidetree-ipfs-datastores",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/sidetree-reference-impl",
+      "url": "https://github.com/decentralized-identity/sidetree-reference-impl",
+      "portfolio": "Sidetree / ION",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/delegated-authority-report",
+      "url": "https://github.com/decentralized-identity/delegated-authority-report",
+      "portfolio": "Trusted AI Agents",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/delegated-authority-threat-model",
+      "url": "https://github.com/decentralized-identity/delegated-authority-threat-model",
+      "portfolio": "Trusted AI Agents",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/kya-os-mcp",
+      "url": "https://github.com/decentralized-identity/kya-os-mcp",
+      "portfolio": "Trusted AI Agents",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/kya-os-schema",
+      "url": "https://github.com/decentralized-identity/kya-os-schema",
+      "portfolio": "Trusted AI Agents",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/trusted-ai-agents",
+      "url": "https://github.com/decentralized-identity/trusted-ai-agents",
+      "portfolio": "Trusted AI Agents",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/trusted-ai-agents-wg",
+      "url": "https://github.com/decentralized-identity/trusted-ai-agents-wg",
+      "portfolio": "Trusted AI Agents",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/activestorage-horcrux",
+      "url": "https://github.com/decentralized-identity/activestorage-horcrux",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/agent-explorer",
+      "url": "https://github.com/decentralized-identity/agent-explorer",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/arewewaciyet",
+      "url": "https://github.com/decentralized-identity/arewewaciyet",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/aries-rfcs",
+      "url": "https://github.com/decentralized-identity/aries-rfcs",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/attestations",
+      "url": "https://github.com/decentralized-identity/attestations",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/authentication-wg",
+      "url": "https://github.com/decentralized-identity/authentication-wg",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/c19-vc.com",
+      "url": "https://github.com/decentralized-identity/c19-vc.com",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/charts",
+      "url": "https://github.com/decentralized-identity/charts",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/claim-format-registry",
+      "url": "https://github.com/decentralized-identity/claim-format-registry",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/confidential-storage",
+      "url": "https://github.com/decentralized-identity/confidential-storage",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/context",
+      "url": "https://github.com/decentralized-identity/context",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/credential-trust-establishment",
+      "url": "https://github.com/decentralized-identity/credential-trust-establishment",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cte-demo",
+      "url": "https://github.com/decentralized-identity/cte-demo",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/data-agreement",
+      "url": "https://github.com/decentralized-identity/data-agreement",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/delegated-authority-evaluations",
+      "url": "https://github.com/decentralized-identity/delegated-authority-evaluations",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-attested-resources",
+      "url": "https://github.com/decentralized-identity/did-attested-resources",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-auth-extension",
+      "url": "https://github.com/decentralized-identity/did-auth-extension",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-auth-jose",
+      "url": "https://github.com/decentralized-identity/did-auth-jose",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-auth-relying-party",
+      "url": "https://github.com/decentralized-identity/did-auth-relying-party",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-crypto-typescript",
+      "url": "https://github.com/decentralized-identity/did-crypto-typescript",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-dht",
+      "url": "https://github.com/decentralized-identity/did-dht",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-jose-extensions",
+      "url": "https://github.com/decentralized-identity/did-jose-extensions",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-key.rs",
+      "url": "https://github.com/decentralized-identity/did-key.rs",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-recovery",
+      "url": "https://github.com/decentralized-identity/did-recovery",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-registration",
+      "url": "https://github.com/decentralized-identity/did-registration",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-security-csharp",
+      "url": "https://github.com/decentralized-identity/did-security-csharp",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-security-typescript",
+      "url": "https://github.com/decentralized-identity/did-security-typescript",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-siop",
+      "url": "https://github.com/decentralized-identity/did-siop",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-siop-browser-ext",
+      "url": "https://github.com/decentralized-identity/did-siop-browser-ext",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-spec-extensions",
+      "url": "https://github.com/decentralized-identity/did-spec-extensions",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/did-whois",
+      "url": "https://github.com/decentralized-identity/did-whois",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dwa-demo",
+      "url": "https://github.com/decentralized-identity/dwa-demo",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/dweb-wallet",
+      "url": "https://github.com/decentralized-identity/dweb-wallet",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/EcdsaSecp256k1RecoverySignature2020",
+      "url": "https://github.com/decentralized-identity/EcdsaSecp256k1RecoverySignature2020",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/element",
+      "url": "https://github.com/decentralized-identity/element",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ES256K-interop",
+      "url": "https://github.com/decentralized-identity/ES256K-interop",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/faq",
+      "url": "https://github.com/decentralized-identity/faq",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/fuzzy-encryption",
+      "url": "https://github.com/decentralized-identity/fuzzy-encryption",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/github-did",
+      "url": "https://github.com/decentralized-identity/github-did",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/go-ipfs-ds-azure",
+      "url": "https://github.com/decentralized-identity/go-ipfs-ds-azure",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/HackAlongGallery",
+      "url": "https://github.com/decentralized-identity/HackAlongGallery",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hackathon-2024",
+      "url": "https://github.com/decentralized-identity/hackathon-2024",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hatpro-schema",
+      "url": "https://github.com/decentralized-identity/hatpro-schema",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/healthcare",
+      "url": "https://github.com/decentralized-identity/healthcare",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/horcrux",
+      "url": "https://github.com/decentralized-identity/horcrux",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/http-did-auth-proxy",
+      "url": "https://github.com/decentralized-identity/http-did-auth-proxy",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hub-common-js",
+      "url": "https://github.com/decentralized-identity/hub-common-js",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hub-node-core",
+      "url": "https://github.com/decentralized-identity/hub-node-core",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hub-reference",
+      "url": "https://github.com/decentralized-identity/hub-reference",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/hub-storage-mongo",
+      "url": "https://github.com/decentralized-identity/hub-storage-mongo",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/integrations",
+      "url": "https://github.com/decentralized-identity/integrations",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/JcsEd25519Signature2020",
+      "url": "https://github.com/decentralized-identity/JcsEd25519Signature2020",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/jobs",
+      "url": "https://github.com/decentralized-identity/jobs",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/jsonld-document-loader",
+      "url": "https://github.com/decentralized-identity/jsonld-document-loader",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/JWS-Test-Suite",
+      "url": "https://github.com/decentralized-identity/JWS-Test-Suite",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/jwt-vc-issuance-profile",
+      "url": "https://github.com/decentralized-identity/jwt-vc-issuance-profile",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/jwt-vc-presentation-profile",
+      "url": "https://github.com/decentralized-identity/jwt-vc-presentation-profile",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/keri",
+      "url": "https://github.com/decentralized-identity/keri",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/keri-dht-py",
+      "url": "https://github.com/decentralized-identity/keri-dht-py",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/keri-java",
+      "url": "https://github.com/decentralized-identity/keri-java",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/kerigo",
+      "url": "https://github.com/decentralized-identity/kerigo",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/kerijs",
+      "url": "https://github.com/decentralized-identity/kerijs",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/keriox",
+      "url": "https://github.com/decentralized-identity/keriox",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/keripy",
+      "url": "https://github.com/decentralized-identity/keripy",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/lds-ecdsa-secp256k1-2019.js",
+      "url": "https://github.com/decentralized-identity/lds-ecdsa-secp256k1-2019.js",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/linked-vp",
+      "url": "https://github.com/decentralized-identity/linked-vp",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/newsletterarchives",
+      "url": "https://github.com/decentralized-identity/newsletterarchives",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/OpenPgpSignature2019",
+      "url": "https://github.com/decentralized-identity/OpenPgpSignature2019",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/papers",
+      "url": "https://github.com/decentralized-identity/papers",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/policy-as-code",
+      "url": "https://github.com/decentralized-identity/policy-as-code",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/presentation-request",
+      "url": "https://github.com/decentralized-identity/presentation-request",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/product-managers",
+      "url": "https://github.com/decentralized-identity/product-managers",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/publications",
+      "url": "https://github.com/decentralized-identity/publications",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/recovery",
+      "url": "https://github.com/decentralized-identity/recovery",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/revocation",
+      "url": "https://github.com/decentralized-identity/revocation",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/rwot11-the-hague",
+      "url": "https://github.com/decentralized-identity/rwot11-the-hague",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/schema-directory",
+      "url": "https://github.com/decentralized-identity/schema-directory",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/schema-forms",
+      "url": "https://github.com/decentralized-identity/schema-forms",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/schemas",
+      "url": "https://github.com/decentralized-identity/schemas",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SchnorrSecp256k1Signature2019",
+      "url": "https://github.com/decentralized-identity/SchnorrSecp256k1Signature2019",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/secret-recovery-methods",
+      "url": "https://github.com/decentralized-identity/secret-recovery-methods",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/secure-data-store",
+      "url": "https://github.com/decentralized-identity/secure-data-store",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SIG-Africa",
+      "url": "https://github.com/decentralized-identity/SIG-Africa",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SIG-APAC",
+      "url": "https://github.com/decentralized-identity/SIG-APAC",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SIG-Banking-and-Finance",
+      "url": "https://github.com/decentralized-identity/SIG-Banking-and-Finance",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SIG-China",
+      "url": "https://github.com/decentralized-identity/SIG-China",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SIG-IoT",
+      "url": "https://github.com/decentralized-identity/SIG-IoT",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SIG-Japan",
+      "url": "https://github.com/decentralized-identity/SIG-Japan",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/SIG-Korea",
+      "url": "https://github.com/decentralized-identity/SIG-Korea",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/snark-credentials",
+      "url": "https://github.com/decentralized-identity/snark-credentials",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/spartan_zkSNARK_signatures",
+      "url": "https://github.com/decentralized-identity/spartan_zkSNARK_signatures",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/spec-up",
+      "url": "https://github.com/decentralized-identity/spec-up",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/specs",
+      "url": "https://github.com/decentralized-identity/specs",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/tbd-dwn-gcp",
+      "url": "https://github.com/decentralized-identity/tbd-dwn-gcp",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/template-for-OGs",
+      "url": "https://github.com/decentralized-identity/template-for-OGs",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/template-for-profile-workitems",
+      "url": "https://github.com/decentralized-identity/template-for-profile-workitems",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/template-for-registry-workitems",
+      "url": "https://github.com/decentralized-identity/template-for-registry-workitems",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/template-for-SIGs",
+      "url": "https://github.com/decentralized-identity/template-for-SIGs",
+      "portfolio": "Unclassified",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/template-for-WGs",
+      "url": "https://github.com/decentralized-identity/template-for-WGs",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/template-for-work-items",
+      "url": "https://github.com/decentralized-identity/template-for-work-items",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/template-IETF-bound",
+      "url": "https://github.com/decentralized-identity/template-IETF-bound",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/test",
+      "url": "https://github.com/decentralized-identity/test",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/test-wg",
+      "url": "https://github.com/decentralized-identity/test-wg",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/trust-establishment",
+      "url": "https://github.com/decentralized-identity/trust-establishment",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/trustdidweb",
+      "url": "https://github.com/decentralized-identity/trustdidweb",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/trustdidweb-info",
+      "url": "https://github.com/decentralized-identity/trustdidweb-info",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/trustdidweb-v03",
+      "url": "https://github.com/decentralized-identity/trustdidweb-v03",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/TSC",
+      "url": "https://github.com/decentralized-identity/TSC",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/ua-web-extension",
+      "url": "https://github.com/decentralized-identity/ua-web-extension",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/vc-marketplace",
+      "url": "https://github.com/decentralized-identity/vc-marketplace",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/vc-spec-map",
+      "url": "https://github.com/decentralized-identity/vc-spec-map",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/vcs",
+      "url": "https://github.com/decentralized-identity/vcs",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/vct",
+      "url": "https://github.com/decentralized-identity/vct",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/vui",
+      "url": "https://github.com/decentralized-identity/vui",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/w3id.org",
+      "url": "https://github.com/decentralized-identity/w3id.org",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/wallet-and-credential-interactions",
+      "url": "https://github.com/decentralized-identity/wallet-and-credential-interactions",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/wallet-rendering",
+      "url": "https://github.com/decentralized-identity/wallet-rendering",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/web-extension",
+      "url": "https://github.com/decentralized-identity/web-extension",
+      "portfolio": "Unclassified",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/universal-wallet-backup-containers",
+      "url": "https://github.com/decentralized-identity/universal-wallet-backup-containers",
+      "portfolio": "Wallet Security",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/wallet-security",
+      "url": "https://github.com/decentralized-identity/wallet-security",
+      "portfolio": "Wallet Security",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    }
+  ],
+  "interpretation": {
+    "discovered": "Repository was found through a declared discovery source; discovery alone does not authorize deep monitoring.",
+    "deep_monitored": "Repository is admitted as included at core or related tier and receives full activity collection.",
+    "watch_monitored": "Repository is admitted at watch tier and receives repository metadata plus release signals only.",
+    "inventory_only": "Repository is retained for scope provenance but receives no routine activity collection."
+  }
+}
