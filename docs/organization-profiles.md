@@ -6,6 +6,9 @@ Trust Ecosystem Monitor separates organization-neutral collection and intelligen
 
 - `organizations/trustoverip/profile.toml` — Trust Over IP Foundation
 - `organizations/decentralized-identity/profile.toml` — Decentralized Identity Foundation (DIF)
+- `organizations/w3c/profile.toml` — World Wide Web Consortium (W3C)
+
+W3C also uses `organizations/w3c/admission.toml` because its GitHub organization is materially broader than the intended monitoring scope.
 
 ## Profile contract
 
@@ -39,27 +42,17 @@ Discovery answers **where a candidate was observed**. Admission answers **whethe
 Profiles may declare `[[discovery_sources]]` entries. The executable source types are currently:
 
 - `github_organization` — discover repositories published by a GitHub organization;
-- `explicit_repository` — name a repository that is outside the primary organization boundary.
+- `explicit_repository` — name a specific repository as a bounded discovery source.
 
 Profiles that omit `discovery_sources` remain backward-compatible: the historical `organization` field is treated as an explicit `github_organization` discovery source.
+
+Discovery provenance is retained on generated repository records. Multiple discovery paths for the same repository are deduplicated without discarding the provenance that led to consideration.
 
 A source type is not added merely because an external API exists. A discovery adapter needs an executable provenance, correlation and failure contract before the source can influence monitoring scope.
 
 ## Governed admission
 
-Large ecosystems may opt into governed admission:
-
-```toml
-[admission]
-mode = "governed"
-
-[[admission.repositories]]
-repository = "example-spec"
-state = "included"
-tier = "core"
-rationale = "The ecosystem governance record identifies this as an active specification repository."
-evidence = ["https://example.org/governance/example-spec"]
-```
+Large ecosystems may opt into governed admission. Admission may be declared inline or, as with W3C, in a sibling `admission.toml` policy file whose repository-specific decisions override permissive discovery defaults.
 
 Admission states are:
 
@@ -72,25 +65,25 @@ Admission states are:
 
 Collection tiers are a separate axis:
 
-| Tier | Intended collection intensity |
+| Tier | Runtime collection intensity |
 | --- | --- |
-| `core` | Full evidence collection for primary standards/work items. |
-| `related` | Full or near-full evidence for materially related work. |
-| `watch` | Reduced observation intended to detect material movement. |
-| `inventory` | Shallow identity/provenance sufficient to preserve discovery or review state. |
+| `core` | Full repository metadata, commits, issues, pull requests and releases. |
+| `related` | Full repository metadata, commits, issues, pull requests and releases. |
+| `watch` | Repository metadata plus release signals only. |
+| `inventory` | Repository identity/provenance only; no routine activity API calls. |
 
-The admission contract does not yet alter collector depth; tier-aware collection is a separate implementation tranche. Recording the tier first makes that future behavior explicit and testable rather than embedding scope judgments in collector code.
+Tier-aware collection is enforced at runtime. Unsupported state/tier combinations fail rather than silently widening collection.
 
 ### Fail-closed scope rule
 
-For `mode = "governed"`, the defaults are fixed:
+For governed admission, unresolved repositories default to:
 
 ```text
 state = review
 tier  = inventory
 ```
 
-A governed profile cannot configure a more permissive default. Absence of repository-specific evidence therefore creates a review item rather than silently expanding monitoring scope. Explicit `included` and `watch` overrides require evidence as well as a rationale.
+Absence of repository-specific evidence therefore creates a review item rather than silently expanding monitoring scope. Explicit `included` and `watch` decisions require rationale and evidence.
 
 This is the core governance invariant:
 
@@ -98,7 +91,16 @@ This is the core governance invariant:
 
 ### Legacy compatibility
 
-Profiles without an `[admission]` table use `mode = "all_discovered"` with `state = "included"` and `tier = "core"`. This preserves the existing Trust Over IP and DIF behavior until those profiles deliberately adopt governed admission.
+Profiles without a governed admission policy use the historical `all_discovered` behavior with `state = included` and `tier = core`. This preserves the existing Trust Over IP and DIF behavior until those profiles deliberately adopt governed admission.
+
+## W3C proving baseline
+
+The W3C profile intentionally avoids `github_organization` discovery. It currently names six repositories explicitly and admits them through evidence-backed policy:
+
+- core: `w3c/vc-data-model`, `w3c/vc-data-integrity`, `w3c/vc-bitstring-status-list`;
+- related: `w3c/cid`, `w3c/vc-di-bbs`, `w3c/webauthn`.
+
+This is a proving baseline, not a claim that these are the only W3C repositories relevant to digital trust. Expansion requires a repository-specific admission decision with rationale and evidence. See `docs/w3c-onboarding.md`.
 
 ## Portfolio classification
 
@@ -114,24 +116,9 @@ Unclassified
 
 An override should be used when the repository's own README, work-item declaration or governance material provides stronger evidence than its name. Pattern rules should cover stable repository families. Broad rules should not be introduced merely to drive the unclassified count toward zero.
 
-Every newly generated repository record includes monitor-owned classification provenance:
+Every newly generated repository record includes monitor-owned classification provenance. `Unclassified` is a monitor-maintainer review state. It means the current taxonomy does not yet place the repository; it does not imply that the upstream repository is deficient or obligated to change.
 
-```json
-{
-  "portfolio": "Claims & Credentials",
-  "classification": {
-    "method": "override",
-    "rule": "credential-schemas",
-    "profile": "decentralized-identity"
-  }
-}
-```
-
-For pattern matches, `method` is `rule` and `rule` identifies the matching prefix or contained fragment. For unmatched repositories, `method` is `unclassified` and `rule` is null.
-
-`Unclassified` is a monitor-maintainer review state. It means the current taxonomy does not yet place the repository; it does not imply that the upstream repository is deficient or obligated to change.
-
-## Profile-scoped state
+## Profile-scoped state and publication
 
 Every profile owns separate retained and generated state:
 
@@ -140,6 +127,7 @@ data/<profile-id>/snapshots/
 data/<profile-id>/dispositions.json
 
 docs/<profile-id>/index.html
+docs/<profile-id>/scope.html
 docs/<profile-id>/findings.html
 docs/<profile-id>/portfolios.html
 docs/<profile-id>/lifecycle.html
@@ -148,11 +136,12 @@ docs/<profile-id>/evidence.html
 docs/<profile-id>/taxonomy.html
 docs/<profile-id>/methodology.html
 docs/<profile-id>/data/latest.json
+docs/<profile-id>/data/scope.json
 ```
 
-The `taxonomy.html` surface makes the profile decision auditable repository-by-repository. It describes how the monitor classified the repository; it is not an upstream governance assertion.
+`scope.html` and `data/scope.json` make discovery, admission and collection intensity auditable repository-by-repository. They distinguish discovered, deep-monitored, watch-monitored, inventory-only, review-required and excluded repositories.
 
-The root `docs/index.html` is an ecosystem catalog. Taxonomy-review items are counted separately from substantive findings so classification maintenance does not read as ecosystem operational risk. The catalog also distinguishes a first baseline from a stateful observation based on whether a previous retained snapshot was available.
+Generated observations are retained on the automation-owned `generated-observations` branch rather than pushed directly to protected `main`. Source, profile, policy and workflow changes continue through the normal PR and validation path. The publication workflow restores prior generated state, collects fresh evidence, persists the new generated state lineage, and only then deploys GitHub Pages.
 
 ## TrustOverIP migration compatibility
 
@@ -168,12 +157,12 @@ A new ecosystem should normally be added as another profile rather than by cloni
 
 1. identify the ecosystem's own governance/work-item/lifecycle vocabulary;
 2. declare bounded discovery sources and preserve their provenance;
-3. choose `governed` admission when discovery is materially broader than intended monitoring scope;
+3. choose governed admission when discovery is materially broader than intended monitoring scope;
 4. record repository-specific rationale and evidence for deliberate inclusion/watch decisions;
-5. create conservative classification rules grounded in ecosystem vocabulary;
-6. use exact classification overrides only where repository-specific evidence justifies them;
+5. assign collection tiers deliberately and test their runtime behavior;
+6. create conservative classification rules grounded in ecosystem vocabulary;
 7. allow unresolved admission to remain `review` and unmatched taxonomy to remain `Unclassified` rather than guessing;
-8. run a first baseline and inspect admission and classification gaps; and
+8. run a first baseline and inspect admission/classification gaps plus the generated scope register; and
 9. keep that ecosystem's evidence and dispositions profile-scoped.
 
-Cross-ecosystem reporting is a separate capability. The existence of two profiles is not evidence of a technical dependency, governance relationship or standards alignment.
+Cross-ecosystem reporting is a separate capability. The existence of multiple profiles is not evidence of a technical dependency, governance relationship or standards alignment.
