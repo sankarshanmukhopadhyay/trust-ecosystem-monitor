@@ -1,0 +1,53 @@
+schema_version = "1"
+policy_id = "w3c-trust-standards-baseline-2026-09"
+
+# Each included repository has explicit W3C evidence. This file is governance
+# configuration: adding a repository requires an evidence-bearing decision.
+
+[[repositories]]
+repository = "w3c/vc-data-model"
+portfolio = "Verifiable Credentials"
+state = "included"
+tier = "core"
+rationale = ["Normative Verifiable Credentials data-model work"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/TR/vc-data-model/all/"]
+
+[[repositories]]
+repository = "w3c/vc-data-integrity"
+portfolio = "Verifiable Credentials"
+state = "included"
+tier = "core"
+rationale = ["Normative authenticity and integrity mechanisms for Verifiable Credentials"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/groups/wg/vc/publications/"]
+
+[[repositories]]
+repository = "w3c/vc-bitstring-status-list"
+portfolio = "Verifiable Credentials"
+state = "included"
+tier = "core"
+rationale = ["Normative privacy-preserving credential status and revocation mechanism"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/groups/wg/vc/publications/"]
+
+[[repositories]]
+repository = "w3c/cid"
+portfolio = "Identifiers & Control"
+state = "included"
+tier = "related"
+rationale = ["Controlled Identifier Documents are a VCWG deliverable with direct controller/key relationship relevance"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/groups/wg/vc/publications/"]
+
+[[repositories]]
+repository = "w3c/vc-di-bbs"
+portfolio = "Privacy & Applied Cryptography"
+state = "included"
+tier = "related"
+rationale = ["VCWG BBS cryptosuite work provides selective-disclosure and zero-knowledge disclosure capability"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/groups/wg/vc/publications/"]
+
+[[repositories]]
+repository = "w3c/webauthn"
+portfolio = "Authentication"
+state = "included"
+tier = "related"
+rationale = ["Normative strong public-key authentication standard with direct trust-system composition relevance"]
+evidence = ["https://www.w3.org/groups/wg/webauthn/", "https://www.w3.org/groups/wg/webauthn/publications/"]
