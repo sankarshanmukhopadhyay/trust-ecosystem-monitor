@@ -1,0 +1,62 @@
+schema_version = "1"
+id = "w3c"
+organization = "w3c"
+display_name = "World Wide Web Consortium"
+monitor_title = "Trust Ecosystem Monitor"
+weekly_brief_title = "W3C Trust Standards Brief"
+disclaimer = "Independent observatory; not an official W3C publication. Scope is a governed trust-standards portfolio, not the complete W3C GitHub organization."
+
+# W3C is deliberately not discovered by enumerating the entire GitHub
+# organization. The baseline begins with repositories explicitly associated
+# with W3C Working Groups on W3C's own group/tool/publication surfaces.
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-data-model"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-data-integrity"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-bitstring-status-list"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/cid"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-di-bbs"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/webauthn"
+
+[repository_overrides]
+vc-data-model = "Verifiable Credentials"
+vc-data-integrity = "Verifiable Credentials"
+vc-bitstring-status-list = "Verifiable Credentials"
+cid = "Identifiers & Control"
+vc-di-bbs = "Privacy & Applied Cryptography"
+webauthn = "Authentication"
+
+[[portfolio_rules]]
+portfolio = "Verifiable Credentials"
+prefixes = ["vc-"]
+contains = ["credential"]
+
+[[portfolio_rules]]
+portfolio = "Authentication"
+prefixes = ["webauthn"]
+contains = ["authentication"]
+
+[[portfolio_rules]]
+portfolio = "Identifiers & Control"
+prefixes = ["cid", "did-"]
+contains = ["identifier"]
+
+[[portfolio_rules]]
+portfolio = "Privacy & Applied Cryptography"
+prefixes = ["privacy", "zkp", "bbs"]
+contains = ["privacy", "cryptograph"]
