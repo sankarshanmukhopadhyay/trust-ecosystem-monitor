@@ -8,7 +8,7 @@
     "monitor_title": "ToIP Portfolio Monitor",
     "weekly_brief_title": "ToIP Weekly Portfolio Brief",
     "disclaimer": "This repository is independently maintained and is not an official Trust Over IP Foundation publication.",
-    "repository_override_count": 0,
+    "repository_override_count": 9,
     "discovery_sources": [
       {
         "type": "github_organization",
@@ -22,7 +22,7 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-09-08T14:28:55.932441+00:00",
+  "generated_at": "2026-09-08T15:12:27.400685+00:00",
   "counts": {
     "discovered": 116,
     "included": 116,
@@ -111,6 +111,222 @@
       "url": "https://github.com/trustoverip/aimwg-tsp-enabled-ai-agent-protocols",
       "portfolio": "AIMWG",
       "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/EasyCLA",
+      "url": "https://github.com/trustoverip/EasyCLA",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/iso-template",
+      "url": "https://github.com/trustoverip/iso-template",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/logo-assets",
+      "url": "https://github.com/trustoverip/logo-assets",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/mega",
+      "url": "https://github.com/trustoverip/mega",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/mkdocs-material",
+      "url": "https://github.com/trustoverip/mkdocs-material",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/next-deliverable-num",
+      "url": "https://github.com/trustoverip/next-deliverable-num",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/PDF-Deliverable-Review",
+      "url": "https://github.com/trustoverip/PDF-Deliverable-Review",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/SC",
+      "url": "https://github.com/trustoverip/SC",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/specification-template",
+      "url": "https://github.com/trustoverip/specification-template",
+      "portfolio": "Admin-Governance",
+      "lifecycle": "dormant",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -2027,30 +2243,6 @@
       }
     },
     {
-      "repository": "trustoverip/EasyCLA",
-      "url": "https://github.com/trustoverip/EasyCLA",
-      "portfolio": "Unclassified",
-      "lifecycle": "active",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
       "repository": "trustoverip/ecosystem-foundry-wg",
       "url": "https://github.com/trustoverip/ecosystem-foundry-wg",
       "portfolio": "Unclassified",
@@ -2243,126 +2435,6 @@
       }
     },
     {
-      "repository": "trustoverip/iso-template",
-      "url": "https://github.com/trustoverip/iso-template",
-      "portfolio": "Unclassified",
-      "lifecycle": "archived",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
-      "repository": "trustoverip/logo-assets",
-      "url": "https://github.com/trustoverip/logo-assets",
-      "portfolio": "Unclassified",
-      "lifecycle": "active",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
-      "repository": "trustoverip/mega",
-      "url": "https://github.com/trustoverip/mega",
-      "portfolio": "Unclassified",
-      "lifecycle": "archived",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
-      "repository": "trustoverip/mkdocs-material",
-      "url": "https://github.com/trustoverip/mkdocs-material",
-      "portfolio": "Unclassified",
-      "lifecycle": "archived",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
-      "repository": "trustoverip/next-deliverable-num",
-      "url": "https://github.com/trustoverip/next-deliverable-num",
-      "portfolio": "Unclassified",
-      "lifecycle": "archived",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
       "repository": "trustoverip/nymble-ecosystem",
       "url": "https://github.com/trustoverip/nymble-ecosystem",
       "portfolio": "Unclassified",
@@ -2387,82 +2459,10 @@
       }
     },
     {
-      "repository": "trustoverip/PDF-Deliverable-Review",
-      "url": "https://github.com/trustoverip/PDF-Deliverable-Review",
-      "portfolio": "Unclassified",
-      "lifecycle": "dormant",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
       "repository": "trustoverip/qr-code-spec",
       "url": "https://github.com/trustoverip/qr-code-spec",
       "portfolio": "Unclassified",
       "lifecycle": "archived",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
-      "repository": "trustoverip/SC",
-      "url": "https://github.com/trustoverip/SC",
-      "portfolio": "Unclassified",
-      "lifecycle": "archived",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      }
-    },
-    {
-      "repository": "trustoverip/specification-template",
-      "url": "https://github.com/trustoverip/specification-template",
-      "portfolio": "Unclassified",
-      "lifecycle": "dormant",
       "admission": {
         "state": "included",
         "tier": "core",

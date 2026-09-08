@@ -6,6 +6,19 @@ monitor_title = "ToIP Portfolio Monitor"
 weekly_brief_title = "ToIP Weekly Portfolio Brief"
 disclaimer = "This repository is independently maintained and is not an official Trust Over IP Foundation publication."
 
+# Administrative/governance repositories are explicit overrides so generated
+# refreshes cannot reclassify standards-production infrastructure by name.
+[repository_overrides]
+EasyCLA = "Admin-Governance"
+iso-template = "Admin-Governance"
+logo-assets = "Admin-Governance"
+mega = "Admin-Governance"
+mkdocs-material = "Admin-Governance"
+next-deliverable-num = "Admin-Governance"
+PDF-Deliverable-Review = "Admin-Governance"
+SC = "Admin-Governance"
+specification-template = "Admin-Governance"
+
 # Portfolio rules are evaluated in order. A repository name is normalized to
 # lowercase; the first matching prefix or contained fragment wins. Repositories
 # with no match remain explicitly Unclassified.

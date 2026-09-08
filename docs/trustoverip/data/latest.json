@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "trustoverip",
-  "generated_at": "2026-09-08T14:28:55.932441+00:00",
+  "generated_at": "2026-09-08T15:12:27.400685+00:00",
   "period": {
-    "since": "2026-09-01T14:28:55.932441+00:00",
-    "until": "2026-09-08T14:28:55.932441+00:00",
+    "since": "2026-09-01T15:12:27.400685+00:00",
+    "until": "2026-09-08T15:12:27.400685+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-08T14:25:40.968660+00:00"
+    "previous_snapshot": "2026-09-08T14:28:55.932441+00:00"
   },
   "repositories": [
     {
@@ -167,6 +167,357 @@
       "classification": {
         "method": "rule",
         "rule": "portfolio_rules[1].prefix:aimwg-",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 745534752,
+      "name": "EasyCLA",
+      "full_name": "trustoverip/EasyCLA",
+      "url": "https://github.com/trustoverip/EasyCLA",
+      "description": "Test repo for setting up EasyCLA, the tool we'll use to manage specification membership sigs",
+      "created_at": "2024-01-19T14:47:55Z",
+      "updated_at": "2026-07-07T23:52:22Z",
+      "pushed_at": "2026-07-08T00:18:52Z",
+      "archived": false,
+      "fork": true,
+      "default_branch": "main",
+      "portfolio": "Admin-Governance",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "easycla",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 677489427,
+      "name": "iso-template",
+      "full_name": "trustoverip/iso-template",
+      "url": "https://github.com/trustoverip/iso-template",
+      "description": "A template for formatting and publishing an ISO specification using the \"ISO Simple\" template.",
+      "created_at": "2023-08-11T17:47:09Z",
+      "updated_at": "2024-03-05T15:40:24Z",
+      "pushed_at": "2023-09-06T17:46:49Z",
+      "archived": true,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Admin-Governance",
+      "kind": "template",
+      "lifecycle": "archived",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "iso-template",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 267143276,
+      "name": "logo-assets",
+      "full_name": "trustoverip/logo-assets",
+      "url": "https://github.com/trustoverip/logo-assets",
+      "description": "Manage lifecycle and access to all logo assets.",
+      "created_at": "2020-05-26T20:19:35Z",
+      "updated_at": "2026-03-25T18:37:16Z",
+      "pushed_at": "2026-03-25T18:37:48Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Admin-Governance",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "logo-assets",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 435614279,
+      "name": "mega",
+      "full_name": "trustoverip/mega",
+      "url": "https://github.com/trustoverip/mega",
+      "description": "demo repo for terms wikis, for fun",
+      "created_at": "2021-12-06T19:02:16Z",
+      "updated_at": "2024-03-05T15:41:09Z",
+      "pushed_at": "2021-12-09T19:07:45Z",
+      "archived": true,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Admin-Governance",
+      "kind": "repository",
+      "lifecycle": "archived",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "mega",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 314282495,
+      "name": "mkdocs-material",
+      "full_name": "trustoverip/mkdocs-material",
+      "url": "https://github.com/trustoverip/mkdocs-material",
+      "description": "ToIP repo template for mkdocs with ToIP Material Theme to be used as a GitHub Template Repository.",
+      "created_at": "2020-11-19T15:03:32Z",
+      "updated_at": "2024-03-05T15:43:37Z",
+      "pushed_at": "2021-06-25T20:51:48Z",
+      "archived": true,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Admin-Governance",
+      "kind": "repository",
+      "lifecycle": "archived",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "mkdocs-material",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 290789325,
+      "name": "next-deliverable-num",
+      "full_name": "trustoverip/next-deliverable-num",
+      "url": "https://github.com/trustoverip/next-deliverable-num",
+      "description": "Unique identifier generator for ToIP Deliverables. ",
+      "created_at": "2020-08-27T13:55:33Z",
+      "updated_at": "2024-03-05T15:44:00Z",
+      "pushed_at": "2020-12-01T14:25:15Z",
+      "archived": true,
+      "fork": false,
+      "default_branch": "master",
+      "portfolio": "Admin-Governance",
+      "kind": "repository",
+      "lifecycle": "archived",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "next-deliverable-num",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 780443784,
+      "name": "PDF-Deliverable-Review",
+      "full_name": "trustoverip/PDF-Deliverable-Review",
+      "url": "https://github.com/trustoverip/PDF-Deliverable-Review",
+      "description": null,
+      "created_at": "2024-04-01T13:51:52Z",
+      "updated_at": "2024-04-01T14:24:19Z",
+      "pushed_at": "2024-04-01T14:15:21Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Admin-Governance",
+      "kind": "public-review",
+      "lifecycle": "dormant",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "pdf-deliverable-review",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 267160530,
+      "name": "SC",
+      "full_name": "trustoverip/SC",
+      "url": "https://github.com/trustoverip/SC",
+      "description": "ToIP Steering Committee: Top-level governance for the ToIP Foundation.",
+      "created_at": "2020-05-26T21:58:50Z",
+      "updated_at": "2024-03-05T15:45:28Z",
+      "pushed_at": "2020-07-22T14:32:42Z",
+      "archived": true,
+      "fork": false,
+      "default_branch": "master",
+      "portfolio": "Admin-Governance",
+      "kind": "repository",
+      "lifecycle": "archived",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "sc",
+        "profile": "trustoverip"
+      }
+    },
+    {
+      "id": 731743288,
+      "name": "specification-template",
+      "full_name": "trustoverip/specification-template",
+      "url": "https://github.com/trustoverip/specification-template",
+      "description": "ToIP specification template",
+      "created_at": "2023-12-14T19:17:34Z",
+      "updated_at": "2026-08-17T14:40:21Z",
+      "pushed_at": "2024-01-27T16:52:45Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Admin-Governance",
+      "kind": "template",
+      "lifecycle": "dormant",
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "specification-template",
         "profile": "trustoverip"
       }
     },
@@ -3252,45 +3603,6 @@
       }
     },
     {
-      "id": 745534752,
-      "name": "EasyCLA",
-      "full_name": "trustoverip/EasyCLA",
-      "url": "https://github.com/trustoverip/EasyCLA",
-      "description": "Test repo for setting up EasyCLA, the tool we'll use to manage specification membership sigs",
-      "created_at": "2024-01-19T14:47:55Z",
-      "updated_at": "2026-07-07T23:52:22Z",
-      "pushed_at": "2026-07-08T00:18:52Z",
-      "archived": false,
-      "fork": true,
-      "default_branch": "main",
-      "portfolio": "Unclassified",
-      "kind": "repository",
-      "lifecycle": "active",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
       "id": 268527607,
       "name": "ecosystem-foundry-wg",
       "full_name": "trustoverip/ecosystem-foundry-wg",
@@ -3603,201 +3915,6 @@
       }
     },
     {
-      "id": 677489427,
-      "name": "iso-template",
-      "full_name": "trustoverip/iso-template",
-      "url": "https://github.com/trustoverip/iso-template",
-      "description": "A template for formatting and publishing an ISO specification using the \"ISO Simple\" template.",
-      "created_at": "2023-08-11T17:47:09Z",
-      "updated_at": "2024-03-05T15:40:24Z",
-      "pushed_at": "2023-09-06T17:46:49Z",
-      "archived": true,
-      "fork": false,
-      "default_branch": "main",
-      "portfolio": "Unclassified",
-      "kind": "template",
-      "lifecycle": "archived",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
-      "id": 267143276,
-      "name": "logo-assets",
-      "full_name": "trustoverip/logo-assets",
-      "url": "https://github.com/trustoverip/logo-assets",
-      "description": "Manage lifecycle and access to all logo assets.",
-      "created_at": "2020-05-26T20:19:35Z",
-      "updated_at": "2026-03-25T18:37:16Z",
-      "pushed_at": "2026-03-25T18:37:48Z",
-      "archived": false,
-      "fork": false,
-      "default_branch": "main",
-      "portfolio": "Unclassified",
-      "kind": "repository",
-      "lifecycle": "active",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
-      "id": 435614279,
-      "name": "mega",
-      "full_name": "trustoverip/mega",
-      "url": "https://github.com/trustoverip/mega",
-      "description": "demo repo for terms wikis, for fun",
-      "created_at": "2021-12-06T19:02:16Z",
-      "updated_at": "2024-03-05T15:41:09Z",
-      "pushed_at": "2021-12-09T19:07:45Z",
-      "archived": true,
-      "fork": false,
-      "default_branch": "main",
-      "portfolio": "Unclassified",
-      "kind": "repository",
-      "lifecycle": "archived",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
-      "id": 314282495,
-      "name": "mkdocs-material",
-      "full_name": "trustoverip/mkdocs-material",
-      "url": "https://github.com/trustoverip/mkdocs-material",
-      "description": "ToIP repo template for mkdocs with ToIP Material Theme to be used as a GitHub Template Repository.",
-      "created_at": "2020-11-19T15:03:32Z",
-      "updated_at": "2024-03-05T15:43:37Z",
-      "pushed_at": "2021-06-25T20:51:48Z",
-      "archived": true,
-      "fork": false,
-      "default_branch": "main",
-      "portfolio": "Unclassified",
-      "kind": "repository",
-      "lifecycle": "archived",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
-      "id": 290789325,
-      "name": "next-deliverable-num",
-      "full_name": "trustoverip/next-deliverable-num",
-      "url": "https://github.com/trustoverip/next-deliverable-num",
-      "description": "Unique identifier generator for ToIP Deliverables. ",
-      "created_at": "2020-08-27T13:55:33Z",
-      "updated_at": "2024-03-05T15:44:00Z",
-      "pushed_at": "2020-12-01T14:25:15Z",
-      "archived": true,
-      "fork": false,
-      "default_branch": "master",
-      "portfolio": "Unclassified",
-      "kind": "repository",
-      "lifecycle": "archived",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
       "id": 309505047,
       "name": "nymble-ecosystem",
       "full_name": "trustoverip/nymble-ecosystem",
@@ -3837,45 +3954,6 @@
       }
     },
     {
-      "id": 780443784,
-      "name": "PDF-Deliverable-Review",
-      "full_name": "trustoverip/PDF-Deliverable-Review",
-      "url": "https://github.com/trustoverip/PDF-Deliverable-Review",
-      "description": null,
-      "created_at": "2024-04-01T13:51:52Z",
-      "updated_at": "2024-04-01T14:24:19Z",
-      "pushed_at": "2024-04-01T14:15:21Z",
-      "archived": false,
-      "fork": false,
-      "default_branch": "main",
-      "portfolio": "Unclassified",
-      "kind": "public-review",
-      "lifecycle": "dormant",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
       "id": 386694363,
       "name": "qr-code-spec",
       "full_name": "trustoverip/qr-code-spec",
@@ -3890,84 +3968,6 @@
       "portfolio": "Unclassified",
       "kind": "specification",
       "lifecycle": "archived",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
-      "id": 267160530,
-      "name": "SC",
-      "full_name": "trustoverip/SC",
-      "url": "https://github.com/trustoverip/SC",
-      "description": "ToIP Steering Committee: Top-level governance for the ToIP Foundation.",
-      "created_at": "2020-05-26T21:58:50Z",
-      "updated_at": "2024-03-05T15:45:28Z",
-      "pushed_at": "2020-07-22T14:32:42Z",
-      "archived": true,
-      "fork": false,
-      "default_branch": "master",
-      "portfolio": "Unclassified",
-      "kind": "repository",
-      "lifecycle": "archived",
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "trustoverip"
-          }
-        ]
-      },
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "classification": {
-        "method": "unclassified",
-        "rule": null,
-        "profile": "trustoverip"
-      }
-    },
-    {
-      "id": 731743288,
-      "name": "specification-template",
-      "full_name": "trustoverip/specification-template",
-      "url": "https://github.com/trustoverip/specification-template",
-      "description": "ToIP specification template",
-      "created_at": "2023-12-14T19:17:34Z",
-      "updated_at": "2026-08-17T14:40:21Z",
-      "pushed_at": "2024-01-27T16:52:45Z",
-      "archived": false,
-      "fork": false,
-      "default_branch": "main",
-      "portfolio": "Unclassified",
-      "kind": "template",
-      "lifecycle": "dormant",
       "discovery": {
         "sources": [
           {
@@ -9681,17 +9681,6 @@
       ]
     },
     {
-      "id": "toip-classification-695d002e5f54",
-      "category": "classification",
-      "subject": "trustoverip/EasyCLA",
-      "status": "open",
-      "materiality": 2,
-      "summary": "Monitor taxonomy does not yet classify this active repository. This is a monitor taxonomy gap, not an upstream repository defect or obligation.",
-      "evidence": [
-        "https://github.com/trustoverip/EasyCLA"
-      ]
-    },
-    {
       "id": "toip-classification-6f32abab2250",
       "category": "classification",
       "subject": "trustoverip/high-assurance-verifiable-identifiers",
@@ -9700,17 +9689,6 @@
       "summary": "Monitor taxonomy does not yet classify this active repository. This is a monitor taxonomy gap, not an upstream repository defect or obligation.",
       "evidence": [
         "https://github.com/trustoverip/high-assurance-verifiable-identifiers"
-      ]
-    },
-    {
-      "id": "toip-classification-4220501000ba",
-      "category": "classification",
-      "subject": "trustoverip/logo-assets",
-      "status": "open",
-      "materiality": 2,
-      "summary": "Monitor taxonomy does not yet classify this active repository. This is a monitor taxonomy gap, not an upstream repository defect or obligation.",
-      "evidence": [
-        "https://github.com/trustoverip/logo-assets"
       ]
     },
     {
@@ -18663,8 +18641,115 @@
       ]
     }
   ],
-  "lifecycle_changes": [],
+  "lifecycle_changes": [
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/EasyCLA",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/EasyCLA"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/PDF-Deliverable-Review",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/PDF-Deliverable-Review"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/SC",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/SC"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/iso-template",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/iso-template"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/logo-assets",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/logo-assets"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/mega",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/mega"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/mkdocs-material",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/mkdocs-material"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/next-deliverable-num",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/next-deliverable-num"
+    },
+    {
+      "type": "portfolio",
+      "repository": "trustoverip/specification-template",
+      "portfolio": "Admin-Governance",
+      "from": "Unclassified",
+      "to": "Admin-Governance",
+      "url": "https://github.com/trustoverip/specification-template"
+    }
+  ],
   "cross_portfolio_seams": [
+    {
+      "id": "toip-seam-9ab37dd145bc",
+      "strength": "explicit-reference",
+      "source_portfolio": "DTG",
+      "target_portfolio": "Admin-Governance",
+      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "target_repository": "trustoverip/SC",
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/commit/c8ef706b4d407a3a68a26b5fe2ce554c43674683",
+        "https://github.com/trustoverip/dtgwg-cred-spec/pull/30"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 5
+    },
+    {
+      "id": "toip-seam-a7a54a997efb",
+      "strength": "explicit-reference",
+      "source_portfolio": "DTG",
+      "target_portfolio": "Admin-Governance",
+      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "target_repository": "trustoverip/SC",
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/pull/27",
+        "https://github.com/trustoverip/dtgwg-cred-spec/commit/879e7f7598de7e2d6499f3f4c012a2603afd63d7"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 5
+    },
     {
       "id": "toip-seam-d260adbee11b",
       "strength": "explicit-reference",
@@ -18694,38 +18779,38 @@
       "materiality": 5
     },
     {
-      "id": "toip-seam-20567de0b075",
+      "id": "toip-seam-1567c371a951",
       "strength": "explicit-reference",
       "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "target_portfolio": "Admin-Governance",
+      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
       "target_repository": "trustoverip/SC",
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/commit/c8ef706b4d407a3a68a26b5fe2ce554c43674683",
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/30"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/e02364d5be40efc0dfda04f2ae4758de11783c00",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/363"
       ],
       "relationship_class": "cross-portfolio",
       "review_materiality": "derived",
       "review_required": true,
-      "materiality": 5
+      "materiality": 4
     },
     {
-      "id": "toip-seam-785c672198c4",
+      "id": "toip-seam-182d9bb99a38",
       "strength": "explicit-reference",
       "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "target_portfolio": "Admin-Governance",
+      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
       "target_repository": "trustoverip/SC",
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/27",
-        "https://github.com/trustoverip/dtgwg-cred-spec/commit/879e7f7598de7e2d6499f3f4c012a2603afd63d7"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/360",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/5bc8a2400bad1ab9277aac0c020c168037bce31d"
       ],
       "relationship_class": "cross-portfolio",
       "review_materiality": "derived",
       "review_required": true,
-      "materiality": 5
+      "materiality": 4
     },
     {
       "id": "toip-seam-f458d1265b01",
@@ -18778,23 +18863,6 @@
       "materiality": 4
     },
     {
-      "id": "toip-seam-4ee19e02188b",
-      "strength": "explicit-reference",
-      "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "target_repository": "trustoverip/SC",
-      "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/e02364d5be40efc0dfda04f2ae4758de11783c00",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/363"
-      ],
-      "relationship_class": "cross-portfolio",
-      "review_materiality": "derived",
-      "review_required": true,
-      "materiality": 4
-    },
-    {
       "id": "toip-seam-a5494492a0d0",
       "strength": "explicit-reference",
       "source_portfolio": "DTG",
@@ -18805,23 +18873,6 @@
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/393684d10b4e52405e87276f566cd2b1b229d66f",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/362"
-      ],
-      "relationship_class": "cross-portfolio",
-      "review_materiality": "derived",
-      "review_required": true,
-      "materiality": 4
-    },
-    {
-      "id": "toip-seam-bc694a4552e6",
-      "strength": "explicit-reference",
-      "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "target_repository": "trustoverip/SC",
-      "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/360",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/5bc8a2400bad1ab9277aac0c020c168037bce31d"
       ],
       "relationship_class": "cross-portfolio",
       "review_materiality": "derived",
@@ -18948,10 +18999,10 @@
       ]
     },
     {
-      "id": "toip-seam-27e875c6ed61",
+      "id": "toip-seam-27772cc403f1",
       "strength": "explicit-reference",
       "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
+      "target_portfolio": "Admin-Governance",
       "source_repository": "trustoverip/dtgwg-cred-spec",
       "target_repository": "trustoverip/SC",
       "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
@@ -18964,10 +19015,10 @@
       "materiality": 3
     },
     {
-      "id": "toip-seam-852a064dc20b",
+      "id": "toip-seam-d27b1593b9f5",
       "strength": "explicit-reference",
       "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
+      "target_portfolio": "Admin-Governance",
       "source_repository": "trustoverip/dtgwg-cred-spec",
       "target_repository": "trustoverip/SC",
       "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
@@ -18980,10 +19031,10 @@
       "materiality": 3
     },
     {
-      "id": "toip-seam-550b475b1064",
+      "id": "toip-seam-991dbae5b544",
       "strength": "explicit-reference",
       "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
+      "target_portfolio": "Admin-Governance",
       "source_repository": "trustoverip/dtgwg-cred-spec",
       "target_repository": "trustoverip/SC",
       "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
@@ -19028,10 +19079,10 @@
       "materiality": 2
     },
     {
-      "id": "toip-seam-ba0fbd59baef",
+      "id": "toip-seam-a303563b72f6",
       "strength": "explicit-reference",
       "source_portfolio": "KERI Suite",
-      "target_portfolio": "Unclassified",
+      "target_portfolio": "Admin-Governance",
       "source_repository": "trustoverip/kswg-dossier-specification",
       "target_repository": "trustoverip/SC",
       "summary": "trustoverip/kswg-dossier-specification references trustoverip/SC in a current change unit.",
@@ -19446,6 +19497,22 @@
       "observed_materiality": 5
     },
     {
+      "id": "toip-seam-26bf6185ad78",
+      "strength": "explicit-reference",
+      "source_portfolio": "Governance",
+      "target_portfolio": "Admin-Governance",
+      "source_repository": "trustoverip/governance",
+      "target_repository": "trustoverip/SC",
+      "summary": "trustoverip/governance references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/governance/commit/04056382d10961ef352e54de32253d756fac3722"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 1
+    },
+    {
       "id": "toip-seam-0fada83072ac",
       "strength": "explicit-reference",
       "source_portfolio": "Governance",
@@ -19471,22 +19538,6 @@
       "summary": "trustoverip/governance references trustoverip/admin in a current change unit.",
       "evidence": [
         "https://github.com/trustoverip/governance/commit/209f1256271941d8f0f1e6597eddf029af9b0b4a"
-      ],
-      "relationship_class": "cross-portfolio",
-      "review_materiality": "derived",
-      "review_required": true,
-      "materiality": 1
-    },
-    {
-      "id": "toip-seam-200ad28fea97",
-      "strength": "explicit-reference",
-      "source_portfolio": "Governance",
-      "target_portfolio": "Unclassified",
-      "source_repository": "trustoverip/governance",
-      "target_repository": "trustoverip/SC",
-      "summary": "trustoverip/governance references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/governance/commit/04056382d10961ef352e54de32253d756fac3722"
       ],
       "relationship_class": "cross-portfolio",
       "review_materiality": "derived",
@@ -19693,21 +19744,6 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-203034baad81",
-      "category": "cross-portfolio-seam",
-      "subject": "trustoverip/dtgwg-cred-spec",
-      "status": "open",
-      "materiality": 5,
-      "urgency": 2,
-      "assurance_impact": 3,
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/commit/c8ef706b4d407a3a68a26b5fe2ce554c43674683",
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/30"
-      ],
-      "disposition": null
-    },
-    {
       "id": "toip-finding-2633a681da90",
       "category": "material-change",
       "subject": "trustoverip/dtgwg-cred-spec",
@@ -19789,6 +19825,21 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-3d61151249e0",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-cred-spec",
+      "status": "open",
+      "materiality": 5,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/pull/27",
+        "https://github.com/trustoverip/dtgwg-cred-spec/commit/879e7f7598de7e2d6499f3f4c012a2603afd63d7"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-427170b80495",
       "category": "material-change",
       "subject": "trustoverip/dtgwg-cred-spec",
@@ -19800,21 +19851,6 @@
       "evidence": [
         "https://github.com/trustoverip/dtgwg-cred-spec/commit/4f7e66b6dfcd8eddc212c8002351a6ad814c60e1",
         "https://github.com/trustoverip/dtgwg-cred-spec/pull/29"
-      ],
-      "disposition": null
-    },
-    {
-      "id": "toip-finding-42ce479c1049",
-      "category": "cross-portfolio-seam",
-      "subject": "trustoverip/dtgwg-cred-spec",
-      "status": "open",
-      "materiality": 5,
-      "urgency": 2,
-      "assurance_impact": 3,
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/27",
-        "https://github.com/trustoverip/dtgwg-cred-spec/commit/879e7f7598de7e2d6499f3f4c012a2603afd63d7"
       ],
       "disposition": null
     },
@@ -20239,6 +20275,21 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-cfaef0242ac9",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-cred-spec",
+      "status": "open",
+      "materiality": 5,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/commit/c8ef706b4d407a3a68a26b5fe2ce554c43674683",
+        "https://github.com/trustoverip/dtgwg-cred-spec/pull/30"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-d03ef0a52ec4",
       "category": "material-change",
       "subject": "trustoverip/dtgwg-trust-tasks-tf",
@@ -20352,7 +20403,7 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-7afd42cb7168",
+      "id": "toip-finding-23254f952a31",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/dtgwg-trust-tasks-tf",
       "status": "open",
@@ -20361,8 +20412,8 @@
       "assurance_impact": 3,
       "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/e02364d5be40efc0dfda04f2ae4758de11783c00",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/363"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/360",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/5bc8a2400bad1ab9277aac0c020c168037bce31d"
       ],
       "disposition": null
     },
@@ -20382,7 +20433,7 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-91d93888d4c8",
+      "id": "toip-finding-8bb2357dcbd3",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/dtgwg-trust-tasks-tf",
       "status": "open",
@@ -20391,8 +20442,8 @@
       "assurance_impact": 3,
       "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/360",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/5bc8a2400bad1ab9277aac0c020c168037bce31d"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/e02364d5be40efc0dfda04f2ae4758de11783c00",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/363"
       ],
       "disposition": null
     },
@@ -20453,6 +20504,20 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-16d31affce18",
+      "category": "lifecycle",
+      "subject": "trustoverip/EasyCLA",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/EasyCLA"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-316dd9816f76",
       "category": "collection",
       "subject": "trustoverip/kswg-main-glossary",
@@ -20465,6 +20530,48 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-4efe4492d7cc",
+      "category": "lifecycle",
+      "subject": "trustoverip/next-deliverable-num",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/next-deliverable-num"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-53e6cbade063",
+      "category": "lifecycle",
+      "subject": "trustoverip/iso-template",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/iso-template"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-6dd2097c8d0f",
+      "category": "lifecycle",
+      "subject": "trustoverip/mkdocs-material",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/mkdocs-material"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-748e68bb3a8f",
       "category": "collection",
       "subject": "trustoverip/tswg-did-method-webs-specification",
@@ -20474,6 +20581,76 @@
       "assurance_impact": 2,
       "summary": "trustoverip/tswg-did-method-webs-specification:commit: GitHub API 409 for /repos/trustoverip/tswg-did-method-webs-specification/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
       "evidence": [],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-7a19e79f322e",
+      "category": "lifecycle",
+      "subject": "trustoverip/logo-assets",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/logo-assets"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-847e65f7dcfb",
+      "category": "lifecycle",
+      "subject": "trustoverip/PDF-Deliverable-Review",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/PDF-Deliverable-Review"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-855c27fc2303",
+      "category": "lifecycle",
+      "subject": "trustoverip/SC",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/SC"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-9426607ab4d9",
+      "category": "lifecycle",
+      "subject": "trustoverip/mega",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/mega"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-c797ab9807d7",
+      "category": "lifecycle",
+      "subject": "trustoverip/specification-template",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 3,
+      "assurance_impact": 3,
+      "summary": "portfolio changed from Unclassified to Admin-Governance",
+      "evidence": [
+        "https://github.com/trustoverip/specification-template"
+      ],
       "disposition": null
     },
     {
@@ -20614,20 +20791,6 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-1ff0f6bdd2d2",
-      "category": "cross-portfolio-seam",
-      "subject": "trustoverip/dtgwg-cred-spec",
-      "status": "open",
-      "materiality": 3,
-      "urgency": 2,
-      "assurance_impact": 3,
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/issues/22"
-      ],
-      "disposition": null
-    },
-    {
       "id": "toip-finding-2207f88291cb",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/dtgwg-agent-names-spec",
@@ -20716,7 +20879,7 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-3d608219133e",
+      "id": "toip-finding-36fc3495e104",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/dtgwg-cred-spec",
       "status": "open",
@@ -20725,7 +20888,7 @@
       "assurance_impact": 3,
       "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/issues/23"
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/25"
       ],
       "disposition": null
     },
@@ -20740,6 +20903,20 @@
       "summary": "trustoverip/kswg-dossier-specification references trustoverip/tt in a current change unit.",
       "evidence": [
         "https://github.com/trustoverip/kswg-dossier-specification/issues/5"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-548848413bf9",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-cred-spec",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/22"
       ],
       "disposition": null
     },
@@ -20782,20 +20959,6 @@
       "summary": "trustoverip/kswg-dossier-specification references trustoverip/spec-up in a current change unit. Classified as tooling/publication evidence; no material cross-portfolio review is inferred from the reference alone.",
       "evidence": [
         "https://github.com/trustoverip/kswg-dossier-specification/pull/26"
-      ],
-      "disposition": null
-    },
-    {
-      "id": "toip-finding-692bd2e8872a",
-      "category": "cross-portfolio-seam",
-      "subject": "trustoverip/governance",
-      "status": "open",
-      "materiality": 3,
-      "urgency": 2,
-      "assurance_impact": 3,
-      "summary": "trustoverip/governance references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/governance/commit/04056382d10961ef352e54de32253d756fac3722"
       ],
       "disposition": null
     },
@@ -20871,6 +21034,20 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-a24fb5e98183",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/governance",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/governance references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/governance/commit/04056382d10961ef352e54de32253d756fac3722"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-c250dfac96bd",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/dtgwg-zkp-spec",
@@ -20928,7 +21105,21 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-d32429deb546",
+      "id": "toip-finding-dc968ff9b6ec",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-cred-spec",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/23"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-e4c13abe832c",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/kswg-dossier-specification",
       "status": "open",
@@ -20938,20 +21129,6 @@
       "summary": "trustoverip/kswg-dossier-specification references trustoverip/SC in a current change unit.",
       "evidence": [
         "https://github.com/trustoverip/kswg-dossier-specification/commit/b9227753cc1bbb92ed237970fc3b89bf1d0c904f"
-      ],
-      "disposition": null
-    },
-    {
-      "id": "toip-finding-d6348702acff",
-      "category": "cross-portfolio-seam",
-      "subject": "trustoverip/dtgwg-cred-spec",
-      "status": "open",
-      "materiality": 3,
-      "urgency": 2,
-      "assurance_impact": 3,
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/issues/25"
       ],
       "disposition": null
     },
@@ -21057,20 +21234,6 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-133a37c31be5",
-      "category": "classification",
-      "subject": "trustoverip/logo-assets",
-      "status": "open",
-      "materiality": 2,
-      "urgency": 2,
-      "assurance_impact": 2,
-      "summary": "Monitor taxonomy does not yet classify this active repository. This is a monitor taxonomy gap, not an upstream repository defect or obligation.",
-      "evidence": [
-        "https://github.com/trustoverip/logo-assets"
-      ],
-      "disposition": null
-    },
-    {
       "id": "toip-finding-220e1aae54a8",
       "category": "classification",
       "subject": "trustoverip/high-assurance-verifiable-identifiers",
@@ -21097,20 +21260,6 @@
         "https://github.com/trustoverip/.github"
       ],
       "disposition": null
-    },
-    {
-      "id": "toip-finding-4f27a5184339",
-      "category": "classification",
-      "subject": "trustoverip/EasyCLA",
-      "status": "open",
-      "materiality": 2,
-      "urgency": 2,
-      "assurance_impact": 2,
-      "summary": "Monitor taxonomy does not yet classify this active repository. This is a monitor taxonomy gap, not an upstream repository defect or obligation.",
-      "evidence": [
-        "https://github.com/trustoverip/EasyCLA"
-      ],
-      "disposition": null
     }
   ],
   "ecosystem_profile": {
@@ -21121,7 +21270,7 @@
     "monitor_title": "ToIP Portfolio Monitor",
     "weekly_brief_title": "ToIP Weekly Portfolio Brief",
     "disclaimer": "This repository is independently maintained and is not an official Trust Over IP Foundation publication.",
-    "repository_override_count": 0,
+    "repository_override_count": 9,
     "discovery_sources": [
       {
         "type": "github_organization",

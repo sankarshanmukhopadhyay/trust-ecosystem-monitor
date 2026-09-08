@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "decentralized-identity",
-  "generated_at": "2026-09-08T14:29:08.958774+00:00",
+  "generated_at": "2026-09-08T15:12:44.001610+00:00",
   "period": {
-    "since": "2026-09-01T14:29:08.958774+00:00",
-    "until": "2026-09-08T14:29:08.958774+00:00",
+    "since": "2026-09-01T15:12:44.001610+00:00",
+    "until": "2026-09-08T15:12:44.001610+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-08T14:25:57.312776+00:00"
+    "previous_snapshot": "2026-09-08T14:29:08.958774+00:00"
   },
   "repositories": [
     {

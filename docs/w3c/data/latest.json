@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "w3c",
-  "generated_at": "2026-09-08T14:29:49.576283+00:00",
+  "generated_at": "2026-09-08T15:13:39.498495+00:00",
   "period": {
-    "since": "2026-09-01T14:29:49.576283+00:00",
-    "until": "2026-09-08T14:29:49.576283+00:00",
+    "since": "2026-09-01T15:13:39.498495+00:00",
+    "until": "2026-09-08T15:13:39.498495+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-08T14:26:53.183958+00:00"
+    "previous_snapshot": "2026-09-08T14:29:49.576283+00:00"
   },
   "repositories": [
     {
@@ -148,7 +148,7 @@
       "description": "A privacy-preserving mechanism to publish status information for Verifiable Credentials.",
       "created_at": "2021-01-29T18:46:03Z",
       "updated_at": "2026-08-24T10:33:41Z",
-      "pushed_at": "2026-08-24T10:33:36Z",
+      "pushed_at": "2026-09-08T14:58:49Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -268,6 +268,19 @@
     }
   ],
   "events": [
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-08T14:59:47Z",
+      "title": "Prepare document for FPWD, add Terse content, administrative changes.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/pull/212",
+      "number": 212,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
     {
       "kind": "issue",
       "repository": "w3c/vc-data-integrity",
@@ -779,6 +792,37 @@
   "assertions": [],
   "collection_errors": [],
   "change_units": [
+    {
+      "id": "toip-change-afd79f010719",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Prepare document for FPWD, add Terse content, administrative changes.",
+      "timestamp": "2026-09-08T14:59:47Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/pull/212"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-08T14:59:47Z",
+          "title": "Prepare document for FPWD, add Terse content, administrative changes.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/pull/212",
+          "number": 212,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
     {
       "id": "toip-change-a58cfd2ec2ee",
       "repository": "w3c/vc-data-integrity",
