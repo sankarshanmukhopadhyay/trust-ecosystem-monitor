@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "trustoverip",
-  "generated_at": "2026-09-08T14:25:40.968660+00:00",
+  "generated_at": "2026-09-08T14:28:55.932441+00:00",
   "period": {
-    "since": "2026-09-01T14:25:40.968660+00:00",
-    "until": "2026-09-08T14:25:40.968660+00:00",
+    "since": "2026-09-01T14:28:55.932441+00:00",
+    "until": "2026-09-08T14:28:55.932441+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-07T02:11:23.204285+00:00"
+    "previous_snapshot": "2026-09-08T14:25:40.968660+00:00"
   },
   "repositories": [
     {
@@ -4567,6 +4567,45 @@
       "materiality": 3
     },
     {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-08T13:32:28Z",
+      "title": "WD02 merge plan: sequencing the five outstanding PRs into a consistent whole",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/31",
+      "number": 31,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-08T13:32:23Z",
+      "title": "Define the identity linkages required by the ZKP constructions",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/9",
+      "number": 9,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-08T13:32:21Z",
+      "title": "Digest-valued binders are unsalted and enumerable; blinding is deferred from WD02",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/38",
+      "number": 38,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
       "kind": "pull_request",
       "repository": "trustoverip/dtgwg-zkp-tf",
       "portfolio": "DTG",
@@ -4825,6 +4864,19 @@
       "sha": "1bcbafa3869b6fa7d2f531aa5f069f4e69aff328",
       "state": null,
       "materiality": 1
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-08T11:34:33Z",
+      "title": "Add a generic statement credential so new predicates do not each need a credential type",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/45",
+      "number": 45,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
     },
     {
       "kind": "pull_request",
@@ -5997,6 +6049,19 @@
       "materiality": 2
     },
     {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-07T13:06:50Z",
+      "title": "Relationship policy discovery: both communities must admit an edge, neither can find out",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/25",
+      "number": 25,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
       "kind": "commit",
       "repository": "trustoverip/dtgwg-cred-spec",
       "portfolio": "DTG",
@@ -6125,6 +6190,19 @@
       "sha": null,
       "state": null,
       "materiality": 5
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-06T20:51:30Z",
+      "title": "W3C alignment: DataIntegrityProof, digestMultibase, and the CID 1.0 multibase headers",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/17",
+      "number": 17,
+      "sha": null,
+      "state": "closed",
+      "materiality": 3
     },
     {
       "kind": "pull_request",
@@ -6439,6 +6517,32 @@
       "materiality": 1
     },
     {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-05T21:08:06Z",
+      "title": "Name the asymmetric edge: two halves may declare different correlation scopes",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/23",
+      "number": 23,
+      "sha": null,
+      "state": "closed",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-05T21:08:06Z",
+      "title": "Replace the four VID types with a declared correlation scope",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/22",
+      "number": 22,
+      "sha": null,
+      "state": "closed",
+      "materiality": 3
+    },
+    {
       "kind": "commit",
       "repository": "trustoverip/dtgwg-cred-spec",
       "portfolio": "DTG",
@@ -6632,6 +6736,32 @@
       "sha": "aae83628ac247cb31ee8b1f2567c642c77550535",
       "state": null,
       "materiality": 1
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-05T20:38:30Z",
+      "title": "Edge verifiability across VTN contexts: different VTNs, or none at all",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/24",
+      "number": 24,
+      "sha": null,
+      "state": "closed",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-05T20:34:48Z",
+      "title": "VRC edge-verifiability conditions exist only in the glossary and contradict the body",
+      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/21",
+      "number": 21,
+      "sha": null,
+      "state": "closed",
+      "materiality": 3
     },
     {
       "kind": "pull_request",
@@ -8077,6 +8207,32 @@
       "materiality": 5
     },
     {
+      "kind": "issue",
+      "repository": "trustoverip/tswg-tsp-specification",
+      "portfolio": "TSWG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-04T15:45:13Z",
+      "title": "Rev 3 Reply_Path: defined outcome for a stale path?",
+      "url": "https://github.com/trustoverip/tswg-tsp-specification/issues/71",
+      "number": 71,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/tswg-tsp-specification",
+      "portfolio": "TSWG",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-04T15:44:56Z",
+      "title": "Rev 3 Referral: does Signature_new bind the introducing context?",
+      "url": "https://github.com/trustoverip/tswg-tsp-specification/issues/70",
+      "number": 70,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
       "kind": "pull_request",
       "repository": "trustoverip/tswg-tsp-specification",
       "portfolio": "TSWG",
@@ -8325,6 +8481,19 @@
     },
     {
       "kind": "issue",
+      "repository": "trustoverip/kswg-cesr-specification",
+      "portfolio": "KERI Suite",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-03T18:20:25Z",
+      "title": "Branch Protection Rule may cause problem",
+      "url": "https://github.com/trustoverip/kswg-cesr-specification/issues/176",
+      "number": 176,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
       "repository": "trustoverip/kswg-keri-specification",
       "portfolio": "KERI Suite",
       "repo_kind": "specification",
@@ -8532,6 +8701,19 @@
       "materiality": 1
     },
     {
+      "kind": "issue",
+      "repository": "trustoverip/kswg-cesr-specification",
+      "portfolio": "KERI Suite",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-03T15:05:09Z",
+      "title": "Codes for SQIsign and other on-ramp signature candidates",
+      "url": "https://github.com/trustoverip/kswg-cesr-specification/issues/170",
+      "number": 170,
+      "sha": null,
+      "state": "closed",
+      "materiality": 3
+    },
+    {
       "kind": "commit",
       "repository": "trustoverip/dtgwg-agent-names-spec",
       "portfolio": "DTG",
@@ -8546,12 +8728,12 @@
     },
     {
       "kind": "commit",
-      "repository": "trustoverip/dtgwg-vds-spec",
+      "repository": "trustoverip/dtgwg-vti-spec",
       "portfolio": "DTG",
       "repo_kind": "specification",
       "timestamp": "2026-09-03T12:02:40Z",
       "title": "Add Dependabot config with grouped updates",
-      "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3",
+      "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3",
       "number": null,
       "sha": "3a18714b25ce81ca24f25f958e14263a19bd6ba3",
       "state": null,
@@ -8559,12 +8741,12 @@
     },
     {
       "kind": "commit",
-      "repository": "trustoverip/dtgwg-vti-spec",
+      "repository": "trustoverip/dtgwg-vds-spec",
       "portfolio": "DTG",
       "repo_kind": "specification",
       "timestamp": "2026-09-03T12:02:40Z",
       "title": "Add Dependabot config with grouped updates",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3",
+      "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3",
       "number": null,
       "sha": "3a18714b25ce81ca24f25f958e14263a19bd6ba3",
       "state": null,
@@ -8598,12 +8780,12 @@
     },
     {
       "kind": "commit",
-      "repository": "trustoverip/dtgwg-vds-spec",
+      "repository": "trustoverip/dtgwg-vti-spec",
       "portfolio": "DTG",
       "repo_kind": "specification",
       "timestamp": "2026-09-03T11:49:45Z",
       "title": "Pin GitHub Actions to commit SHAs",
-      "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
+      "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
       "number": null,
       "sha": "a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
       "state": null,
@@ -8611,12 +8793,12 @@
     },
     {
       "kind": "commit",
-      "repository": "trustoverip/dtgwg-vti-spec",
+      "repository": "trustoverip/dtgwg-vds-spec",
       "portfolio": "DTG",
       "repo_kind": "specification",
       "timestamp": "2026-09-03T11:49:45Z",
       "title": "Pin GitHub Actions to commit SHAs",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
+      "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
       "number": null,
       "sha": "a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
       "state": null,
@@ -9143,6 +9325,19 @@
       "materiality": 4
     },
     {
+      "kind": "issue",
+      "repository": "trustoverip/kswg-cesr-specification",
+      "portfolio": "KERI Suite",
+      "repo_kind": "specification",
+      "timestamp": "2026-09-01T21:40:25Z",
+      "title": "tweak Ed448 code?",
+      "url": "https://github.com/trustoverip/kswg-cesr-specification/issues/175",
+      "number": 175,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
       "kind": "pull_request",
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
@@ -9649,6 +9844,99 @@
           "title": "Record verified publication links in the reader",
           "url": "https://github.com/trustoverip/dtgwg-zkp-tf/pull/25",
           "number": 25,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-91672783490d",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "WD02 merge plan: sequencing the five outstanding PRs into a consistent whole",
+      "timestamp": "2026-09-08T13:32:28Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/31"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-08T13:32:28Z",
+          "title": "WD02 merge plan: sequencing the five outstanding PRs into a consistent whole",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/31",
+          "number": 31,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-bcd44e79c6dd",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Define the identity linkages required by the ZKP constructions",
+      "timestamp": "2026-09-08T13:32:23Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/9"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-08T13:32:23Z",
+          "title": "Define the identity linkages required by the ZKP constructions",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/9",
+          "number": 9,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-d391f7ced714",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Digest-valued binders are unsalted and enumerable; blinding is deferred from WD02",
+      "timestamp": "2026-09-08T13:32:21Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/38"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-08T13:32:21Z",
+          "title": "Digest-valued binders are unsalted and enumerable; blinding is deferred from WD02",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/38",
+          "number": 38,
           "sha": null,
           "state": "open",
           "materiality": 3
@@ -11450,6 +11738,37 @@
       ]
     },
     {
+      "id": "toip-change-40ec38c0f5be",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Add a generic statement credential so new predicates do not each need a credential type",
+      "timestamp": "2026-09-08T11:34:33Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/45"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-08T11:34:33Z",
+          "title": "Add a generic statement credential so new predicates do not each need a credential type",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/45",
+          "number": 45,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
       "id": "toip-change-23592ca7b83a",
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
@@ -12648,6 +12967,37 @@
       ]
     },
     {
+      "id": "toip-change-6ad3e01ab08b",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Relationship policy discovery: both communities must admit an edge, neither can find out",
+      "timestamp": "2026-09-07T13:06:50Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/25"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-07T13:06:50Z",
+          "title": "Relationship policy discovery: both communities must admit an edge, neither can find out",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/25",
+          "number": 25,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
       "id": "toip-change-f5fe14878687",
       "repository": "trustoverip/dtgwg-cred-spec",
       "portfolio": "DTG",
@@ -12690,6 +13040,37 @@
           "sha": null,
           "state": "merged",
           "materiality": 5
+        }
+      ]
+    },
+    {
+      "id": "toip-change-3b2c31b22ce0",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "W3C alignment: DataIntegrityProof, digestMultibase, and the CID 1.0 multibase headers",
+      "timestamp": "2026-09-06T20:51:30Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/17"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-06T20:51:30Z",
+          "title": "W3C alignment: DataIntegrityProof, digestMultibase, and the CID 1.0 multibase headers",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/17",
+          "number": 17,
+          "sha": null,
+          "state": "closed",
+          "materiality": 3
         }
       ]
     },
@@ -13062,6 +13443,68 @@
       ]
     },
     {
+      "id": "toip-change-f8531b815854",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Name the asymmetric edge: two halves may declare different correlation scopes",
+      "timestamp": "2026-09-05T21:08:06Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/23"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-05T21:08:06Z",
+          "title": "Name the asymmetric edge: two halves may declare different correlation scopes",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/23",
+          "number": 23,
+          "sha": null,
+          "state": "closed",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-8689e976c5b0",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Replace the four VID types with a declared correlation scope",
+      "timestamp": "2026-09-05T21:08:06Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/22"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-05T21:08:06Z",
+          "title": "Replace the four VID types with a declared correlation scope",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/22",
+          "number": 22,
+          "sha": null,
+          "state": "closed",
+          "materiality": 3
+        }
+      ]
+    },
+    {
       "id": "toip-change-a78f42486ebe",
       "repository": "trustoverip/dtgwg-cred-spec",
       "portfolio": "DTG",
@@ -13227,6 +13670,68 @@
           "sha": "aae83628ac247cb31ee8b1f2567c642c77550535",
           "state": null,
           "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-4c1d69e64e58",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Edge verifiability across VTN contexts: different VTNs, or none at all",
+      "timestamp": "2026-09-05T20:38:30Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/24"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-05T20:38:30Z",
+          "title": "Edge verifiability across VTN contexts: different VTNs, or none at all",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/24",
+          "number": 24,
+          "sha": null,
+          "state": "closed",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-087d61bea680",
+      "repository": "trustoverip/dtgwg-cred-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "VRC edge-verifiability conditions exist only in the glossary and contradict the body",
+      "timestamp": "2026-09-05T20:34:48Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/21"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-cred-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-05T20:34:48Z",
+          "title": "VRC edge-verifiability conditions exist only in the glossary and contradict the body",
+          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/21",
+          "number": 21,
+          "sha": null,
+          "state": "closed",
+          "materiality": 3
         }
       ]
     },
@@ -15752,6 +16257,68 @@
       ]
     },
     {
+      "id": "toip-change-18c657e0fbc3",
+      "repository": "trustoverip/tswg-tsp-specification",
+      "portfolio": "TSWG",
+      "repo_kind": "specification",
+      "title": "Rev 3 Reply_Path: defined outcome for a stale path?",
+      "timestamp": "2026-09-04T15:45:13Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/tswg-tsp-specification/issues/71"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/tswg-tsp-specification",
+          "portfolio": "TSWG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-04T15:45:13Z",
+          "title": "Rev 3 Reply_Path: defined outcome for a stale path?",
+          "url": "https://github.com/trustoverip/tswg-tsp-specification/issues/71",
+          "number": 71,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-2f6b38a6066e",
+      "repository": "trustoverip/tswg-tsp-specification",
+      "portfolio": "TSWG",
+      "repo_kind": "specification",
+      "title": "Rev 3 Referral: does Signature_new bind the introducing context?",
+      "timestamp": "2026-09-04T15:44:56Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/tswg-tsp-specification/issues/70"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/tswg-tsp-specification",
+          "portfolio": "TSWG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-04T15:44:56Z",
+          "title": "Rev 3 Referral: does Signature_new bind the introducing context?",
+          "url": "https://github.com/trustoverip/tswg-tsp-specification/issues/70",
+          "number": 70,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ]
+    },
+    {
       "id": "toip-change-aee2a8e55bf7",
       "repository": "trustoverip/tswg-tsp-specification",
       "portfolio": "TSWG",
@@ -16025,6 +16592,37 @@
           "sha": "eb3ddde36a1642c0cb0dd53c4b95ab4d7304156e",
           "state": null,
           "materiality": 1
+        }
+      ]
+    },
+    {
+      "id": "toip-change-b59965e4eaad",
+      "repository": "trustoverip/kswg-cesr-specification",
+      "portfolio": "KERI Suite",
+      "repo_kind": "specification",
+      "title": "Branch Protection Rule may cause problem",
+      "timestamp": "2026-09-03T18:20:25Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/kswg-cesr-specification/issues/176"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/kswg-cesr-specification",
+          "portfolio": "KERI Suite",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-03T18:20:25Z",
+          "title": "Branch Protection Rule may cause problem",
+          "url": "https://github.com/trustoverip/kswg-cesr-specification/issues/176",
+          "number": 176,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
         }
       ]
     },
@@ -16509,6 +17107,37 @@
       ]
     },
     {
+      "id": "toip-change-30a0d8226bdd",
+      "repository": "trustoverip/kswg-cesr-specification",
+      "portfolio": "KERI Suite",
+      "repo_kind": "specification",
+      "title": "Codes for SQIsign and other on-ramp signature candidates",
+      "timestamp": "2026-09-03T15:05:09Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/kswg-cesr-specification/issues/170"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/kswg-cesr-specification",
+          "portfolio": "KERI Suite",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-03T15:05:09Z",
+          "title": "Codes for SQIsign and other on-ramp signature candidates",
+          "url": "https://github.com/trustoverip/kswg-cesr-specification/issues/170",
+          "number": 170,
+          "sha": null,
+          "state": "closed",
+          "materiality": 3
+        }
+      ]
+    },
+    {
       "id": "toip-change-2c72b047663a",
       "repository": "trustoverip/dtgwg-agent-names-spec",
       "portfolio": "DTG",
@@ -16540,37 +17169,6 @@
       ]
     },
     {
-      "id": "toip-change-dc70ed5bb7c4",
-      "repository": "trustoverip/dtgwg-vds-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Add Dependabot config with grouped updates",
-      "timestamp": "2026-09-03T12:02:40Z",
-      "materiality": 2,
-      "event_kinds": [
-        "commit"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vds-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3"
-      ],
-      "events": [
-        {
-          "kind": "commit",
-          "repository": "trustoverip/dtgwg-vds-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-09-03T12:02:40Z",
-          "title": "Add Dependabot config with grouped updates",
-          "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3",
-          "number": null,
-          "sha": "3a18714b25ce81ca24f25f958e14263a19bd6ba3",
-          "state": null,
-          "materiality": 2
-        }
-      ]
-    },
-    {
       "id": "toip-change-16a08936e449",
       "repository": "trustoverip/dtgwg-vti-spec",
       "portfolio": "DTG",
@@ -16594,6 +17192,37 @@
           "timestamp": "2026-09-03T12:02:40Z",
           "title": "Add Dependabot config with grouped updates",
           "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3",
+          "number": null,
+          "sha": "3a18714b25ce81ca24f25f958e14263a19bd6ba3",
+          "state": null,
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-dc70ed5bb7c4",
+      "repository": "trustoverip/dtgwg-vds-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Add Dependabot config with grouped updates",
+      "timestamp": "2026-09-03T12:02:40Z",
+      "materiality": 2,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vds-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-vds-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-03T12:02:40Z",
+          "title": "Add Dependabot config with grouped updates",
+          "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/3a18714b25ce81ca24f25f958e14263a19bd6ba3",
           "number": null,
           "sha": "3a18714b25ce81ca24f25f958e14263a19bd6ba3",
           "state": null,
@@ -16664,37 +17293,6 @@
       ]
     },
     {
-      "id": "toip-change-b17430193e1c",
-      "repository": "trustoverip/dtgwg-vds-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Pin GitHub Actions to commit SHAs",
-      "timestamp": "2026-09-03T11:49:45Z",
-      "materiality": 2,
-      "event_kinds": [
-        "commit"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vds-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6"
-      ],
-      "events": [
-        {
-          "kind": "commit",
-          "repository": "trustoverip/dtgwg-vds-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-09-03T11:49:45Z",
-          "title": "Pin GitHub Actions to commit SHAs",
-          "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
-          "number": null,
-          "sha": "a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
-          "state": null,
-          "materiality": 2
-        }
-      ]
-    },
-    {
       "id": "toip-change-659e4d0d0bf0",
       "repository": "trustoverip/dtgwg-vti-spec",
       "portfolio": "DTG",
@@ -16718,6 +17316,37 @@
           "timestamp": "2026-09-03T11:49:45Z",
           "title": "Pin GitHub Actions to commit SHAs",
           "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
+          "number": null,
+          "sha": "a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
+          "state": null,
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-b17430193e1c",
+      "repository": "trustoverip/dtgwg-vds-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Pin GitHub Actions to commit SHAs",
+      "timestamp": "2026-09-03T11:49:45Z",
+      "materiality": 2,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vds-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-vds-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-03T11:49:45Z",
+          "title": "Pin GitHub Actions to commit SHAs",
+          "url": "https://github.com/trustoverip/dtgwg-vds-spec/commit/a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
           "number": null,
           "sha": "a4860b59d1dd6bd24f20408e1cf36d6f53e022d6",
           "state": null,
@@ -17462,6 +18091,37 @@
           "sha": null,
           "state": "merged",
           "materiality": 4
+        }
+      ]
+    },
+    {
+      "id": "toip-change-59a1ca00e633",
+      "repository": "trustoverip/kswg-cesr-specification",
+      "portfolio": "KERI Suite",
+      "repo_kind": "specification",
+      "title": "tweak Ed448 code?",
+      "timestamp": "2026-09-01T21:40:25Z",
+      "materiality": 3,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/kswg-cesr-specification/issues/175"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/kswg-cesr-specification",
+          "portfolio": "KERI Suite",
+          "repo_kind": "specification",
+          "timestamp": "2026-09-01T21:40:25Z",
+          "title": "tweak Ed448 code?",
+          "url": "https://github.com/trustoverip/kswg-cesr-specification/issues/175",
+          "number": 175,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
         }
       ]
     },
@@ -18286,6 +18946,54 @@
         "https://github.com/trustoverip/kswg-dossier-specification/pull/25",
         "https://github.com/trustoverip/tswg-tsp-specification/pull/62"
       ]
+    },
+    {
+      "id": "toip-seam-27e875c6ed61",
+      "strength": "explicit-reference",
+      "source_portfolio": "DTG",
+      "target_portfolio": "Unclassified",
+      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "target_repository": "trustoverip/SC",
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/25"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 3
+    },
+    {
+      "id": "toip-seam-852a064dc20b",
+      "strength": "explicit-reference",
+      "source_portfolio": "DTG",
+      "target_portfolio": "Unclassified",
+      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "target_repository": "trustoverip/SC",
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/23"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 3
+    },
+    {
+      "id": "toip-seam-550b475b1064",
+      "strength": "explicit-reference",
+      "source_portfolio": "DTG",
+      "target_portfolio": "Unclassified",
+      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "target_repository": "trustoverip/SC",
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/22"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 3
     },
     {
       "id": "toip-seam-e440df255e34",
@@ -19906,6 +20614,20 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-1ff0f6bdd2d2",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-cred-spec",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/22"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-2207f88291cb",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/dtgwg-agent-names-spec",
@@ -19990,6 +20712,20 @@
       "evidence": [
         "https://github.com/trustoverip/dtgwg-vds-spec/pull/8",
         "https://github.com/trustoverip/dtgwg-vds-spec/commit/dae1ddda47fcff17976efa44f8ba6db87b02ea0f"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-3d608219133e",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-cred-spec",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/23"
       ],
       "disposition": null
     },
@@ -20202,6 +20938,20 @@
       "summary": "trustoverip/kswg-dossier-specification references trustoverip/SC in a current change unit.",
       "evidence": [
         "https://github.com/trustoverip/kswg-dossier-specification/commit/b9227753cc1bbb92ed237970fc3b89bf1d0c904f"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-d6348702acff",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-cred-spec",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/issues/25"
       ],
       "disposition": null
     },

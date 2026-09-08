@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "w3c",
-  "generated_at": "2026-09-08T14:26:53.183958+00:00",
+  "generated_at": "2026-09-08T14:29:49.576283+00:00",
   "period": {
-    "since": "2026-09-01T14:26:53.183958+00:00",
-    "until": "2026-09-08T14:26:53.183958+00:00",
+    "since": "2026-09-01T14:29:49.576283+00:00",
+    "until": "2026-09-08T14:29:49.576283+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": null
+    "previous_snapshot": "2026-09-08T14:26:53.183958+00:00"
   },
   "repositories": [
     {

@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "decentralized-identity",
-  "generated_at": "2026-09-08T14:25:57.312776+00:00",
+  "generated_at": "2026-09-08T14:29:08.958774+00:00",
   "period": {
-    "since": "2026-09-01T14:25:57.312776+00:00",
-    "until": "2026-09-08T14:25:57.312776+00:00",
+    "since": "2026-09-01T14:29:08.958774+00:00",
+    "until": "2026-09-08T14:29:08.958774+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-07T02:11:40.082253+00:00"
+    "previous_snapshot": "2026-09-08T14:25:57.312776+00:00"
   },
   "repositories": [
     {
@@ -10521,6 +10521,32 @@
       "materiality": 3
     },
     {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-08T09:35:13Z",
+      "title": "A verification method can only hold one purpose, and createVMID is not exported",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/180",
+      "number": 180,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-08T09:35:02Z",
+      "title": "updateDID discards all verification relationships when verificationMethods is supplied",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/179",
+      "number": 179,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
       "kind": "pull_request",
       "repository": "decentralized-identity/didwebvh-ts",
       "portfolio": "DID Methods",
@@ -10859,6 +10885,45 @@
       "materiality": 2
     },
     {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-07T08:26:58Z",
+      "title": "isKeyAuthorized normalizes the proof's verificationMethod but not updateKeys, so getVerificationMethodId() output can never authorize",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/166",
+      "number": 166,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-07T07:15:33Z",
+      "title": "API methods for controller agent role in witnessing lifecycle",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/175",
+      "number": 175,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-07T07:15:09Z",
+      "title": "API methods for witnessing agent role in witnessing lifecycle",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/176",
+      "number": 176,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
       "kind": "commit",
       "repository": "decentralized-identity/web-did-resolver",
       "portfolio": "Implementations & Tooling",
@@ -10961,6 +11026,58 @@
       "sha": null,
       "state": "closed",
       "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T21:09:35Z",
+      "title": "Remove v0.5 create and update support",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/150",
+      "number": 150,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T21:09:33Z",
+      "title": "Enable v1.0 deactivate to deactivate v0.5 logs",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/152",
+      "number": 152,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T21:09:30Z",
+      "title": "Allow log that changes version midway through",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/62",
+      "number": 62,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-04T21:09:28Z",
+      "title": "Enable v1.0 resolver to resolve v0.5 logs",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/151",
+      "number": 151,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
     },
     {
       "kind": "commit",
@@ -11468,6 +11585,68 @@
           "sha": null,
           "state": "open",
           "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-c9b7490703d3",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "A verification method can only hold one purpose, and createVMID is not exported",
+      "timestamp": "2026-09-08T09:35:13Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/180"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-08T09:35:13Z",
+          "title": "A verification method can only hold one purpose, and createVMID is not exported",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/180",
+          "number": 180,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-f45ef5e8095b",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "updateDID discards all verification relationships when verificationMethods is supplied",
+      "timestamp": "2026-09-08T09:35:02Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/179"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-08T09:35:02Z",
+          "title": "updateDID discards all verification relationships when verificationMethods is supplied",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/179",
+          "number": 179,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
         }
       ]
     },
@@ -12262,6 +12441,99 @@
       ]
     },
     {
+      "id": "toip-change-b61b82d7a5d5",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "isKeyAuthorized normalizes the proof's verificationMethod but not updateKeys, so getVerificationMethodId() output can never authorize",
+      "timestamp": "2026-09-07T08:26:58Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/166"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-07T08:26:58Z",
+          "title": "isKeyAuthorized normalizes the proof's verificationMethod but not updateKeys, so getVerificationMethodId() output can never authorize",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/166",
+          "number": 166,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-ff84a7e33299",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "API methods for controller agent role in witnessing lifecycle",
+      "timestamp": "2026-09-07T07:15:33Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/175"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-07T07:15:33Z",
+          "title": "API methods for controller agent role in witnessing lifecycle",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/175",
+          "number": 175,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-acd04185393c",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "API methods for witnessing agent role in witnessing lifecycle",
+      "timestamp": "2026-09-07T07:15:09Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/176"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-07T07:15:09Z",
+          "title": "API methods for witnessing agent role in witnessing lifecycle",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/176",
+          "number": 176,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ]
+    },
+    {
       "id": "toip-change-83af84740a3c",
       "repository": "decentralized-identity/web-did-resolver",
       "portfolio": "Implementations & Tooling",
@@ -12490,6 +12762,130 @@
           "sha": null,
           "state": "closed",
           "materiality": 3
+        }
+      ]
+    },
+    {
+      "id": "toip-change-146f163f7b56",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "Remove v0.5 create and update support",
+      "timestamp": "2026-09-04T21:09:35Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/150"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T21:09:35Z",
+          "title": "Remove v0.5 create and update support",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/150",
+          "number": 150,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-04a843b22de5",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "Enable v1.0 deactivate to deactivate v0.5 logs",
+      "timestamp": "2026-09-04T21:09:33Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/152"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T21:09:33Z",
+          "title": "Enable v1.0 deactivate to deactivate v0.5 logs",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/152",
+          "number": 152,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-5894154ca602",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "Allow log that changes version midway through",
+      "timestamp": "2026-09-04T21:09:30Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/62"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T21:09:30Z",
+          "title": "Allow log that changes version midway through",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/62",
+          "number": 62,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ]
+    },
+    {
+      "id": "toip-change-309fe638031b",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "Enable v1.0 resolver to resolve v0.5 logs",
+      "timestamp": "2026-09-04T21:09:28Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/151"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-04T21:09:28Z",
+          "title": "Enable v1.0 resolver to resolve v0.5 logs",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/issues/151",
+          "number": 151,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
         }
       ]
     },
@@ -13461,6 +13857,70 @@
       "materiality": 3
     },
     {
+      "id": "toip-seam-7f4b63e2c1f5",
+      "strength": "explicit-reference",
+      "source_portfolio": "DID Methods",
+      "target_portfolio": "Sidetree / ION",
+      "source_repository": "decentralized-identity/didwebvh-ts",
+      "target_repository": "decentralized-identity/ion",
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/180"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 2
+    },
+    {
+      "id": "toip-seam-34eee64975c3",
+      "strength": "explicit-reference",
+      "source_portfolio": "DID Methods",
+      "target_portfolio": "Sidetree / ION",
+      "source_repository": "decentralized-identity/didwebvh-ts",
+      "target_repository": "decentralized-identity/ion",
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/179"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 2
+    },
+    {
+      "id": "toip-seam-e260596366a8",
+      "strength": "explicit-reference",
+      "source_portfolio": "DID Methods",
+      "target_portfolio": "Sidetree / ION",
+      "source_repository": "decentralized-identity/didwebvh-ts",
+      "target_repository": "decentralized-identity/ion",
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/166"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 2
+    },
+    {
+      "id": "toip-seam-e20f9216049e",
+      "strength": "explicit-reference",
+      "source_portfolio": "DID Methods",
+      "target_portfolio": "Sidetree / ION",
+      "source_repository": "decentralized-identity/didwebvh-ts",
+      "target_repository": "decentralized-identity/ion",
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/62"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 2
+    },
+    {
       "id": "toip-seam-642bef87b028",
       "strength": "explicit-reference",
       "source_portfolio": "Identifiers & Discovery",
@@ -13633,6 +14093,20 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-383c1ddd3719",
+      "category": "cross-portfolio-seam",
+      "subject": "decentralized-identity/didwebvh-ts",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/180"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-3b1c65af1adb",
       "category": "cross-portfolio-seam",
       "subject": "decentralized-identity/did-jwt",
@@ -13643,6 +14117,34 @@
       "summary": "decentralized-identity/did-jwt references decentralized-identity/did-resolver in a current change unit.",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/332"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-4c226eea0e30",
+      "category": "cross-portfolio-seam",
+      "subject": "decentralized-identity/didwebvh-ts",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/62"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-685406c6b896",
+      "category": "cross-portfolio-seam",
+      "subject": "decentralized-identity/didwebvh-ts",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/179"
       ],
       "disposition": null
     },
@@ -13671,6 +14173,20 @@
       "summary": "decentralized-identity/did-jwt references decentralized-identity/ion in a current change unit.",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/333"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-97f63e1df27a",
+      "category": "cross-portfolio-seam",
+      "subject": "decentralized-identity/didwebvh-ts",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "decentralized-identity/didwebvh-ts references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/issues/166"
       ],
       "disposition": null
     },
