@@ -8,6 +8,18 @@ from trust_ecosystem_monitor.profile import DEFAULT_PROFILE_PATH, classify_portf
 
 
 class TrustOverIPProfileCompatibilityTests(unittest.TestCase):
+    INTENTIONAL_CLASSIFICATION_MIGRATIONS = {
+        "EasyCLA": ("Unclassified", "Admin-Governance"),
+        "iso-template": ("Unclassified", "Admin-Governance"),
+        "logo-assets": ("Unclassified", "Admin-Governance"),
+        "mega": ("Unclassified", "Admin-Governance"),
+        "mkdocs-material": ("Unclassified", "Admin-Governance"),
+        "next-deliverable-num": ("Unclassified", "Admin-Governance"),
+        "PDF-Deliverable-Review": ("Unclassified", "Admin-Governance"),
+        "SC": ("Unclassified", "Admin-Governance"),
+        "specification-template": ("Unclassified", "Admin-Governance"),
+    }
+
     @classmethod
     def setUpClass(cls):
         cls.profile = load_profile(DEFAULT_PROFILE_PATH)
@@ -44,8 +56,13 @@ class TrustOverIPProfileCompatibilityTests(unittest.TestCase):
         mismatches = []
         for repository in snapshot.get("repositories", []):
             actual = classify_portfolio(repository["name"], self.profile)
-            if actual != repository["portfolio"]:
-                mismatches.append((repository["name"], repository["portfolio"], actual))
+            retained = repository["portfolio"]
+            if actual == retained:
+                continue
+            allowed = self.INTENTIONAL_CLASSIFICATION_MIGRATIONS.get(repository["name"])
+            if allowed == (retained, actual):
+                continue
+            mismatches.append((repository["name"], retained, actual))
         self.assertEqual(mismatches, [], f"profile changed retained ToIP classifications: {mismatches}")
 
     def test_runtime_adapter_preserves_core_api(self):
