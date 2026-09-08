@@ -43,6 +43,19 @@ jobs:
           python -m trust_ecosystem_monitor collect
           --profile organizations/decentralized-identity/profile.toml
           --lookback-days 7
+      - name: Collect W3C trust-standards evidence
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: >-
+          python -m trust_ecosystem_monitor collect
+          --profile organizations/w3c/profile.toml
+          --lookback-days 7
+      - name: Render governed scope registers
+        run: >-
+          python -m trust_ecosystem_monitor.scope
+          docs/trustoverip
+          docs/decentralized-identity
+          docs/w3c
       - name: Render ecosystem catalog
         run: python -m trust_ecosystem_monitor site
       - name: Validate current generated state
