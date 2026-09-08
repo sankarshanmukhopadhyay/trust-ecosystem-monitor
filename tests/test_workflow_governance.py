@@ -23,6 +23,13 @@ class WorkflowGovernanceTests(unittest.TestCase):
     def test_persistence_is_explicitly_scoped_to_generated_branch(self):
         self.assertIn('git push origin "$commit:refs/heads/generated-observations"', self.text)
 
+    def test_publication_changes_self_verify_on_main(self):
+        self.assertIn("push:", self.text)
+        self.assertIn("- main", self.text)
+        self.assertIn("'.github/workflows/collect-weekly.yml'", self.text)
+        self.assertIn("'organizations/**'", self.text)
+        self.assertIn("'trust_ecosystem_monitor/**'", self.text)
+
 
 if __name__ == "__main__":
     unittest.main()
