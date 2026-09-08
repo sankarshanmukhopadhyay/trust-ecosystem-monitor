@@ -2,6 +2,13 @@ name: Collect and publish weekly ecosystem briefs
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/collect-weekly.yml'
+      - 'organizations/**'
+      - 'trust_ecosystem_monitor/**'
   schedule:
     - cron: '30 21 * * 0'
 
