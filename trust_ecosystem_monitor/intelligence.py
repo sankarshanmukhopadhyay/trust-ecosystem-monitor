@@ -24,7 +24,7 @@ SEMANTIC_CHANGE_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("privacy", ("privacy", "correlation", "unlinkability", "data minim", "disclosure")),
     ("authority", ("authority", "delegat", "authoriz", "permission", "entitlement", "revocation")),
     ("governance", ("governance", "policy", "charter", "decision right", "work item")),
-    ("protocol_semantics", ("protocol", "semantic", "normative", "must ", "should ", "interoperab")),
+    ("protocol_semantics", ("protocol", "semantic", "normative", "must ", "should ")),
     ("api", ("api", "endpoint", "openapi", "http", "request", "response")),
     ("schema", ("schema", "json schema", "field", "property", "serialization")),
     ("lifecycle", ("lifecycle", "status", "suspend", "expire", "withdraw", "deprecat")),
