@@ -36,6 +36,11 @@ SEMANTIC_CHANGE_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("implementation", ("implement", "code", "refactor", "fix", "feature", "build", "ci")),
 )
 
+PROPAGATION_INTERPRETATION = (
+    "Temporal monitor observation only. It does not establish causation, formal dependency, "
+    "compatibility impact, compliance obligation, recognition, or authority."
+)
+
 
 def _unit_id(repository: str, key: str) -> str:
     digest = hashlib.sha256(f"{repository}|{key}".encode()).hexdigest()[:12]
@@ -51,6 +56,11 @@ def _seam_id(left: str, right: str, key: str) -> str:
 def _relationship_id(source: str, target: str, key: str) -> str:
     digest = hashlib.sha256(f"{source}|{target}|{key}".encode()).hexdigest()[:12]
     return f"tem-relationship-{digest}"
+
+
+def _propagation_id(source: str, target: str, trigger: str, state: str) -> str:
+    digest = hashlib.sha256(f"{source}|{target}|{trigger}|{state}".encode()).hexdigest()[:12]
+    return f"tem-propagation-{digest}"
 
 
 def _reference_key(event: dict[str, Any]) -> str | None:
@@ -200,6 +210,139 @@ def build_relationship_graph(units: list[dict[str, Any]], repositories: list[dic
     )
 
 
+def _unit_timestamp(unit: dict[str, Any]) -> str:
+    return str(unit.get("timestamp") or "")
+
+
+def detect_change_propagation(
+    units: list[dict[str, Any]],
+    relationships: list[dict[str, Any]],
+    previous: dict[str, Any] | None = None,
+) -> list[dict[str, Any]]:
+    """Derive bounded temporal propagation observations.
+
+    Relationship direction means `source_repository` explicitly referenced
+    `target_repository`. A later source change that retains the explicit reference
+    may be recorded as follow-up to an earlier target change. This is temporal
+    evidence only; causation and normative dependency are never inferred.
+    """
+    previous = previous or {}
+    current_by_id = {unit["id"]: unit for unit in units}
+    previous_units = previous.get("change_units", [])
+    historical_units = previous_units + units
+    units_by_repo: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for unit in historical_units:
+        units_by_repo[unit.get("repository", "")].append(unit)
+    for repository_units in units_by_repo.values():
+        repository_units.sort(key=_unit_timestamp)
+
+    observations: list[dict[str, Any]] = []
+    observed_keys: set[tuple[str, str, str]] = set()
+
+    # Positive evidence: a referencing change occurs after a change in the
+    # referenced repository and retains the explicit reference.
+    for relationship in relationships:
+        responding = current_by_id.get(relationship.get("source_change_unit"))
+        if not responding:
+            continue
+        target = relationship["target_repository"]
+        candidates = [
+            unit
+            for unit in units_by_repo.get(target, [])
+            if _unit_timestamp(unit) and _unit_timestamp(unit) < _unit_timestamp(responding)
+        ]
+        if not candidates:
+            observations.append({
+                "id": _propagation_id(relationship["source_repository"], target, relationship["id"], "insufficient_history"),
+                "state": "insufficient_history",
+                "referencing_repository": relationship["source_repository"],
+                "referenced_repository": target,
+                "relationship_id": relationship["id"],
+                "trigger_change_unit": None,
+                "responding_change_unit": responding["id"],
+                "trigger_timestamp": None,
+                "response_timestamp": responding.get("timestamp"),
+                "relationship_evidence": relationship.get("evidence", []),
+                "evidence": relationship.get("evidence", []),
+                "interpretation": PROPAGATION_INTERPRETATION,
+            })
+            continue
+
+        trigger = candidates[-1]
+        key = (relationship["source_repository"], target, trigger["id"])
+        if key in observed_keys:
+            continue
+        observed_keys.add(key)
+        observations.append({
+            "id": _propagation_id(relationship["source_repository"], target, trigger["id"], "observed_follow_up"),
+            "state": "observed_follow_up",
+            "referencing_repository": relationship["source_repository"],
+            "referenced_repository": target,
+            "relationship_id": relationship["id"],
+            "trigger_change_unit": trigger["id"],
+            "responding_change_unit": responding["id"],
+            "trigger_timestamp": trigger.get("timestamp"),
+            "response_timestamp": responding.get("timestamp"),
+            "trigger_semantic_change_type": trigger.get("semantic_change", {}).get("type", "unknown"),
+            "response_semantic_change_type": responding.get("semantic_change", {}).get("type", "unknown"),
+            "relationship_evidence": relationship.get("evidence", []),
+            "evidence": list(dict.fromkeys(trigger.get("evidence", []) + relationship.get("evidence", []))),
+            "interpretation": PROPAGATION_INTERPRETATION,
+        })
+
+    # Absence-of-follow-up observations require historical relationship evidence.
+    # A first baseline cannot support an absence claim.
+    previous_relationships = previous.get("relationships", [])
+    if previous_relationships:
+        current_pairs = {
+            (relationship["source_repository"], relationship["target_repository"]): relationship
+            for relationship in relationships
+        }
+        for prior in previous_relationships:
+            source = prior.get("source_repository")
+            target = prior.get("target_repository")
+            if not source or not target:
+                continue
+            current_target_units = [unit for unit in units if unit.get("repository") == target]
+            for trigger in current_target_units:
+                pair = (source, target)
+                current_relationship = current_pairs.get(pair)
+                if current_relationship:
+                    responding = current_by_id.get(current_relationship.get("source_change_unit"))
+                    if responding and _unit_timestamp(responding) > _unit_timestamp(trigger):
+                        continue
+                key = (source, target, trigger["id"])
+                if key in observed_keys:
+                    continue
+                observed_keys.add(key)
+                observations.append({
+                    "id": _propagation_id(source, target, trigger["id"], "no_follow_up_observed"),
+                    "state": "no_follow_up_observed",
+                    "referencing_repository": source,
+                    "referenced_repository": target,
+                    "relationship_id": prior.get("id"),
+                    "trigger_change_unit": trigger["id"],
+                    "responding_change_unit": None,
+                    "trigger_timestamp": trigger.get("timestamp"),
+                    "response_timestamp": None,
+                    "trigger_semantic_change_type": trigger.get("semantic_change", {}).get("type", "unknown"),
+                    "relationship_evidence": prior.get("evidence", []),
+                    "evidence": list(dict.fromkeys(trigger.get("evidence", []) + prior.get("evidence", []))),
+                    "interpretation": PROPAGATION_INTERPRETATION + " No follow-up observed is not evidence that follow-up was required.",
+                })
+
+    state_order = {"observed_follow_up": 0, "no_follow_up_observed": 1, "insufficient_history": 2}
+    return sorted(
+        observations,
+        key=lambda item: (
+            state_order.get(item["state"], 9),
+            item["referencing_repository"],
+            item["referenced_repository"],
+            item.get("trigger_timestamp") or "",
+        ),
+    )
+
+
 def _explicit_reference_metadata(target: dict[str, Any], source_materiality: int) -> dict[str, Any]:
     if target.get("name", "").lower() in TOOLING_REPOSITORIES:
         return {
@@ -264,6 +407,7 @@ def analyze_snapshot(snapshot: dict[str, Any], previous: dict[str, Any] | None =
     snapshot["change_units"] = consolidate_change_units(snapshot.get("events", []))
     snapshot["lifecycle_changes"] = detect_lifecycle_changes(snapshot.get("repositories", []), (previous or {}).get("repositories", [])) if previous else []
     snapshot["relationships"] = build_relationship_graph(snapshot["change_units"], snapshot.get("repositories", []))
+    snapshot["change_propagation"] = detect_change_propagation(snapshot["change_units"], snapshot["relationships"], previous)
     snapshot["cross_portfolio_seams"] = detect_cross_portfolio_seams(snapshot["change_units"], snapshot.get("repositories", []))
     findings = build_findings(snapshot)
     snapshot["findings"] = apply_dispositions(findings, load_dispositions())
