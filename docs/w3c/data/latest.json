@@ -1,0 +1,2679 @@
+{
+  "schema_version": "0.2",
+  "organization": "w3c",
+  "generated_at": "2026-09-17T08:02:04.869564+00:00",
+  "period": {
+    "since": "2026-09-10T08:02:04.869564+00:00",
+    "until": "2026-09-17T08:02:04.869564+00:00",
+    "lookback_days": 7
+  },
+  "provenance": {
+    "source": "GitHub REST API",
+    "collector": "trust-ecosystem-monitor",
+    "deterministic_classification": true,
+    "previous_snapshot": null
+  },
+  "repositories": [
+    {
+      "id": 51303856,
+      "name": "webauthn",
+      "full_name": "w3c/webauthn",
+      "url": "https://github.com/w3c/webauthn",
+      "description": "Web Authentication: An API for accessing Public Key Credentials",
+      "created_at": "2016-02-08T14:51:38Z",
+      "updated_at": "2026-09-17T04:06:08Z",
+      "pushed_at": "2026-09-10T11:24:01Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Authentication",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/webauthn"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Normative strong public-key authentication standard with direct trust-system composition relevance"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/webauthn/",
+          "https://www.w3.org/groups/wg/webauthn/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "webauthn",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 713003014,
+      "name": "cid",
+      "full_name": "w3c/cid",
+      "url": "https://github.com/w3c/cid",
+      "description": "Controlled Identifier Documents",
+      "created_at": "2023-11-01T16:34:26Z",
+      "updated_at": "2026-08-28T15:11:58Z",
+      "pushed_at": "2026-08-24T10:34:42Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Identifiers & Control",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/cid"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Controlled Identifier Documents are a VCWG deliverable with direct controller/key relationship relevance"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "cid",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 250393085,
+      "name": "vc-di-bbs",
+      "full_name": "w3c/vc-di-bbs",
+      "url": "https://github.com/w3c/vc-di-bbs",
+      "description": "A linked data proof suite specification for BBS+ signatures",
+      "created_at": "2020-03-26T23:17:09Z",
+      "updated_at": "2026-09-10T15:38:49Z",
+      "pushed_at": "2026-09-10T15:35:25Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Privacy & Applied Cryptography",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-di-bbs"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "VCWG BBS cryptosuite work provides selective-disclosure and zero-knowledge disclosure capability"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-di-bbs",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 334233799,
+      "name": "vc-bitstring-status-list",
+      "full_name": "w3c/vc-bitstring-status-list",
+      "url": "https://github.com/w3c/vc-bitstring-status-list",
+      "description": "A privacy-preserving mechanism to publish status information for Verifiable Credentials.",
+      "created_at": "2021-01-29T18:46:03Z",
+      "updated_at": "2026-09-16T15:13:05Z",
+      "pushed_at": "2026-09-17T04:04:20Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-bitstring-status-list"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative privacy-preserving credential status and revocation mechanism"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-bitstring-status-list",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 130575803,
+      "name": "vc-data-integrity",
+      "full_name": "w3c/vc-data-integrity",
+      "url": "https://github.com/w3c/vc-data-integrity",
+      "description": "W3C Data Integrity Specification",
+      "created_at": "2018-04-22T14:35:06Z",
+      "updated_at": "2026-09-11T16:06:14Z",
+      "pushed_at": "2026-09-15T16:07:43Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-data-integrity"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative authenticity and integrity mechanisms for Verifiable Credentials"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/groups/wg/vc/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-data-integrity",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 73851409,
+      "name": "vc-data-model",
+      "full_name": "w3c/vc-data-model",
+      "url": "https://github.com/w3c/vc-data-model",
+      "description": "W3C Verifiable Credentials v2.0 Specification",
+      "created_at": "2016-11-15T20:14:42Z",
+      "updated_at": "2026-09-13T23:06:41Z",
+      "pushed_at": "2026-09-13T23:06:37Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-data-model"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Normative Verifiable Credentials data-model work"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-data-model/all/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-data-model",
+        "profile": "w3c"
+      }
+    }
+  ],
+  "events": [
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-17T04:05:16Z",
+      "title": "FPWD publish date set to Sept 24",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/pull/214",
+      "number": 214,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-17T00:05:19Z",
+      "title": "Technical Decisions and Options",
+      "url": "https://github.com/w3c/vc-data-integrity/issues/362",
+      "number": 362,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T19:30:30Z",
+      "title": "export definitions?",
+      "url": "https://github.com/w3c/webauthn/issues/1049",
+      "number": 1049,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T19:29:30Z",
+      "title": "Targeting EUDI Wallet et. al. for payments",
+      "url": "https://github.com/w3c/webauthn/issues/2480",
+      "number": 2480,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T19:28:14Z",
+      "title": "Missing validation of rpId before Related Origins fetch",
+      "url": "https://github.com/w3c/webauthn/issues/2422",
+      "number": 2422,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T19:27:24Z",
+      "title": "Consider portable evidence manifests for attestation auditability",
+      "url": "https://github.com/w3c/webauthn/issues/2436",
+      "number": 2436,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T19:22:49Z",
+      "title": "Re-Open \"confirmation\" discussion (see PR#2020)",
+      "url": "https://github.com/w3c/webauthn/issues/2352",
+      "number": 2352,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T19:17:53Z",
+      "title": "Call for editors for WebAuthn L4",
+      "url": "https://github.com/w3c/webauthn/issues/2406",
+      "number": 2406,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T19:17:36Z",
+      "title": "Credential Backup clarification (note about older authenticators)",
+      "url": "https://github.com/w3c/webauthn/issues/2477",
+      "number": 2477,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T18:57:56Z",
+      "title": "Add \"Credential Manager Trust Group (CMTG) Key\" extension",
+      "url": "https://github.com/w3c/webauthn/pull/2377",
+      "number": 2377,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T18:21:52Z",
+      "title": "Add Definition of Unlinkable Disclosure",
+      "url": "https://github.com/w3c/vc-data-integrity/issues/363",
+      "number": 363,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T17:43:45Z",
+      "title": "Missing Step in Selective Disclosure (SIC approach serialize  derive)",
+      "url": "https://github.com/w3c/vc-data-integrity/issues/367",
+      "number": 367,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T16:06:46Z",
+      "title": "Rephrase securing requirement as constraint on securing (vs conformance).",
+      "url": "https://github.com/w3c/vc-data-model/pull/1645",
+      "number": 1645,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "added authors' version notes",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/114ff2a5882d01601114454da3ddcd58f36d4383",
+      "number": null,
+      "sha": "114ff2a5882d01601114454da3ddcd58f36d4383",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Revert base spec file status to ED.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/cabcb39d892c39a787676cd019a97574468ec269",
+      "number": null,
+      "sha": "cabcb39d892c39a787676cd019a97574468ec269",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Apply formatting suggestions.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/3227176e06e2a5389fbc8d007c267e318f44613d",
+      "number": null,
+      "sha": "3227176e06e2a5389fbc8d007c267e318f44613d",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Update snapshot.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/15c9b1521a551d4b69797fb6a47115e3c4e2d0f9",
+      "number": null,
+      "sha": "15c9b1521a551d4b69797fb6a47115e3c4e2d0f9",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Fix broken reference.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/00a848672cfa4cdd7ab3d1036d20a605b2e54925",
+      "number": null,
+      "sha": "00a848672cfa4cdd7ab3d1036d20a605b2e54925",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Update FPWD snapshot.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/9d6dc84c6367b41103c2f7d4be3ff93676e5b58a",
+      "number": null,
+      "sha": "9d6dc84c6367b41103c2f7d4be3ff93676e5b58a",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Fix algorithm pointer.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/b9cbd7d9661d2d7aad4988d0a64ee2585aabeb37",
+      "number": null,
+      "sha": "b9cbd7d9661d2d7aad4988d0a64ee2585aabeb37",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Change publication date.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/6280e69c96140ea9bb2abb1e8003c3a38b6ab2de",
+      "number": null,
+      "sha": "6280e69c96140ea9bb2abb1e8003c3a38b6ab2de",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Remove Dave Longley as editor, add Wesley Smith as editor.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/789612cbccfaf8ef2c6516dbd35f258a77d5d7f0",
+      "number": null,
+      "sha": "789612cbccfaf8ef2c6516dbd35f258a77d5d7f0",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Add revision history entry.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/c96a42ea65ac8987d25793e120213c2ab8136aec",
+      "number": null,
+      "sha": "c96a42ea65ac8987d25793e120213c2ab8136aec",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Add FPWD snapshot.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/8aa1321fecd0736bfbf03a659d3fb5edfde37e26",
+      "number": null,
+      "sha": "8aa1321fecd0736bfbf03a659d3fb5edfde37e26",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Add Terse conversion algorithms.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/619d1717507a9411c4b1d5fff2cc19c274d9a0d3",
+      "number": null,
+      "sha": "619d1717507a9411c4b1d5fff2cc19c274d9a0d3",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Add Terse data model entry and example.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/4f6fda7cf85f5b993ab147d739d6810fd42590e6",
+      "number": null,
+      "sha": "4f6fda7cf85f5b993ab147d739d6810fd42590e6",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Update metadata for FPWD.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/commit/acc12588c23708e5d8f0d7645fdcd9d3d1921f2f",
+      "number": null,
+      "sha": "acc12588c23708e5d8f0d7645fdcd9d3d1921f2f",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "title": "Prepare document for FPWD, add Terse content, administrative changes.",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/pull/212",
+      "number": 212,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-15T16:07:44Z",
+      "title": "Update to define the SIC proof header bytes",
+      "url": "https://github.com/w3c/vc-data-integrity/pull/365",
+      "number": 365,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-15T16:05:38Z",
+      "title": "Add hybrid fallback URL extension",
+      "url": "https://github.com/w3c/webauthn/issues/2341",
+      "number": 2341,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/cid",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-14T09:28:35Z",
+      "title": "Allow for fragment identifier in document.id",
+      "url": "https://github.com/w3c/cid/pull/168",
+      "number": 168,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:07:28Z",
+      "title": "Add a \"localizeable value\" term to address i18n concerns",
+      "url": "https://github.com/w3c/vc-data-model/issues/1641",
+      "number": 1641,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:07:05Z",
+      "title": "Suggestion: Show mixed localized/non-localized arrays in i18n examples",
+      "url": "https://github.com/w3c/vc-data-model/issues/1643",
+      "number": 1643,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:06:36Z",
+      "title": "Add an example of a mixed array of strings and language value objects",
+      "url": "https://github.com/w3c/vc-data-model/pull/1647",
+      "number": 1647,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:06:35Z",
+      "title": "Clarify that name/description can be more than one LVO.",
+      "url": "https://github.com/w3c/vc-data-model/commit/46d5e557792efb8ba2aefe0ae267b3d2e26b492d",
+      "number": null,
+      "sha": "46d5e557792efb8ba2aefe0ae267b3d2e26b492d",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:06:35Z",
+      "title": "Add lang tag to mixed array of language value object example.",
+      "url": "https://github.com/w3c/vc-data-model/commit/534a8f0bc86394bbd815aa48b8e7e46ca817ed94",
+      "number": null,
+      "sha": "534a8f0bc86394bbd815aa48b8e7e46ca817ed94",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:06:35Z",
+      "title": "Add example of mixed text string / language value object array.",
+      "url": "https://github.com/w3c/vc-data-model/commit/2d2adb6831e7c971c9f28ba80ba7e3c067dc5747",
+      "number": null,
+      "sha": "2d2adb6831e7c971c9f28ba80ba7e3c067dc5747",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:00:55Z",
+      "title": "Export definition of language value object; revise prose.",
+      "url": "https://github.com/w3c/vc-data-model/pull/1646",
+      "number": 1646,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:00:54Z",
+      "title": "Clarify language tag requirements from BCP47 and I18N-GLOSSARY.",
+      "url": "https://github.com/w3c/vc-data-model/commit/b73b6d17a22af6ea47e687d9e03af1f48146d36f",
+      "number": null,
+      "sha": "b73b6d17a22af6ea47e687d9e03af1f48146d36f",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-13T23:00:54Z",
+      "title": "Export definition of language value object; revise prose.",
+      "url": "https://github.com/w3c/vc-data-model/commit/4822fddf578aab028bd0bb41048c27f0ed188429",
+      "number": null,
+      "sha": "4822fddf578aab028bd0bb41048c27f0ed188429",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-11T14:45:12Z",
+      "title": "added authors'/editors' version notes and copied the diagrams",
+      "url": "https://github.com/w3c/vc-bitstring-status-list/pull/213",
+      "number": 213,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-10T21:41:06Z",
+      "title": "RDFC-based cryptosuites do not specify `rdfDirection`; implementations already diverge on documents with `@direction`",
+      "url": "https://github.com/w3c/vc-data-integrity/issues/366",
+      "number": 366,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-10T21:38:52Z",
+      "title": "Add Cross Device Fallback URL extension for hybrid transport authentication",
+      "url": "https://github.com/w3c/webauthn/pull/2380",
+      "number": 2380,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-10T17:00:12Z",
+      "title": "Generalize and Modularize Optional Features",
+      "url": "https://github.com/w3c/vc-di-bbs/issues/207",
+      "number": 207,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-10T15:35:26Z",
+      "title": "Refactor  to use  Common SD  Algorithms",
+      "url": "https://github.com/w3c/vc-di-bbs/pull/206",
+      "number": 206,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-10T15:35:25Z",
+      "title": "Refactor  to use  Common SD  Algorithms (#206)",
+      "url": "https://github.com/w3c/vc-di-bbs/commit/495310858ad0b54c4b6cb1423c59a90a22091459",
+      "number": null,
+      "sha": "495310858ad0b54c4b6cb1423c59a90a22091459",
+      "state": null,
+      "materiality": 1
+    }
+  ],
+  "assertions": [],
+  "collection_errors": [],
+  "change_units": [
+    {
+      "id": "toip-change-b62cff20028d",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "FPWD publish date set to Sept 24",
+      "timestamp": "2026-09-17T04:05:16Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/pull/214"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-17T04:05:16Z",
+          "title": "FPWD publish date set to Sept 24",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/pull/214",
+          "number": 214,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "publish"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-a58cfd2ec2ee",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Technical Decisions and Options",
+      "timestamp": "2026-09-17T00:05:19Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/issues/362"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-17T00:05:19Z",
+          "title": "Technical Decisions and Options",
+          "url": "https://github.com/w3c/vc-data-integrity/issues/362",
+          "number": 362,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "ci"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-5e9f0982e3a6",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "export definitions?",
+      "timestamp": "2026-09-16T19:30:30Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/1049"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T19:30:30Z",
+          "title": "export definitions?",
+          "url": "https://github.com/w3c/webauthn/issues/1049",
+          "number": 1049,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-70d76ee62bba",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Targeting EUDI Wallet et. al. for payments",
+      "timestamp": "2026-09-16T19:29:30Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2480"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T19:29:30Z",
+          "title": "Targeting EUDI Wallet et. al. for payments",
+          "url": "https://github.com/w3c/webauthn/issues/2480",
+          "number": 2480,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-236601b57008",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Missing validation of rpId before Related Origins fetch",
+      "timestamp": "2026-09-16T19:28:14Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2422"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T19:28:14Z",
+          "title": "Missing validation of rpId before Related Origins fetch",
+          "url": "https://github.com/w3c/webauthn/issues/2422",
+          "number": 2422,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-5e3c4d2de161",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Consider portable evidence manifests for attestation auditability",
+      "timestamp": "2026-09-16T19:27:24Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2436"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T19:27:24Z",
+          "title": "Consider portable evidence manifests for attestation auditability",
+          "url": "https://github.com/w3c/webauthn/issues/2436",
+          "number": 2436,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-644ee6d8906f",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Re-Open \"confirmation\" discussion (see PR#2020)",
+      "timestamp": "2026-09-16T19:22:49Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2352"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T19:22:49Z",
+          "title": "Re-Open \"confirmation\" discussion (see PR#2020)",
+          "url": "https://github.com/w3c/webauthn/issues/2352",
+          "number": 2352,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-a6252cd80f04",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Call for editors for WebAuthn L4",
+      "timestamp": "2026-09-16T19:17:53Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2406"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T19:17:53Z",
+          "title": "Call for editors for WebAuthn L4",
+          "url": "https://github.com/w3c/webauthn/issues/2406",
+          "number": 2406,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-82a7cc9d038f",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Credential Backup clarification (note about older authenticators)",
+      "timestamp": "2026-09-16T19:17:36Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2477"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T19:17:36Z",
+          "title": "Credential Backup clarification (note about older authenticators)",
+          "url": "https://github.com/w3c/webauthn/issues/2477",
+          "number": 2477,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-a0fc1f31cab7",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Add \"Credential Manager Trust Group (CMTG) Key\" extension",
+      "timestamp": "2026-09-16T18:57:56Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/pull/2377"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T18:57:56Z",
+          "title": "Add \"Credential Manager Trust Group (CMTG) Key\" extension",
+          "url": "https://github.com/w3c/webauthn/pull/2377",
+          "number": 2377,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-5416b199fa42",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add Definition of Unlinkable Disclosure",
+      "timestamp": "2026-09-16T18:21:52Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/issues/363"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T18:21:52Z",
+          "title": "Add Definition of Unlinkable Disclosure",
+          "url": "https://github.com/w3c/vc-data-integrity/issues/363",
+          "number": 363,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "privacy",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "disclosure"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-55c98eb8bbe6",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Missing Step in Selective Disclosure (SIC approach serialize  derive)",
+      "timestamp": "2026-09-16T17:43:45Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/issues/367"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T17:43:45Z",
+          "title": "Missing Step in Selective Disclosure (SIC approach serialize  derive)",
+          "url": "https://github.com/w3c/vc-data-integrity/issues/367",
+          "number": 367,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "privacy",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "disclosure"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-0a4ce990a1a7",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Rephrase securing requirement as constraint on securing (vs conformance).",
+      "timestamp": "2026-09-16T16:06:46Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1645"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T16:06:46Z",
+          "title": "Rephrase securing requirement as constraint on securing (vs conformance).",
+          "url": "https://github.com/w3c/vc-data-model/pull/1645",
+          "number": 1645,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "interop",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "conformance"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-069689def709",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "added authors' version notes",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/114ff2a5882d01601114454da3ddcd58f36d4383"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "added authors' version notes",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/114ff2a5882d01601114454da3ddcd58f36d4383",
+          "number": null,
+          "sha": "114ff2a5882d01601114454da3ddcd58f36d4383",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "version"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-ae37223c33dc",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Revert base spec file status to ED.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/cabcb39d892c39a787676cd019a97574468ec269"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Revert base spec file status to ED.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/cabcb39d892c39a787676cd019a97574468ec269",
+          "number": null,
+          "sha": "cabcb39d892c39a787676cd019a97574468ec269",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "lifecycle",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "status"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-4f02af0585b7",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Apply formatting suggestions.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/3227176e06e2a5389fbc8d007c267e318f44613d"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Apply formatting suggestions.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/3227176e06e2a5389fbc8d007c267e318f44613d",
+          "number": null,
+          "sha": "3227176e06e2a5389fbc8d007c267e318f44613d",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-88c8c1c15827",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Update snapshot.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/15c9b1521a551d4b69797fb6a47115e3c4e2d0f9"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Update snapshot.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/15c9b1521a551d4b69797fb6a47115e3c4e2d0f9",
+          "number": null,
+          "sha": "15c9b1521a551d4b69797fb6a47115e3c4e2d0f9",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-02b2b0365963",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Fix broken reference.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/00a848672cfa4cdd7ab3d1036d20a605b2e54925"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Fix broken reference.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/00a848672cfa4cdd7ab3d1036d20a605b2e54925",
+          "number": null,
+          "sha": "00a848672cfa4cdd7ab3d1036d20a605b2e54925",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "fix"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-8ca1254bbedb",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Update FPWD snapshot.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/9d6dc84c6367b41103c2f7d4be3ff93676e5b58a"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Update FPWD snapshot.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/9d6dc84c6367b41103c2f7d4be3ff93676e5b58a",
+          "number": null,
+          "sha": "9d6dc84c6367b41103c2f7d4be3ff93676e5b58a",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-36a3e3632093",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Fix algorithm pointer.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/b9cbd7d9661d2d7aad4988d0a64ee2585aabeb37"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Fix algorithm pointer.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/b9cbd7d9661d2d7aad4988d0a64ee2585aabeb37",
+          "number": null,
+          "sha": "b9cbd7d9661d2d7aad4988d0a64ee2585aabeb37",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "fix"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-2955e194e26d",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Change publication date.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/6280e69c96140ea9bb2abb1e8003c3a38b6ab2de"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Change publication date.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/6280e69c96140ea9bb2abb1e8003c3a38b6ab2de",
+          "number": null,
+          "sha": "6280e69c96140ea9bb2abb1e8003c3a38b6ab2de",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-3ac21aad2c65",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Remove Dave Longley as editor, add Wesley Smith as editor.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/789612cbccfaf8ef2c6516dbd35f258a77d5d7f0"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Remove Dave Longley as editor, add Wesley Smith as editor.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/789612cbccfaf8ef2c6516dbd35f258a77d5d7f0",
+          "number": null,
+          "sha": "789612cbccfaf8ef2c6516dbd35f258a77d5d7f0",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-843c522b5d36",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add revision history entry.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/c96a42ea65ac8987d25793e120213c2ab8136aec"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Add revision history entry.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/c96a42ea65ac8987d25793e120213c2ab8136aec",
+          "number": null,
+          "sha": "c96a42ea65ac8987d25793e120213c2ab8136aec",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-0d01b6d7d6f5",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add FPWD snapshot.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/8aa1321fecd0736bfbf03a659d3fb5edfde37e26"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Add FPWD snapshot.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/8aa1321fecd0736bfbf03a659d3fb5edfde37e26",
+          "number": null,
+          "sha": "8aa1321fecd0736bfbf03a659d3fb5edfde37e26",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-55e006f6245b",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add Terse conversion algorithms.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/619d1717507a9411c4b1d5fff2cc19c274d9a0d3"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Add Terse conversion algorithms.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/619d1717507a9411c4b1d5fff2cc19c274d9a0d3",
+          "number": null,
+          "sha": "619d1717507a9411c4b1d5fff2cc19c274d9a0d3",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "version"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-35c7f2dd4bb4",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add Terse data model entry and example.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/4f6fda7cf85f5b993ab147d739d6810fd42590e6"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Add Terse data model entry and example.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/4f6fda7cf85f5b993ab147d739d6810fd42590e6",
+          "number": null,
+          "sha": "4f6fda7cf85f5b993ab147d739d6810fd42590e6",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-085e82de4404",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Update metadata for FPWD.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/commit/acc12588c23708e5d8f0d7645fdcd9d3d1921f2f"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Update metadata for FPWD.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/commit/acc12588c23708e5d8f0d7645fdcd9d3d1921f2f",
+          "number": null,
+          "sha": "acc12588c23708e5d8f0d7645fdcd9d3d1921f2f",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-afd79f010719",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Prepare document for FPWD, add Terse content, administrative changes.",
+      "timestamp": "2026-09-16T15:12:58Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/pull/212"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-16T15:12:58Z",
+          "title": "Prepare document for FPWD, add Terse content, administrative changes.",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/pull/212",
+          "number": 212,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-2180df5f3f21",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Update to define the SIC proof header bytes",
+      "timestamp": "2026-09-15T16:07:44Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/pull/365"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-15T16:07:44Z",
+          "title": "Update to define the SIC proof header bytes",
+          "url": "https://github.com/w3c/vc-data-integrity/pull/365",
+          "number": 365,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-bd12d74c5623",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Add hybrid fallback URL extension",
+      "timestamp": "2026-09-15T16:05:38Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/issues/2341"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-15T16:05:38Z",
+          "title": "Add hybrid fallback URL extension",
+          "url": "https://github.com/w3c/webauthn/issues/2341",
+          "number": 2341,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-de2ae29fbe3e",
+      "repository": "w3c/cid",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Allow for fragment identifier in document.id",
+      "timestamp": "2026-09-14T09:28:35Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/cid/pull/168"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/cid",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-14T09:28:35Z",
+          "title": "Allow for fragment identifier in document.id",
+          "url": "https://github.com/w3c/cid/pull/168",
+          "number": 168,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-4f04a3c06593",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add a \"localizeable value\" term to address i18n concerns",
+      "timestamp": "2026-09-13T23:07:28Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/issues/1641"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:07:28Z",
+          "title": "Add a \"localizeable value\" term to address i18n concerns",
+          "url": "https://github.com/w3c/vc-data-model/issues/1641",
+          "number": 1641,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-7cbe10979944",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Suggestion: Show mixed localized/non-localized arrays in i18n examples",
+      "timestamp": "2026-09-13T23:07:05Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/issues/1643"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:07:05Z",
+          "title": "Suggestion: Show mixed localized/non-localized arrays in i18n examples",
+          "url": "https://github.com/w3c/vc-data-model/issues/1643",
+          "number": 1643,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-497090b0c277",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add an example of a mixed array of strings and language value objects",
+      "timestamp": "2026-09-13T23:06:36Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1647"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:06:36Z",
+          "title": "Add an example of a mixed array of strings and language value objects",
+          "url": "https://github.com/w3c/vc-data-model/pull/1647",
+          "number": 1647,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-7f8e2015634b",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Clarify that name/description can be more than one LVO.",
+      "timestamp": "2026-09-13T23:06:35Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/46d5e557792efb8ba2aefe0ae267b3d2e26b492d"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:06:35Z",
+          "title": "Clarify that name/description can be more than one LVO.",
+          "url": "https://github.com/w3c/vc-data-model/commit/46d5e557792efb8ba2aefe0ae267b3d2e26b492d",
+          "number": null,
+          "sha": "46d5e557792efb8ba2aefe0ae267b3d2e26b492d",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-840828118a4a",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add lang tag to mixed array of language value object example.",
+      "timestamp": "2026-09-13T23:06:35Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/534a8f0bc86394bbd815aa48b8e7e46ca817ed94"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:06:35Z",
+          "title": "Add lang tag to mixed array of language value object example.",
+          "url": "https://github.com/w3c/vc-data-model/commit/534a8f0bc86394bbd815aa48b8e7e46ca817ed94",
+          "number": null,
+          "sha": "534a8f0bc86394bbd815aa48b8e7e46ca817ed94",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "tag"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-7330abb26944",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add example of mixed text string / language value object array.",
+      "timestamp": "2026-09-13T23:06:35Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/2d2adb6831e7c971c9f28ba80ba7e3c067dc5747"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:06:35Z",
+          "title": "Add example of mixed text string / language value object array.",
+          "url": "https://github.com/w3c/vc-data-model/commit/2d2adb6831e7c971c9f28ba80ba7e3c067dc5747",
+          "number": null,
+          "sha": "2d2adb6831e7c971c9f28ba80ba7e3c067dc5747",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-91a250a2e88d",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Export definition of language value object; revise prose.",
+      "timestamp": "2026-09-13T23:00:55Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1646"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:00:55Z",
+          "title": "Export definition of language value object; revise prose.",
+          "url": "https://github.com/w3c/vc-data-model/pull/1646",
+          "number": 1646,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-403464729c68",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Clarify language tag requirements from BCP47 and I18N-GLOSSARY.",
+      "timestamp": "2026-09-13T23:00:54Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/b73b6d17a22af6ea47e687d9e03af1f48146d36f"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:00:54Z",
+          "title": "Clarify language tag requirements from BCP47 and I18N-GLOSSARY.",
+          "url": "https://github.com/w3c/vc-data-model/commit/b73b6d17a22af6ea47e687d9e03af1f48146d36f",
+          "number": null,
+          "sha": "b73b6d17a22af6ea47e687d9e03af1f48146d36f",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "tag"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-9f368503afb2",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Export definition of language value object; revise prose.",
+      "timestamp": "2026-09-13T23:00:54Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/commit/4822fddf578aab028bd0bb41048c27f0ed188429"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-13T23:00:54Z",
+          "title": "Export definition of language value object; revise prose.",
+          "url": "https://github.com/w3c/vc-data-model/commit/4822fddf578aab028bd0bb41048c27f0ed188429",
+          "number": null,
+          "sha": "4822fddf578aab028bd0bb41048c27f0ed188429",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-ce8c89565728",
+      "repository": "w3c/vc-bitstring-status-list",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "added authors'/editors' version notes and copied the diagrams",
+      "timestamp": "2026-09-11T14:45:12Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-bitstring-status-list/pull/213"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-bitstring-status-list",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-11T14:45:12Z",
+          "title": "added authors'/editors' version notes and copied the diagrams",
+          "url": "https://github.com/w3c/vc-bitstring-status-list/pull/213",
+          "number": 213,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "version"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-26436649b6de",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "RDFC-based cryptosuites do not specify `rdfDirection`; implementations already diverge on documents with `@direction`",
+      "timestamp": "2026-09-10T21:41:06Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/issues/366"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-10T21:41:06Z",
+          "title": "RDFC-based cryptosuites do not specify `rdfDirection`; implementations already diverge on documents with `@direction`",
+          "url": "https://github.com/w3c/vc-data-integrity/issues/366",
+          "number": 366,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-3ba3d5bccbe3",
+      "repository": "w3c/webauthn",
+      "portfolio": "Authentication",
+      "repo_kind": "repository",
+      "title": "Add Cross Device Fallback URL extension for hybrid transport authentication",
+      "timestamp": "2026-09-10T21:38:52Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/webauthn/pull/2380"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/webauthn",
+          "portfolio": "Authentication",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-10T21:38:52Z",
+          "title": "Add Cross Device Fallback URL extension for hybrid transport authentication",
+          "url": "https://github.com/w3c/webauthn/pull/2380",
+          "number": 2380,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-7005dec2452d",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "title": "Generalize and Modularize Optional Features",
+      "timestamp": "2026-09-10T17:00:12Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-di-bbs/issues/207"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-di-bbs",
+          "portfolio": "Privacy & Applied Cryptography",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-10T17:00:12Z",
+          "title": "Generalize and Modularize Optional Features",
+          "url": "https://github.com/w3c/vc-di-bbs/issues/207",
+          "number": 207,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "feature"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-74742e978a10",
+      "repository": "w3c/vc-di-bbs",
+      "portfolio": "Privacy & Applied Cryptography",
+      "repo_kind": "repository",
+      "title": "Refactor  to use  Common SD  Algorithms",
+      "timestamp": "2026-09-10T15:35:26Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/w3c/vc-di-bbs/pull/206",
+        "https://github.com/w3c/vc-di-bbs/commit/495310858ad0b54c4b6cb1423c59a90a22091459"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-di-bbs",
+          "portfolio": "Privacy & Applied Cryptography",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-10T15:35:26Z",
+          "title": "Refactor  to use  Common SD  Algorithms",
+          "url": "https://github.com/w3c/vc-di-bbs/pull/206",
+          "number": 206,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-di-bbs",
+          "portfolio": "Privacy & Applied Cryptography",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-10T15:35:25Z",
+          "title": "Refactor  to use  Common SD  Algorithms (#206)",
+          "url": "https://github.com/w3c/vc-di-bbs/commit/495310858ad0b54c4b6cb1423c59a90a22091459",
+          "number": null,
+          "sha": "495310858ad0b54c4b6cb1423c59a90a22091459",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "refactor"
+        ],
+        "evidence_state": "derived"
+      }
+    }
+  ],
+  "lifecycle_changes": [],
+  "relationships": [],
+  "change_propagation": [],
+  "cross_portfolio_seams": [],
+  "findings": [],
+  "watch_propositions": [],
+  "ecosystem_profile": {
+    "schema_version": "1",
+    "id": "w3c",
+    "organization": "w3c",
+    "display_name": "World Wide Web Consortium",
+    "monitor_title": "Trust Ecosystem Monitor",
+    "weekly_brief_title": "W3C Trust Standards Brief",
+    "disclaimer": "Independent observatory; not an official W3C publication. Scope is a governed trust-standards portfolio, not the complete W3C GitHub organization.",
+    "repository_override_count": 6,
+    "discovery_sources": [
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-data-model"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-data-integrity"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-bitstring-status-list"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/cid"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-di-bbs"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/webauthn"
+      }
+    ],
+    "admission": {
+      "mode": "all_discovered",
+      "default_state": "included",
+      "default_tier": "core",
+      "repository_override_count": 0
+    }
+  }
+}
