@@ -18,6 +18,24 @@ PORTFOLIO_RELATIONSHIPS = {
 
 TOOLING_REPOSITORIES = {"spec-up", "spec-up-t"}
 
+# Ordered from specific/high-signal semantics toward broad fallback categories.
+SEMANTIC_CHANGE_RULES: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("security", ("security", "vulnerability", "cve", "attack", "threat", "exploit")),
+    ("privacy", ("privacy", "correlation", "unlinkability", "data minim", "disclosure")),
+    ("authority", ("authority", "delegat", "authoriz", "permission", "entitlement", "revocation")),
+    ("governance", ("governance", "policy", "charter", "decision right", "work item")),
+    ("protocol_semantics", ("protocol", "semantic", "normative", "must ", "should ")),
+    ("api", ("api", "endpoint", "openapi", "http", "request", "response")),
+    ("schema", ("schema", "json schema", "field", "property", "serialization")),
+    ("lifecycle", ("lifecycle", "status", "suspend", "expire", "withdraw", "deprecat")),
+    ("dependency", ("depend", "upstream", "downstream", "vendor", "library")),
+    ("interop", ("interop", "conformance", "compatib", "profile", "test vector")),
+    ("specification", ("spec", "draft", "rfc", "recommendation", "working draft")),
+    ("release", ("release", "version", "tag", "publish")),
+    ("editorial", ("editorial", "typo", "wording", "readme", "documentation", "docs")),
+    ("implementation", ("implement", "code", "refactor", "fix", "feature", "build", "ci")),
+)
+
 
 def _unit_id(repository: str, key: str) -> str:
     digest = hashlib.sha256(f"{repository}|{key}".encode()).hexdigest()[:12]
@@ -28,6 +46,11 @@ def _seam_id(left: str, right: str, key: str) -> str:
     pair = "|".join(sorted((left, right)))
     digest = hashlib.sha256(f"{pair}|{key}".encode()).hexdigest()[:12]
     return f"toip-seam-{digest}"
+
+
+def _relationship_id(source: str, target: str, key: str) -> str:
+    digest = hashlib.sha256(f"{source}|{target}|{key}".encode()).hexdigest()[:12]
+    return f"tem-relationship-{digest}"
 
 
 def _reference_key(event: dict[str, Any]) -> str | None:
@@ -46,6 +69,45 @@ def _semantic_key(event: dict[str, Any]) -> str:
     return "semantic:" + "-".join(words or [event.get("kind", "event")])
 
 
+def classify_semantic_change(unit: dict[str, Any]) -> dict[str, Any]:
+    """Classify one change unit using bounded, explainable repository evidence.
+
+    This is intentionally deterministic. It does not claim that the inferred class
+    is an upstream project's own characterization of the change.
+    """
+    text_parts = [str(unit.get("title", ""))]
+    text_parts.extend(str(event.get("title", "")) for event in unit.get("events", []))
+    text = " ".join(text_parts).lower()
+
+    for change_type, terms in SEMANTIC_CHANGE_RULES:
+        matched = [term for term in terms if term in text]
+        if matched:
+            return {
+                "type": change_type,
+                "method": "deterministic-keyword-v1",
+                "confidence": "moderate",
+                "matched_terms": sorted(set(matched)),
+                "evidence_state": "derived",
+            }
+
+    if "release" in set(unit.get("event_kinds", [])):
+        return {
+            "type": "release",
+            "method": "event-kind-v1",
+            "confidence": "high",
+            "matched_terms": [],
+            "evidence_state": "derived",
+        }
+
+    return {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient",
+    }
+
+
 def consolidate_change_units(events: list[dict[str, Any]]) -> list[dict[str, Any]]:
     buckets: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
     for event in events:
@@ -55,13 +117,15 @@ def consolidate_change_units(events: list[dict[str, Any]]) -> list[dict[str, Any
     for (repo, key), members in buckets.items():
         members.sort(key=lambda item: item.get("timestamp") or "", reverse=True)
         primary = max(members, key=lambda m: (int(m.get("materiality", 1)), {"release": 4, "pull_request": 3, "issue": 2, "commit": 1}.get(m["kind"], 0)))
-        units.append({
+        unit = {
             "id": _unit_id(repo, key), "repository": repo, "portfolio": primary["portfolio"], "repo_kind": primary["repo_kind"],
             "title": primary["title"], "timestamp": members[0].get("timestamp"),
             "materiality": max(int(m.get("materiality", 1)) for m in members),
             "event_kinds": sorted({m["kind"] for m in members}), "event_count": len(members),
             "evidence": list(dict.fromkeys(m["url"] for m in members if m.get("url"))), "events": members,
-        })
+        }
+        unit["semantic_change"] = classify_semantic_change(unit)
+        units.append(unit)
     units.sort(key=lambda unit: unit.get("timestamp") or "", reverse=True)
     return units
 
@@ -91,6 +155,49 @@ def _repo_mentions(unit: dict[str, Any], repositories: list[dict[str, Any]]) -> 
     text = " ".join([unit.get("title", "")] + [e.get("title", "") for e in unit.get("events", [])]).lower()
     source = unit["repository"].lower()
     return [repo for repo in repositories if repo["full_name"].lower() != source and (repo["name"].lower() in text or repo["full_name"].lower() in text)]
+
+
+def build_relationship_graph(units: list[dict[str, Any]], repositories: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Materialize only relationships that have explicit evidence in observed change units.
+
+    An edge records an observed reference. It is deliberately not promoted to a
+    dependency, recognition, authority, or interoperability claim without stronger
+    evidence supplied by a future capability.
+    """
+    relationships: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, str]] = set()
+    by_name = {repo["full_name"]: repo for repo in repositories}
+
+    for unit in units:
+        source = unit["repository"]
+        source_repo = by_name.get(source, {})
+        for target in _repo_mentions(unit, repositories):
+            key = (source, target["full_name"], unit["id"])
+            if key in seen:
+                continue
+            seen.add(key)
+            tooling = target.get("name", "").lower() in TOOLING_REPOSITORIES
+            relationships.append({
+                "id": _relationship_id(source, target["full_name"], unit["id"]),
+                "source_repository": source,
+                "target_repository": target["full_name"],
+                "source_portfolio": unit.get("portfolio", source_repo.get("portfolio", "Unclassified")),
+                "target_portfolio": target.get("portfolio", "Unclassified"),
+                "relationship_type": "tooling-publication-reference" if tooling else "observed-reference",
+                "claim_strength": "observed",
+                "formal_dependency": False,
+                "recognition_inferred": False,
+                "authority_inferred": False,
+                "source_change_unit": unit["id"],
+                "semantic_change_type": unit.get("semantic_change", {}).get("type", "unknown"),
+                "evidence": unit.get("evidence", []),
+                "evidence_state": "observed" if unit.get("evidence") else "insufficient",
+            })
+
+    return sorted(
+        relationships,
+        key=lambda item: (item["source_repository"], item["target_repository"], item["source_change_unit"]),
+    )
 
 
 def _explicit_reference_metadata(target: dict[str, Any], source_materiality: int) -> dict[str, Any]:
@@ -156,6 +263,7 @@ def detect_cross_portfolio_seams(units: list[dict[str, Any]], repositories: list
 def analyze_snapshot(snapshot: dict[str, Any], previous: dict[str, Any] | None = None) -> dict[str, Any]:
     snapshot["change_units"] = consolidate_change_units(snapshot.get("events", []))
     snapshot["lifecycle_changes"] = detect_lifecycle_changes(snapshot.get("repositories", []), (previous or {}).get("repositories", [])) if previous else []
+    snapshot["relationships"] = build_relationship_graph(snapshot["change_units"], snapshot.get("repositories", []))
     snapshot["cross_portfolio_seams"] = detect_cross_portfolio_seams(snapshot["change_units"], snapshot.get("repositories", []))
     findings = build_findings(snapshot)
     snapshot["findings"] = apply_dispositions(findings, load_dispositions())
