@@ -38,8 +38,12 @@ jobs:
         run: python -m unittest discover -s tests
       - name: Restore generated observation state
         run: |
-          git fetch origin generated-observations
-          git checkout origin/generated-observations -- data docs
+          if git ls-remote --exit-code --heads origin generated-observations >/dev/null 2>&1; then
+            git fetch origin generated-observations
+            git checkout origin/generated-observations -- data docs
+          else
+            echo "No generated-observations branch exists yet; using the checked-out main baseline."
+          fi
       - name: Collect TrustOverIP evidence
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -75,12 +79,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin generated-observations
+          branch_exists=false
+          if git ls-remote --exit-code --heads origin generated-observations >/dev/null 2>&1; then
+            branch_exists=true
+            git fetch origin generated-observations
+            parent=$(git rev-parse origin/generated-observations)
+          else
+            parent=$(git rev-parse HEAD)
+          fi
           git add data docs
           tree=$(git write-tree)
-          parent=$(git rev-parse origin/generated-observations)
           parent_tree=$(git rev-parse "${parent}^{tree}")
-          if [ "$tree" != "$parent_tree" ]; then
+          if [ "$branch_exists" = false ] || [ "$tree" != "$parent_tree" ]; then
             commit=$(printf '%s\n' "chore(monitor): update weekly ecosystem observations" | git commit-tree "$tree" -p "$parent")
             git push origin "$commit:refs/heads/generated-observations"
           fi
