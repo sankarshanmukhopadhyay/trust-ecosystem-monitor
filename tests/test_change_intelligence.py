@@ -5,6 +5,7 @@ from trust_ecosystem_monitor.intelligence import (
     build_relationship_graph,
     classify_semantic_change,
     consolidate_change_units,
+    detect_change_propagation,
 )
 
 
@@ -150,6 +151,146 @@ class RelationshipGraphTests(unittest.TestCase):
 
         self.assertEqual(1, len(result["relationships"]))
         self.assertEqual("interop", result["change_units"][0]["semantic_change"]["type"])
+
+
+class ChangePropagationTests(unittest.TestCase):
+    def setUp(self):
+        self.repositories = [
+            {"name": "source", "full_name": "example/source", "portfolio": "A", "lifecycle": "active", "url": "https://github.com/example/source"},
+            {"name": "target", "full_name": "example/target", "portfolio": "B", "lifecycle": "active", "url": "https://github.com/example/target"},
+        ]
+
+    def _units(self, events):
+        return consolidate_change_units(events)
+
+    def test_later_explicit_reference_is_observed_follow_up(self):
+        units = self._units([
+            {
+                "repository": "example/target", "portfolio": "B", "repo_kind": "specification",
+                "title": "Change schema field", "timestamp": "2026-09-17T00:00:00Z", "materiality": 5,
+                "kind": "pull_request", "number": 1, "url": "https://github.com/example/target/pull/1",
+            },
+            {
+                "repository": "example/source", "portfolio": "A", "repo_kind": "specification",
+                "title": "Align with example/target schema", "timestamp": "2026-09-17T01:00:00Z", "materiality": 4,
+                "kind": "issue", "number": 2, "url": "https://github.com/example/source/issues/2",
+            },
+        ])
+        relationships = build_relationship_graph(units, self.repositories)
+
+        propagation = detect_change_propagation(units, relationships)
+
+        observed = [item for item in propagation if item["state"] == "observed_follow_up"]
+        self.assertEqual(1, len(observed))
+        self.assertEqual("example/target", observed[0]["referenced_repository"])
+        self.assertEqual("example/source", observed[0]["referencing_repository"])
+        self.assertIsNotNone(observed[0]["trigger_change_unit"])
+        self.assertIsNotNone(observed[0]["responding_change_unit"])
+        self.assertIn("does not establish causation", observed[0]["interpretation"])
+
+    def test_reference_before_target_change_is_not_response_to_later_change(self):
+        units = self._units([
+            {
+                "repository": "example/source", "portfolio": "A", "repo_kind": "specification",
+                "title": "Reference example/target", "timestamp": "2026-09-17T00:00:00Z", "materiality": 4,
+                "kind": "issue", "number": 3, "url": "https://github.com/example/source/issues/3",
+            },
+            {
+                "repository": "example/target", "portfolio": "B", "repo_kind": "specification",
+                "title": "Later protocol change", "timestamp": "2026-09-17T02:00:00Z", "materiality": 5,
+                "kind": "pull_request", "number": 4, "url": "https://github.com/example/target/pull/4",
+            },
+        ])
+        relationships = build_relationship_graph(units, self.repositories)
+
+        propagation = detect_change_propagation(units, relationships)
+
+        self.assertFalse(any(item["state"] == "observed_follow_up" for item in propagation))
+        self.assertTrue(any(item["state"] == "insufficient_history" for item in propagation))
+
+    def test_prior_relationship_can_support_no_follow_up_observed(self):
+        previous = {
+            "change_units": [],
+            "relationships": [
+                {
+                    "id": "rel-prior", "source_repository": "example/source", "target_repository": "example/target",
+                    "source_change_unit": "prior-source", "evidence": ["https://github.com/example/source/issues/1"],
+                }
+            ],
+        }
+        units = self._units([
+            {
+                "repository": "example/target", "portfolio": "B", "repo_kind": "specification",
+                "title": "New normative protocol change", "timestamp": "2026-09-17T03:00:00Z", "materiality": 5,
+                "kind": "pull_request", "number": 5, "url": "https://github.com/example/target/pull/5",
+            }
+        ])
+
+        propagation = detect_change_propagation(units, [], previous)
+
+        absent = [item for item in propagation if item["state"] == "no_follow_up_observed"]
+        self.assertEqual(1, len(absent))
+        self.assertIsNone(absent[0]["responding_change_unit"])
+        self.assertIn("not evidence that follow-up was required", absent[0]["interpretation"])
+
+    def test_first_baseline_does_not_emit_absence_claim(self):
+        units = self._units([
+            {
+                "repository": "example/target", "portfolio": "B", "repo_kind": "specification",
+                "title": "Protocol change", "timestamp": "2026-09-17T03:00:00Z", "materiality": 5,
+                "kind": "pull_request", "number": 6, "url": "https://github.com/example/target/pull/6",
+            }
+        ])
+
+        propagation = detect_change_propagation(units, [], None)
+
+        self.assertFalse(any(item["state"] == "no_follow_up_observed" for item in propagation))
+
+    def test_previous_target_change_can_be_trigger_for_current_follow_up(self):
+        previous_target = self._units([
+            {
+                "repository": "example/target", "portfolio": "B", "repo_kind": "specification",
+                "title": "Schema revision", "timestamp": "2026-09-16T23:00:00Z", "materiality": 5,
+                "kind": "pull_request", "number": 7, "url": "https://github.com/example/target/pull/7",
+            }
+        ])[0]
+        previous = {"change_units": [previous_target], "relationships": []}
+        current_units = self._units([
+            {
+                "repository": "example/source", "portfolio": "A", "repo_kind": "specification",
+                "title": "Update for example/target schema", "timestamp": "2026-09-17T04:00:00Z", "materiality": 4,
+                "kind": "pull_request", "number": 8, "url": "https://github.com/example/source/pull/8",
+            }
+        ])
+        relationships = build_relationship_graph(current_units, self.repositories)
+
+        propagation = detect_change_propagation(current_units, relationships, previous)
+
+        observed = [item for item in propagation if item["state"] == "observed_follow_up"]
+        self.assertEqual(1, len(observed))
+        self.assertEqual(previous_target["id"], observed[0]["trigger_change_unit"])
+
+    def test_analyze_snapshot_publishes_change_propagation(self):
+        snapshot = {
+            "repositories": self.repositories,
+            "events": [
+                {
+                    "repository": "example/target", "portfolio": "B", "repo_kind": "specification",
+                    "title": "Schema change", "timestamp": "2026-09-17T00:00:00Z", "materiality": 5,
+                    "kind": "pull_request", "number": 9, "url": "https://github.com/example/target/pull/9",
+                },
+                {
+                    "repository": "example/source", "portfolio": "A", "repo_kind": "specification",
+                    "title": "Align example/target schema", "timestamp": "2026-09-17T01:00:00Z", "materiality": 4,
+                    "kind": "issue", "number": 10, "url": "https://github.com/example/source/issues/10",
+                },
+            ],
+        }
+
+        result = analyze_snapshot(snapshot)
+
+        self.assertIn("change_propagation", result)
+        self.assertTrue(any(item["state"] == "observed_follow_up" for item in result["change_propagation"]))
 
 
 if __name__ == "__main__":
