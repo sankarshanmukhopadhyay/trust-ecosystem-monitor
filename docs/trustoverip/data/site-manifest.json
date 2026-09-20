@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-17T08:00:43.140357+00:00",
+  "generated_at": "2026-09-20T23:20:41.744580+00:00",
   "week": "2026-W38",
   "pages": [
     "index.html",
@@ -12,12 +12,12 @@
   ],
   "counts": {
     "repositories": 116,
-    "events": 361,
-    "change_units": 163,
-    "findings": 87,
-    "open_findings": 87,
-    "lifecycle_changes": 10,
-    "cross_portfolio_seams": 28,
+    "events": 262,
+    "change_units": 121,
+    "findings": 36,
+    "open_findings": 36,
+    "lifecycle_changes": 0,
+    "cross_portfolio_seams": 15,
     "tooling_publication_observations": 0
   }
 }
