@@ -85,6 +85,24 @@ def _render_taxonomy(snapshot: dict, docs: Path) -> None:
         method = str(repository.get("classification", {}).get("method", "legacy/unknown"))
         counts[method] = counts.get(method, 0) + 1
 
+    relationship_summary = ""
+    relationship_data = docs / "data" / "relationships.json"
+    if relationship_data.exists():
+        try:
+            relationship_payload = json.loads(relationship_data.read_text(encoding="utf-8"))
+            counts = relationship_payload.get("counts", {})
+            relationship_summary = (
+                "<section class='card'>"
+                "<h2>Cross-ecosystem intelligence</h2>"
+                f"<p><strong>{int(counts.get('established', 0))}</strong> established relationships · "
+                f"<strong>{int(counts.get('candidate', 0))}</strong> candidates awaiting stronger evidence or review.</p>"
+                "<p class='muted'>Relationships are derived above profile-local evidence; co-location never implies dependency or alignment.</p>"
+                "<p><a class='button' href='relationships.html'>Open relationship register →</a></p>"
+                "</section>"
+            )
+        except (OSError, json.JSONDecodeError, TypeError, ValueError):
+            relationship_summary = ""
+
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Taxonomy · {PROJECT_TITLE}</title>
 <style>:root{{--ink:#172033;--muted:#657083;--line:#d9dee7;--panel:#f6f8fb;--accent:#075985}}*{{box-sizing:border-box}}body{{margin:0;font:15.5px/1.55 system-ui,-apple-system,sans-serif;color:var(--ink)}}header{{border-bottom:1px solid var(--line);position:sticky;top:0;background:white}}.bar,main,footer{{max-width:1240px;margin:auto;padding:1rem 1.4rem}}.bar{{display:flex;gap:1rem;align-items:center;flex-wrap:wrap}}.brand{{font-weight:750;margin-right:auto}}a{{color:var(--accent)}}.bar a{{text-decoration:none}}.lede{{max-width:900px;color:#39465b}}.metrics{{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin:1.2rem 0}}.metric{{background:var(--panel);border:1px solid var(--line);padding:.8rem;border-radius:.5rem}}.metric strong{{display:block;font-size:1.45rem}}table{{border-collapse:collapse;width:100%;font-size:.93rem}}th,td{{padding:.55rem;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}}th{{background:var(--panel)}}code{{background:var(--panel);padding:.1rem .25rem}}footer{{border-top:1px solid var(--line);color:var(--muted)}}</style></head><body>
 <header><div class="bar"><span class="brand">{PROJECT_TITLE}</span><a href="index.html">Overview</a><a href="findings.html">Findings</a><a href="portfolios.html">Portfolios</a><a href="lifecycle.html">Lifecycle</a><a href="seams.html">Review seams</a><a href="evidence.html">Evidence</a><a href="taxonomy.html">Taxonomy</a><a href="methodology.html">Method</a></div></header>
@@ -216,9 +234,10 @@ h1{{margin:.3rem 0}}.lede{{max-width:850px;color:#39465b;font-size:1.08rem}}.gri
 <header><div><strong>{PROJECT_TITLE}</strong></div></header>
 <main><h1>Monitored trust ecosystems</h1>
 <p class="lede">Independent, evidence-backed observation of GitHub-based trust ecosystems. Taxonomy-review items are shown separately from substantive findings so classification maintenance is not presented as ecosystem operational risk.</p>
+{relationship_summary}
 <div class="grid">{body}</div>
 <h2>Interpretation boundary</h2>
-<p>Co-location in this catalog does not assert a technical, governance or dependency relationship between ecosystems. Cross-ecosystem analysis is a separate capability and must be supported by explicit evidence.</p>
+<p>Co-location in this catalog does not assert a technical, governance or dependency relationship between ecosystems. Cross-ecosystem analysis is separately derived from explicit evidence; candidate and Grade C propositions are never presented as established dependencies.</p>
 </main><footer>Trust Ecosystem Monitor · independently maintained</footer></body></html>"""
     (docs / "index.html").write_text(page, encoding="utf-8")
 
