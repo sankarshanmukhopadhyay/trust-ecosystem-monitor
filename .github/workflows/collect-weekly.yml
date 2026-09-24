@@ -8,6 +8,7 @@ on:
     paths:
       - '.github/workflows/collect-weekly.yml'
       - 'organizations/**'
+      - 'relationships/**'
       - 'trust_ecosystem_monitor/**'
   schedule:
     - cron: '30 21 * * 0'
@@ -71,6 +72,8 @@ jobs:
           docs/trustoverip
           docs/decentralized-identity
           docs/w3c
+      - name: Render cross-ecosystem intelligence
+        run: python -m trust_ecosystem_monitor.cross_ecosystem
       - name: Render ecosystem catalog
         run: python -m trust_ecosystem_monitor site
       - name: Validate current generated state

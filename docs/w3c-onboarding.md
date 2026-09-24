@@ -8,24 +8,38 @@ The W3C GitHub organization contains far more repositories than this monitor can
 
 The W3C profile deliberately uses `explicit_repository` discovery sources only. It does not enumerate `w3c/*` through the GitHub organization API. Repository inclusion is separately governed by `organizations/w3c/admission.toml`.
 
-The governing rule is:
-
 > Ecosystem membership is evidence for discovery, not sufficient authority for monitoring scope.
 
-## Current proving baseline
+## Current governed baseline
 
-The September 2026 baseline contains six repositories. Each has an explicit admission decision, rationale, portfolio and W3C evidence source.
+The 24 September 2026 baseline expands the proving set from six to sixteen repositories because the newly admitted work has direct, evidenced intersection with monitored DIF and/or TrustOverIP work.
 
 | Repository | Portfolio | Admission | Tier |
 | --- | --- | --- | --- |
 | `w3c/vc-data-model` | Verifiable Credentials | included | core |
 | `w3c/vc-data-integrity` | Verifiable Credentials | included | core |
 | `w3c/vc-bitstring-status-list` | Verifiable Credentials | included | core |
+| `w3c/vc-jose-cose` | Verifiable Credentials | included | core |
+| `w3c/vc-json-schema` | Verifiable Credentials | included | related |
+| `w3c/vcalm` | Verifiable Credentials | included | related |
+| `w3c/vc-recognized-entities` | Trust & Recognition | included | core |
 | `w3c/cid` | Identifiers & Control | included | related |
+| `w3c/did` | Identifiers & Control | included | core |
+| `w3c/did-resolution` | Identifiers & Control | included | core |
+| `w3c/did-extensions` | Identifiers & Control | included | related |
+| `w3c/did-rubric` | Identifiers & Control | watch | watch |
 | `w3c/vc-di-bbs` | Privacy & Applied Cryptography | included | related |
+| `w3c/vc-di-eddsa` | Privacy & Applied Cryptography | included | related |
+| `w3c/vc-di-ecdsa` | Privacy & Applied Cryptography | included | related |
 | `w3c/webauthn` | Authentication | included | related |
 
-The baseline is intentionally small. It is a proving set for governed monitoring, not a statement that other W3C repositories are irrelevant.
+The set remains intentionally bounded. It is not a statement that other W3C repositories are irrelevant.
+
+## Why these additions matter
+
+The DID and DID Resolution repositories add the normative identifier/resolution surface that DIF DID Methods and Universal Resolver build against. Recognized Entities adds a distinct trust-and-recognition surface that intersects ToIP trust-registry and governance work. JOSE/COSE, JSON Schema, VCALM and the additional cryptosuites fill material VC interoperability seams that were not represented by the original Data Integrity/BBS-only baseline.
+
+`w3c/did-rubric` is deliberately watch-tier: rubric evolution can change evaluation context, but the rubric is not treated as an implementation dependency.
 
 ## Admission and expansion rule
 
@@ -37,39 +51,33 @@ Adding another W3C repository requires all of the following in repository-owned 
 4. evidence from an authoritative W3C workgroup, publication or tool record; and
 5. a portfolio classification that is defensible from the evidence.
 
-If the evidence is insufficient, the fail-closed result is `review` / `inventory`. That state preserves provenance without authorizing routine activity collection.
+If the evidence is insufficient, the fail-closed result is `review` / `inventory`.
+
+## Cross-ecosystem use
+
+W3C is an independently collected profile. Its inclusion does not itself assert that a W3C artifact is a dependency of DIF or TrustOverIP work. Cross-ecosystem relationships are derived separately and must retain relationship type, directionality, evidence grade, provenance and review state.
+
+This separation allows the monitor to distinguish, for example:
+
+- a normative dependency on a W3C specification;
+- an informative reference such as a resolver implementation listed by a W3C specification;
+- a shared external primitive used independently by two ecosystems; and
+- a merely topical similarity that remains a candidate rather than a published dependency.
 
 ## Runtime collection semantics
 
-Collection depth is enforced by tier:
-
 - `core` and `related`: repository metadata plus commits, issues, pull requests and releases;
 - `watch`: repository metadata plus release signals only;
-- `inventory`: repository identity and discovery/admission provenance only, with no routine activity API calls.
-
-Discovery therefore does not imply deep monitoring, and admission policy is executable rather than descriptive.
+- `inventory`: repository identity and discovery/admission provenance only.
 
 ## Published assurance surfaces
 
-Every W3C run publishes both human-readable and machine-readable scope evidence:
-
-- `w3c/scope.html` — repository-level discovery, admission, tier, rationale, evidence and provenance;
-- `w3c/data/scope.json` — machine-readable scope register;
-- `w3c/data/latest.json` — current generated evidence state; and
-- the standard ecosystem report surfaces for findings, portfolios, lifecycle, seams, evidence, taxonomy and methodology.
-
-The scope register distinguishes discovered, deep-monitored, watch-monitored, inventory-only, review-required and excluded repositories.
+Every W3C run publishes human-readable and machine-readable scope evidence under `docs/w3c/`. Cross-ecosystem publication is generated separately at the catalog root so profile-local evidence remains the source of truth.
 
 ## Operational evidence
 
-The first production W3C publication run on 8 September 2026 completed successfully after the generated-state persistence model was corrected for protected `main`. The workflow now retains generated `data/` and `docs/` state on the automation-owned `generated-observations` branch and deploys Pages only after that state has been persisted.
-
-This operational design keeps source authority and observation authority separate:
-
-- `main` remains the PR-governed source/configuration branch;
-- `generated-observations` is the append-only operational evidence lineage maintained by automation; and
-- GitHub Pages publishes the generated `docs/` artifact from the validated collection run.
+Generated `data/` and `docs/` state is retained on the automation-owned `generated-observations` branch; `main` remains the PR-governed source/configuration branch. Pages deploys only after generated observation state has been persisted.
 
 ## Review boundary
 
-W3C scope should be expanded only when the evidence justifies it. A large organization is not a reason to collect everything, and a low repository count is not a reason to force expansion. The monitor should prefer a small explainable scope over a comprehensive but unauditable one.
+W3C scope should be expanded only when evidence justifies it. A large organization is not a reason to collect everything, and a low repository count is not a reason to force expansion. The monitor should prefer a small explainable scope over a comprehensive but unauditable one.

@@ -67,4 +67,20 @@ def validate(root: str | Path = ".", require_generated: bool = False) -> list[st
         errors.append("missing top-level ecosystem catalog: docs/index.html")
     if not (root / "docs" / "ecosystems.json").exists():
         errors.append("missing top-level ecosystem manifest: docs/ecosystems.json")
+    relationship_json = root / "docs" / "data" / "relationships.json"
+    relationship_html = root / "docs" / "relationships.html"
+    if not relationship_json.exists():
+        errors.append("missing cross-ecosystem relationship data: docs/data/relationships.json")
+    if not relationship_html.exists():
+        errors.append("missing cross-ecosystem relationship register: docs/relationships.html")
+    if relationship_json.exists():
+        try:
+            relationships = json.loads(relationship_json.read_text(encoding="utf-8"))
+            if relationships.get("authority") != "derived":
+                errors.append("cross-ecosystem relationship data must declare authority=derived")
+            for item in relationships.get("relationships", []):
+                if item.get("evidence_grade") == "C" and item.get("publication_state") == "established":
+                    errors.append(f"Grade C relationship published as established: {item.get('id')}")
+        except json.JSONDecodeError as exc:
+            errors.append(f"invalid cross-ecosystem relationship JSON: {exc}")
     return errors

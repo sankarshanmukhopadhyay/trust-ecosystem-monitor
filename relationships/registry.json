@@ -1,0 +1,139 @@
+{
+  "schema_version": "1",
+  "relationships": [
+    {
+      "id": "rel-toip-cred-vcdm2",
+      "source": {
+        "ecosystem": "trustoverip",
+        "repository": "trustoverip/dtgwg-cred-spec",
+        "artifact": "ToIP Credential Specification"
+      },
+      "target": {
+        "ecosystem": "w3c",
+        "repository": "w3c/vc-data-model",
+        "artifact": "Verifiable Credentials Data Model 2.0",
+        "version": "2.0"
+      },
+      "type": "normative_dependency",
+      "direction": "source_to_target",
+      "evidence_grade": "A",
+      "state": "accepted",
+      "rationale": "The ToIP credential specification normatively reuses VC Data Model 2.0 semantics, including the digestMultibase property encoding.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-cred-spec/blob/main/spec/body.md",
+        "https://www.w3.org/TR/vc-data-model-2.0/"
+      ]
+    },
+    {
+      "id": "rel-dif-uniresolver-did-resolution",
+      "source": {
+        "ecosystem": "decentralized-identity",
+        "repository": "decentralized-identity/universal-resolver",
+        "artifact": "Universal Resolver"
+      },
+      "target": {
+        "ecosystem": "w3c",
+        "repository": "w3c/did-resolution",
+        "artifact": "DID Resolution v1"
+      },
+      "type": "implements",
+      "direction": "source_to_target",
+      "evidence_grade": "A",
+      "state": "accepted",
+      "rationale": "Universal Resolver states that it is based on DID Resolution and its driver contract returns DID Resolution results.",
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/blob/main/README.md",
+        "https://github.com/decentralized-identity/universal-resolver/blob/main/docs/driver-development.md",
+        "https://www.w3.org/TR/did-resolution/"
+      ]
+    },
+    {
+      "id": "rel-dif-credential-schemas-vc-json-schema",
+      "source": {
+        "ecosystem": "decentralized-identity",
+        "repository": "decentralized-identity/credential-schemas",
+        "artifact": "DIF Credential Schemas"
+      },
+      "target": {
+        "ecosystem": "w3c",
+        "repository": "w3c/vc-json-schema",
+        "artifact": "Verifiable Credential JSON Schema"
+      },
+      "type": "profiles",
+      "direction": "source_to_target",
+      "evidence_grade": "B",
+      "state": "accepted",
+      "rationale": "DIF credential-schemas guidance explicitly points contributors to W3C VC JSON Schema format and W3C VC standards for compliance.",
+      "evidence": [
+        "https://github.com/decentralized-identity/credential-schemas/blob/main/community-schemas/README.md",
+        "https://www.w3.org/TR/vc-json-schema/"
+      ]
+    },
+    {
+      "id": "rel-w3c-did-resolution-uniresolver",
+      "source": {
+        "ecosystem": "w3c",
+        "repository": "w3c/did-resolution",
+        "artifact": "DID Resolution v1"
+      },
+      "target": {
+        "ecosystem": "decentralized-identity",
+        "repository": "decentralized-identity/universal-resolver",
+        "artifact": "Universal Resolver"
+      },
+      "type": "informative_reference",
+      "direction": "source_to_target",
+      "evidence_grade": "B",
+      "state": "accepted",
+      "rationale": "The W3C DID Resolution specification lists Universal Resolver as a DID resolution resource; this is informative evidence, not a normative dependency.",
+      "evidence": [
+        "https://www.w3.org/TR/did-resolution/",
+        "https://github.com/decentralized-identity/universal-resolver"
+      ]
+    },
+    {
+      "id": "cand-recognized-entities-trqp",
+      "source": {
+        "ecosystem": "w3c",
+        "repository": "w3c/vc-recognized-entities",
+        "artifact": "Verifiable Credentials for Recognized Entities"
+      },
+      "target": {
+        "ecosystem": "trustoverip",
+        "repository": "trustoverip/tswg-trust-registry-protocol",
+        "artifact": "Trust Registry Protocol"
+      },
+      "type": "semantic_overlap",
+      "direction": "undirected",
+      "evidence_grade": "C",
+      "state": "candidate",
+      "rationale": "Both address recognition/trust-infrastructure concerns, but no direct dependency or profiling evidence has yet been established.",
+      "evidence": [
+        "https://www.w3.org/TR/vc-recognized-entities/",
+        "https://github.com/trustoverip/tswg-trust-registry-protocol"
+      ]
+    },
+    {
+      "id": "cand-bbs-toip-zkp",
+      "source": {
+        "ecosystem": "w3c",
+        "repository": "w3c/vc-di-bbs",
+        "artifact": "Data Integrity BBS Cryptosuite"
+      },
+      "target": {
+        "ecosystem": "trustoverip",
+        "repository": "trustoverip/dtgwg-zkp-spec",
+        "artifact": "ToIP ZKP Specification"
+      },
+      "type": "semantic_overlap",
+      "direction": "undirected",
+      "evidence_grade": "C",
+      "state": "candidate",
+      "rationale": "Both concern privacy-preserving proof/selective-disclosure mechanisms; topical overlap alone is insufficient to assert dependency.",
+      "evidence": [
+        "https://www.w3.org/TR/vc-di-bbs/",
+        "https://github.com/trustoverip/dtgwg-zkp-spec"
+      ]
+    }
+  ]
+}
