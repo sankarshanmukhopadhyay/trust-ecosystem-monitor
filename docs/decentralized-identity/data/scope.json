@@ -22,7 +22,7 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-09-20T23:20:53.752964+00:00",
+  "generated_at": "2026-09-24T04:29:31.653241+00:00",
   "counts": {
     "discovered": 269,
     "included": 269,
@@ -2414,7 +2414,7 @@
       "repository": "decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials",
       "url": "https://github.com/decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials",
       "portfolio": "Labs",
-      "lifecycle": "active",
+      "lifecycle": "dormant",
       "admission": {
         "state": "included",
         "tier": "core",

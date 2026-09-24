@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-09-20T23:20:41.744580+00:00",
+  "generated_at": "2026-09-24T04:29:20.883556+00:00",
   "counts": {
-    "discovered": 116,
-    "included": 116,
+    "discovered": 117,
+    "included": 117,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 116,
+    "deep_monitored": 117,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -878,6 +878,30 @@
       "repository": "trustoverip/dtgwg-zkp-tf",
       "url": "https://github.com/trustoverip/dtgwg-zkp-tf",
       "portfolio": "DTG",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/egwg-governance-metamodel",
+      "url": "https://github.com/trustoverip/egwg-governance-metamodel",
+      "portfolio": "EGWG",
       "lifecycle": "active",
       "admission": {
         "state": "included",
