@@ -23,19 +23,27 @@ class W3CBaselineTests(unittest.TestCase):
         discovered = {source.value.lower() for source in self.profile.discovery_sources}
         self.assertEqual(discovered, set(self.decisions))
 
-    def test_every_included_repository_has_evidence(self):
+    def test_every_admitted_or_watched_repository_has_evidence(self):
         for repository, decision in self.decisions.items():
             with self.subTest(repository=repository):
-                self.assertEqual(decision.state, "included")
+                self.assertIn(decision.state, {"included", "watch"})
                 self.assertGreater(len(decision.evidence), 0)
+                if decision.state == "watch":
+                    self.assertEqual(decision.tier, "watch")
 
     def test_baseline_is_bounded(self):
-        self.assertLessEqual(len(self.decisions), 10)
+        self.assertEqual(len(self.decisions), 16)
+        self.assertLessEqual(len(self.decisions), 20)
 
     def test_expected_core_and_related_boundaries(self):
         self.assertEqual(self.decisions["w3c/vc-data-model"].tier, "core")
         self.assertEqual(self.decisions["w3c/webauthn"].tier, "related")
         self.assertTrue(self.decisions["w3c/vc-data-model"].deep_collection_allowed)
+        self.assertEqual(self.decisions["w3c/did"].tier, "core")
+        self.assertEqual(self.decisions["w3c/did-resolution"].tier, "core")
+        self.assertEqual(self.decisions["w3c/vc-recognized-entities"].tier, "core")
+        self.assertEqual(self.decisions["w3c/did-rubric"].tier, "watch")
+        self.assertFalse(self.decisions["w3c/did-rubric"].deep_collection_allowed)
 
 
 if __name__ == "__main__":
