@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "trustoverip",
-  "generated_at": "2026-09-24T04:29:20.883556+00:00",
+  "generated_at": "2026-09-24T04:38:57.498862+00:00",
   "period": {
-    "since": "2026-09-17T04:29:20.883556+00:00",
-    "until": "2026-09-24T04:29:20.883556+00:00",
+    "since": "2026-09-17T04:38:57.498862+00:00",
+    "until": "2026-09-24T04:38:57.498862+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-20T23:20:41.744580+00:00"
+    "previous_snapshot": "2026-09-24T04:29:20.883556+00:00"
   },
   "repositories": [
     {
@@ -9965,21 +9965,21 @@
       "evidence": []
     },
     {
-      "id": "toip-collection-c5acd31b6c7b",
-      "category": "collection",
-      "subject": "trustoverip/dtgwg-ux-tf",
-      "status": "open",
-      "materiality": 3,
-      "summary": "trustoverip/dtgwg-ux-tf:commit: GitHub API 409 for /repos/trustoverip/dtgwg-ux-tf/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
-      "evidence": []
-    },
-    {
       "id": "toip-collection-26868bb0219a",
       "category": "collection",
       "subject": "trustoverip/dtgwg-rcards-tf",
       "status": "open",
       "materiality": 3,
       "summary": "trustoverip/dtgwg-rcards-tf:commit: GitHub API 409 for /repos/trustoverip/dtgwg-rcards-tf/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
+      "evidence": []
+    },
+    {
+      "id": "toip-collection-c5acd31b6c7b",
+      "category": "collection",
+      "subject": "trustoverip/dtgwg-ux-tf",
+      "status": "open",
+      "materiality": 3,
+      "summary": "trustoverip/dtgwg-ux-tf:commit: GitHub API 409 for /repos/trustoverip/dtgwg-ux-tf/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
       "evidence": []
     },
     {
@@ -10012,8 +10012,8 @@
   ],
   "collection_errors": [
     "trustoverip/aimwg-tsp-enabled-ai-agent-protocols:commit: GitHub API 409 for /repos/trustoverip/aimwg-tsp-enabled-ai-agent-protocols/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
-    "trustoverip/dtgwg-ux-tf:commit: GitHub API 409 for /repos/trustoverip/dtgwg-ux-tf/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
     "trustoverip/dtgwg-rcards-tf:commit: GitHub API 409 for /repos/trustoverip/dtgwg-rcards-tf/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
+    "trustoverip/dtgwg-ux-tf:commit: GitHub API 409 for /repos/trustoverip/dtgwg-ux-tf/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
     "trustoverip/kswg-main-glossary:commit: GitHub API 409 for /repos/trustoverip/kswg-main-glossary/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}",
     "trustoverip/kswg-cesr-specification:release: list index out of range",
     "trustoverip/tswg-did-method-webs-specification:commit: GitHub API 409 for /repos/trustoverip/tswg-did-method-webs-specification/commits: {\"message\":\"Git Repository is empty.\",\"documentation_url\":\"https://docs.github.com/rest/commits/commits#list-commits\",\"status\":\"409\"}"
@@ -20786,16 +20786,7 @@
       }
     }
   ],
-  "lifecycle_changes": [
-    {
-      "type": "discovered",
-      "repository": "trustoverip/egwg-governance-metamodel",
-      "portfolio": "EGWG",
-      "from": null,
-      "to": "active",
-      "url": "https://github.com/trustoverip/egwg-governance-metamodel"
-    }
-  ],
+  "lifecycle_changes": [],
   "relationships": [
     {
       "id": "tem-relationship-477a8b173098",
@@ -21498,6 +21489,172 @@
         "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-57f51d927839",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-ca94cc58430b",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T13:28:32Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/commit/4964b286cf8ce19d31c30228a43a8d964daed447",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-20e6b931094c",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-5e447816d291",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T13:50:00Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "api",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/commit/62d8e9a8181c01aa00cade202288496a167f7621",
+        "https://github.com/trustoverip/spec-up-t/pull/327",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-a0638c16c934",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-e5b57475d1e1",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T15:34:34Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/commit/8c34af7d75b6e41daa7c6507df081536697a8ddb",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-6e7285a89593",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-5d8c0415b866",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T15:45:11Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "release",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/commit/8188d0708a8d109ee5ad16a94060f571079fe325",
+        "https://github.com/trustoverip/spec-up-t/commit/59921a264bd82acff7059d7f5ba49c9e57717417",
+        "https://github.com/trustoverip/spec-up-t/commit/f7e735026981d5b252a7abe25e4ca4f50b01fb7d",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-3d315b108c53",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-88e51b85bf54",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T15:46:27Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "api",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/commit/79611dba4c17bffe787803f2b45894de7764a329",
+        "https://github.com/trustoverip/spec-up-t/pull/328",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-7099282aa8e4",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-27d5c27a3385",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T15:59:09Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "release",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/releases/tag/v2.2.0",
+        "https://github.com/trustoverip/spec-up-t/releases/tag/v2.1.0",
+        "https://github.com/trustoverip/spec-up-t/releases/tag/v2.0.0",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-6e29a49f153e",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-c68536033313",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T16:07:07Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "release",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/issues/324",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-162241e0cfcf",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "trustoverip/spec-up-t-website",
+      "referenced_repository": "trustoverip/spec-up-t",
+      "relationship_id": "tem-relationship-7bc9954ab2c9",
+      "trigger_change_unit": "toip-change-715f1444a130",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T16:16:32Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "specification",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/issues/321",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
     {
       "id": "tem-propagation-3bdb842b3250",
@@ -23570,7 +23727,38 @@
       "disposition": null
     }
   ],
-  "watch_propositions": [],
+  "watch_propositions": [
+    {
+      "id": "tem-watch-19e27c8d12ca",
+      "kind": "follow_up_after_referenced_change",
+      "proposition": "Observe whether trustoverip/spec-up-t-website records later explicit follow-up after observed changes in trustoverip/spec-up-t.",
+      "state": "waiting_external",
+      "source_repository": "trustoverip/spec-up-t-website",
+      "target_repository": "trustoverip/spec-up-t",
+      "trigger": {
+        "type": "explicit_follow_up_observed",
+        "condition": "A later change in trustoverip/spec-up-t-website explicitly references trustoverip/spec-up-t after the watched target change."
+      },
+      "source_relationship_id": "tem-relationship-7bc9954ab2c9",
+      "source_propagation_id": "tem-propagation-57f51d927839",
+      "trigger_change_unit": "toip-change-ca94cc58430b",
+      "trigger_timestamp": "2026-09-23T13:28:32Z",
+      "response_change_unit": null,
+      "response_timestamp": null,
+      "created_at": "2026-09-23T13:28:32Z",
+      "last_observed_at": "2026-09-24T04:38:57.498862+00:00",
+      "evidence": [
+        "https://github.com/trustoverip/spec-up-t/commit/4964b286cf8ce19d31c30228a43a8d964daed447",
+        "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22"
+      ],
+      "authority": {
+        "owner": "trust-ecosystem-monitor",
+        "scope": "derived_observation",
+        "upstream_action_authorized": false
+      },
+      "interpretation": "Monitor-owned observation proposition only. A watch does not establish dependency, causation, compatibility impact, compliance, recognition, authority, prediction, breakage, or an upstream obligation. Trigger observation requires reassessment; it does not automatically resolve the proposition."
+    }
+  ],
   "ecosystem_profile": {
     "schema_version": "1",
     "id": "trustoverip",

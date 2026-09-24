@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "w3c",
-  "generated_at": "2026-09-24T04:30:07.590674+00:00",
+  "generated_at": "2026-09-24T04:39:44.419009+00:00",
   "period": {
-    "since": "2026-09-17T04:30:07.590674+00:00",
-    "until": "2026-09-24T04:30:07.590674+00:00",
+    "since": "2026-09-17T04:39:44.419009+00:00",
+    "until": "2026-09-24T04:39:44.419009+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-20T23:21:35.704855+00:00"
+    "previous_snapshot": "2026-09-24T04:30:07.590674+00:00"
   },
   "repositories": [
     {
@@ -47,7 +47,7 @@
           "https://www.w3.org/groups/wg/webauthn/",
           "https://www.w3.org/groups/wg/webauthn/publications/"
         ],
-        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
         "deep_collection_allowed": true
       },
       "classification": {
@@ -89,12 +89,180 @@
           "https://www.w3.org/groups/wg/vc/tools/",
           "https://www.w3.org/groups/wg/vc/publications/"
         ],
-        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
         "deep_collection_allowed": true
       },
       "classification": {
         "method": "override",
         "rule": "cid",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 207496343,
+      "name": "did",
+      "full_name": "w3c/did",
+      "url": "https://github.com/w3c/did",
+      "description": "W3C Decentralized Identifier Specification",
+      "created_at": "2019-09-10T07:46:26Z",
+      "updated_at": "2026-09-22T06:00:59Z",
+      "pushed_at": "2026-08-27T15:30:31Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Identifiers & Control",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/did"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "DID Working Group repository for the Decentralized Identifier specification; foundational to DIF DID methods, DIDComm and resolver work and relevant to ToIP identifier/control semantics"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/did/tools/",
+          "https://www.w3.org/groups/wg/did/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "did",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 239821927,
+      "name": "did-extensions",
+      "full_name": "w3c/did-extensions",
+      "url": "https://github.com/w3c/did-extensions",
+      "description": "Decentralized Identifier Ecosystem Extensions",
+      "created_at": "2020-02-11T17:25:04Z",
+      "updated_at": "2026-09-22T17:31:22Z",
+      "pushed_at": "2026-09-07T22:02:41Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Identifiers & Control",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/did-extensions"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "DID ecosystem extension registry can affect resolver and DID-method interoperability without itself establishing method support"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/did/tools/",
+          "https://www.w3.org/groups/wg/did/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "did-extensions",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 133962339,
+      "name": "did-resolution",
+      "full_name": "w3c/did-resolution",
+      "url": "https://github.com/w3c/did-resolution",
+      "description": "Editor's Draft: Decentralized Identifier Resolution (DID Resolution) 1.0 Specification",
+      "created_at": "2018-05-18T14:05:37Z",
+      "updated_at": "2026-09-11T07:18:48Z",
+      "pushed_at": "2026-08-27T15:30:03Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Identifiers & Control",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/did-resolution"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "DID Working Group deliverable defining DID resolution and dereferencing; directly intersects DIF Universal Resolver and downstream discovery/resolution semantics"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/did/tools/",
+          "https://www.w3.org/TR/did-resolution/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "did-resolution",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 207496536,
+      "name": "did-rubric",
+      "full_name": "w3c/did-rubric",
+      "url": "https://github.com/w3c/did-rubric",
+      "description": "W3C Decentralized Characteristics Rubric v2.0",
+      "created_at": "2019-09-10T07:47:21Z",
+      "updated_at": "2026-09-22T17:22:50Z",
+      "pushed_at": "2026-09-22T17:23:01Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Identifiers & Control",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/did-rubric"
+          }
+        ]
+      },
+      "admission": {
+        "state": "watch",
+        "tier": "watch",
+        "rationale": [
+          "DID Method Rubric evolution is governance/evaluation context relevant to DID method assessment but is not a runtime dependency"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/did/tools/",
+          "https://www.w3.org/groups/wg/did/publications/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": false
+      },
+      "classification": {
+        "method": "override",
+        "rule": "did-rubric",
         "profile": "w3c"
       }
     },
@@ -131,12 +299,138 @@
           "https://www.w3.org/groups/wg/vc/tools/",
           "https://www.w3.org/groups/wg/vc/publications/"
         ],
-        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
         "deep_collection_allowed": true
       },
       "classification": {
         "method": "override",
         "rule": "vc-di-bbs",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 450948445,
+      "name": "vc-di-ecdsa",
+      "full_name": "w3c/vc-di-ecdsa",
+      "url": "https://github.com/w3c/vc-di-ecdsa",
+      "description": "Data Integrity specification for ECDSA using NIST-compliant curves",
+      "created_at": "2022-01-22T22:15:42Z",
+      "updated_at": "2026-09-16T17:20:37Z",
+      "pushed_at": "2026-09-16T17:20:31Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Privacy & Applied Cryptography",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-di-ecdsa"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Data Integrity ECDSA cryptosuite is an interoperability dependency for implementations selecting W3C VC proof mechanisms"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-di-ecdsa/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-di-ecdsa",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 296160423,
+      "name": "vc-di-eddsa",
+      "full_name": "w3c/vc-di-eddsa",
+      "url": "https://github.com/w3c/vc-di-eddsa",
+      "description": "EdDSA Data Integrity Cryptosuites Specification",
+      "created_at": "2020-09-16T22:24:16Z",
+      "updated_at": "2026-09-01T20:44:52Z",
+      "pushed_at": "2026-09-01T20:44:46Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Privacy & Applied Cryptography",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-di-eddsa"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "Data Integrity EdDSA cryptosuite is an interoperability dependency for implementations selecting W3C VC proof mechanisms"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-di-eddsa/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-di-eddsa",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 570999813,
+      "name": "vc-recognized-entities",
+      "full_name": "w3c/vc-recognized-entities",
+      "url": "https://github.com/w3c/vc-recognized-entities",
+      "description": "The Recognized Entities specification defines Verifiable Credentials for recognizing entities and the actions they perform.",
+      "created_at": "2022-11-26T20:34:13Z",
+      "updated_at": "2026-09-23T02:40:16Z",
+      "pushed_at": "2026-09-22T14:39:32Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Trust & Recognition",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-recognized-entities"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "VCWG work on cryptographically verifiable recognition of entities and actions intersects trust-registry, recognition and issuer/verifier governance concerns"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-recognized-entities/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-recognized-entities",
         "profile": "w3c"
       }
     },
@@ -173,7 +467,7 @@
           "https://www.w3.org/groups/wg/vc/tools/",
           "https://www.w3.org/groups/wg/vc/publications/"
         ],
-        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
         "deep_collection_allowed": true
       },
       "classification": {
@@ -215,7 +509,7 @@
           "https://www.w3.org/groups/wg/vc/tools/",
           "https://www.w3.org/groups/wg/vc/publications/"
         ],
-        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
         "deep_collection_allowed": true
       },
       "classification": {
@@ -257,7 +551,7 @@
           "https://www.w3.org/groups/wg/vc/tools/",
           "https://www.w3.org/TR/vc-data-model/all/"
         ],
-        "method": "policy:w3c-trust-standards-baseline-2026-09",
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
         "deep_collection_allowed": true
       },
       "classification": {
@@ -265,9 +559,148 @@
         "rule": "vc-data-model",
         "profile": "w3c"
       }
+    },
+    {
+      "id": 515030687,
+      "name": "vc-jose-cose",
+      "full_name": "w3c/vc-jose-cose",
+      "url": "https://github.com/w3c/vc-jose-cose",
+      "description": "Verifiable Credentials Working Group \u2014 VC JSON Web Tokens specification",
+      "created_at": "2022-07-18T04:10:05Z",
+      "updated_at": "2026-09-11T07:19:11Z",
+      "pushed_at": "2026-08-24T10:38:19Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-jose-cose"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "VCWG JOSE/COSE security mechanisms, including SD-JWT-related credential securing, materially affect VC interoperability choices across DIF and ToIP work"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-jose-cose/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-jose-cose",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 219192996,
+      "name": "vc-json-schema",
+      "full_name": "w3c/vc-json-schema",
+      "url": "https://github.com/w3c/vc-json-schema",
+      "description": "A mechanism to use JSON Schemas with Verifiable Credentials",
+      "created_at": "2019-11-02T17:59:33Z",
+      "updated_at": "2026-08-24T10:39:05Z",
+      "pushed_at": "2026-08-24T10:39:01Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vc-json-schema"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "VCWG credential-schema mechanism intersects DIF credential schema work and ToIP credential validation semantics"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/TR/vc-json-schema/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vc-json-schema",
+        "profile": "w3c"
+      }
+    },
+    {
+      "id": 287404406,
+      "name": "vcalm",
+      "full_name": "w3c/vcalm",
+      "url": "https://github.com/w3c/vcalm",
+      "description": "An HTTP API for performing verifiable credential lifecycle management.",
+      "created_at": "2020-08-14T00:09:39Z",
+      "updated_at": "2026-09-22T19:34:28Z",
+      "pushed_at": "2026-09-22T19:34:22Z",
+      "archived": false,
+      "fork": false,
+      "default_branch": "main",
+      "portfolio": "Verifiable Credentials",
+      "kind": "repository",
+      "lifecycle": "active",
+      "discovery": {
+        "sources": [
+          {
+            "type": "explicit_repository",
+            "value": "w3c/vcalm"
+          }
+        ]
+      },
+      "admission": {
+        "state": "included",
+        "tier": "related",
+        "rationale": [
+          "W3C-hosted VC lifecycle API work covers issuance, verification, presentation and management interfaces with interoperability relevance"
+        ],
+        "evidence": [
+          "https://www.w3.org/groups/wg/vc/tools/",
+          "https://www.w3.org/community/reports/credentials/CG-FINAL-vcalm-20260320/"
+        ],
+        "method": "policy:w3c-trust-standards-baseline-2026-09-24",
+        "deep_collection_allowed": true
+      },
+      "classification": {
+        "method": "override",
+        "rule": "vcalm",
+        "profile": "w3c"
+      }
     }
   ],
   "events": [
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-24T04:10:09Z",
+      "title": "full pass at DID URL dereferencing algorithm (isolated)",
+      "url": "https://github.com/w3c/did-resolution/pull/344",
+      "number": 344,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
     {
       "kind": "issue",
       "repository": "w3c/vc-data-integrity",
@@ -329,6 +762,19 @@
       "title": "Using key pre-rotation in Data Integrity to enable quantum resistance with current cryptography",
       "url": "https://github.com/w3c/vc-data-integrity/issues/373",
       "number": 373,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-23T20:41:07Z",
+      "title": "Add support for FieldMatch (transitive output validations)",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/121",
+      "number": 121,
       "sha": null,
       "state": "open",
       "materiality": 2
@@ -426,6 +872,19 @@
     },
     {
       "kind": "issue",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-23T14:15:57Z",
+      "title": "Treat deactivated DID resolution state as an error code",
+      "url": "https://github.com/w3c/did-resolution/issues/353",
+      "number": 353,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
       "repository": "w3c/vc-data-model",
       "portfolio": "Verifiable Credentials",
       "repo_kind": "repository",
@@ -465,6 +924,58 @@
     },
     {
       "kind": "issue",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-23T07:50:55Z",
+      "title": "MUST implement the exact function signature for DID Resolution?",
+      "url": "https://github.com/w3c/did-resolution/issues/363",
+      "number": 363,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-23T07:46:31Z",
+      "title": "Explain better that function signatures are abstract",
+      "url": "https://github.com/w3c/did-resolution/pull/356",
+      "number": 356,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-23T06:24:21Z",
+      "title": "Draft vocabulary definition",
+      "url": "https://github.com/w3c/vc-recognized-entities/pull/122",
+      "number": 122,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-23T06:09:39Z",
+      "title": "Add normative reference to `jsonata` definition.",
+      "url": "https://github.com/w3c/vcalm/issues/686",
+      "number": 686,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
       "repository": "w3c/webauthn",
       "portfolio": "Authentication",
       "repo_kind": "repository",
@@ -491,6 +1002,305 @@
     },
     {
       "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T21:29:17Z",
+      "title": "Add did:aip method registration (Agent Identity Protocol)",
+      "url": "https://github.com/w3c/did-extensions/pull/689",
+      "number": 689,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T21:17:24Z",
+      "title": "Register did:epn",
+      "url": "https://github.com/w3c/did-extensions/pull/751",
+      "number": 751,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T21:08:46Z",
+      "title": "Register did:aria DID method",
+      "url": "https://github.com/w3c/did-extensions/pull/714",
+      "number": 714,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T21:01:28Z",
+      "title": "add the registered / recognised entity ID to the Data model",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/132",
+      "number": 132,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T20:57:39Z",
+      "title": "Security and Privacy Self-Review Questionnaire for VC Recognized Entities v1.0",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/96",
+      "number": 96,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T20:41:26Z",
+      "title": "Normative references to WhoisService and PathService",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/117",
+      "number": 117,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T19:41:43Z",
+      "title": "Adding appendix with swimlane examples (#2)",
+      "url": "https://github.com/w3c/vcalm/pull/716",
+      "number": 716,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T19:40:08Z",
+      "title": "Add ExchangeVerifiablePresentation option to support exchange specific data",
+      "url": "https://github.com/w3c/vcalm/pull/713",
+      "number": 713,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T19:34:22Z",
+      "title": "Apply git renormalize to mixed line ending files",
+      "url": "https://github.com/w3c/vcalm/pull/721",
+      "number": 721,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T19:34:21Z",
+      "title": "apply git renormalize to files",
+      "url": "https://github.com/w3c/vcalm/commit/20f5dd50fa8e958b684fccb81d737383406124b0",
+      "number": null,
+      "sha": "20f5dd50fa8e958b684fccb81d737383406124b0",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T19:26:44Z",
+      "title": "Replace `firstName` with i18n appropriate `givenName` in VPR example",
+      "url": "https://github.com/w3c/vcalm/pull/727",
+      "number": 727,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T19:23:57Z",
+      "title": "Adding credentialOffer parameter to the VerifiablePresenationRequest",
+      "url": "https://github.com/w3c/vcalm/pull/728",
+      "number": 728,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T19:00:40Z",
+      "title": "Specify proper format for date/time properties",
+      "url": "https://github.com/w3c/vcalm/pull/729",
+      "number": 729,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T18:54:34Z",
+      "title": "Add contact email and website for did:meta",
+      "url": "https://github.com/w3c/did-extensions/pull/752",
+      "number": 752,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T18:43:46Z",
+      "title": "Include optional `credentialOffer` property in a VPR that announces VCs to be issued in step",
+      "url": "https://github.com/w3c/vcalm/issues/689",
+      "number": 689,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T18:39:44Z",
+      "title": "Add did:vireo method",
+      "url": "https://github.com/w3c/did-extensions/pull/755",
+      "number": 755,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T18:22:14Z",
+      "title": "`created` field is defined as a string?",
+      "url": "https://github.com/w3c/vcalm/issues/725",
+      "number": 725,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T18:21:12Z",
+      "title": "Register did:cimd - a DID method for AI agents and MCP clients (resolved from the OAuth Client ID Metadata Document, no ledger)",
+      "url": "https://github.com/w3c/did-extensions/pull/756",
+      "number": 756,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T17:58:35Z",
+      "title": "Adding `credentialOffer` to VPR",
+      "url": "https://github.com/w3c/vcalm/pull/705",
+      "number": 705,
+      "sha": null,
+      "state": "closed",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T17:07:08Z",
+      "title": "Use more globally correct example; editorial nit",
+      "url": "https://github.com/w3c/vcalm/issues/724",
+      "number": 724,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T16:50:25Z",
+      "title": "Resolve tension between Threat Model and Privacy & Security Considerations (#711)",
+      "url": "https://github.com/w3c/vcalm/commit/5becd48eed5eb9ed2350e0c9d89bcb084361080c",
+      "number": null,
+      "sha": "5becd48eed5eb9ed2350e0c9d89bcb084361080c",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T16:50:25Z",
+      "title": "Resolve tension between Threat Model and Privacy & Security Considerations",
+      "url": "https://github.com/w3c/vcalm/pull/711",
+      "number": 711,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T16:49:16Z",
+      "title": "Sync threat file names with changes to threat names",
+      "url": "https://github.com/w3c/vcalm/issues/726",
+      "number": 726,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
       "repository": "w3c/vc-data-integrity",
       "portfolio": "Verifiable Credentials",
       "repo_kind": "repository",
@@ -498,6 +1308,71 @@
       "title": "Fix Salted Hash of Claims Algorithms",
       "url": "https://github.com/w3c/vc-data-integrity/pull/371",
       "number": 371,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T16:29:44Z",
+      "title": "Documenting localizable text in examples",
+      "url": "https://github.com/w3c/vcalm/issues/723",
+      "number": 723,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T14:47:21Z",
+      "title": "Create vocabulary term definitions and anchors in spec",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/92",
+      "number": 92,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T14:28:44Z",
+      "title": "Register did:rodit method",
+      "url": "https://github.com/w3c/did-extensions/pull/757",
+      "number": 757,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T14:07:07Z",
+      "title": "Register did:youling and did:myco methods",
+      "url": "https://github.com/w3c/did-extensions/pull/758",
+      "number": 758,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T14:02:33Z",
+      "title": "Deprecate four error entries whose DID Resolution definitions were removed",
+      "url": "https://github.com/w3c/did-extensions/pull/760",
+      "number": 760,
       "sha": null,
       "state": "open",
       "materiality": 3
@@ -516,6 +1391,201 @@
       "materiality": 2
     },
     {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:09:17Z",
+      "title": "Add Privacy Considerations on Verifiable Recognition Credential delivery mechanisms",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/56",
+      "number": 56,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "title": "Fix UTF-8 markup issues in threat T4.",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/3a9b7521971e99cd3c0bb41cc01fcde10cb25282",
+      "number": null,
+      "sha": "3a9b7521971e99cd3c0bb41cc01fcde10cb25282",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "title": "Clarify threat nuances when fetching recognized entity credential.",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/e8aad3474cfc0cf387da240889ce5f2d18c584cd",
+      "number": null,
+      "sha": "e8aad3474cfc0cf387da240889ce5f2d18c584cd",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "title": "Explain most-to-least privacy preserving way to fetch a REC.",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/9bb1564983279c5059f6b555c81df1680055dcc3",
+      "number": null,
+      "sha": "9bb1564983279c5059f6b555c81df1680055dcc3",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "title": "Explain most-to-least privacy preserving way to fetch a recognized entity credential",
+      "url": "https://github.com/w3c/vc-recognized-entities/pull/129",
+      "number": 129,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:00:52Z",
+      "title": "Separate discovery from verification in the Algorithms section",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/105",
+      "number": 105,
+      "sha": null,
+      "state": "closed",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:00:36Z",
+      "title": "Refactor Algorithms to extract Recognition Validation algorithm.",
+      "url": "https://github.com/w3c/vc-recognized-entities/pull/128",
+      "number": 128,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "title": "Clarify how identifier comparison is performed.",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/f6955af49d2329af25911c15253b2f936af3996f",
+      "number": null,
+      "sha": "f6955af49d2329af25911c15253b2f936af3996f",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "title": "Fix grammar throughout recognition validation algorithm",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/2cb91636d40f6e308531eb8fa6bcdc64e28db062",
+      "number": null,
+      "sha": "2cb91636d40f6e308531eb8fa6bcdc64e28db062",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "title": "Refactor after ensuring Recognition Validation can be implemented.",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/76e1683925bb3603432d1c8a3cc24665a0a4348b",
+      "number": null,
+      "sha": "76e1683925bb3603432d1c8a3cc24665a0a4348b",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "title": "Refactor Recognition Verification out of Algorithms.",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/b7c23b71dc99757a0b05cf7897161289f9a75712",
+      "number": null,
+      "sha": "b7c23b71dc99757a0b05cf7897161289f9a75712",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T01:32:43Z",
+      "title": "threat model is not a sufficient replacement for privacy considerations and security considerations",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/130",
+      "number": 130,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T01:23:59Z",
+      "title": "recommendations for distributing recognized entities credentials to avoid privacy leakage?",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/131",
+      "number": 131,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "commit",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-22T01:17:38Z",
+      "title": "Update name of threat model.",
+      "url": "https://github.com/w3c/vc-recognized-entities/commit/75512fad7869fe5fa6511d9cf6b1556a9a3c996f",
+      "number": null,
+      "sha": "75512fad7869fe5fa6511d9cf6b1556a9a3c996f",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/did",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-21T22:31:34Z",
+      "title": "Update short name in spec and repo to match TR space publication",
+      "url": "https://github.com/w3c/did/issues/936",
+      "number": 936,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
       "kind": "pull_request",
       "repository": "w3c/vc-data-integrity",
       "portfolio": "Verifiable Credentials",
@@ -527,6 +1597,19 @@
       "sha": null,
       "state": "open",
       "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-21T14:50:29Z",
+      "title": "Registration process clarification for did:maatara: metadata entry and IP commitments",
+      "url": "https://github.com/w3c/did-extensions/issues/759",
+      "number": 759,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
     },
     {
       "kind": "pull_request",
@@ -594,6 +1677,19 @@
       "materiality": 1
     },
     {
+      "kind": "issue",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-20T08:05:27Z",
+      "title": "Rethinking verifying recognition chains",
+      "url": "https://github.com/w3c/vc-recognized-entities/issues/85",
+      "number": 85,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
       "kind": "commit",
       "repository": "w3c/vc-data-integrity",
       "portfolio": "Verifiable Credentials",
@@ -620,6 +1716,32 @@
       "materiality": 4
     },
     {
+      "kind": "pull_request",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-19T15:27:51Z",
+      "title": "Update did:aip registration to v2 (Solana to ERC-8004)",
+      "url": "https://github.com/w3c/did-extensions/pull/750",
+      "number": 750,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-18T15:57:46Z",
+      "title": "Link to `webs` method is broken",
+      "url": "https://github.com/w3c/did-extensions/issues/754",
+      "number": 754,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
       "kind": "issue",
       "repository": "w3c/webauthn",
       "portfolio": "Authentication",
@@ -631,6 +1753,19 @@
       "sha": null,
       "state": "open",
       "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-17T21:53:15Z",
+      "title": "Emphasize DID URL dereferencing \"algorithm\" over \"function\"",
+      "url": "https://github.com/w3c/did-resolution/pull/362",
+      "number": 362,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
     },
     {
       "kind": "issue",
@@ -670,11 +1805,64 @@
       "sha": null,
       "state": "merged",
       "materiality": 4
+    },
+    {
+      "kind": "issue",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "timestamp": "2026-09-17T14:39:21Z",
+      "title": "How to express inputs and results of the algorithms?",
+      "url": "https://github.com/w3c/did-resolution/issues/361",
+      "number": 361,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
     }
   ],
   "assertions": [],
   "collection_errors": [],
   "change_units": [
+    {
+      "id": "toip-change-8699355370fc",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "full pass at DID URL dereferencing algorithm (isolated)",
+      "timestamp": "2026-09-24T04:10:09Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-resolution/pull/344"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-resolution",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-24T04:10:09Z",
+          "title": "full pass at DID URL dereferencing algorithm (isolated)",
+          "url": "https://github.com/w3c/did-resolution/pull/344",
+          "number": 344,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "ci"
+        ],
+        "evidence_state": "derived"
+      }
+    },
     {
       "id": "toip-change-5e91e82bf68c",
       "repository": "w3c/vc-data-integrity",
@@ -865,6 +2053,46 @@
         "confidence": "low",
         "matched_terms": [],
         "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-6c4c2bba581f",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Add support for FieldMatch (transitive output validations)",
+      "timestamp": "2026-09-23T20:41:07Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/121"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-23T20:41:07Z",
+          "title": "Add support for FieldMatch (transitive output validations)",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/121",
+          "number": 121,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "schema",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "field"
+        ],
+        "evidence_state": "derived"
       }
     },
     {
@@ -1138,6 +2366,46 @@
       }
     },
     {
+      "id": "toip-change-c8a243c1ffd4",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Treat deactivated DID resolution state as an error code",
+      "timestamp": "2026-09-23T14:15:57Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-resolution/issues/353"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/did-resolution",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-23T14:15:57Z",
+          "title": "Treat deactivated DID resolution state as an error code",
+          "url": "https://github.com/w3c/did-resolution/issues/353",
+          "number": 353,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "code"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
       "id": "toip-change-6c984b3ecab5",
       "repository": "w3c/vc-data-model",
       "portfolio": "Verifiable Credentials",
@@ -1256,6 +2524,164 @@
       }
     },
     {
+      "id": "toip-change-4807655c0b39",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "MUST implement the exact function signature for DID Resolution?",
+      "timestamp": "2026-09-23T07:50:55Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-resolution/issues/363"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/did-resolution",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-23T07:50:55Z",
+          "title": "MUST implement the exact function signature for DID Resolution?",
+          "url": "https://github.com/w3c/did-resolution/issues/363",
+          "number": 363,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "must "
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-faec8af4280c",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Explain better that function signatures are abstract",
+      "timestamp": "2026-09-23T07:46:31Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-resolution/pull/356"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-resolution",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-23T07:46:31Z",
+          "title": "Explain better that function signatures are abstract",
+          "url": "https://github.com/w3c/did-resolution/pull/356",
+          "number": 356,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-0b3d90ea11e9",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Draft vocabulary definition",
+      "timestamp": "2026-09-23T06:24:21Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/pull/122"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-23T06:24:21Z",
+          "title": "Draft vocabulary definition",
+          "url": "https://github.com/w3c/vc-recognized-entities/pull/122",
+          "number": 122,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "draft"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-f0746b122556",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add normative reference to `jsonata` definition.",
+      "timestamp": "2026-09-23T06:09:39Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/issues/686"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-23T06:09:39Z",
+          "title": "Add normative reference to `jsonata` definition.",
+          "url": "https://github.com/w3c/vcalm/issues/686",
+          "number": 686,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "normative"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
       "id": "toip-change-82a7cc9d038f",
       "repository": "w3c/webauthn",
       "portfolio": "Authentication",
@@ -1332,6 +2758,882 @@
       }
     },
     {
+      "id": "toip-change-c98089cfe4fe",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Add did:aip method registration (Agent Identity Protocol)",
+      "timestamp": "2026-09-22T21:29:17Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/689"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T21:29:17Z",
+          "title": "Add did:aip method registration (Agent Identity Protocol)",
+          "url": "https://github.com/w3c/did-extensions/pull/689",
+          "number": 689,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "protocol"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-1c8d959fd565",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Register did:epn",
+      "timestamp": "2026-09-22T21:17:24Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/751"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T21:17:24Z",
+          "title": "Register did:epn",
+          "url": "https://github.com/w3c/did-extensions/pull/751",
+          "number": 751,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-6b7a80f0c416",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Register did:aria DID method",
+      "timestamp": "2026-09-22T21:08:46Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/714"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T21:08:46Z",
+          "title": "Register did:aria DID method",
+          "url": "https://github.com/w3c/did-extensions/pull/714",
+          "number": 714,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-c04cf15d2ee6",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "add the registered / recognised entity ID to the Data model",
+      "timestamp": "2026-09-22T21:01:28Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/132"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T21:01:28Z",
+          "title": "add the registered / recognised entity ID to the Data model",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/132",
+          "number": 132,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-aa1340a88c89",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Security and Privacy Self-Review Questionnaire for VC Recognized Entities v1.0",
+      "timestamp": "2026-09-22T20:57:39Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/96"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T20:57:39Z",
+          "title": "Security and Privacy Self-Review Questionnaire for VC Recognized Entities v1.0",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/96",
+          "number": 96,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "security",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "security"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-0e3dc22a64b6",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Normative references to WhoisService and PathService",
+      "timestamp": "2026-09-22T20:41:26Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/117"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T20:41:26Z",
+          "title": "Normative references to WhoisService and PathService",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/117",
+          "number": 117,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "normative"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-b2f9ce797522",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Adding appendix with swimlane examples (#2)",
+      "timestamp": "2026-09-22T19:41:43Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/pull/716"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T19:41:43Z",
+          "title": "Adding appendix with swimlane examples (#2)",
+          "url": "https://github.com/w3c/vcalm/pull/716",
+          "number": 716,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-f9c17ecfdcbf",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Add ExchangeVerifiablePresentation option to support exchange specific data",
+      "timestamp": "2026-09-22T19:40:08Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/pull/713"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T19:40:08Z",
+          "title": "Add ExchangeVerifiablePresentation option to support exchange specific data",
+          "url": "https://github.com/w3c/vcalm/pull/713",
+          "number": 713,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-ae0e59c91bd4",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Apply git renormalize to mixed line ending files",
+      "timestamp": "2026-09-22T19:34:22Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/pull/721"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T19:34:22Z",
+          "title": "Apply git renormalize to mixed line ending files",
+          "url": "https://github.com/w3c/vcalm/pull/721",
+          "number": 721,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-759a823ef2e9",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "apply git renormalize to files",
+      "timestamp": "2026-09-22T19:34:21Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/commit/20f5dd50fa8e958b684fccb81d737383406124b0"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T19:34:21Z",
+          "title": "apply git renormalize to files",
+          "url": "https://github.com/w3c/vcalm/commit/20f5dd50fa8e958b684fccb81d737383406124b0",
+          "number": null,
+          "sha": "20f5dd50fa8e958b684fccb81d737383406124b0",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-8c558dc8533a",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Replace `firstName` with i18n appropriate `givenName` in VPR example",
+      "timestamp": "2026-09-22T19:26:44Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/pull/727"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T19:26:44Z",
+          "title": "Replace `firstName` with i18n appropriate `givenName` in VPR example",
+          "url": "https://github.com/w3c/vcalm/pull/727",
+          "number": 727,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-de40bdb23d28",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Adding credentialOffer parameter to the VerifiablePresenationRequest",
+      "timestamp": "2026-09-22T19:23:57Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/pull/728"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T19:23:57Z",
+          "title": "Adding credentialOffer parameter to the VerifiablePresenationRequest",
+          "url": "https://github.com/w3c/vcalm/pull/728",
+          "number": 728,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "api",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "request"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-b97ec0f8a72c",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Specify proper format for date/time properties",
+      "timestamp": "2026-09-22T19:00:40Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/pull/729"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T19:00:40Z",
+          "title": "Specify proper format for date/time properties",
+          "url": "https://github.com/w3c/vcalm/pull/729",
+          "number": 729,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-031281278cb0",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Add contact email and website for did:meta",
+      "timestamp": "2026-09-22T18:54:34Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/752"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T18:54:34Z",
+          "title": "Add contact email and website for did:meta",
+          "url": "https://github.com/w3c/did-extensions/pull/752",
+          "number": 752,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-0598ee815f10",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Include optional `credentialOffer` property in a VPR that announces VCs to be issued in step",
+      "timestamp": "2026-09-22T18:43:46Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/issues/689"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T18:43:46Z",
+          "title": "Include optional `credentialOffer` property in a VPR that announces VCs to be issued in step",
+          "url": "https://github.com/w3c/vcalm/issues/689",
+          "number": 689,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "schema",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "property"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-6a47b5eb3e0f",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Add did:vireo method",
+      "timestamp": "2026-09-22T18:39:44Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/755"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T18:39:44Z",
+          "title": "Add did:vireo method",
+          "url": "https://github.com/w3c/did-extensions/pull/755",
+          "number": 755,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-3c171110b0cc",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "`created` field is defined as a string?",
+      "timestamp": "2026-09-22T18:22:14Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/issues/725"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T18:22:14Z",
+          "title": "`created` field is defined as a string?",
+          "url": "https://github.com/w3c/vcalm/issues/725",
+          "number": 725,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "schema",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "field"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-0727082801ee",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Register did:cimd - a DID method for AI agents and MCP clients (resolved from the OAuth Client ID Metadata Document, no ledger)",
+      "timestamp": "2026-09-22T18:21:12Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/756"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T18:21:12Z",
+          "title": "Register did:cimd - a DID method for AI agents and MCP clients (resolved from the OAuth Client ID Metadata Document, no ledger)",
+          "url": "https://github.com/w3c/did-extensions/pull/756",
+          "number": 756,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "ci"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-174f2bdc5f14",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Adding `credentialOffer` to VPR",
+      "timestamp": "2026-09-22T17:58:35Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/pull/705"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T17:58:35Z",
+          "title": "Adding `credentialOffer` to VPR",
+          "url": "https://github.com/w3c/vcalm/pull/705",
+          "number": 705,
+          "sha": null,
+          "state": "closed",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-e423530e8be4",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Use more globally correct example; editorial nit",
+      "timestamp": "2026-09-22T17:07:08Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/issues/724"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T17:07:08Z",
+          "title": "Use more globally correct example; editorial nit",
+          "url": "https://github.com/w3c/vcalm/issues/724",
+          "number": 724,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "editorial",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "editorial"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-f781d5f46095",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Resolve tension between Threat Model and Privacy & Security Considerations",
+      "timestamp": "2026-09-22T16:50:25Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/w3c/vcalm/commit/5becd48eed5eb9ed2350e0c9d89bcb084361080c",
+        "https://github.com/w3c/vcalm/pull/711"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T16:50:25Z",
+          "title": "Resolve tension between Threat Model and Privacy & Security Considerations (#711)",
+          "url": "https://github.com/w3c/vcalm/commit/5becd48eed5eb9ed2350e0c9d89bcb084361080c",
+          "number": null,
+          "sha": "5becd48eed5eb9ed2350e0c9d89bcb084361080c",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T16:50:25Z",
+          "title": "Resolve tension between Threat Model and Privacy & Security Considerations",
+          "url": "https://github.com/w3c/vcalm/pull/711",
+          "number": 711,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "security",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "security",
+          "threat"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-128531e0770a",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Sync threat file names with changes to threat names",
+      "timestamp": "2026-09-22T16:49:16Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/issues/726"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T16:49:16Z",
+          "title": "Sync threat file names with changes to threat names",
+          "url": "https://github.com/w3c/vcalm/issues/726",
+          "number": 726,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "security",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "threat"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
       "id": "toip-change-989b581a4506",
       "repository": "w3c/vc-data-integrity",
       "portfolio": "Verifiable Credentials",
@@ -1367,6 +3669,200 @@
         "confidence": "moderate",
         "matched_terms": [
           "fix"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-ae553c5bb729",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Documenting localizable text in examples",
+      "timestamp": "2026-09-22T16:29:44Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vcalm/issues/723"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vcalm",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T16:29:44Z",
+          "title": "Documenting localizable text in examples",
+          "url": "https://github.com/w3c/vcalm/issues/723",
+          "number": 723,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-ce042a45a6ef",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Create vocabulary term definitions and anchors in spec",
+      "timestamp": "2026-09-22T14:47:21Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/92"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T14:47:21Z",
+          "title": "Create vocabulary term definitions and anchors in spec",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/92",
+          "number": 92,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-9ffed00e5726",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Register did:rodit method",
+      "timestamp": "2026-09-22T14:28:44Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/757"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T14:28:44Z",
+          "title": "Register did:rodit method",
+          "url": "https://github.com/w3c/did-extensions/pull/757",
+          "number": 757,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-68c88cedf1a8",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Register did:youling and did:myco methods",
+      "timestamp": "2026-09-22T14:07:07Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/758"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T14:07:07Z",
+          "title": "Register did:youling and did:myco methods",
+          "url": "https://github.com/w3c/did-extensions/pull/758",
+          "number": 758,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-7749d6af7756",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Deprecate four error entries whose DID Resolution definitions were removed",
+      "timestamp": "2026-09-22T14:02:33Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/760"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T14:02:33Z",
+          "title": "Deprecate four error entries whose DID Resolution definitions were removed",
+          "url": "https://github.com/w3c/did-extensions/pull/760",
+          "number": 760,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "lifecycle",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "deprecat"
         ],
         "evidence_state": "derived"
       }
@@ -1412,6 +3908,604 @@
       }
     },
     {
+      "id": "toip-change-5604bdb53296",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Add Privacy Considerations on Verifiable Recognition Credential delivery mechanisms",
+      "timestamp": "2026-09-22T02:09:17Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/56"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:09:17Z",
+          "title": "Add Privacy Considerations on Verifiable Recognition Credential delivery mechanisms",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/56",
+          "number": 56,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "privacy",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "privacy"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-e305ba77c15e",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Fix UTF-8 markup issues in threat T4.",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/3a9b7521971e99cd3c0bb41cc01fcde10cb25282"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:08:49Z",
+          "title": "Fix UTF-8 markup issues in threat T4.",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/3a9b7521971e99cd3c0bb41cc01fcde10cb25282",
+          "number": null,
+          "sha": "3a9b7521971e99cd3c0bb41cc01fcde10cb25282",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "security",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "threat"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-47b742b1913a",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Clarify threat nuances when fetching recognized entity credential.",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/e8aad3474cfc0cf387da240889ce5f2d18c584cd"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:08:49Z",
+          "title": "Clarify threat nuances when fetching recognized entity credential.",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/e8aad3474cfc0cf387da240889ce5f2d18c584cd",
+          "number": null,
+          "sha": "e8aad3474cfc0cf387da240889ce5f2d18c584cd",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "security",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "threat"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-e45d1cf051f3",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Explain most-to-least privacy preserving way to fetch a REC.",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/9bb1564983279c5059f6b555c81df1680055dcc3"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:08:49Z",
+          "title": "Explain most-to-least privacy preserving way to fetch a REC.",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/9bb1564983279c5059f6b555c81df1680055dcc3",
+          "number": null,
+          "sha": "9bb1564983279c5059f6b555c81df1680055dcc3",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "privacy",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "privacy"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-49cdf352b9e1",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Explain most-to-least privacy preserving way to fetch a recognized entity credential",
+      "timestamp": "2026-09-22T02:08:49Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/pull/129"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:08:49Z",
+          "title": "Explain most-to-least privacy preserving way to fetch a recognized entity credential",
+          "url": "https://github.com/w3c/vc-recognized-entities/pull/129",
+          "number": 129,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "privacy",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "privacy"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-7c095c67a5a6",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Separate discovery from verification in the Algorithms section",
+      "timestamp": "2026-09-22T02:00:52Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/105"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:00:52Z",
+          "title": "Separate discovery from verification in the Algorithms section",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/105",
+          "number": 105,
+          "sha": null,
+          "state": "closed",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-eda0463ed0c5",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Refactor Algorithms to extract Recognition Validation algorithm.",
+      "timestamp": "2026-09-22T02:00:36Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/pull/128"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:00:36Z",
+          "title": "Refactor Algorithms to extract Recognition Validation algorithm.",
+          "url": "https://github.com/w3c/vc-recognized-entities/pull/128",
+          "number": 128,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "refactor"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-cbd223c644c4",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Clarify how identifier comparison is performed.",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/f6955af49d2329af25911c15253b2f936af3996f"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:00:35Z",
+          "title": "Clarify how identifier comparison is performed.",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/f6955af49d2329af25911c15253b2f936af3996f",
+          "number": null,
+          "sha": "f6955af49d2329af25911c15253b2f936af3996f",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-a01220c56c67",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Fix grammar throughout recognition validation algorithm",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/2cb91636d40f6e308531eb8fa6bcdc64e28db062"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:00:35Z",
+          "title": "Fix grammar throughout recognition validation algorithm",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/2cb91636d40f6e308531eb8fa6bcdc64e28db062",
+          "number": null,
+          "sha": "2cb91636d40f6e308531eb8fa6bcdc64e28db062",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "fix"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-ac317f40d6a9",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Refactor after ensuring Recognition Validation can be implemented.",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/76e1683925bb3603432d1c8a3cc24665a0a4348b"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:00:35Z",
+          "title": "Refactor after ensuring Recognition Validation can be implemented.",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/76e1683925bb3603432d1c8a3cc24665a0a4348b",
+          "number": null,
+          "sha": "76e1683925bb3603432d1c8a3cc24665a0a4348b",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "implement",
+          "refactor"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-9c6ada2e103c",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Refactor Recognition Verification out of Algorithms.",
+      "timestamp": "2026-09-22T02:00:35Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/b7c23b71dc99757a0b05cf7897161289f9a75712"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T02:00:35Z",
+          "title": "Refactor Recognition Verification out of Algorithms.",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/b7c23b71dc99757a0b05cf7897161289f9a75712",
+          "number": null,
+          "sha": "b7c23b71dc99757a0b05cf7897161289f9a75712",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "refactor"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-8e43d1f1748e",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "threat model is not a sufficient replacement for privacy considerations and security considerations",
+      "timestamp": "2026-09-22T01:32:43Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/130"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T01:32:43Z",
+          "title": "threat model is not a sufficient replacement for privacy considerations and security considerations",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/130",
+          "number": 130,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "security",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "security",
+          "threat"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-5ae89a8e27e5",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "recommendations for distributing recognized entities credentials to avoid privacy leakage?",
+      "timestamp": "2026-09-22T01:23:59Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/131"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T01:23:59Z",
+          "title": "recommendations for distributing recognized entities credentials to avoid privacy leakage?",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/131",
+          "number": 131,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "privacy",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "privacy"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-e9158e757420",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Update name of threat model.",
+      "timestamp": "2026-09-22T01:17:38Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/commit/75512fad7869fe5fa6511d9cf6b1556a9a3c996f"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-22T01:17:38Z",
+          "title": "Update name of threat model.",
+          "url": "https://github.com/w3c/vc-recognized-entities/commit/75512fad7869fe5fa6511d9cf6b1556a9a3c996f",
+          "number": null,
+          "sha": "75512fad7869fe5fa6511d9cf6b1556a9a3c996f",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "security",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "threat"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-23af49f0e91e",
+      "repository": "w3c/did",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Update short name in spec and repo to match TR space publication",
+      "timestamp": "2026-09-21T22:31:34Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did/issues/936"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/did",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-21T22:31:34Z",
+          "title": "Update short name in spec and repo to match TR space publication",
+          "url": "https://github.com/w3c/did/issues/936",
+          "number": 936,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
       "id": "toip-change-c12db77d4dfa",
       "repository": "w3c/vc-data-integrity",
       "portfolio": "Verifiable Credentials",
@@ -1449,6 +4543,44 @@
           "fix"
         ],
         "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-0971fb6c727e",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Registration process clarification for did:maatara: metadata entry and IP commitments",
+      "timestamp": "2026-09-21T14:50:29Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/issues/759"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-21T14:50:29Z",
+          "title": "Registration process clarification for did:maatara: metadata entry and IP commitments",
+          "url": "https://github.com/w3c/did-extensions/issues/759",
+          "number": 759,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
       }
     },
     {
@@ -1650,6 +4782,44 @@
       }
     },
     {
+      "id": "toip-change-f78f2aca227e",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "repo_kind": "repository",
+      "title": "Rethinking verifying recognition chains",
+      "timestamp": "2026-09-20T08:05:27Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-recognized-entities/issues/85"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-recognized-entities",
+          "portfolio": "Trust & Recognition",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-20T08:05:27Z",
+          "title": "Rethinking verifying recognition chains",
+          "url": "https://github.com/w3c/vc-recognized-entities/issues/85",
+          "number": 85,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
       "id": "toip-change-2180df5f3f21",
       "repository": "w3c/vc-data-integrity",
       "portfolio": "Verifiable Credentials",
@@ -1703,6 +4873,82 @@
       }
     },
     {
+      "id": "toip-change-f6dea76c2d61",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Update did:aip registration to v2 (Solana to ERC-8004)",
+      "timestamp": "2026-09-19T15:27:51Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/750"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-19T15:27:51Z",
+          "title": "Update did:aip registration to v2 (Solana to ERC-8004)",
+          "url": "https://github.com/w3c/did-extensions/pull/750",
+          "number": 750,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-052b61139111",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Link to `webs` method is broken",
+      "timestamp": "2026-09-18T15:57:46Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-extensions/issues/754"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/did-extensions",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-18T15:57:46Z",
+          "title": "Link to `webs` method is broken",
+          "url": "https://github.com/w3c/did-extensions/issues/754",
+          "number": 754,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
       "id": "toip-change-5e3c4d2de161",
       "repository": "w3c/webauthn",
       "portfolio": "Authentication",
@@ -1738,6 +4984,46 @@
         "confidence": "low",
         "matched_terms": [],
         "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-4f9cef1288e8",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "Emphasize DID URL dereferencing \"algorithm\" over \"function\"",
+      "timestamp": "2026-09-17T21:53:15Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-resolution/pull/362"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/did-resolution",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-17T21:53:15Z",
+          "title": "Emphasize DID URL dereferencing \"algorithm\" over \"function\"",
+          "url": "https://github.com/w3c/did-resolution/pull/362",
+          "number": 362,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "ci"
+        ],
+        "evidence_state": "derived"
       }
     },
     {
@@ -1834,11 +5120,498 @@
         ],
         "evidence_state": "derived"
       }
+    },
+    {
+      "id": "toip-change-ab2bbfa38d92",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "repo_kind": "repository",
+      "title": "How to express inputs and results of the algorithms?",
+      "timestamp": "2026-09-17T14:39:21Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/did-resolution/issues/361"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/did-resolution",
+          "portfolio": "Identifiers & Control",
+          "repo_kind": "repository",
+          "timestamp": "2026-09-17T14:39:21Z",
+          "title": "How to express inputs and results of the algorithms?",
+          "url": "https://github.com/w3c/did-resolution/issues/361",
+          "number": 361,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
     }
   ],
-  "lifecycle_changes": [],
-  "relationships": [],
-  "change_propagation": [],
+  "lifecycle_changes": [
+    {
+      "type": "discovered",
+      "repository": "w3c/did",
+      "portfolio": "Identifiers & Control",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/did"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/did-extensions",
+      "portfolio": "Identifiers & Control",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/did-extensions"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/did-resolution",
+      "portfolio": "Identifiers & Control",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/did-resolution"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/did-rubric",
+      "portfolio": "Identifiers & Control",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/did-rubric"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/vc-di-ecdsa",
+      "portfolio": "Privacy & Applied Cryptography",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/vc-di-ecdsa"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/vc-di-eddsa",
+      "portfolio": "Privacy & Applied Cryptography",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/vc-di-eddsa"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/vc-jose-cose",
+      "portfolio": "Verifiable Credentials",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/vc-jose-cose"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/vc-json-schema",
+      "portfolio": "Verifiable Credentials",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/vc-json-schema"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/vc-recognized-entities",
+      "portfolio": "Trust & Recognition",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/vc-recognized-entities"
+    },
+    {
+      "type": "discovered",
+      "repository": "w3c/vcalm",
+      "portfolio": "Verifiable Credentials",
+      "from": null,
+      "to": "active",
+      "url": "https://github.com/w3c/vcalm"
+    }
+  ],
+  "relationships": [
+    {
+      "id": "tem-relationship-f552f48ae249",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-031281278cb0",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/752"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-73602b0c8486",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-0727082801ee",
+      "semantic_change_type": "implementation",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/756"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-a1851d9f2d89",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-0971fb6c727e",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/issues/759"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-6be0efcfd7de",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-1c8d959fd565",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/751"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-586709fa8809",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-68c88cedf1a8",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/758"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-6023ba6121e0",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-6a47b5eb3e0f",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/755"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-eaf2f2f4355e",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-6b7a80f0c416",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/714"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-2a9c9ffb90e2",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-7749d6af7756",
+      "semantic_change_type": "lifecycle",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/760"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-01c09147cd11",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-9ffed00e5726",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/757"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-79cc4f028ab1",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-c98089cfe4fe",
+      "semantic_change_type": "protocol_semantics",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/689"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-83176fc2358d",
+      "source_repository": "w3c/did-extensions",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-f6dea76c2d61",
+      "semantic_change_type": "unknown",
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/750"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-89a27d1163f7",
+      "source_repository": "w3c/did-resolution",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-4807655c0b39",
+      "semantic_change_type": "protocol_semantics",
+      "evidence": [
+        "https://github.com/w3c/did-resolution/issues/363"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-75ae70582926",
+      "source_repository": "w3c/did-resolution",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-4f9cef1288e8",
+      "semantic_change_type": "implementation",
+      "evidence": [
+        "https://github.com/w3c/did-resolution/pull/362"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-0e4e2692bcf6",
+      "source_repository": "w3c/did-resolution",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-8699355370fc",
+      "semantic_change_type": "implementation",
+      "evidence": [
+        "https://github.com/w3c/did-resolution/pull/344"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-20d6c3d0e6b1",
+      "source_repository": "w3c/did-resolution",
+      "target_repository": "w3c/did",
+      "source_portfolio": "Identifiers & Control",
+      "target_portfolio": "Identifiers & Control",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-c8a243c1ffd4",
+      "semantic_change_type": "implementation",
+      "evidence": [
+        "https://github.com/w3c/did-resolution/issues/353"
+      ],
+      "evidence_state": "observed"
+    }
+  ],
+  "change_propagation": [
+    {
+      "id": "tem-propagation-c0f8717d6eb5",
+      "state": "observed_follow_up",
+      "referencing_repository": "w3c/did-extensions",
+      "referenced_repository": "w3c/did",
+      "relationship_id": "tem-relationship-f552f48ae249",
+      "trigger_change_unit": "toip-change-23af49f0e91e",
+      "responding_change_unit": "toip-change-031281278cb0",
+      "trigger_timestamp": "2026-09-21T22:31:34Z",
+      "response_timestamp": "2026-09-22T18:54:34Z",
+      "trigger_semantic_change_type": "specification",
+      "response_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/w3c/did-extensions/pull/752"
+      ],
+      "evidence": [
+        "https://github.com/w3c/did/issues/936",
+        "https://github.com/w3c/did-extensions/pull/752"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-6472a356eeee",
+      "state": "observed_follow_up",
+      "referencing_repository": "w3c/did-resolution",
+      "referenced_repository": "w3c/did",
+      "relationship_id": "tem-relationship-89a27d1163f7",
+      "trigger_change_unit": "toip-change-23af49f0e91e",
+      "responding_change_unit": "toip-change-4807655c0b39",
+      "trigger_timestamp": "2026-09-21T22:31:34Z",
+      "response_timestamp": "2026-09-23T07:50:55Z",
+      "trigger_semantic_change_type": "specification",
+      "response_semantic_change_type": "protocol_semantics",
+      "relationship_evidence": [
+        "https://github.com/w3c/did-resolution/issues/363"
+      ],
+      "evidence": [
+        "https://github.com/w3c/did/issues/936",
+        "https://github.com/w3c/did-resolution/issues/363"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-18c25c317d7a",
+      "state": "insufficient_history",
+      "referencing_repository": "w3c/did-extensions",
+      "referenced_repository": "w3c/did",
+      "relationship_id": "tem-relationship-a1851d9f2d89",
+      "trigger_change_unit": null,
+      "responding_change_unit": "toip-change-0971fb6c727e",
+      "trigger_timestamp": null,
+      "response_timestamp": "2026-09-21T14:50:29Z",
+      "relationship_evidence": [
+        "https://github.com/w3c/did-extensions/issues/759"
+      ],
+      "evidence": [
+        "https://github.com/w3c/did-extensions/issues/759"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-1838d29e0a7e",
+      "state": "insufficient_history",
+      "referencing_repository": "w3c/did-extensions",
+      "referenced_repository": "w3c/did",
+      "relationship_id": "tem-relationship-83176fc2358d",
+      "trigger_change_unit": null,
+      "responding_change_unit": "toip-change-f6dea76c2d61",
+      "trigger_timestamp": null,
+      "response_timestamp": "2026-09-19T15:27:51Z",
+      "relationship_evidence": [
+        "https://github.com/w3c/did-extensions/pull/750"
+      ],
+      "evidence": [
+        "https://github.com/w3c/did-extensions/pull/750"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-d5760aeaadd2",
+      "state": "insufficient_history",
+      "referencing_repository": "w3c/did-resolution",
+      "referenced_repository": "w3c/did",
+      "relationship_id": "tem-relationship-75ae70582926",
+      "trigger_change_unit": null,
+      "responding_change_unit": "toip-change-4f9cef1288e8",
+      "trigger_timestamp": null,
+      "response_timestamp": "2026-09-17T21:53:15Z",
+      "relationship_evidence": [
+        "https://github.com/w3c/did-resolution/pull/362"
+      ],
+      "evidence": [
+        "https://github.com/w3c/did-resolution/pull/362"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    }
+  ],
   "cross_portfolio_seams": [],
   "findings": [],
   "watch_propositions": [],
@@ -1850,7 +5623,7 @@
     "monitor_title": "Trust Ecosystem Monitor",
     "weekly_brief_title": "W3C Trust Standards Brief",
     "disclaimer": "Independent observatory; not an official W3C publication. Scope is a governed trust-standards portfolio, not the complete W3C GitHub organization.",
-    "repository_override_count": 6,
+    "repository_override_count": 16,
     "discovery_sources": [
       {
         "type": "explicit_repository",
@@ -1875,6 +5648,46 @@
       {
         "type": "explicit_repository",
         "value": "w3c/webauthn"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/did"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/did-resolution"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-recognized-entities"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-jose-cose"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-json-schema"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vcalm"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-di-eddsa"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/vc-di-ecdsa"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/did-extensions"
+      },
+      {
+        "type": "explicit_repository",
+        "value": "w3c/did-rubric"
       }
     ],
     "admission": {

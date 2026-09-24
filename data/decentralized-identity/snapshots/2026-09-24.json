@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "decentralized-identity",
-  "generated_at": "2026-09-24T04:29:31.653241+00:00",
+  "generated_at": "2026-09-24T04:39:08.338655+00:00",
   "period": {
-    "since": "2026-09-17T04:29:31.653241+00:00",
-    "until": "2026-09-24T04:29:31.653241+00:00",
+    "since": "2026-09-17T04:39:08.338655+00:00",
+    "until": "2026-09-24T04:39:08.338655+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-09-20T23:20:53.752964+00:00"
+    "previous_snapshot": "2026-09-24T04:29:31.653241+00:00"
   },
   "repositories": [
     {
@@ -23847,16 +23847,7 @@
       }
     }
   ],
-  "lifecycle_changes": [
-    {
-      "type": "lifecycle",
-      "repository": "decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials",
-      "portfolio": "Labs",
-      "from": "active",
-      "to": "dormant",
-      "url": "https://github.com/decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials"
-    }
-  ],
+  "lifecycle_changes": [],
   "relationships": [
     {
       "id": "tem-relationship-acd024f84015",
@@ -25825,29 +25816,6 @@
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
     {
-      "id": "tem-propagation-3f5a061dc048",
-      "state": "observed_follow_up",
-      "referencing_repository": "decentralized-identity/ethr-did-resolver",
-      "referenced_repository": "decentralized-identity/thisdid",
-      "relationship_id": "tem-relationship-03a7eccb12c2",
-      "trigger_change_unit": "toip-change-8cb97a47a7e7",
-      "responding_change_unit": "toip-change-b1d7bee33b9e",
-      "trigger_timestamp": "2026-09-15T22:11:06Z",
-      "response_timestamp": "2026-09-17T10:50:27Z",
-      "trigger_semantic_change_type": "unknown",
-      "response_semantic_change_type": "api",
-      "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/commit/4473125cc438d110f09987fcd7774d92af4b580c",
-        "https://github.com/decentralized-identity/ethr-did-resolver/pull/305"
-      ],
-      "evidence": [
-        "https://github.com/decentralized-identity/thisdid/pull/2",
-        "https://github.com/decentralized-identity/ethr-did-resolver/commit/4473125cc438d110f09987fcd7774d92af4b580c",
-        "https://github.com/decentralized-identity/ethr-did-resolver/pull/305"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
-    },
-    {
       "id": "tem-propagation-7a4b27982489",
       "state": "observed_follow_up",
       "referencing_repository": "decentralized-identity/veramo",
@@ -26163,6 +26131,108 @@
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
     {
+      "id": "tem-propagation-2ffbae915be4",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/did-jwt-vc",
+      "referenced_repository": "decentralized-identity/did-resolver",
+      "relationship_id": "tem-relationship-285fb8896ce5",
+      "trigger_change_unit": "toip-change-7fd7a0ebf446",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T05:03:05Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/did-jwt-vc/commit/82882bb91b15cf82354e47d15baf3fb9c4001cf4"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
+        "https://github.com/decentralized-identity/did-resolver/pull/175",
+        "https://github.com/decentralized-identity/did-jwt-vc/commit/82882bb91b15cf82354e47d15baf3fb9c4001cf4"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-9b9b9f5b99bd",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/did-jwt-vc",
+      "referenced_repository": "decentralized-identity/did-resolver",
+      "relationship_id": "tem-relationship-285fb8896ce5",
+      "trigger_change_unit": "toip-change-5fcc062c0f86",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T17:42:18Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/did-jwt-vc/commit/82882bb91b15cf82354e47d15baf3fb9c4001cf4"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/commit/73a48923a6134799206f635aa21a387d9d5ccb16",
+        "https://github.com/decentralized-identity/did-resolver/pull/176",
+        "https://github.com/decentralized-identity/did-jwt-vc/commit/82882bb91b15cf82354e47d15baf3fb9c4001cf4"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-36d49b9965bf",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/did-jwt-vc",
+      "referenced_repository": "decentralized-identity/did-resolver",
+      "relationship_id": "tem-relationship-285fb8896ce5",
+      "trigger_change_unit": "toip-change-035c9defc8a1",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T17:42:33Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "dependency",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/did-jwt-vc/commit/82882bb91b15cf82354e47d15baf3fb9c4001cf4"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/issues/97",
+        "https://github.com/decentralized-identity/did-jwt-vc/commit/82882bb91b15cf82354e47d15baf3fb9c4001cf4"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-831900e43f64",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/didwebvh-py",
+      "referenced_repository": "decentralized-identity/didwebvh",
+      "relationship_id": "tem-relationship-ff05a7d604c6",
+      "trigger_change_unit": "toip-change-b3b3230f3b1c",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T21:07:38Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "specification",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/didwebvh-py/issues/33"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh/pull/297",
+        "https://github.com/decentralized-identity/didwebvh-py/issues/33"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-26cbe043de41",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/didwebvh-py",
+      "referenced_repository": "decentralized-identity/didwebvh",
+      "relationship_id": "tem-relationship-ff05a7d604c6",
+      "trigger_change_unit": "toip-change-90224996114c",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T22:04:36Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "specification",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/didwebvh-py/issues/33"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh/pull/298",
+        "https://github.com/decentralized-identity/didwebvh-py/issues/33"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
       "id": "tem-propagation-aa18b874de3f",
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/didwebvh-test-suite",
@@ -26174,11 +26244,13 @@
       "response_timestamp": null,
       "trigger_semantic_change_type": "specification",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21"
+        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
+        "https://github.com/decentralized-identity/didwebvh-test-suite/commit/703f97fae37cc394ce10340d8d0815dab63573f6"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/pull/297",
-        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21"
+        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
+        "https://github.com/decentralized-identity/didwebvh-test-suite/commit/703f97fae37cc394ce10340d8d0815dab63573f6"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26194,11 +26266,13 @@
       "response_timestamp": null,
       "trigger_semantic_change_type": "specification",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21"
+        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
+        "https://github.com/decentralized-identity/didwebvh-test-suite/commit/703f97fae37cc394ce10340d8d0815dab63573f6"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/pull/298",
-        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21"
+        "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
+        "https://github.com/decentralized-identity/didwebvh-test-suite/commit/703f97fae37cc394ce10340d8d0815dab63573f6"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26393,21 +26467,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-b0610fcbf278",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-19T09:13:09Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "implementation",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26416,21 +26490,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-27f2064530d5",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-19T14:43:57Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "unknown",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/19d9edd0e3591aed916a8214eb76962ee2453c2e",
         "https://github.com/decentralized-identity/did-resolver/pull/165",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26439,21 +26513,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-a815333e5a73",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-20T21:12:37Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "dependency",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/d8d5898542a55158480fe8994be12d0c560505f6",
         "https://github.com/decentralized-identity/did-resolver/pull/172",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26462,21 +26536,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-b9c7cd5d13d6",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-21T13:52:26Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "implementation",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/d24aae964ddab88b68a54748fe1354d14fb78928",
         "https://github.com/decentralized-identity/did-resolver/pull/171",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26485,21 +26559,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-668e913b2281",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-21T14:28:17Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "implementation",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/3fa9cd137f37e3c887333fadbebbdc89e1465b59",
         "https://github.com/decentralized-identity/did-resolver/pull/174",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26508,21 +26582,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-4ca9eb00c77c",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-21T14:35:07Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "release",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/3bad7a0b6b115be48bad62d33bad17dad9030587",
         "https://github.com/decentralized-identity/did-resolver/pull/173",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26531,20 +26605,20 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-36de66816df1",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-21T14:35:42Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "release",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/releases/tag/v6.0.0",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26553,20 +26627,20 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-127bd61b8752",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-21T14:36:42Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "release",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/issues/157",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26575,21 +26649,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-7fd7a0ebf446",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-23T05:03:05Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "unknown",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
         "https://github.com/decentralized-identity/did-resolver/pull/175",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26598,21 +26672,21 @@
       "state": "no_follow_up_observed",
       "referencing_repository": "decentralized-identity/ethr-did-resolver",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-42ac0ddf3c06",
+      "relationship_id": "tem-relationship-2c1f642d5502",
       "trigger_change_unit": "toip-change-5fcc062c0f86",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-09-23T17:42:18Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "unknown",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/73a48923a6134799206f635aa21a387d9d5ccb16",
         "https://github.com/decentralized-identity/did-resolver/pull/176",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26628,11 +26702,11 @@
       "response_timestamp": null,
       "trigger_semantic_change_type": "dependency",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-jwt%407.0.1"
+        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-jwt%407.0.2"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/issues/194",
-        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-jwt%407.0.1"
+        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-jwt%407.0.2"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26648,12 +26722,12 @@
       "response_timestamp": null,
       "trigger_semantic_change_type": "unknown",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.1"
+        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.2"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/73a48923a6134799206f635aa21a387d9d5ccb16",
         "https://github.com/decentralized-identity/did-resolver/pull/176",
-        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.1"
+        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.2"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -26669,11 +26743,73 @@
       "response_timestamp": null,
       "trigger_semantic_change_type": "dependency",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.1"
+        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.2"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/issues/97",
-        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.1"
+        "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.2"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-64e3866b680e",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/web-did-resolver",
+      "referenced_repository": "decentralized-identity/did-resolver",
+      "relationship_id": "tem-relationship-a1d4f9392dd1",
+      "trigger_change_unit": "toip-change-7fd7a0ebf446",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T05:03:05Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/web-did-resolver/commit/a6aa9e8d52dea652d5d2ebc7d68de0bc73910183"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
+        "https://github.com/decentralized-identity/did-resolver/pull/175",
+        "https://github.com/decentralized-identity/web-did-resolver/commit/a6aa9e8d52dea652d5d2ebc7d68de0bc73910183"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-1b1ddee47488",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/web-did-resolver",
+      "referenced_repository": "decentralized-identity/did-resolver",
+      "relationship_id": "tem-relationship-a1d4f9392dd1",
+      "trigger_change_unit": "toip-change-5fcc062c0f86",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T17:42:18Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/web-did-resolver/commit/a6aa9e8d52dea652d5d2ebc7d68de0bc73910183"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/commit/73a48923a6134799206f635aa21a387d9d5ccb16",
+        "https://github.com/decentralized-identity/did-resolver/pull/176",
+        "https://github.com/decentralized-identity/web-did-resolver/commit/a6aa9e8d52dea652d5d2ebc7d68de0bc73910183"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-1ddb96ca0764",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/web-did-resolver",
+      "referenced_repository": "decentralized-identity/did-resolver",
+      "relationship_id": "tem-relationship-a1d4f9392dd1",
+      "trigger_change_unit": "toip-change-035c9defc8a1",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-09-23T17:42:33Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "dependency",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/web-did-resolver/commit/a6aa9e8d52dea652d5d2ebc7d68de0bc73910183"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/issues/97",
+        "https://github.com/decentralized-identity/web-did-resolver/commit/a6aa9e8d52dea652d5d2ebc7d68de0bc73910183"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -27636,6 +27772,26 @@
       ],
       "evidence": [
         "https://github.com/decentralized-identity/ethr-did-resolver/commit/4e337fb6367c33fceca3fb9ed0b57999302e1e1b"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-423b43136570",
+      "state": "insufficient_history",
+      "referencing_repository": "decentralized-identity/ethr-did-resolver",
+      "referenced_repository": "decentralized-identity/thisdid",
+      "relationship_id": "tem-relationship-03a7eccb12c2",
+      "trigger_change_unit": null,
+      "responding_change_unit": "toip-change-b1d7bee33b9e",
+      "trigger_timestamp": null,
+      "response_timestamp": "2026-09-17T10:50:27Z",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/4473125cc438d110f09987fcd7774d92af4b580c",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/305"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/4473125cc438d110f09987fcd7774d92af4b580c",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/305"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
@@ -30364,20 +30520,6 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-88c8867d13dc",
-      "category": "lifecycle",
-      "subject": "decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials",
-      "status": "open",
-      "materiality": 4,
-      "urgency": 3,
-      "assurance_impact": 3,
-      "summary": "lifecycle changed from active to dormant",
-      "evidence": [
-        "https://github.com/decentralized-identity/labs-anonymous-multi-signature-verifiable-credentials"
-      ],
-      "disposition": null
-    },
-    {
       "id": "toip-finding-035712de17dd",
       "category": "cross-portfolio-seam",
       "subject": "decentralized-identity/did-resolver",
@@ -31765,7 +31907,7 @@
       "id": "tem-watch-b72507564a9b",
       "kind": "follow_up_after_referenced_change",
       "proposition": "Observe whether decentralized-identity/did-jwt records later explicit follow-up after observed changes in decentralized-identity/did-resolver.",
-      "state": "trigger_observed",
+      "state": "reassessment_required",
       "source_repository": "decentralized-identity/did-jwt",
       "target_repository": "decentralized-identity/did-resolver",
       "trigger": {
@@ -31779,7 +31921,7 @@
       "response_change_unit": "toip-change-4a2d091304da",
       "response_timestamp": "2026-09-18T17:17:00Z",
       "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
@@ -31799,7 +31941,7 @@
       "id": "tem-watch-bb684f1bacc6",
       "kind": "follow_up_after_referenced_change",
       "proposition": "Observe whether decentralized-identity/did-jwt-vc records later explicit follow-up after observed changes in decentralized-identity/did-resolver.",
-      "state": "trigger_observed",
+      "state": "reassessment_required",
       "source_repository": "decentralized-identity/did-jwt-vc",
       "target_repository": "decentralized-identity/did-resolver",
       "trigger": {
@@ -31813,7 +31955,7 @@
       "response_change_unit": "toip-change-b2a92a4c47e2",
       "response_timestamp": "2026-09-21T23:44:03Z",
       "created_at": "2026-09-14T02:03:44Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/5ea4ec243bbd50dee27da2a0b7f45f051bacf385",
         "https://github.com/decentralized-identity/did-jwt-vc/pull/158",
@@ -31831,7 +31973,7 @@
       "id": "tem-watch-f251c94403b7",
       "kind": "follow_up_after_referenced_change",
       "proposition": "Observe whether decentralized-identity/didwebvh-test-suite records later explicit follow-up after observed changes in decentralized-identity/didwebvh.",
-      "state": "trigger_observed",
+      "state": "reassessment_required",
       "source_repository": "decentralized-identity/didwebvh-test-suite",
       "target_repository": "decentralized-identity/didwebvh",
       "trigger": {
@@ -31845,7 +31987,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T22:31:17Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/issues/295",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -31864,7 +32006,7 @@
       "id": "tem-watch-79fe833c2331",
       "kind": "follow_up_after_referenced_change",
       "proposition": "Observe whether decentralized-identity/didwebvh-test-suite records later explicit follow-up after observed changes in decentralized-identity/didwebvh-ts.",
-      "state": "trigger_observed",
+      "state": "reassessment_required",
       "source_repository": "decentralized-identity/didwebvh-test-suite",
       "target_repository": "decentralized-identity/didwebvh-ts",
       "trigger": {
@@ -31878,7 +32020,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T10:08:41Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh-ts/commit/5838e48a065adb7dc58f4694347037366274c7ec",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -31896,7 +32038,7 @@
       "id": "tem-watch-a209e6b57ebb",
       "kind": "follow_up_after_referenced_change",
       "proposition": "Observe whether decentralized-identity/didwebvh-ts records later explicit follow-up after observed changes in decentralized-identity/did-resolver.",
-      "state": "trigger_observed",
+      "state": "reassessment_required",
       "source_repository": "decentralized-identity/didwebvh-ts",
       "target_repository": "decentralized-identity/did-resolver",
       "trigger": {
@@ -31910,7 +32052,7 @@
       "response_change_unit": "toip-change-a300091fec5e",
       "response_timestamp": "2026-09-19T17:25:31Z",
       "created_at": "2026-09-20T06:47:17Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/171",
         "https://github.com/decentralized-identity/didwebvh-ts/commit/c5d82f72c23b30d694a641e3669ac94307aaa256",
@@ -31929,7 +32071,7 @@
       "id": "tem-watch-c66b4971e3cf",
       "kind": "follow_up_after_referenced_change",
       "proposition": "Observe whether decentralized-identity/veramo records later explicit follow-up after observed changes in decentralized-identity/did-jwt.",
-      "state": "trigger_observed",
+      "state": "reassessment_required",
       "source_repository": "decentralized-identity/veramo",
       "target_repository": "decentralized-identity/did-jwt",
       "trigger": {
@@ -31943,7 +32085,7 @@
       "response_change_unit": "toip-change-db7522b124af",
       "response_timestamp": "2026-09-23T11:37:37Z",
       "created_at": "2026-09-18T12:48:33Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/338",
         "https://github.com/decentralized-identity/did-jwt/commit/470fe5d8850711ba2be845fa352d0b753600a772",
@@ -31963,7 +32105,7 @@
       "id": "tem-watch-3dcb42f57a96",
       "kind": "follow_up_after_referenced_change",
       "proposition": "Observe whether decentralized-identity/veramo records later explicit follow-up after observed changes in decentralized-identity/did-resolver.",
-      "state": "trigger_observed",
+      "state": "reassessment_required",
       "source_repository": "decentralized-identity/veramo",
       "target_repository": "decentralized-identity/did-resolver",
       "trigger": {
@@ -31977,7 +32119,7 @@
       "response_change_unit": "toip-change-e906292a73ce",
       "response_timestamp": "2026-09-23T11:37:43Z",
       "created_at": "2026-09-16T11:26:49Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/164",
         "https://github.com/decentralized-identity/did-resolver/commit/607da04b6aaa1a80cc22378fd07ab8a6ce9ebf65",
@@ -31985,6 +32127,71 @@
         "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
         "https://github.com/decentralized-identity/did-resolver/pull/175",
         "https://github.com/decentralized-identity/veramo/releases/tag/%40veramo/did-resolver%407.0.2"
+      ],
+      "authority": {
+        "owner": "trust-ecosystem-monitor",
+        "scope": "derived_observation",
+        "upstream_action_authorized": false
+      },
+      "interpretation": "Monitor-owned observation proposition only. A watch does not establish dependency, causation, compatibility impact, compliance, recognition, authority, prediction, breakage, or an upstream obligation. Trigger observation requires reassessment; it does not automatically resolve the proposition."
+    },
+    {
+      "id": "tem-watch-f891f0d78baf",
+      "kind": "follow_up_after_referenced_change",
+      "proposition": "Observe whether decentralized-identity/ethr-did-resolver records later explicit follow-up after observed changes in decentralized-identity/did-resolver.",
+      "state": "trigger_observed",
+      "source_repository": "decentralized-identity/ethr-did-resolver",
+      "target_repository": "decentralized-identity/did-resolver",
+      "trigger": {
+        "type": "explicit_follow_up_observed",
+        "condition": "A later change in decentralized-identity/ethr-did-resolver explicitly references decentralized-identity/did-resolver after the watched target change."
+      },
+      "source_relationship_id": "tem-relationship-42ac0ddf3c06",
+      "source_propagation_id": "tem-propagation-2511d1c15215",
+      "trigger_change_unit": "toip-change-b0610fcbf278",
+      "trigger_timestamp": "2026-09-19T09:13:09Z",
+      "response_change_unit": "toip-change-0d756280880c",
+      "response_timestamp": "2026-09-23T18:10:22Z",
+      "created_at": "2026-09-19T09:13:09Z",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/pull/170",
+        "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
+        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
+        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3",
+        "https://github.com/decentralized-identity/did-resolver/issues/97",
+        "https://github.com/decentralized-identity/ethr-did-resolver/commit/5baaa56763549566970591993e220aebb801cf20",
+        "https://github.com/decentralized-identity/ethr-did-resolver/pull/314"
+      ],
+      "authority": {
+        "owner": "trust-ecosystem-monitor",
+        "scope": "derived_observation",
+        "upstream_action_authorized": false
+      },
+      "interpretation": "Monitor-owned observation proposition only. A watch does not establish dependency, causation, compatibility impact, compliance, recognition, authority, prediction, breakage, or an upstream obligation. Trigger observation requires reassessment; it does not automatically resolve the proposition."
+    },
+    {
+      "id": "tem-watch-3a66718ce319",
+      "kind": "follow_up_after_referenced_change",
+      "proposition": "Observe whether decentralized-identity/didwebvh-py records later explicit follow-up after observed changes in decentralized-identity/didwebvh.",
+      "state": "waiting_external",
+      "source_repository": "decentralized-identity/didwebvh-py",
+      "target_repository": "decentralized-identity/didwebvh",
+      "trigger": {
+        "type": "explicit_follow_up_observed",
+        "condition": "A later change in decentralized-identity/didwebvh-py explicitly references decentralized-identity/didwebvh after the watched target change."
+      },
+      "source_relationship_id": "tem-relationship-ff05a7d604c6",
+      "source_propagation_id": "tem-propagation-831900e43f64",
+      "trigger_change_unit": "toip-change-b3b3230f3b1c",
+      "trigger_timestamp": "2026-09-23T21:07:38Z",
+      "response_change_unit": null,
+      "response_timestamp": null,
+      "created_at": "2026-09-23T21:07:38Z",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh/pull/297",
+        "https://github.com/decentralized-identity/didwebvh-py/issues/33"
       ],
       "authority": {
         "owner": "trust-ecosystem-monitor",
@@ -32011,7 +32218,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-09-15T22:11:06Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/thisdid/pull/2",
         "https://github.com/decentralized-identity/didwebvh-test-suite/commit/f98baa75b1d648dea84b0dd201eeac9f9cbc94d1",
@@ -32025,29 +32232,28 @@
       "interpretation": "Monitor-owned observation proposition only. A watch does not establish dependency, causation, compatibility impact, compliance, recognition, authority, prediction, breakage, or an upstream obligation. Trigger observation requires reassessment; it does not automatically resolve the proposition."
     },
     {
-      "id": "tem-watch-f891f0d78baf",
+      "id": "tem-watch-53285f453996",
       "kind": "follow_up_after_referenced_change",
-      "proposition": "Observe whether decentralized-identity/ethr-did-resolver records later explicit follow-up after observed changes in decentralized-identity/did-resolver.",
+      "proposition": "Observe whether decentralized-identity/web-did-resolver records later explicit follow-up after observed changes in decentralized-identity/did-resolver.",
       "state": "waiting_external",
-      "source_repository": "decentralized-identity/ethr-did-resolver",
+      "source_repository": "decentralized-identity/web-did-resolver",
       "target_repository": "decentralized-identity/did-resolver",
       "trigger": {
         "type": "explicit_follow_up_observed",
-        "condition": "A later change in decentralized-identity/ethr-did-resolver explicitly references decentralized-identity/did-resolver after the watched target change."
+        "condition": "A later change in decentralized-identity/web-did-resolver explicitly references decentralized-identity/did-resolver after the watched target change."
       },
-      "source_relationship_id": "tem-relationship-42ac0ddf3c06",
-      "source_propagation_id": "tem-propagation-b5964ee6e397",
-      "trigger_change_unit": "toip-change-b0610fcbf278",
-      "trigger_timestamp": "2026-09-19T09:13:09Z",
+      "source_relationship_id": "tem-relationship-a1d4f9392dd1",
+      "source_propagation_id": "tem-propagation-64e3866b680e",
+      "trigger_change_unit": "toip-change-7fd7a0ebf446",
+      "trigger_timestamp": "2026-09-23T05:03:05Z",
       "response_change_unit": null,
       "response_timestamp": null,
-      "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-09-24T04:29:31.653241+00:00",
+      "created_at": "2026-09-23T05:03:05Z",
+      "last_observed_at": "2026-09-24T04:39:08.338655+00:00",
       "evidence": [
-        "https://github.com/decentralized-identity/did-resolver/pull/170",
-        "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.4",
-        "https://github.com/decentralized-identity/ethr-did-resolver/releases/tag/ethr-did-resolver%4014.1.3"
+        "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
+        "https://github.com/decentralized-identity/did-resolver/pull/175",
+        "https://github.com/decentralized-identity/web-did-resolver/commit/a6aa9e8d52dea652d5d2ebc7d68de0bc73910183"
       ],
       "authority": {
         "owner": "trust-ecosystem-monitor",

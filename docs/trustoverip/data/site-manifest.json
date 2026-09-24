@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-24T04:29:20.883556+00:00",
+  "generated_at": "2026-09-24T04:38:57.498862+00:00",
   "week": "2026-W39",
   "pages": [
     "index.html",
@@ -16,7 +16,7 @@
     "change_units": 193,
     "findings": 58,
     "open_findings": 58,
-    "lifecycle_changes": 1,
+    "lifecycle_changes": 0,
     "cross_portfolio_seams": 30,
     "tooling_publication_observations": 0
   }

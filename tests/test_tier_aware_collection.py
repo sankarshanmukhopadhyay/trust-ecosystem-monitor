@@ -49,12 +49,14 @@ class TierAwareCollectionTests(unittest.TestCase):
 
         discovered = client.org_repositories()
 
-        self.assertEqual(len(discovered), 6)
+        self.assertEqual(len(discovered), 16)
         self.assertFalse(any(path.startswith("/orgs/w3c/repos") for path, _ in client.calls))
         for repo in discovered:
             with self.subTest(repository=repo["full_name"]):
-                self.assertEqual(repo["_admission"]["state"], "included")
-                self.assertIn(repo["_admission"]["tier"], {"core", "related"})
+                self.assertIn(repo["_admission"]["state"], {"included", "watch"})
+                self.assertIn(repo["_admission"]["tier"], {"core", "related", "watch"})
+                if repo["_admission"]["state"] == "watch":
+                    self.assertEqual(repo["_admission"]["tier"], "watch")
                 self.assertEqual(repo["_discovery_sources"][0]["type"], "explicit_repository")
 
     def test_duplicate_discovery_retains_both_sources(self):

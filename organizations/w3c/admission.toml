@@ -1,8 +1,9 @@
 schema_version = "1"
-policy_id = "w3c-trust-standards-baseline-2026-09"
+policy_id = "w3c-trust-standards-baseline-2026-09-24"
 
-# Each included repository has explicit W3C evidence. This file is governance
-# configuration: adding a repository requires an evidence-bearing decision.
+# Governed W3C trust-standards scope. Adding a repository requires explicit
+# discovery, an admission decision, a rationale, authoritative W3C evidence,
+# and a defensible portfolio classification.
 
 [[repositories]]
 repository = "w3c/vc-data-model"
@@ -51,3 +52,83 @@ state = "included"
 tier = "related"
 rationale = ["Normative strong public-key authentication standard with direct trust-system composition relevance"]
 evidence = ["https://www.w3.org/groups/wg/webauthn/", "https://www.w3.org/groups/wg/webauthn/publications/"]
+
+[[repositories]]
+repository = "w3c/did"
+portfolio = "Identifiers & Control"
+state = "included"
+tier = "core"
+rationale = ["DID Working Group repository for the Decentralized Identifier specification; foundational to DIF DID methods, DIDComm and resolver work and relevant to ToIP identifier/control semantics"]
+evidence = ["https://www.w3.org/groups/wg/did/tools/", "https://www.w3.org/groups/wg/did/publications/"]
+
+[[repositories]]
+repository = "w3c/did-resolution"
+portfolio = "Identifiers & Control"
+state = "included"
+tier = "core"
+rationale = ["DID Working Group deliverable defining DID resolution and dereferencing; directly intersects DIF Universal Resolver and downstream discovery/resolution semantics"]
+evidence = ["https://www.w3.org/groups/wg/did/tools/", "https://www.w3.org/TR/did-resolution/"]
+
+[[repositories]]
+repository = "w3c/vc-recognized-entities"
+portfolio = "Trust & Recognition"
+state = "included"
+tier = "core"
+rationale = ["VCWG work on cryptographically verifiable recognition of entities and actions intersects trust-registry, recognition and issuer/verifier governance concerns"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/TR/vc-recognized-entities/"]
+
+[[repositories]]
+repository = "w3c/vc-jose-cose"
+portfolio = "Verifiable Credentials"
+state = "included"
+tier = "core"
+rationale = ["VCWG JOSE/COSE security mechanisms, including SD-JWT-related credential securing, materially affect VC interoperability choices across DIF and ToIP work"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/TR/vc-jose-cose/"]
+
+[[repositories]]
+repository = "w3c/vc-json-schema"
+portfolio = "Verifiable Credentials"
+state = "included"
+tier = "related"
+rationale = ["VCWG credential-schema mechanism intersects DIF credential schema work and ToIP credential validation semantics"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/TR/vc-json-schema/"]
+
+[[repositories]]
+repository = "w3c/vcalm"
+portfolio = "Verifiable Credentials"
+state = "included"
+tier = "related"
+rationale = ["W3C-hosted VC lifecycle API work covers issuance, verification, presentation and management interfaces with interoperability relevance"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/community/reports/credentials/CG-FINAL-vcalm-20260320/"]
+
+[[repositories]]
+repository = "w3c/vc-di-eddsa"
+portfolio = "Privacy & Applied Cryptography"
+state = "included"
+tier = "related"
+rationale = ["Data Integrity EdDSA cryptosuite is an interoperability dependency for implementations selecting W3C VC proof mechanisms"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/TR/vc-di-eddsa/"]
+
+[[repositories]]
+repository = "w3c/vc-di-ecdsa"
+portfolio = "Privacy & Applied Cryptography"
+state = "included"
+tier = "related"
+rationale = ["Data Integrity ECDSA cryptosuite is an interoperability dependency for implementations selecting W3C VC proof mechanisms"]
+evidence = ["https://www.w3.org/groups/wg/vc/tools/", "https://www.w3.org/TR/vc-di-ecdsa/"]
+
+[[repositories]]
+repository = "w3c/did-extensions"
+portfolio = "Identifiers & Control"
+state = "included"
+tier = "related"
+rationale = ["DID ecosystem extension registry can affect resolver and DID-method interoperability without itself establishing method support"]
+evidence = ["https://www.w3.org/groups/wg/did/tools/", "https://www.w3.org/groups/wg/did/publications/"]
+
+[[repositories]]
+repository = "w3c/did-rubric"
+portfolio = "Identifiers & Control"
+state = "watch"
+tier = "watch"
+rationale = ["DID Method Rubric evolution is governance/evaluation context relevant to DID method assessment but is not a runtime dependency"]
+evidence = ["https://www.w3.org/groups/wg/did/tools/", "https://www.w3.org/groups/wg/did/publications/"]

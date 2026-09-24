@@ -202,6 +202,24 @@ def render_catalog(root: str | Path = ".") -> None:
         "<article class='card'><h2>No ecosystem reports yet</h2>"
         "<p>Run collection for at least one organization profile.</p></article>"
     )
+    relationship_summary = ""
+    relationship_data = docs / "data" / "relationships.json"
+    if relationship_data.exists():
+        try:
+            relationship_payload = json.loads(relationship_data.read_text(encoding="utf-8"))
+            relationship_counts = relationship_payload.get("counts", {})
+            relationship_summary = (
+                "<section class='card'>"
+                "<h2>Cross-ecosystem intelligence</h2>"
+                f"<p><strong>{int(relationship_counts.get('established', 0))}</strong> established relationships · "
+                f"<strong>{int(relationship_counts.get('candidate', 0))}</strong> candidates awaiting stronger evidence or review.</p>"
+                "<p class='muted'>Relationships are derived above profile-local evidence; co-location never implies dependency or alignment.</p>"
+                "<p><a class='button' href='relationships.html'>Open relationship register →</a></p>"
+                "</section>"
+            )
+        except (OSError, json.JSONDecodeError, TypeError, ValueError):
+            relationship_summary = ""
+
     page = f"""<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{PROJECT_TITLE}</title>
@@ -216,9 +234,10 @@ h1{{margin:.3rem 0}}.lede{{max-width:850px;color:#39465b;font-size:1.08rem}}.gri
 <header><div><strong>{PROJECT_TITLE}</strong></div></header>
 <main><h1>Monitored trust ecosystems</h1>
 <p class="lede">Independent, evidence-backed observation of GitHub-based trust ecosystems. Taxonomy-review items are shown separately from substantive findings so classification maintenance is not presented as ecosystem operational risk.</p>
+{relationship_summary}
 <div class="grid">{body}</div>
 <h2>Interpretation boundary</h2>
-<p>Co-location in this catalog does not assert a technical, governance or dependency relationship between ecosystems. Cross-ecosystem analysis is a separate capability and must be supported by explicit evidence.</p>
+<p>Co-location in this catalog does not assert a technical, governance or dependency relationship between ecosystems. Cross-ecosystem analysis is separately derived from explicit evidence; candidate and Grade C propositions are never presented as established dependencies.</p>
 </main><footer>Trust Ecosystem Monitor · independently maintained</footer></body></html>"""
     (docs / "index.html").write_text(page, encoding="utf-8")
 

@@ -7,8 +7,8 @@ weekly_brief_title = "W3C Trust Standards Brief"
 disclaimer = "Independent observatory; not an official W3C publication. Scope is a governed trust-standards portfolio, not the complete W3C GitHub organization."
 
 # W3C is deliberately not discovered by enumerating the entire GitHub
-# organization. The baseline begins with repositories explicitly associated
-# with W3C Working Groups on W3C's own group/tool/publication surfaces.
+# organization. Every monitored repository is explicitly admitted with
+# authoritative W3C evidence in admission.toml.
 [[discovery_sources]]
 type = "explicit_repository"
 value = "w3c/vc-data-model"
@@ -33,17 +33,67 @@ value = "w3c/vc-di-bbs"
 type = "explicit_repository"
 value = "w3c/webauthn"
 
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/did"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/did-resolution"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-recognized-entities"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-jose-cose"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-json-schema"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vcalm"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-di-eddsa"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/vc-di-ecdsa"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/did-extensions"
+
+[[discovery_sources]]
+type = "explicit_repository"
+value = "w3c/did-rubric"
+
 [repository_overrides]
 vc-data-model = "Verifiable Credentials"
 vc-data-integrity = "Verifiable Credentials"
 vc-bitstring-status-list = "Verifiable Credentials"
+vc-jose-cose = "Verifiable Credentials"
+vc-json-schema = "Verifiable Credentials"
+vcalm = "Verifiable Credentials"
+vc-recognized-entities = "Trust & Recognition"
 cid = "Identifiers & Control"
+did = "Identifiers & Control"
+did-resolution = "Identifiers & Control"
+did-extensions = "Identifiers & Control"
+did-rubric = "Identifiers & Control"
 vc-di-bbs = "Privacy & Applied Cryptography"
+vc-di-eddsa = "Privacy & Applied Cryptography"
+vc-di-ecdsa = "Privacy & Applied Cryptography"
 webauthn = "Authentication"
 
 [[portfolio_rules]]
 portfolio = "Verifiable Credentials"
-prefixes = ["vc-"]
+prefixes = ["vc-", "vcalm"]
 contains = ["credential"]
 
 [[portfolio_rules]]
@@ -52,9 +102,14 @@ prefixes = ["webauthn"]
 contains = ["authentication"]
 
 [[portfolio_rules]]
+portfolio = "Trust & Recognition"
+prefixes = ["vc-recognized-"]
+contains = ["recognized"]
+
+[[portfolio_rules]]
 portfolio = "Identifiers & Control"
 prefixes = ["cid", "did-"]
-contains = ["identifier"]
+contains = ["identifier", "resolution"]
 
 [[portfolio_rules]]
 portfolio = "Privacy & Applied Cryptography"
