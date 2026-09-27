@@ -1,6 +1,6 @@
 {
   "schema_version": "1",
-  "generated_at": "2026-09-24T04:39:51.630043+00:00",
+  "generated_at": "2026-09-27T23:53:35.238818+00:00",
   "authority": "derived",
   "interpretation": "Cross-ecosystem relationships are derived from independently collected evidence. Candidate or Grade C records are discovery propositions, not dependencies, recognition, alignment, governance coordination, or interoperability claims.",
   "relationships": [
@@ -34,14 +34,14 @@
           "lifecycle": "active",
           "portfolio": "DTG",
           "url": "https://github.com/trustoverip/dtgwg-cred-spec",
-          "snapshot_generated_at": "2026-09-24T04:38:57.498862+00:00"
+          "snapshot_generated_at": "2026-09-27T23:52:42.801277+00:00"
         },
         "target": {
           "ecosystem": "w3c",
           "lifecycle": "active",
           "portfolio": "Verifiable Credentials",
           "url": "https://github.com/w3c/vc-data-model",
-          "snapshot_generated_at": "2026-09-24T04:39:44.419009+00:00"
+          "snapshot_generated_at": "2026-09-27T23:53:28.405090+00:00"
         }
       },
       "publication_state": "established"
@@ -76,14 +76,14 @@
           "lifecycle": "active",
           "portfolio": "Identifiers & Discovery",
           "url": "https://github.com/decentralized-identity/universal-resolver",
-          "snapshot_generated_at": "2026-09-24T04:39:08.338655+00:00"
+          "snapshot_generated_at": "2026-09-27T23:52:53.819064+00:00"
         },
         "target": {
           "ecosystem": "w3c",
           "lifecycle": "active",
           "portfolio": "Identifiers & Control",
           "url": "https://github.com/w3c/did-resolution",
-          "snapshot_generated_at": "2026-09-24T04:39:44.419009+00:00"
+          "snapshot_generated_at": "2026-09-27T23:53:28.405090+00:00"
         }
       },
       "publication_state": "established"
@@ -117,14 +117,14 @@
           "lifecycle": "active",
           "portfolio": "Claims & Credentials",
           "url": "https://github.com/decentralized-identity/credential-schemas",
-          "snapshot_generated_at": "2026-09-24T04:39:08.338655+00:00"
+          "snapshot_generated_at": "2026-09-27T23:52:53.819064+00:00"
         },
         "target": {
           "ecosystem": "w3c",
           "lifecycle": "active",
           "portfolio": "Verifiable Credentials",
           "url": "https://github.com/w3c/vc-json-schema",
-          "snapshot_generated_at": "2026-09-24T04:39:44.419009+00:00"
+          "snapshot_generated_at": "2026-09-27T23:53:28.405090+00:00"
         }
       },
       "publication_state": "established"
@@ -158,14 +158,14 @@
           "lifecycle": "active",
           "portfolio": "Identifiers & Control",
           "url": "https://github.com/w3c/did-resolution",
-          "snapshot_generated_at": "2026-09-24T04:39:44.419009+00:00"
+          "snapshot_generated_at": "2026-09-27T23:53:28.405090+00:00"
         },
         "target": {
           "ecosystem": "decentralized-identity",
           "lifecycle": "active",
           "portfolio": "Identifiers & Discovery",
           "url": "https://github.com/decentralized-identity/universal-resolver",
-          "snapshot_generated_at": "2026-09-24T04:39:08.338655+00:00"
+          "snapshot_generated_at": "2026-09-27T23:52:53.819064+00:00"
         }
       },
       "publication_state": "established"
@@ -199,14 +199,14 @@
           "lifecycle": "active",
           "portfolio": "Trust & Recognition",
           "url": "https://github.com/w3c/vc-recognized-entities",
-          "snapshot_generated_at": "2026-09-24T04:39:44.419009+00:00"
+          "snapshot_generated_at": "2026-09-27T23:53:28.405090+00:00"
         },
         "target": {
           "ecosystem": "trustoverip",
           "lifecycle": "active",
           "portfolio": "TSWG",
           "url": "https://github.com/trustoverip/tswg-trust-registry-protocol",
-          "snapshot_generated_at": "2026-09-24T04:38:57.498862+00:00"
+          "snapshot_generated_at": "2026-09-27T23:52:42.801277+00:00"
         }
       },
       "publication_state": "candidate"
@@ -240,14 +240,14 @@
           "lifecycle": "active",
           "portfolio": "Privacy & Applied Cryptography",
           "url": "https://github.com/w3c/vc-di-bbs",
-          "snapshot_generated_at": "2026-09-24T04:39:44.419009+00:00"
+          "snapshot_generated_at": "2026-09-27T23:53:28.405090+00:00"
         },
         "target": {
           "ecosystem": "trustoverip",
           "lifecycle": "active",
           "portfolio": "DTG",
           "url": "https://github.com/trustoverip/dtgwg-zkp-spec",
-          "snapshot_generated_at": "2026-09-24T04:38:57.498862+00:00"
+          "snapshot_generated_at": "2026-09-27T23:52:42.801277+00:00"
         }
       },
       "publication_state": "candidate"

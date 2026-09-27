@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-09-24T04:38:57.498862+00:00",
+  "generated_at": "2026-09-27T23:52:42.801277+00:00",
   "counts": {
-    "discovered": 117,
-    "included": 117,
+    "discovered": 118,
+    "included": 118,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 117,
+    "deep_monitored": 118,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -805,6 +805,30 @@
     {
       "repository": "trustoverip/dtgwg-vds-tf",
       "url": "https://github.com/trustoverip/dtgwg-vds-tf",
+      "portfolio": "DTG",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/dtgwg-vsc-registry",
+      "url": "https://github.com/trustoverip/dtgwg-vsc-registry",
       "portfolio": "DTG",
       "lifecycle": "active",
       "admission": {
