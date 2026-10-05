@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-27T23:53:28.405090+00:00",
-  "week": "2026-W39",
+  "generated_at": "2026-10-05T00:03:56.612252+00:00",
+  "week": "2026-W41",
   "pages": [
     "index.html",
     "findings.html",
@@ -12,8 +12,8 @@
   ],
   "counts": {
     "repositories": 16,
-    "events": 121,
-    "change_units": 116,
+    "events": 87,
+    "change_units": 82,
     "findings": 0,
     "open_findings": 0,
     "lifecycle_changes": 0,

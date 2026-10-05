@@ -22,7 +22,7 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-09-27T23:52:53.819064+00:00",
+  "generated_at": "2026-10-05T00:03:20.927246+00:00",
   "counts": {
     "discovered": 269,
     "included": 269,
@@ -2654,7 +2654,7 @@
       "repository": "decentralized-identity/decentralized-web-node",
       "url": "https://github.com/decentralized-identity/decentralized-web-node",
       "portfolio": "Secure Data Storage / DWN",
-      "lifecycle": "dormant",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
