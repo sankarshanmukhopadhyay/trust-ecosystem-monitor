@@ -47,7 +47,6 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
     cql = f'space = HOME AND lastmodified >= "{month}-01" AND lastmodified < "{next_month}-01"'
     path = "/wiki/rest/api/content/search?" + urlencode({"cql": cql, "limit": PAGE_SIZE, "start": 0})
     seen_pages = set()
-    allowed_starts = set()
     seen_ids = set()
     records = []
     diagnostics = []
