@@ -61,13 +61,20 @@ def github_pages(url: str, token: str, *, max_pages: int = 100):
     raise RuntimeError(f"GitHub pagination safety limit reached: {url}")
 
 
-def collect_month(org: str, month: str, token: str) -> dict:
+def collect_month(org: str, month: str, token: str, repositories: list[str] | None = None) -> dict:
     bounds = month_bounds(month)
     root = f"https://api.github.com/orgs/{urllib.parse.quote(org, safe='')}/repos?type=public"
     evidence = []
     coverage = []
     seen_repositories = set()
-    for repo in github_pages(root, token):
+    if repositories is not None:
+        for name in repositories:
+            if not name.startswith(org + "/") or name.count("/") != 1:
+                raise ValueError(f"Repository outside configured organization: {name}")
+        repo_source = ({"full_name": name} for name in repositories)
+    else:
+        repo_source = github_pages(root, token)
+    for repo in repo_source:
         name = repo["full_name"]
         if name in seen_repositories:
             continue
@@ -107,7 +114,7 @@ def collect_month(org: str, month: str, token: str) -> dict:
         "coverage": coverage,
         "coverage_complete": all(entry["issues"] == "complete" and entry["pull_requests"] == "complete" for entry in coverage),
         "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
-        "collection_scope": "all public organization repositories; admission-tier filtering not yet applied",
+        "collection_scope": ("explicit repositories: " + ", ".join(repositories)) if repositories is not None else "all public organization repositories; admission-tier filtering not yet applied",
     }
 
 
@@ -124,6 +131,7 @@ def render_markdown(result: dict) -> str:
         "",
     ]
     lines.append(f"GitHub collection complete for enumerated repositories: **{result['coverage_complete']}**.")
+    lines.append(f"Collection scope: {result['collection_scope']}.")
     lines.append("")
     for item in result["evidence"]:
         lines.append(f"- {item['occurred_at'][:10]} — {item['repository']}: {item['kind']} #{item['id'].split(':')[-2]} {item['event']} — [{item['title'].replace(chr(10), ' ')}]({item['url']})")
@@ -139,8 +147,9 @@ def main(argv=None) -> int:
     parser.add_argument("--org", default="trustoverip")
     parser.add_argument("--month", required=True)
     parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--repo", action="append", dest="repos", help="Bound collection to explicit owner/repository; repeat as needed")
     args = parser.parse_args(argv)
-    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""))
+    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""), repositories=args.repos)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / f"{args.month}.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     (args.output / f"{args.month}.md").write_text(render_markdown(result), encoding="utf-8")
