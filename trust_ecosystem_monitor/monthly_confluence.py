@@ -41,7 +41,7 @@ def convert_confluence_export(payload: dict, period: str) -> dict:
         version = page.get("version")
         if version is not None and (not isinstance(version, int) or isinstance(version, bool) or version < 1):
             raise ValueError("Confluence version must be a positive integer")
-        key = (url, version)
+        key = url
         if key in seen:
             continue
         seen.add(key)
