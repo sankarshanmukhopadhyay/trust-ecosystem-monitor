@@ -27,3 +27,17 @@ The collector writes one JSON evidence manifest and one Markdown listing per mon
 ## Portability contract
 
 Collection requires only an organization name, reporting month, output directory, and GitHub token. No maintainer-hosted service is required. The next increment should support ecosystem profile configuration and meeting-source adapters without changing existing weekly report semantics.
+
+## Bounded two-month prototype
+
+The draft PR includes `.github/workflows/monthly-prototype.yml`, which is intended to collect three explicitly scoped ToIP repositories for August and September 2026, compare their GitHub lifecycle events, and upload six JSON/Markdown artifacts. The workflow does not publish to Pages and cannot be represented as having run until a successful Actions run and artifact are verified.
+
+The scope is **illustrative, not comprehensive**: `dtgwg-rahp-tf`, `dtgwg-cred-spec`, and `tswg-trust-registry-protocol`. These repository names must be validated for continued availability before treating the output as collected evidence.
+
+Run comparison after both manifests exist:
+
+```sh
+python -m trust_ecosystem_monitor.monthly_compare reports/prototype/2026-08.json reports/prototype/2026-09.json --output reports/prototype
+```
+
+A successful bounded run is not the completion of issue #61. The final ToIP-wide reports require an agreed governed repository scope and available meeting evidence. Coverage must be disclosed separately for each.
