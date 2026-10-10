@@ -77,6 +77,7 @@ jobs:
           cp monthly-prototype/2026-09-overview.html docs/monthly/2026-09-overview.html
           cp monthly-prototype/2026-08-to-2026-09.html docs/monthly/2026-08-to-2026-09.html
           python -m trust_ecosystem_monitor.monthly_index --output docs/monthly/index.html
+          python -m trust_ecosystem_monitor.monthly_index --link-home docs/index.html
       - name: Upload public HTML preview bundle
         uses: actions/upload-artifact@v4
         with:
