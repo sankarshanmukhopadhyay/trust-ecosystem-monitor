@@ -1,0 +1,53 @@
+name: ToIP public source reachability diagnostic
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate source probe
+        run: python -m unittest tests.test_source_probe tests.test_confluence_discovery tests.test_confluence_search
+      - name: Run bounded read-only probe
+        run: python -m trust_ecosystem_monitor.source_probe --output source-probe.json
+      - name: Discover bounded Confluence metadata sample
+        run: python -m trust_ecosystem_monitor.confluence_discovery --output confluence-metadata-sample.json --limit 25 --max-batches 3
+      - name: Discover August 2026 metadata sample
+        run: python -m trust_ecosystem_monitor.confluence_discovery --output confluence-august-sample.json --limit 25 --max-batches 3 --month 2026-08
+      - name: Discover September 2026 metadata sample
+        run: python -m trust_ecosystem_monitor.confluence_discovery --output confluence-september-sample.json --limit 25 --max-batches 3 --month 2026-09
+      - name: Search Confluence August 2026 by last-modified date
+        run: python -m trust_ecosystem_monitor.confluence_search --month 2026-08 --output confluence-august-search.json
+      - name: Search Confluence September 2026 by last-modified date
+        run: python -m trust_ecosystem_monitor.confluence_search --month 2026-09 --output confluence-september-search.json
+      - name: Summarize historical search results
+        run: |
+          python -c "import json; [(lambda d,m: print(m, 'coverage',d.get('coverage'),'count',d.get('sample_count'),'total',d.get('total_size'),'http',d.get('http_status'),'reason',d.get('reason'),'rejected_path',d.get('rejected_path')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
+      - name: Summarize month sample counts
+        run: |
+          python -c "import json; [(lambda d,m: print(m, 'matches',d.get('month_match_count'),'unknown_timestamps',d.get('unknown_timestamp_count'),'next_page',d.get('next_page_present'),'coverage',d.get('coverage')))(json.load(open('confluence-'+m+'-sample.json')),m) for m in ('august','september')]"
+      - name: Show sanitized metadata summary
+        run: python -c "import json; d=json.load(open('confluence-metadata-sample.json')); print({k:d.get(k) for k in ('coverage','reason','http_status','next_page_present')}); print('sample_pages',len(d.get('pages',[])),'batches',d.get('batches_fetched'))"
+      - name: Show sanitized status summary
+        run: python -c "import json; d=json.load(open('source-probe.json')); print([(r['source'],r['status'],r['http_status']) for r in d['results']])"
+      - name: Upload diagnostic metadata
+        uses: actions/upload-artifact@v4
+        with:
+          name: toip-public-source-reachability
+          path: |
+            source-probe.json
+            confluence-metadata-sample.json
+            confluence-august-sample.json
+            confluence-september-sample.json
+            confluence-august-search.json
+            confluence-september-search.json
+          retention-days: 7
