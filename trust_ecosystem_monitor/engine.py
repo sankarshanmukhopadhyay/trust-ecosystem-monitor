@@ -4,6 +4,7 @@ import json
 import os
 import shutil
 import tempfile
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -44,20 +45,39 @@ class GitHubClient(core.GitHubClient):
         if self.token:
             headers["Authorization"] = f"Bearer {self.token}"
         req = urllib.request.Request(url, headers=headers)
-        try:
-            with urllib.request.urlopen(req, timeout=30) as response:
-                return json.loads(response.read().decode("utf-8"))
-        except urllib.error.HTTPError as exc:
-            remaining = exc.headers.get("X-RateLimit-Remaining") if exc.headers else None
-            reset = exc.headers.get("X-RateLimit-Reset") if exc.headers else None
-            retry_after = exc.headers.get("Retry-After") if exc.headers else None
-            # Avoid exposing API response bodies or authorization material.
-            if exc.code == 429 or (exc.code == 403 and remaining == "0"):
+        # Retry only short, explicitly bounded throttles. A primary quota
+        # exhausted for an hour is an incomplete collection, not a reason
+        # to occupy a CI runner or publish partial evidence.
+        for attempt in range(3):
+            try:
+                with urllib.request.urlopen(req, timeout=30) as response:
+                    return json.loads(response.read().decode("utf-8"))
+            except urllib.error.HTTPError as exc:
+                remaining = exc.headers.get("X-RateLimit-Remaining") if exc.headers else None
+                reset = exc.headers.get("X-RateLimit-Reset") if exc.headers else None
+                retry_after = exc.headers.get("Retry-After") if exc.headers else None
+                throttled = exc.code == 429 or (exc.code == 403 and remaining == "0")
+                if not throttled:
+                    raise RuntimeError(f"GitHub API HTTP {exc.code} for {path}; request unsuccessful") from exc
+                delay = None
+                if retry_after is not None:
+                    try:
+                        delay = max(0.0, float(retry_after))
+                    except ValueError:
+                        pass
+                elif reset is not None:
+                    try:
+                        delay = max(0.0, float(reset) - time.time() + 1.0)
+                    except ValueError:
+                        pass
+                if attempt < 2 and delay is not None and delay <= 5:
+                    time.sleep(delay)
+                    continue
                 raise RuntimeError(
                     f"GitHub API rate limited for {path}: HTTP {exc.code}; "
                     f"reset_epoch={reset or 'unknown'}; retry_after={retry_after or 'unknown'}"
                 ) from exc
-            raise RuntimeError(f"GitHub API HTTP {exc.code} for {path}; request unsuccessful") from exc
+        raise AssertionError("unreachable retry loop")
 
     def org_repositories(self) -> list[dict[str, Any]]:
         """Resolve declared discovery sources and retain source provenance.
