@@ -61,7 +61,7 @@ def github_pages(url: str, token: str, *, max_pages: int = 100):
     raise RuntimeError(f"GitHub pagination safety limit reached: {url}")
 
 
-def collect_month(org: str, month: str, token: str, repositories: list[str] | None = None) -> dict:
+def collect_month(org: str, month: str, token: str, repositories: list[str] | None = None, prefixes: list[str] | None = None) -> dict:
     bounds = month_bounds(month)
     root = f"https://api.github.com/orgs/{urllib.parse.quote(org, safe='')}/repos?type=public"
     evidence = []
@@ -76,6 +76,8 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
         repo_source = github_pages(root, token)
     for repo in repo_source:
         name = repo["full_name"]
+        if prefixes and not any(name.split("/", 1)[1].startswith(prefix) for prefix in prefixes):
+            continue
         if name in seen_repositories:
             continue
         seen_repositories.add(name)
@@ -114,7 +116,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
         "coverage": coverage,
         "coverage_complete": bool(coverage) and all(entry["issues"] == "complete" and entry["pull_requests"] == "complete" for entry in coverage),
         "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
-        "collection_scope": ("explicit repositories: " + ", ".join(repositories)) if repositories is not None else "all public organization repositories; admission-tier filtering not yet applied",
+        "collection_scope": ("explicit repositories: " + ", ".join(repositories)) if repositories is not None else ("public organization repositories matching prefixes: " + ", ".join(prefixes) if prefixes else "all public organization repositories; admission-tier filtering not yet applied"),
     }
 
 
@@ -148,8 +150,9 @@ def main(argv=None) -> int:
     parser.add_argument("--month", required=True)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--repo", action="append", dest="repos", help="Bound collection to explicit owner/repository; repeat as needed")
+    parser.add_argument("--prefix", action="append", dest="prefixes", help="Select public organization repositories by name prefix; repeatable")
     args = parser.parse_args(argv)
-    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""), repositories=args.repos)
+    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""), repositories=args.repos, prefixes=args.prefixes)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / f"{args.month}.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     (args.output / f"{args.month}.md").write_text(render_markdown(result), encoding="utf-8")
