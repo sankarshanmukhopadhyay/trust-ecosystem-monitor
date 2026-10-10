@@ -5,7 +5,7 @@ Only allowlisted metadata is retained. No page bodies, titles or credentials.
 """
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import datetime, timezone
 import re
 import json
 from urllib.parse import urlencode, urlsplit, parse_qs
@@ -25,7 +25,8 @@ class AcquisitionError(RuntimeError):
 
 def acquire_metadata(month: str, *, approved_space_ids: set[str],
                      scope_approved: bool = False, reuse_approved: bool = False,
-                     fetch=None, max_pages: int = MAX_PAGES) -> dict:
+                     fetch=None, max_pages: int = MAX_PAGES,
+                     retrieved_at: str | None = None) -> dict:
     """Return metadata observations and explicit incomplete-coverage diagnostics.
 
     Search is scoped by approved space key HOME, then each hit's spaceId is
@@ -40,6 +41,15 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
         raise ValueError("approved space IDs must be numeric")
     if not 1 <= max_pages <= MAX_PAGES:
         raise ValueError("invalid pagination budget")
+    if retrieved_at is None:
+        retrieved_at = datetime.now(timezone.utc).isoformat()
+    else:
+        try:
+            parsed_at = datetime.fromisoformat(retrieved_at.replace("Z", "+00:00"))
+        except (ValueError, AttributeError) as exc:
+            raise ValueError("retrieved_at must be timezone-aware ISO 8601") from exc
+        if parsed_at.tzinfo is None or parsed_at.utcoffset() is None:
+            raise ValueError("retrieved_at must be timezone-aware ISO 8601")
     if fetch is None:
         fetch = _fetch_json
     year, mm = map(int, month.split("-"))
@@ -53,6 +63,9 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
     seen_ids = set()
     records = []
     diagnostics = []
+    search_pages_fetched = 0
+    metadata_lookups_attempted = 0
+    terminal_page_seen = False
     for page_no in range(max_pages):
         if path in seen_pages:
             diagnostics.append("pagination_cycle")
@@ -63,6 +76,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
         except (AcquisitionError, ValueError, KeyError, TypeError):
             diagnostics.append("retrieval_error")
             break
+        search_pages_fetched += 1
         if not isinstance(data, dict) or not isinstance(data.get("results"), list):
             diagnostics.append("malformed_response")
             break
@@ -75,6 +89,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
                 diagnostics.append("duplicate_hit")
                 continue
             seen_ids.add(ident)
+            metadata_lookups_attempted += 1
             try:
                 page = fetch("/wiki/api/v2/pages/" + ident)
             except (AcquisitionError, ValueError, KeyError, TypeError):
@@ -87,10 +102,14 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
                 diagnostics.append("out_of_scope")
                 continue
             version = page.get("version")
+            if (not isinstance(version, dict) or type(version.get("number")) is not int
+                    or version["number"] < 1):
+                diagnostics.append("missing_version_provenance")
+                continue
             records.append({
                 "source": "confluence", "source_id": ident,
                 "space_id": str(page["spaceId"]),
-                "version": version.get("number") if isinstance(version, dict) and isinstance(version.get("number"), int) else None,
+                "version": version["number"],
                 "url": BASE + "/wiki/spaces/HOME/pages/" + ident,
                 "kind": "page_update",
                 "classification": "metadata_only",
@@ -99,6 +118,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
         if not nxt:
             if data.get("size") == PAGE_SIZE:
                 diagnostics.append("possible_truncation")
+            terminal_page_seen = True
             break
         if nxt in seen_pages:
             diagnostics.append("pagination_cycle")
@@ -126,7 +146,12 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
         "schema_version": "1", "period": month,
         "source": "confluence", "space_ids": sorted(approved_space_ids),
         "records": records, "diagnostics": sorted(set(diagnostics)),
-        "coverage": "partial", "scope_verified": True,
+        "retrieved_at": retrieved_at,
+        "search_pages_fetched": search_pages_fetched,
+        "metadata_lookups_attempted": metadata_lookups_attempted,
+        "search_terminated_normally": terminal_page_seen,
+        "coverage": "partial" if search_pages_fetched else "unavailable",
+        "scope_verified": False, "scope_caller_approved": True,
         "historical_completeness_verified": False,
         "publication_admitted": False,
     }
