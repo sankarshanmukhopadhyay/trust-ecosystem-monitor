@@ -2,6 +2,7 @@ import unittest
 from unittest.mock import patch
 
 from trust_ecosystem_monitor.monthly import month_bounds, in_month, collect_month, render_markdown
+from trust_ecosystem_monitor.monthly_compare import compare, render_markdown as render_comparison
 
 
 class MonthlyTests(unittest.TestCase):
@@ -28,6 +29,19 @@ class MonthlyTests(unittest.TestCase):
         self.assertEqual(result["external_sources"]["lfx"], "not_checked")
         self.assertTrue(result["coverage_complete"])
         self.assertIn("https://github.com/trustoverip/example/issues/3", render_markdown(result))
+
+    def test_comparison_is_evidence_only(self):
+        first = {"ecosystem": "trustoverip", "period": "2026-08", "coverage_complete": True, "evidence": [{"repository": "trustoverip/a", "event": "opened", "url": "https://github.com/trustoverip/a/issues/1"}]}
+        second = {"ecosystem": "trustoverip", "period": "2026-09", "coverage_complete": False, "evidence": []}
+        result = compare(first, second)
+        self.assertEqual(result["repositories"][0]["earlier"]["opened"], 1)
+        self.assertIn("incomplete", render_comparison(result))
+        with self.assertRaises(ValueError):
+            compare(second, first)
+
+    def test_explicit_repository_scope_rejects_cross_org(self):
+        with self.assertRaises(ValueError):
+            collect_month("trustoverip", "2026-08", "token", ["other/a"])
 
     @patch("trust_ecosystem_monitor.monthly.github_pages")
     def test_partial_failure_is_visible(self, pages):
