@@ -22,3 +22,7 @@ The `toip_evidence_contract` module provides an offline validation and bounded c
 - Confirm the public Pages deployment independently (#81). LFX remains deferred (#80).
 
 **Current release:** GitHub-only bounded inference is implemented; cross-source publication is blocked until these gates are satisfied.
+
+## Reviewable subject mapping requirement (next increment)
+
+A common `subject_id` alone is insufficient for a public cross-source finding. Both source records must now provide an HTTPS `subject_evidence_url` for review. If either reference is absent or unsafe, inference is suppressed, not guessed. This is an additional mechanical gate, **not independent proof that the linked records refer to the same subject**. Human verification and the source-owner rights decision remain mandatory before publication. Existing GitHub-only pages are unchanged.
