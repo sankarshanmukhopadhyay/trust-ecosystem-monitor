@@ -74,7 +74,17 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
         repo_source = ({"full_name": name} for name in repositories)
     else:
         repo_source = github_pages(root, token)
-    for repo in repo_source:
+    try:
+        discovered = list(repo_source)
+    except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, RuntimeError) as exc:
+        return {
+            "schema_version": "1", "ecosystem": org, "period": month,
+            "methodology": "Historical GitHub issue and PR lifecycle events; discovery failed",
+            "evidence": [], "coverage": [{"repository": org + "/*", "issues": "not_checked", "pull_requests": "not_checked", "discovery": f"unavailable: {type(exc).__name__}: {exc}"}],
+            "coverage_complete": False, "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
+            "collection_scope": "repository discovery failed; no claim of completeness",
+        }
+    for repo in discovered:
         name = repo["full_name"]
         if prefixes and not any(name.split("/", 1)[1].startswith(prefix) for prefix in prefixes):
             continue
