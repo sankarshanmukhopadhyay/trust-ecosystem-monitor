@@ -32,6 +32,8 @@ concurrency:
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
   prototype:
@@ -82,6 +84,21 @@ jobs:
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-to-2026-09.md --output monthly-prototype/2026-08-to-2026-09.html
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-overview.md --output monthly-prototype/2026-08-overview.html
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-overview.md --output monthly-prototype/2026-09-overview.html
+      - name: Stage public HTML previews
+        run: |
+          mkdir -p docs/monthly
+          cp monthly-prototype/2026-08-report.html docs/monthly/2026-08-report.html
+          cp monthly-prototype/2026-09-report.html docs/monthly/2026-09-report.html
+          cp monthly-prototype/2026-08-overview.html docs/monthly/2026-08-overview.html
+          cp monthly-prototype/2026-09-overview.html docs/monthly/2026-09-overview.html
+          cp monthly-prototype/2026-08-to-2026-09.html docs/monthly/2026-08-to-2026-09.html
+          python -m trust_ecosystem_monitor.monthly_index --output docs/monthly/index.html
+      - name: Upload public HTML preview bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: toip-monthly-html-previews
+          path: docs/monthly/
+          retention-days: 30
       - name: Upload prototype evidence
         uses: actions/upload-artifact@v4
         with:
