@@ -36,6 +36,8 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
     total = None
     space_keys = set()
     missing_space = 0
+    observed_shapes = set()
+    space_sources = set()
     while url and batches < max_batches:
         parsed = urlsplit(url)
         if parsed.scheme != "https" or parsed.netloc != "lf-toip.atlassian.net" or parsed.path not in ("/wiki/rest/api/search", "/wiki/rest/api/content/search", "/rest/api/search"):
@@ -60,9 +62,24 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
         count += min(len(data["results"]), limit)
         # Collect only aggregate public space identifiers, not page data.
         for item in data["results"]:
-            content = item.get("content") if isinstance(item, dict) else None
-            space = content.get("space") if isinstance(content, dict) else None
-            key = space.get("key") if isinstance(space, dict) else None
+            if not isinstance(item, dict):
+                missing_space += 1
+                continue
+            # Field-name diagnostics only: never store titles, IDs or bodies.
+            observed_shapes.add(",".join(sorted(
+                k for k in item if k in {"content", "space", "spaceId", "entity", "resultGlobalContainer"}
+            )) or "none")
+            content = item.get("content") if isinstance(item.get("content"), dict) else {}
+            candidates = [
+                ("content.space", content.get("space")),
+                ("result.space", item.get("space")),
+            ]
+            key = None
+            for origin, candidate in candidates:
+                if isinstance(candidate, dict) and isinstance(candidate.get("key"), str):
+                    key = candidate["key"]
+                    space_sources.add(origin)
+                    break
             if isinstance(key, str) and 0 < len(key) <= 100:
                 space_keys.add(key)
             else:
@@ -88,6 +105,8 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
             url = candidate
         else:
             url = None
+    result["observed_field_shapes"] = sorted(observed_shapes)
+    result["space_key_origins"] = sorted(space_sources)
     result["observed_space_keys"] = sorted(space_keys)
     result["missing_space_count"] = missing_space
     result["scope_verified"] = False
