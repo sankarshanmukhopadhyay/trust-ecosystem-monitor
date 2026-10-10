@@ -1,4 +1,5 @@
 import unittest
+from urllib.parse import parse_qs, urlencode, urlsplit
 
 from trust_ecosystem_monitor.toip_confluence_acquisition import acquire_metadata
 
@@ -47,6 +48,54 @@ class AcquisitionTests(unittest.TestCase):
         data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
                                 scope_approved=True, reuse_approved=True, fetch=cycle)
         self.assertIn("pagination_cycle", data["diagnostics"])
+
+    def test_rejects_tampered_pagination_query(self):
+        def tampered(path):
+            if path.startswith("/wiki/rest/"):
+                query = parse_qs(urlsplit(path).query)
+                query["cql"] = ['space = OTHER']
+                query["start"] = ["50"]
+                return {"results": [], "_links": {"next": "/wiki/rest/api/content/search?" + urlencode({k: v[0] for k, v in query.items()})}}
+            raise AssertionError("unexpected lookup")
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=tampered)
+        self.assertIn("unsafe_pagination", data["diagnostics"])
+
+    def test_rejects_extra_query_parameters(self):
+        def extra(path):
+            if path.startswith("/wiki/rest/"):
+                return {"results": [], "_links": {"next": path.replace("start=0", "start=50") + "&expand=body.storage"}}
+            raise AssertionError("unexpected lookup")
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=extra)
+        self.assertIn("unsafe_pagination", data["diagnostics"])
+
+    def test_valid_pagination_preserves_scope(self):
+        calls = []
+        def pages(path):
+            if path.startswith("/wiki/rest/"):
+                calls.append(path)
+                if len(calls) == 1:
+                    return {"results": [], "_links": {"next": path.replace("start=0", "start=50")}}
+                return {"results": [], "_links": {}}
+            raise AssertionError("unexpected lookup")
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=pages)
+        self.assertEqual(len(calls), 2)
+        self.assertNotIn("unsafe_pagination", data["diagnostics"])
+
+    def test_strict_month_and_december_rollover(self):
+        for month in ("2026-8", "2026-08extra", "2026-13", "2026-00"):
+            with self.subTest(month=month), self.assertRaises(ValueError):
+                acquire_metadata(month, approved_space_ids={"22970380"},
+                                 scope_approved=True, reuse_approved=True, fetch=fixture)
+        observed = []
+        def capture(path):
+            observed.append(path)
+            return {"results": [], "_links": {}}
+        acquire_metadata("2026-12", approved_space_ids={"22970380"},
+                         scope_approved=True, reuse_approved=True, fetch=capture)
+        self.assertIn('2027-01-01', parse_qs(urlsplit(observed[0]).query)["cql"][0])
 
     def test_lookup_failure_not_silent(self):
         def fail(path):
