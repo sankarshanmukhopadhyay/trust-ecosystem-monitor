@@ -41,3 +41,15 @@ python -m trust_ecosystem_monitor.monthly_compare reports/prototype/2026-08.json
 ```
 
 A successful bounded run is not the completion of issue #61. The final ToIP-wide reports require an agreed governed repository scope and available meeting evidence. Coverage must be disclosed separately for each.
+
+## HTML report format
+
+The prototype generates self-contained, responsive HTML files for the August report, September report, and comparison alongside Markdown and JSON. HTML is generated from the same evidence-backed Markdown, with untrusted text escaped and only HTTPS evidence links converted into anchors. It does not require a JavaScript runtime, external CSS, a site generator, or personal infrastructure.
+
+For a standalone local conversion:
+
+```sh
+python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-report.md --output monthly-prototype/2026-08-report.html
+```
+
+The GitHub Actions artifact is a preview delivery mechanism; publication to a ToIP-controlled site remains a separate governance and deployment decision.
