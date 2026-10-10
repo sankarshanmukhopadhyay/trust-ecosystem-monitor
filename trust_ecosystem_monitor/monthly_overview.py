@@ -34,8 +34,8 @@ def render(manifest: dict, *, examples_per_portfolio: int = 8) -> str:
         items = buckets[group]
         counts = Counter(item["event"] for item in items)
         lines.append(f"| {group} | {len(set(item['repository'] for item in items))} | {counts['opened']} | {counts['closed']} | {counts['merged']} |")
-    if not buckets:
-        lines.append("| No observed events | 0 | 0 | 0 | 0 |")
+    if not scoped_groups and not buckets:
+        lines.append("| No selected repositories | 0 | 0 | 0 | 0 |")
     lines.extend(["", "## Selected source-linked observations", ""])
     for group in sorted(scoped_groups | set(buckets)):
         items = buckets[group]
