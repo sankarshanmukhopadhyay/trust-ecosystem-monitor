@@ -23,7 +23,7 @@ class OfflinePreviewTests(unittest.TestCase):
     def test_synthetic_cross_source_preview(self):
         html = render_preview(fixture([G, C]))
         self.assertIn("NOT FOR PUBLICATION", html)
-        self.assertIn("cross-source reference", html.lower())
+        self.assertIn("reference the same curator-identified subject", html.lower())
         self.assertIn("does not establish governance approval", html)
 
     def test_no_unreviewed_cross_source_inference(self):
