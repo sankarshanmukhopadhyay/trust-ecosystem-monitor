@@ -16,7 +16,7 @@ jobs:
         with:
           python-version: '3.11'
       - name: Validate source probe
-        run: python -m unittest tests.test_source_probe tests.test_confluence_discovery tests.test_confluence_search
+        run: python -m unittest tests.test_source_probe tests.test_confluence_discovery tests.test_confluence_search tests.test_confluence_space_identity
       - name: Run bounded read-only probe
         run: python -m trust_ecosystem_monitor.source_probe --output source-probe.json
       - name: Discover bounded Confluence metadata sample
@@ -29,6 +29,10 @@ jobs:
         run: python -m trust_ecosystem_monitor.confluence_search --month 2026-08 --resolve-missing --output confluence-august-search.json
       - name: Search Confluence September 2026 by last-modified date
         run: python -m trust_ecosystem_monitor.confluence_search --month 2026-09 --resolve-missing --output confluence-september-search.json
+      - name: Verify observed Confluence space identity (not authority)
+        run: python -m trust_ecosystem_monitor.confluence_space_identity --space-id 22970380 --output confluence-space-identity.json
+      - name: Summarize public space identity
+        run: python -c "import json; d=json.load(open('confluence-space-identity.json')); print({k:d.get(k) for k in ('requested_space_id','identity_verified','authority_verified','publication_rights_verified','key','name','coverage','reason','http_status')})"
       - name: Summarize observed public Confluence space candidates
         run: |
           python -c "import json; [(lambda d,m: print(m, 'resolved_space_ids',d.get('resolved_space_ids',[]),'lookup_status',d.get('metadata_lookup_status',{}),'field_shapes',d.get('observed_field_shapes',[]),'space_key_origins',d.get('space_key_origins',[]),'observed_space_keys',d.get('observed_space_keys',[]),'missing_space_count',d.get('missing_space_count'),'scope_verified',d.get('scope_verified'),'coverage',d.get('coverage')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
@@ -53,4 +57,5 @@ jobs:
             confluence-september-sample.json
             confluence-august-search.json
             confluence-september-search.json
+            confluence-space-identity.json
           retention-days: 7
