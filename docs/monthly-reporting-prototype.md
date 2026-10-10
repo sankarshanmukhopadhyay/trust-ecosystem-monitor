@@ -84,3 +84,29 @@ python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-report.
 The importer reports LFX coverage as **partial** because a supplied export cannot prove the completeness of all LFX meetings. It records meeting listings as discussions, not decisions or deliverables. Until an authorized export is provided and included in the report-generation workflow, CI-generated reports continue to state LFX `not_checked`. Confluence is likewise not checked.
 
 No credentials, attendance lists, private minutes, or restricted source text should be committed to the repository.
+
+## Confluence metadata import
+
+An authorized Confluence export can be converted into a monthly source manifest. The adapter requires `pages` with `updated_at` (ISO 8601 with timezone), `url` (HTTPS), `group`, `title`, and optional positive integer `version`. For example:
+
+```json
+{
+  "pages": [
+    {
+      "updated_at": "2026-09-12T14:00:00Z",
+      "url": "https://example.org/wiki/page/1",
+      "group": "DTG",
+      "title": "Working notes",
+      "version": 3
+    }
+  ]
+}
+```
+
+The URL is illustrative, not evidence of a real Confluence page.
+
+```sh
+python -m trust_ecosystem_monitor.monthly_confluence authorized-confluence-export.json --month 2026-09 --output monthly-prototype/2026-09-confluence.json
+```
+
+The adapter reports `partial` coverage and records **page updates**, not independently verified decisions. It does not claim live Confluence API access or a complete historical change log. The existing monthly report accepts a combined meeting manifest; separately imported Confluence and LFX manifests must be combined and validated before use.
