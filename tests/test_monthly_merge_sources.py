@@ -14,6 +14,11 @@ class MergeSourcesTests(unittest.TestCase):
         self.assertEqual(len(result["records"]), 1)
         self.assertEqual(result["coverage"], {"lfx": "partial", "confluence": "partial"})
 
+    def test_conflicting_coverage_never_claims_complete(self):
+        a = empty_manifest("2026-09", lfx="complete")
+        b = empty_manifest("2026-09", lfx="unavailable")
+        self.assertEqual(combine("2026-09", [a, b])["coverage"]["lfx"], "partial")
+
     def test_rejects_mixed_periods(self):
         with self.assertRaises(ValueError):
             combine("2026-09", [empty_manifest("2026-08")])
