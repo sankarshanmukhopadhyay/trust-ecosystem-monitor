@@ -73,9 +73,9 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
                 raise ValueError(f"Repository outside configured organization: {name}")
         repo_source = ({"full_name": name} for name in repositories)
     else:
-        repo_source = github_pages(root, token)
+        repo_source = None
     try:
-        discovered = list(repo_source)
+        discovered = list(repo_source if repo_source is not None else github_pages(root, token))
     except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, RuntimeError) as exc:
         return {
             "schema_version": "1", "ecosystem": org, "period": month,
