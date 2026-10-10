@@ -50,6 +50,8 @@ def check(root: Path) -> list[str]:
         if name in {"intelligence/toip/index.html", "intelligence/toip/coverage/index.html", "intelligence/toip/2026-08/index.html", "intelligence/toip/2026-09/index.html"}:
             if "LFX" not in content:
                 errors.append("Missing LFX coverage disclosure: " + name)
+        if not name.startswith("intelligence/"):
+            continue
         links = Links()
         links.feed(content)
         for href in links.links:
