@@ -100,6 +100,9 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
             if data.get("size") == PAGE_SIZE:
                 diagnostics.append("possible_truncation")
             break
+        if nxt in seen_pages:
+            diagnostics.append("pagination_cycle")
+            break
         parsed = urlsplit(nxt)
         try:
             params = parse_qs(parsed.query, keep_blank_values=True, strict_parsing=True)
