@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - feat/61-monthly-evidence-foundation
     paths:
       - 'trust_ecosystem_monitor/monthly.py'
       - 'trust_ecosystem_monitor/monthly_lfx.py'
