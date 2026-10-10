@@ -78,11 +78,21 @@ jobs:
           cp monthly-prototype/2026-08-to-2026-09.html docs/monthly/2026-08-to-2026-09.html
           python -m trust_ecosystem_monitor.monthly_index --output docs/monthly/index.html
           python -m trust_ecosystem_monitor.monthly_index --link-home docs/index.html
+      - name: Render ToIP ecosystem intelligence
+        run: |
+          python -m trust_ecosystem_monitor.toip_intelligence monthly-prototype/2026-08.json monthly-prototype/2026-09.json --output docs/intelligence/toip
+          mkdir -p docs/intelligence
+          cat > docs/intelligence/index.html <<'EOF'
+          <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ecosystem intelligence</title></head><body><main><h1>Ecosystem intelligence</h1><p>Independent evidence-based ecosystem reporting.</p><p><a href="toip/">ToIP ecosystem intelligence</a></p></main></body></html>
+          EOF
+          python -c "from pathlib import Path; p=Path('docs/index.html'); s=p.read_text(); link='<p><a href=\"intelligence/toip/\">ToIP ecosystem intelligence (source-aware preview)</a></p>'; s=s.replace('</main>',link+'</main>',1) if 'href=\"intelligence/toip/\"' not in s else s; p.write_text(s)"
       - name: Upload public HTML preview bundle
         uses: actions/upload-artifact@v4
         with:
           name: toip-monthly-html-previews
-          path: docs/monthly/
+          path: |
+            docs/monthly/
+            docs/intelligence/
           retention-days: 30
       - name: Upload prototype evidence
         uses: actions/upload-artifact@v4
