@@ -107,6 +107,7 @@ def collect_month(org: str, month: str, token: str) -> dict:
         "coverage": coverage,
         "coverage_complete": all(entry["issues"] == "complete" and entry["pull_requests"] == "complete" for entry in coverage),
         "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
+        "collection_scope": "all public organization repositories; admission-tier filtering not yet applied",
     }
 
 
@@ -129,7 +130,7 @@ def render_markdown(result: dict) -> str:
     lines.extend(["", "## Source coverage", ""])
     for entry in result["coverage"]:
         lines.append(f"- {entry['repository']}: issues={entry['issues']}; PRs={entry['pull_requests']}")
-    lines.extend(["- Confluence: not checked", "- LFX: not checked", ""])
+    lines.extend(["- Confluence: not checked", "- LFX: not checked", "", "## Interpretation limits", "", "- No inference of inactivity from absent evidence.", "- No inference of decisions, deliverables, or completion from GitHub event counts.", "- Historical issue/PR state transitions may be incomplete.", ""])
     return "\n".join(lines)
 
 
