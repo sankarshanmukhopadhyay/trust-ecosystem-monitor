@@ -6,8 +6,9 @@ Only allowlisted metadata is retained. No page bodies, titles or credentials.
 from __future__ import annotations
 
 from datetime import datetime
+import re
 import json
-from urllib.parse import urlencode, urlsplit
+from urllib.parse import urlencode, urlsplit, parse_qs
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
 
@@ -31,7 +32,8 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
     checked against approved numeric space IDs. The result is not a license to
     republish records, and it never marks historical completeness on its own.
     """
-    datetime.strptime(month, "%Y-%m")
+    if not isinstance(month, str) or not re.fullmatch(r"[0-9]{4}-(0[1-9]|1[0-2])", month):
+        raise ValueError("month must be YYYY-MM")
     if not scope_approved or not reuse_approved or not approved_space_ids:
         raise PermissionError("dated scope and metadata reuse approvals required")
     if not all(str(v).isdigit() for v in approved_space_ids):
@@ -46,6 +48,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
     next_month = f"{year+1}-01" if mm == 12 else f"{year}-{mm+1:02d}"
     cql = f'space = HOME AND lastmodified >= "{month}-01" AND lastmodified < "{next_month}-01"'
     path = "/wiki/rest/api/content/search?" + urlencode({"cql": cql, "limit": PAGE_SIZE, "start": 0})
+    expected_query = {"cql": [cql], "limit": [str(PAGE_SIZE)]}
     seen_pages = set()
     seen_ids = set()
     records = []
@@ -98,7 +101,19 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
                 diagnostics.append("possible_truncation")
             break
         parsed = urlsplit(nxt)
-        if parsed.scheme or parsed.netloc or not nxt.startswith("/wiki/rest/api/content/search?") or "cql=" not in nxt:
+        try:
+            params = parse_qs(parsed.query, keep_blank_values=True, strict_parsing=True)
+            valid = (not parsed.scheme and not parsed.netloc and not parsed.fragment
+                     and parsed.path == "/wiki/rest/api/content/search"
+                     and set(params) == {"cql", "limit", "start"}
+                     and all(len(values) == 1 for values in params.values())
+                     and params["cql"] == expected_query["cql"]
+                     and params["limit"] == expected_query["limit"]
+                     and params["start"][0].isdigit()
+                     and int(params["start"][0]) > 0)
+        except (ValueError, KeyError):
+            valid = False
+        if not valid:
             diagnostics.append("unsafe_pagination")
             break
         path = nxt
