@@ -5,7 +5,6 @@ This module is intentionally independent of the weekly observation state.
 from __future__ import annotations
 
 import argparse
-import calendar
 import datetime as dt
 import json
 import os
@@ -67,8 +66,12 @@ def collect_month(org: str, month: str, token: str) -> dict:
     root = f"https://api.github.com/orgs/{urllib.parse.quote(org, safe='')}/repos?type=public"
     evidence = []
     coverage = []
+    seen_repositories = set()
     for repo in github_pages(root, token):
         name = repo["full_name"]
+        if name in seen_repositories:
+            continue
+        seen_repositories.add(name)
         base = f"https://api.github.com/repos/{name}"
         status = {"repository": name, "issues": "complete", "pull_requests": "complete"}
         for kind, endpoint in (("issues", "issues?state=all"), ("pull_requests", "pulls?state=all")):
@@ -93,6 +96,7 @@ def collect_month(org: str, month: str, token: str) -> dict:
             except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, RuntimeError) as exc:
                 status[kind] = f"unavailable: {type(exc).__name__}: {exc}"
         coverage.append(status)
+    evidence = list({entry["id"]: entry for entry in evidence}.values())
     evidence.sort(key=lambda e: (e["occurred_at"], e["id"]))
     return {
         "schema_version": "1",
