@@ -48,8 +48,16 @@ class GitHubClient(core.GitHubClient):
             with urllib.request.urlopen(req, timeout=30) as response:
                 return json.loads(response.read().decode("utf-8"))
         except urllib.error.HTTPError as exc:
-            body = exc.read().decode("utf-8", errors="replace")
-            raise RuntimeError(f"GitHub API {exc.code} for {path}: {body[:300]}") from exc
+            remaining = exc.headers.get("X-RateLimit-Remaining") if exc.headers else None
+            reset = exc.headers.get("X-RateLimit-Reset") if exc.headers else None
+            retry_after = exc.headers.get("Retry-After") if exc.headers else None
+            # Avoid exposing API response bodies or authorization material.
+            if exc.code == 429 or (exc.code == 403 and remaining == "0"):
+                raise RuntimeError(
+                    f"GitHub API rate limited for {path}: HTTP {exc.code}; "
+                    f"reset_epoch={reset or 'unknown'}; retry_after={retry_after or 'unknown'}"
+                ) from exc
+            raise RuntimeError(f"GitHub API HTTP {exc.code} for {path}; request unsuccessful") from exc
 
     def org_repositories(self) -> list[dict[str, Any]]:
         """Resolve declared discovery sources and retain source provenance.
