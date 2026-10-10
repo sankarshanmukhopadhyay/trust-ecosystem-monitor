@@ -41,7 +41,7 @@ def convert_lfx_export(payload: dict, period: str) -> dict:
             raise ValueError("LFX meeting requires URL, group and title")
         if not url.startswith("https://"):
             raise ValueError("LFX evidence URL must be HTTPS")
-        key = (url, when.isoformat())
+        key = url
         if key in seen:
             continue
         seen.add(key)
