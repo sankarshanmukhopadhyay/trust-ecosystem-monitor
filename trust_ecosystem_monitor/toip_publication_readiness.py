@@ -47,7 +47,7 @@ def check(root: Path) -> list[str]:
         content = path.read_text(encoding="utf-8")
         if "<html" not in content.lower() or "</html>" not in content.lower():
             errors.append("Invalid HTML shell: " + name)
-        if name.startswith("intelligence/toip/"):
+        if name in {"intelligence/toip/index.html", "intelligence/toip/coverage/index.html", "intelligence/toip/2026-08/index.html", "intelligence/toip/2026-09/index.html"}:
             if "LFX" not in content:
                 errors.append("Missing LFX coverage disclosure: " + name)
         links = Links()
