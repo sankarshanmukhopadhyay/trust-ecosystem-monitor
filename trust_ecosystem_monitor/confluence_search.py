@@ -12,12 +12,39 @@ from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import urlencode, urljoin, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
+import re
 
 BASE = "https://lf-toip.atlassian.net/wiki/rest/api/search"
 MAX_BYTES = 1024 * 1024
+MAX_LOOKUPS = 50
+PAGE_ID = re.compile(r"[0-9]{1,20}$")
 
 
-def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: int = 3) -> dict:
+def resolve_space(page_id: str, *, opener=urlopen) -> tuple[str | None, str]:
+    """Fetch public v2 page metadata only; never fetch bodies or follow redirects."""
+    if not PAGE_ID.fullmatch(page_id):
+        return None, "invalid_id"
+    url = f"https://lf-toip.atlassian.net/wiki/api/v2/pages/{page_id}"
+    request = Request(url, headers={"Accept": "application/json", "User-Agent": "TEM-Public-Space-Resolver/1.0"})
+    try:
+        with opener(request, timeout=15) as response:
+            payload = response.read(MAX_BYTES + 1)
+            if len(payload) > MAX_BYTES:
+                return None, "response_limit"
+            data = json.loads(payload)
+    except HTTPError as exc:
+        return None, "not_authorized" if exc.code in (401, 403) else "http_error"
+    except (URLError, TimeoutError, OSError, ValueError, UnicodeError):
+        return None, "unavailable"
+    if not isinstance(data, dict) or str(data.get("id")) != page_id:
+        return None, "identity_mismatch"
+    space_id = data.get("spaceId")
+    if not isinstance(space_id, (str, int)) or isinstance(space_id, bool) or not str(space_id).isdigit():
+        return None, "missing_space_id"
+    return str(space_id), "resolved"
+
+
+def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: int = 3, resolve_missing: bool = False) -> dict:
     try:
         start = datetime.strptime(month, "%Y-%m").replace(tzinfo=timezone.utc)
     except ValueError as exc:
@@ -38,6 +65,9 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
     missing_space = 0
     observed_shapes = set()
     space_sources = set()
+    resolved_space_ids = set()
+    lookup_status = {}
+    lookup_cache = {}
     while url and batches < max_batches:
         parsed = urlsplit(url)
         if parsed.scheme != "https" or parsed.netloc != "lf-toip.atlassian.net" or parsed.path not in ("/wiki/rest/api/search", "/wiki/rest/api/content/search", "/rest/api/search"):
@@ -83,6 +113,20 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
             if isinstance(key, str) and 0 < len(key) <= 100:
                 space_keys.add(key)
             else:
+                if resolve_missing:
+                    identifier = content.get("id")
+                    if not isinstance(identifier, (str, int)) or isinstance(identifier, bool):
+                        status = "missing_page_id"
+                    else:
+                        identifier = str(identifier)
+                        if identifier not in lookup_cache and len(lookup_cache) < MAX_LOOKUPS:
+                            lookup_cache[identifier] = resolve_space(identifier, opener=opener)
+                        space_id, status = lookup_cache.get(identifier, (None, "lookup_limit"))
+                        if space_id is not None:
+                            resolved_space_ids.add(space_id)
+                    lookup_status[status] = lookup_status.get(status, 0) + 1
+                    if status == "resolved":
+                        continue
                 missing_space += 1
         if isinstance(data.get("totalSize"), int):
             total = data["totalSize"]
@@ -108,6 +152,9 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
     result["observed_field_shapes"] = sorted(observed_shapes)
     result["space_key_origins"] = sorted(space_sources)
     result["observed_space_keys"] = sorted(space_keys)
+    result["resolved_space_ids"] = sorted(resolved_space_ids)
+    result["metadata_lookup_status"] = dict(sorted(lookup_status.items()))
+    result["metadata_lookup_attempted"] = len(lookup_cache)
     result["missing_space_count"] = missing_space
     result["scope_verified"] = False
     result["sample_count"] = count
@@ -124,8 +171,9 @@ def main() -> None:
     parser.add_argument("--month", required=True)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--max-batches", type=int, default=3)
+    parser.add_argument("--resolve-missing", action="store_true", help="Bounded public v2 page metadata lookups for missing space keys")
     args = parser.parse_args()
-    report = search_month(args.month, max_batches=args.max_batches)
+    report = search_month(args.month, max_batches=args.max_batches, resolve_missing=args.resolve_missing)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
 

@@ -3,7 +3,7 @@ import json
 import unittest
 from urllib.error import HTTPError
 
-from trust_ecosystem_monitor.confluence_search import search_month
+from trust_ecosystem_monitor.confluence_search import search_month, resolve_space
 
 
 class Response:
@@ -60,6 +60,32 @@ class SearchTests(unittest.TestCase):
         self.assertEqual(result["space_key_origins"], ["content.space", "result.space"])
         self.assertNotIn("do not retain", str(result))
         self.assertFalse(result["scope_verified"])
+
+    def test_public_page_metadata_resolves_space_id(self):
+        def opener(req, timeout):
+            self.assertEqual(req.full_url, "https://lf-toip.atlassian.net/wiki/api/v2/pages/123")
+            return Response({"id": "123", "spaceId": "456", "body": {"storage": "must not leak"}})
+        self.assertEqual(resolve_space("123", opener=opener), ("456", "resolved"))
+        self.assertEqual(resolve_space("../123", opener=opener), (None, "invalid_id"))
+
+    def test_lookup_denial_and_identity_mismatch(self):
+        def denied(req, timeout):
+            raise HTTPError(req.full_url, 403, "Forbidden", {}, None)
+        self.assertEqual(resolve_space("123", opener=denied)[1], "not_authorized")
+        self.assertEqual(resolve_space("123", opener=lambda req, timeout: Response({"id": "999", "spaceId": "456"}))[1], "identity_mismatch")
+
+    def test_month_resolves_unmapped_space_without_publishing_page_id(self):
+        def opener(req, timeout):
+            if "/api/v2/pages/" in req.full_url:
+                return Response({"id": "123", "spaceId": "456"})
+            return Response({"results": [{"content": {"id": "123"}, "resultGlobalContainer": {"title": "secret"}}], "_links": {}})
+        result = search_month("2026-08", opener=opener, resolve_missing=True)
+        self.assertEqual(result["resolved_space_ids"], ["456"])
+        self.assertEqual(result["metadata_lookup_status"], {"resolved": 1})
+        self.assertEqual(result["missing_space_count"], 0)
+        self.assertFalse(result["scope_verified"])
+        self.assertNotIn("secret", str(result))
+        self.assertNotIn("123", str(result))
 
     def test_http_denial_is_unavailable(self):
         def opener(req, timeout):

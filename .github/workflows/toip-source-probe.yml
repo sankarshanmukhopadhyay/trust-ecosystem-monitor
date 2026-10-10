@@ -26,12 +26,12 @@ jobs:
       - name: Discover September 2026 metadata sample
         run: python -m trust_ecosystem_monitor.confluence_discovery --output confluence-september-sample.json --limit 25 --max-batches 3 --month 2026-09
       - name: Search Confluence August 2026 by last-modified date
-        run: python -m trust_ecosystem_monitor.confluence_search --month 2026-08 --output confluence-august-search.json
+        run: python -m trust_ecosystem_monitor.confluence_search --month 2026-08 --resolve-missing --output confluence-august-search.json
       - name: Search Confluence September 2026 by last-modified date
-        run: python -m trust_ecosystem_monitor.confluence_search --month 2026-09 --output confluence-september-search.json
+        run: python -m trust_ecosystem_monitor.confluence_search --month 2026-09 --resolve-missing --output confluence-september-search.json
       - name: Summarize observed public Confluence space candidates
         run: |
-          python -c "import json; [(lambda d,m: print(m, 'field_shapes',d.get('observed_field_shapes',[]),'space_key_origins',d.get('space_key_origins',[]),'observed_space_keys',d.get('observed_space_keys',[]),'missing_space_count',d.get('missing_space_count'),'scope_verified',d.get('scope_verified'),'coverage',d.get('coverage')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
+          python -c "import json; [(lambda d,m: print(m, 'resolved_space_ids',d.get('resolved_space_ids',[]),'lookup_status',d.get('metadata_lookup_status',{}),'field_shapes',d.get('observed_field_shapes',[]),'space_key_origins',d.get('space_key_origins',[]),'observed_space_keys',d.get('observed_space_keys',[]),'missing_space_count',d.get('missing_space_count'),'scope_verified',d.get('scope_verified'),'coverage',d.get('coverage')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
       - name: Summarize historical search results
         run: |
           python -c "import json; [(lambda d,m: print(m, 'coverage',d.get('coverage'),'count',d.get('sample_count'),'total',d.get('total_size'),'http',d.get('http_status'),'reason',d.get('reason'),'rejected_path',d.get('rejected_path')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
