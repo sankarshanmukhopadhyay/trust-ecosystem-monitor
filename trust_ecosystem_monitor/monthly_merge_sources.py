@@ -22,12 +22,16 @@ def combine(period: str, manifests: list[dict]) -> dict:
             if status not in ORDER:
                 raise ValueError("Invalid coverage state")
             previous = combined["coverage"][source]
-            if status == "complete" and previous not in {"not_checked", "complete"}:
+            if previous == "complete" and status not in {"complete", "not_checked"}:
                 combined["coverage"][source] = "partial"
-            elif previous == "complete" and status not in {"not_checked", "complete"}:
+            elif status == "complete" and previous not in {"complete", "not_checked"}:
                 combined["coverage"][source] = "partial"
-            elif ORDER[status] > ORDER[previous]:
+            elif previous == "not_checked":
                 combined["coverage"][source] = status
+            elif status == "partial" or previous == "partial":
+                combined["coverage"][source] = "partial"
+            elif status != "not_checked" and previous != status:
+                combined["coverage"][source] = "partial"
         for record in manifest.get("records", []):
             key = (record["source"], record["url"], record["classification"])
             if key not in seen:
