@@ -11,6 +11,8 @@ on:
       - 'trust_ecosystem_monitor/monthly_lfx.py'
       - 'trust_ecosystem_monitor/monthly_confluence.py'
       - 'trust_ecosystem_monitor/monthly_merge_sources.py'
+      - 'trust_ecosystem_monitor/monthly_overview.py'
+      - 'tests/test_monthly_overview.py'
       - 'tests/test_monthly_merge_sources.py'
       - 'tests/test_monthly_confluence.py'
       - 'trust_ecosystem_monitor/monthly_compare.py'
@@ -65,11 +67,17 @@ jobs:
       - name: Compare observed evidence
         run: |
           python -m trust_ecosystem_monitor.monthly_compare monthly-prototype/2026-08.json monthly-prototype/2026-09.json --output monthly-prototype
+      - name: Render portfolio overview reports
+        run: |
+          python -m trust_ecosystem_monitor.monthly_overview monthly-prototype/2026-08.json --output monthly-prototype/2026-08-overview.md
+          python -m trust_ecosystem_monitor.monthly_overview monthly-prototype/2026-09.json --output monthly-prototype/2026-09-overview.md
       - name: Render HTML previews
         run: |
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-report.md --output monthly-prototype/2026-08-report.html
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-report.md --output monthly-prototype/2026-09-report.html
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-to-2026-09.md --output monthly-prototype/2026-08-to-2026-09.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-overview.md --output monthly-prototype/2026-08-overview.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-overview.md --output monthly-prototype/2026-09-overview.html
       - name: Upload prototype evidence
         uses: actions/upload-artifact@v4
         with:
