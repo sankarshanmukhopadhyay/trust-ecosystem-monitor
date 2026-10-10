@@ -8,6 +8,8 @@ import argparse
 import json
 from pathlib import Path
 
+from .monthly_continuity import continuity
+
 
 def compare(earlier: dict, later: dict) -> dict:
     if earlier["ecosystem"] != later["ecosystem"]:
@@ -31,6 +33,7 @@ def compare(earlier: dict, later: dict) -> dict:
             earlier["period"]: earlier["coverage_complete"],
             later["period"]: later["coverage_complete"],
         },
+        "continuity": continuity(earlier, later),
         "repositories": [
             {"repository": name, "earlier": before.get(name, {}), "later": after.get(name, {})}
             for name in names
@@ -60,6 +63,9 @@ def render_markdown(result: dict) -> str:
         def counts(item: dict) -> str:
             return " / ".join(str(item.get(key, 0)) for key in ("opened", "closed", "merged"))
         lines.append(f"| {row['repository']} | {counts(row['earlier'])} | {counts(row['later'])} |")
+    lines.extend(["", "## Observed continuity classifications", ""])
+    for item in result["continuity"]:
+        lines.append("- " + item["repository"] + ": " + item["classification"])
     lines.extend(["", "## Interpretation limits", "", "- No inference of decisions, delivery, organizational inactivity or maturity.", "- The same work item can generate multiple lifecycle events.", "- The comparison does not include Confluence or LFX until independently collected and verified.", ""])
     return "\n".join(lines)
 
