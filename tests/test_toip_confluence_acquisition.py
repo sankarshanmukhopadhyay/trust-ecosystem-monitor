@@ -97,6 +97,53 @@ class AcquisitionTests(unittest.TestCase):
                          scope_approved=True, reuse_approved=True, fetch=capture)
         self.assertIn('2027-01-01', parse_qs(urlsplit(observed[0]).query)["cql"][0])
 
+    def test_retrieval_provenance_and_caller_scope_are_not_source_verification(self):
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True,
+                                retrieved_at="2026-10-10T09:00:00+05:30", fetch=fixture)
+        self.assertEqual(data["retrieved_at"], "2026-10-10T09:00:00+05:30")
+        self.assertEqual(data["search_pages_fetched"], 1)
+        self.assertEqual(data["metadata_lookups_attempted"], 1)
+        self.assertTrue(data["search_terminated_normally"])
+        self.assertTrue(data["scope_caller_approved"])
+        self.assertFalse(data["scope_verified"])
+
+    def test_rejects_naive_retrieval_timestamp(self):
+        with self.assertRaises(ValueError):
+            acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                             scope_approved=True, reuse_approved=True,
+                             retrieved_at="2026-10-10T09:00:00", fetch=fixture)
+
+    def test_failed_first_search_is_unavailable(self):
+        def failed(path):
+            raise ValueError("unavailable")
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=failed)
+        self.assertEqual(data["coverage"], "unavailable")
+        self.assertEqual(data["search_pages_fetched"], 0)
+        self.assertFalse(data["search_terminated_normally"])
+        self.assertIn("retrieval_error", data["diagnostics"])
+
+    def test_invalid_page_version_excluded(self):
+        def invalid_version(path):
+            if path.startswith("/wiki/rest/"):
+                return {"results": [{"id": "42"}], "_links": {}}
+            return {"id": "42", "spaceId": "22970380", "version": {"number": True}}
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=invalid_version)
+        self.assertEqual(data["records"], [])
+        self.assertIn("missing_version_provenance", data["diagnostics"])
+
+    def test_page_budget_disclosed(self):
+        def paginated(path):
+            return {"results": [], "_links": {"next": path.replace("start=0", "start=50")}}
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True,
+                                max_pages=1, fetch=paginated)
+        self.assertIn("page_budget_exhausted", data["diagnostics"])
+        self.assertFalse(data["search_terminated_normally"])
+        self.assertEqual(data["coverage"], "partial")
+
     def test_lookup_failure_not_silent(self):
         def fail(path):
             if path.startswith("/wiki/rest/"):
