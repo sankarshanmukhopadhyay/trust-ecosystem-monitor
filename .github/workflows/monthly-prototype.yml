@@ -41,6 +41,10 @@ jobs:
             --repo trustoverip/dtgwg-rahp-tf \
             --repo trustoverip/dtgwg-cred-spec \
             --repo trustoverip/tswg-trust-registry-protocol
+      - name: Render source-aware monthly reports
+        run: |
+          python -m trust_ecosystem_monitor.monthly_report monthly-prototype/2026-08.json --output monthly-prototype/2026-08-report.md
+          python -m trust_ecosystem_monitor.monthly_report monthly-prototype/2026-09.json --output monthly-prototype/2026-09-report.md
       - name: Compare observed evidence
         run: |
           python -m trust_ecosystem_monitor.monthly_compare monthly-prototype/2026-08.json monthly-prototype/2026-09.json --output monthly-prototype
