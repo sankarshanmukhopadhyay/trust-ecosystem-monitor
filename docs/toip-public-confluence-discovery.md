@@ -28,3 +28,16 @@ Verification: workflow runs [38013735555](https://github.com/sankarshanmukhopadh
 - Build LFX meeting evidence with separate classifications for listed, held, minutes available and decision recorded.
 - Integrate authorized evidence into the August/September reports with source-aware coverage and privacy controls.
 - Keep issue #63 open until its remaining acceptance criteria are satisfied; do not close it on the strength of reachability or CQL counts alone.
+
+## Space-scope observation (subsequent increment)
+
+The historical CQL diagnostic now emits **observed public space keys** and
+a count of entries with no usable space key. The manual diagnostic workflow
+prints these aggregates for August and September, without page titles,
+bodies, author profiles or identifiers.
+
+Observed keys are **candidates for scope reconciliation**, not an authoritative
+ToIP allowlist. The query remains unscoped, and `scope_verified=false` even
+when all pages returned by the bounded query are enumerated. A source owner
+must confirm which spaces and groups belong in the reporting inventory and
+what reuse rights apply before records can enter public historical reports.
