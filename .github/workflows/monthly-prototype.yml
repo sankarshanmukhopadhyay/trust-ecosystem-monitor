@@ -2,41 +2,23 @@ name: Historical ToIP monthly evidence prototype
 
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - main
-      - feat/61-monthly-evidence-foundation
-    paths:
-      - 'trust_ecosystem_monitor/monthly.py'
-      - 'trust_ecosystem_monitor/monthly_lfx.py'
-      - 'trust_ecosystem_monitor/monthly_confluence.py'
-      - 'trust_ecosystem_monitor/monthly_merge_sources.py'
-      - 'trust_ecosystem_monitor/monthly_overview.py'
-      - 'tests/test_monthly_overview.py'
-      - 'tests/test_monthly_merge_sources.py'
-      - 'tests/test_monthly_confluence.py'
-      - 'trust_ecosystem_monitor/monthly_compare.py'
-      - 'trust_ecosystem_monitor/monthly_continuity.py'
-      - 'trust_ecosystem_monitor/monthly_meetings.py'
-      - 'trust_ecosystem_monitor/monthly_report.py'
-      - 'trust_ecosystem_monitor/monthly_html.py'
-      - 'tests/test_monthly_html.py'
-      - 'tests/test_monthly_lfx.py'
-      - 'tests/test_monthly_sources.py'
-      - 'tests/test_monthly.py'
-      - '.github/workflows/monthly-prototype.yml'
 
 concurrency:
-  group: monthly-prototype-${{ github.ref }}
+  group: pages
   cancel-in-progress: true
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
   prototype:
     runs-on: ubuntu-latest
     timeout-minutes: 25
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -82,9 +64,36 @@ jobs:
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-to-2026-09.md --output monthly-prototype/2026-08-to-2026-09.html
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-overview.md --output monthly-prototype/2026-08-overview.html
           python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-overview.md --output monthly-prototype/2026-09-overview.html
+      - name: Restore latest generated weekly Pages site
+        run: |
+          git fetch origin generated-observations
+          git checkout origin/generated-observations -- docs
+      - name: Stage public HTML previews
+        run: |
+          mkdir -p docs/monthly
+          cp monthly-prototype/2026-08-report.html docs/monthly/2026-08-report.html
+          cp monthly-prototype/2026-09-report.html docs/monthly/2026-09-report.html
+          cp monthly-prototype/2026-08-overview.html docs/monthly/2026-08-overview.html
+          cp monthly-prototype/2026-09-overview.html docs/monthly/2026-09-overview.html
+          cp monthly-prototype/2026-08-to-2026-09.html docs/monthly/2026-08-to-2026-09.html
+          python -m trust_ecosystem_monitor.monthly_index --output docs/monthly/index.html
+          python -m trust_ecosystem_monitor.monthly_index --link-home docs/index.html
+      - name: Upload public HTML preview bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: toip-monthly-html-previews
+          path: docs/monthly/
+          retention-days: 30
       - name: Upload prototype evidence
         uses: actions/upload-artifact@v4
         with:
           name: toip-aug-sep-2026-monthly-prototype
           path: monthly-prototype/
           retention-days: 30
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs
+      - name: Deploy combined weekly site and monthly previews
+        id: deployment
+        uses: actions/deploy-pages@v5
