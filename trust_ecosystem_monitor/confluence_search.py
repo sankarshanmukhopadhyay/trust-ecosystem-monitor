@@ -17,7 +17,7 @@ import re
 BASE = "https://lf-toip.atlassian.net/wiki/rest/api/search"
 MAX_BYTES = 1024 * 1024
 MAX_LOOKUPS = 50
-PAGE_ID = re.compile(r"[0-9]{1,20}\\Z")
+PAGE_ID = re.compile(r"[0-9]{1,20}$")
 
 
 def resolve_space(page_id: str, *, opener=urlopen) -> tuple[str | None, str]:
