@@ -3,6 +3,7 @@ from unittest.mock import patch
 
 from trust_ecosystem_monitor.monthly import month_bounds, in_month, collect_month, render_markdown
 from trust_ecosystem_monitor.monthly_compare import compare, render_markdown as render_comparison
+from trust_ecosystem_monitor.monthly_continuity import continuity
 
 
 class MonthlyTests(unittest.TestCase):
@@ -38,6 +39,13 @@ class MonthlyTests(unittest.TestCase):
         self.assertIn("incomplete", render_comparison(result))
         with self.assertRaises(ValueError):
             compare(second, first)
+
+    def test_continuity_with_shared_item(self):
+        first = {"ecosystem": "trustoverip", "period": "2026-08", "coverage_complete": True, "evidence": [{"repository": "trustoverip/a", "url": "https://github.com/trustoverip/a/issues/1"}]}
+        second = {"ecosystem": "trustoverip", "period": "2026-09", "coverage_complete": True, "evidence": [{"repository": "trustoverip/a", "url": "https://github.com/trustoverip/a/issues/1"}]}
+        self.assertEqual(continuity(first, second)[0]["classification"], "continuing_observed")
+        second["coverage_complete"] = False
+        self.assertEqual(continuity(first, second)[0]["classification"], "evidence_insufficient")
 
     def test_explicit_repository_scope_rejects_cross_org(self):
         with self.assertRaises(ValueError):
