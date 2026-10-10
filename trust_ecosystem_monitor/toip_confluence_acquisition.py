@@ -98,7 +98,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
                 diagnostics.append("possible_truncation")
             break
         parsed = urlsplit(nxt)
-        if parsed.scheme or parsed.netloc or not nxt.startswith("/wiki/rest/api/content/search?"):
+        if parsed.scheme or parsed.netloc or not nxt.startswith("/wiki/rest/api/content/search?") or "cql=" not in nxt:
             diagnostics.append("unsafe_pagination")
             break
         path = nxt

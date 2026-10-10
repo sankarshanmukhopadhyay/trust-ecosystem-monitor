@@ -5,11 +5,11 @@ from trust_ecosystem_monitor.toip_evidence_contract import infer_correlations, v
 
 GITHUB = dict(source="github", source_id="org/repo#12", subject_id="change-12",
               kind="proposal", url="https://github.com/org/repo/pull/12",
-              occurred_at="2026-08-12T10:00:00Z", summary="PR opened")
+              occurred_at="2026-08-12T10:00:00Z", summary="PR opened", subject_evidence_url="https://github.com/org/repo/pull/12")
 CONFLUENCE = dict(source="confluence", source_id="page-45-v2", subject_id="change-12",
                   kind="page_update", url="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/45",
                   occurred_at="2026-08-13T10:00:00Z", summary="Page revised",
-                  publication_approved=True)
+                  publication_approved=True, subject_evidence_url="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/45")
 
 
 class ContractTests(unittest.TestCase):
@@ -22,6 +22,14 @@ class ContractTests(unittest.TestCase):
         self.assertEqual(len(findings), 1)
         self.assertEqual(findings[0]["type"], "cross_source_reference")
         self.assertIn("does not establish governance approval", findings[0]["limitations"])
+
+    def test_missing_reviewable_subject_evidence_suppresses_inference(self):
+        self.assertEqual(infer_correlations([GITHUB, dict(CONFLUENCE, subject_evidence_url="")],
+                                            approved_confluence=True), [])
+
+    def test_unsafe_subject_evidence_suppresses_inference(self):
+        self.assertEqual(infer_correlations([GITHUB, dict(CONFLUENCE, subject_evidence_url="http://bad.example")],
+                                            approved_confluence=True), [])
 
     def test_unrelated_subjects_not_correlated(self):
         self.assertEqual(infer_correlations([GITHUB, dict(CONFLUENCE, subject_id="other")],

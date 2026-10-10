@@ -85,10 +85,16 @@ def infer_correlations(records: list[dict], *, approved_confluence: bool = False
         confluence = [r for r in group if r["source"] == "confluence"]
         if not github or not confluence:
             continue
+        mapping = [r.get("subject_evidence_url") for r in group]
+        if any(not isinstance(link, str) or not link.startswith("https://")
+               or urlsplit(link).username or urlsplit(link).password
+               or not urlsplit(link).hostname for link in mapping):
+            continue
         findings.append({
             "type": "cross_source_reference",
             "subject_id": subject,
             "source_urls": sorted({r["url"] for r in group}),
+            "subject_evidence_urls": sorted(set(mapping)),
             "observation_count": len(group),
             "statement": "GitHub and authorized Confluence observations reference the same curator-identified subject.",
             "limitations": "Shared subject is curator-asserted; this does not establish governance approval, adoption, interoperability or causation.",
