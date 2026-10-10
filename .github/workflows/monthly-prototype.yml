@@ -11,6 +11,8 @@ on:
       - 'trust_ecosystem_monitor/monthly_continuity.py'
       - 'trust_ecosystem_monitor/monthly_meetings.py'
       - 'trust_ecosystem_monitor/monthly_report.py'
+      - 'trust_ecosystem_monitor/monthly_html.py'
+      - 'tests/test_monthly_html.py'
       - 'tests/test_monthly_sources.py'
       - 'tests/test_monthly.py'
       - '.github/workflows/monthly-prototype.yml'
@@ -52,6 +54,11 @@ jobs:
       - name: Compare observed evidence
         run: |
           python -m trust_ecosystem_monitor.monthly_compare monthly-prototype/2026-08.json monthly-prototype/2026-09.json --output monthly-prototype
+      - name: Render HTML previews
+        run: |
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-report.md --output monthly-prototype/2026-08-report.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-report.md --output monthly-prototype/2026-09-report.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-to-2026-09.md --output monthly-prototype/2026-08-to-2026-09.html
       - name: Upload prototype evidence
         uses: actions/upload-artifact@v4
         with:
