@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "trustoverip",
-  "generated_at": "2026-10-10T02:15:24.204381+00:00",
+  "generated_at": "2026-10-10T05:18:15.023408+00:00",
   "period": {
-    "since": "2026-10-03T02:15:24.204381+00:00",
-    "until": "2026-10-10T02:15:24.204381+00:00",
+    "since": "2026-10-03T05:18:15.023408+00:00",
+    "until": "2026-10-10T05:18:15.023408+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-10T02:04:32.038553+00:00"
+    "previous_snapshot": "2026-10-10T02:15:24.204381+00:00"
   },
   "repositories": [
     {
@@ -7399,136 +7399,6 @@
       "sha": null,
       "state": "merged",
       "materiality": 4
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:44:07Z",
-      "title": "trust-tasks-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:44:02Z",
-      "title": "trust-tasks-tsp-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:43:58Z",
-      "title": "trust-tasks-proof-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:43:54Z",
-      "title": "trust-tasks-https-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:43:46Z",
-      "title": "trust-tasks-didcomm-v1-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:43:41Z",
-      "title": "trust-tasks-didcomm-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:43:36Z",
-      "title": "trust-tasks-capability-client-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "release",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:43:31Z",
-      "title": "trust-tasks-rs-v0.27.0",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.0",
-      "number": null,
-      "sha": null,
-      "state": null,
-      "materiality": 5
-    },
-    {
-      "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:42:46Z",
-      "title": "chore: release 11 packages",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/717",
-      "number": 717,
-      "sha": null,
-      "state": "merged",
-      "materiality": 4
-    },
-    {
-      "kind": "commit",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-03T02:42:45Z",
-      "title": "chore: release 11 packages (#717)",
-      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c2ad5f3729bf92e1ea17fad4e7331be0c25f7903",
-      "number": null,
-      "sha": "c2ad5f3729bf92e1ea17fad4e7331be0c25f7903",
-      "state": null,
-      "materiality": 1
     }
   ],
   "assertions": [
@@ -11569,7 +11439,7 @@
       "event_kinds": [
         "release"
       ],
-      "event_count": 16,
+      "event_count": 14,
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.7",
@@ -11584,9 +11454,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.0",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.1"
       ],
       "events": [
         {
@@ -11770,32 +11638,6 @@
           "sha": null,
           "state": null,
           "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:44:07Z",
-          "title": "trust-tasks-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.0",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:43:31Z",
-          "title": "trust-tasks-rs-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.0",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
         }
       ],
       "semantic_change": {
@@ -11817,7 +11659,7 @@
       "event_kinds": [
         "release"
       ],
-      "event_count": 8,
+      "event_count": 7,
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.6",
@@ -11825,8 +11667,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.1"
       ],
       "events": [
         {
@@ -11919,19 +11760,6 @@
           "sha": null,
           "state": null,
           "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:44:02Z",
-          "title": "trust-tasks-tsp-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.0",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
         }
       ],
       "semantic_change": {
@@ -11953,7 +11781,7 @@
       "event_kinds": [
         "release"
       ],
-      "event_count": 8,
+      "event_count": 7,
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.6",
@@ -11961,8 +11789,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.1"
       ],
       "events": [
         {
@@ -12055,19 +11882,6 @@
           "sha": null,
           "state": null,
           "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:43:58Z",
-          "title": "trust-tasks-proof-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.0",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
         }
       ],
       "semantic_change": {
@@ -12089,7 +11903,7 @@
       "event_kinds": [
         "release"
       ],
-      "event_count": 8,
+      "event_count": 7,
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
@@ -12097,8 +11911,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1"
       ],
       "events": [
         {
@@ -12191,19 +12004,6 @@
           "sha": null,
           "state": null,
           "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:43:54Z",
-          "title": "trust-tasks-https-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
         }
       ],
       "semantic_change": {
@@ -12227,7 +12027,7 @@
       "event_kinds": [
         "release"
       ],
-      "event_count": 16,
+      "event_count": 14,
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.7",
@@ -12242,9 +12042,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.0",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.1"
       ],
       "events": [
         {
@@ -12428,32 +12226,6 @@
           "sha": null,
           "state": null,
           "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:43:46Z",
-          "title": "trust-tasks-didcomm-v1-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.0",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:43:41Z",
-          "title": "trust-tasks-didcomm-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.0",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
         }
       ],
       "semantic_change": {
@@ -12475,7 +12247,7 @@
       "event_kinds": [
         "release"
       ],
-      "event_count": 8,
+      "event_count": 7,
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.6",
@@ -12483,8 +12255,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.1"
       ],
       "events": [
         {
@@ -12573,19 +12344,6 @@
           "timestamp": "2026-10-03T05:50:09Z",
           "title": "trust-tasks-capability-client-v0.27.1",
           "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.1",
-          "number": null,
-          "sha": null,
-          "state": null,
-          "materiality": 5
-        },
-        {
-          "kind": "release",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:43:36Z",
-          "title": "trust-tasks-capability-client-v0.27.0",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.0",
           "number": null,
           "sha": null,
           "state": null,
@@ -13980,61 +13738,6 @@
         "matched_terms": [],
         "evidence_state": "insufficient"
       }
-    },
-    {
-      "id": "toip-change-8fb407dfcdfc",
-      "repository": "trustoverip/dtgwg-trust-tasks-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "title": "chore: release 11 packages",
-      "timestamp": "2026-10-03T02:42:46Z",
-      "materiality": 4,
-      "event_kinds": [
-        "commit",
-        "pull_request"
-      ],
-      "event_count": 2,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/717",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c2ad5f3729bf92e1ea17fad4e7331be0c25f7903"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:42:46Z",
-          "title": "chore: release 11 packages",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/717",
-          "number": 717,
-          "sha": null,
-          "state": "merged",
-          "materiality": 4
-        },
-        {
-          "kind": "commit",
-          "repository": "trustoverip/dtgwg-trust-tasks-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-03T02:42:45Z",
-          "title": "chore: release 11 packages (#717)",
-          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c2ad5f3729bf92e1ea17fad4e7331be0c25f7903",
-          "number": null,
-          "sha": "c2ad5f3729bf92e1ea17fad4e7331be0c25f7903",
-          "state": null,
-          "materiality": 1
-        }
-      ],
-      "semantic_change": {
-        "type": "release",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "release"
-        ],
-        "evidence_state": "derived"
-      }
     }
   ],
   "lifecycle_changes": [],
@@ -14242,8 +13945,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1"
       ],
       "evidence_state": "observed"
     },
@@ -14869,8 +14571,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1"
       ],
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
@@ -14879,8 +14580,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
@@ -15163,8 +14863,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1"
       ],
       "relationship_class": "cross-portfolio",
       "review_materiality": "derived",
@@ -15638,8 +15337,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1"
       ],
       "disposition": null
     },
@@ -15674,8 +15372,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.1"
       ],
       "disposition": null
     },
@@ -15702,9 +15399,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.0",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.1"
       ],
       "disposition": null
     },
@@ -15746,9 +15441,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.2",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.0",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.1"
       ],
       "disposition": null
     },
@@ -15917,8 +15610,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.1"
       ],
       "disposition": null
     },
@@ -15938,8 +15630,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.1"
       ],
       "disposition": null
     },
@@ -15959,8 +15650,7 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.4",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.3",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.2",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.1",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.0"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.1"
       ],
       "disposition": null
     },
@@ -16356,7 +16046,7 @@
       "response_change_unit": "toip-change-c5fea5c2d259",
       "response_timestamp": "2026-10-08T18:44:26Z",
       "created_at": "2026-09-30T20:35:56Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/issues/140",
         "https://github.com/trustoverip/kswg-dossier-specification/pull/36",
@@ -16388,7 +16078,7 @@
       "response_change_unit": "toip-change-38d269042c08",
       "response_timestamp": "2026-09-24T10:00:38Z",
       "created_at": "2026-09-23T13:28:32Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/4964b286cf8ce19d31c30228a43a8d964daed447",
         "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22",
@@ -16420,7 +16110,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/ctwg-main-glossary/issues/49"
@@ -16450,7 +16140,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-agent-names-spec/pull/9"
@@ -16480,7 +16170,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-cred-spec/commit/94af2d89ed04e6f27011ef8ee6ca5acf70755a78",
@@ -16511,7 +16201,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-08T10:12:49Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/governance/commit/12e3ac283a5fdc69bc434680d718cd4fc0a7d637",
         "https://github.com/trustoverip/dtgwg-rahp-tf/commit/9ab60bc285adeeeb8e2e743bda5b609736ad56b6",
@@ -16542,7 +16232,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-trust-tasks-spec/commit/bf667f3e8506b7fb2c3e96665b7060e2ebaad806",
@@ -16573,7 +16263,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-vds-spec/pull/14",
@@ -16604,7 +16294,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-vti-spec/pull/50",
@@ -16635,7 +16325,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-zkp-spec/pull/14"
@@ -16665,7 +16355,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-10T02:15:24.204381+00:00",
+      "last_observed_at": "2026-10-10T05:18:15.023408+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/toip-template/pull/17"

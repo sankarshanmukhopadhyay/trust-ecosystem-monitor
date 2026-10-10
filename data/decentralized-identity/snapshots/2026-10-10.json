@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "decentralized-identity",
-  "generated_at": "2026-10-10T02:15:35.311427+00:00",
+  "generated_at": "2026-10-10T05:18:26.260984+00:00",
   "period": {
-    "since": "2026-10-03T02:15:35.311427+00:00",
-    "until": "2026-10-10T02:15:35.311427+00:00",
+    "since": "2026-10-03T05:18:26.260984+00:00",
+    "until": "2026-10-10T05:18:26.260984+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-10T02:04:43.266077+00:00"
+    "previous_snapshot": "2026-10-10T02:15:35.311427+00:00"
   },
   "repositories": [
     {
@@ -3649,7 +3649,7 @@
       "description": "A JavaScript Framework for Verifiable Data",
       "created_at": "2019-11-12T14:18:17Z",
       "updated_at": "2026-10-08T15:09:25Z",
-      "pushed_at": "2026-10-10T00:23:57Z",
+      "pushed_at": "2026-10-10T04:24:15Z",
       "archived": false,
       "fork": false,
       "default_branch": "next",
@@ -10512,7 +10512,7 @@
       "repository": "decentralized-identity/veramo",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "timestamp": "2026-10-10T00:23:56Z",
+      "timestamp": "2026-10-10T04:24:13Z",
       "title": "Dependency Dashboard",
       "url": "https://github.com/decentralized-identity/veramo/issues/1102",
       "number": 1102,
@@ -10525,7 +10525,7 @@
       "repository": "decentralized-identity/veramo",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "timestamp": "2026-10-10T00:23:53Z",
+      "timestamp": "2026-10-10T04:24:10Z",
       "title": "chore(deps): update devdeps (major)",
       "url": "https://github.com/decentralized-identity/veramo/pull/1372",
       "number": 1372,
@@ -10538,7 +10538,7 @@
       "repository": "decentralized-identity/veramo",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "timestamp": "2026-10-10T00:23:40Z",
+      "timestamp": "2026-10-10T04:23:23Z",
       "title": "chore(deps): update devdeps",
       "url": "https://github.com/decentralized-identity/veramo/pull/1517",
       "number": 1517,
@@ -10551,7 +10551,7 @@
       "repository": "decentralized-identity/veramo",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "timestamp": "2026-10-10T00:23:05Z",
+      "timestamp": "2026-10-10T04:23:17Z",
       "title": "fix(deps): update all non-major dependencies",
       "url": "https://github.com/decentralized-identity/veramo/pull/1232",
       "number": 1232,
@@ -13210,19 +13210,6 @@
       "sha": null,
       "state": "open",
       "materiality": 2
-    },
-    {
-      "kind": "pull_request",
-      "repository": "decentralized-identity/didwebvh-ts",
-      "portfolio": "DID Methods",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T03:11:11Z",
-      "title": "feat(witness): verify a candidate entry against the witness's own log before signing",
-      "url": "https://github.com/decentralized-identity/didwebvh-ts/pull/183",
-      "number": 183,
-      "sha": null,
-      "state": "closed",
-      "materiality": 3
     }
   ],
   "assertions": [
@@ -13331,7 +13318,7 @@
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
       "title": "Dependency Dashboard",
-      "timestamp": "2026-10-10T00:23:56Z",
+      "timestamp": "2026-10-10T04:24:13Z",
       "materiality": 2,
       "event_kinds": [
         "issue"
@@ -13346,7 +13333,7 @@
           "repository": "decentralized-identity/veramo",
           "portfolio": "Implementations & Tooling",
           "repo_kind": "repository",
-          "timestamp": "2026-10-10T00:23:56Z",
+          "timestamp": "2026-10-10T04:24:13Z",
           "title": "Dependency Dashboard",
           "url": "https://github.com/decentralized-identity/veramo/issues/1102",
           "number": 1102,
@@ -13371,7 +13358,7 @@
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
       "title": "chore(deps): update devdeps (major)",
-      "timestamp": "2026-10-10T00:23:53Z",
+      "timestamp": "2026-10-10T04:24:10Z",
       "materiality": 3,
       "event_kinds": [
         "pull_request"
@@ -13386,7 +13373,7 @@
           "repository": "decentralized-identity/veramo",
           "portfolio": "Implementations & Tooling",
           "repo_kind": "repository",
-          "timestamp": "2026-10-10T00:23:53Z",
+          "timestamp": "2026-10-10T04:24:10Z",
           "title": "chore(deps): update devdeps (major)",
           "url": "https://github.com/decentralized-identity/veramo/pull/1372",
           "number": 1372,
@@ -13409,7 +13396,7 @@
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
       "title": "chore(deps): update devdeps",
-      "timestamp": "2026-10-10T00:23:40Z",
+      "timestamp": "2026-10-10T04:23:23Z",
       "materiality": 3,
       "event_kinds": [
         "pull_request"
@@ -13424,7 +13411,7 @@
           "repository": "decentralized-identity/veramo",
           "portfolio": "Implementations & Tooling",
           "repo_kind": "repository",
-          "timestamp": "2026-10-10T00:23:40Z",
+          "timestamp": "2026-10-10T04:23:23Z",
           "title": "chore(deps): update devdeps",
           "url": "https://github.com/decentralized-identity/veramo/pull/1517",
           "number": 1517,
@@ -13447,7 +13434,7 @@
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
       "title": "fix(deps): update all non-major dependencies",
-      "timestamp": "2026-10-10T00:23:05Z",
+      "timestamp": "2026-10-10T04:23:17Z",
       "materiality": 3,
       "event_kinds": [
         "pull_request"
@@ -13462,7 +13449,7 @@
           "repository": "decentralized-identity/veramo",
           "portfolio": "Implementations & Tooling",
           "repo_kind": "repository",
-          "timestamp": "2026-10-10T00:23:05Z",
+          "timestamp": "2026-10-10T04:23:17Z",
           "title": "fix(deps): update all non-major dependencies",
           "url": "https://github.com/decentralized-identity/veramo/pull/1232",
           "number": 1232,
@@ -20329,44 +20316,6 @@
         ],
         "evidence_state": "derived"
       }
-    },
-    {
-      "id": "toip-change-1a171f6faac1",
-      "repository": "decentralized-identity/didwebvh-ts",
-      "portfolio": "DID Methods",
-      "repo_kind": "repository",
-      "title": "feat(witness): verify a candidate entry against the witness's own log before signing",
-      "timestamp": "2026-10-03T03:11:11Z",
-      "materiality": 3,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/decentralized-identity/didwebvh-ts/pull/183"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "decentralized-identity/didwebvh-ts",
-          "portfolio": "DID Methods",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T03:11:11Z",
-          "title": "feat(witness): verify a candidate entry against the witness's own log before signing",
-          "url": "https://github.com/decentralized-identity/didwebvh-ts/pull/183",
-          "number": 183,
-          "sha": null,
-          "state": "closed",
-          "materiality": 3
-        }
-      ],
-      "semantic_change": {
-        "type": "unknown",
-        "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
-      }
     }
   ],
   "lifecycle_changes": [],
@@ -24804,7 +24753,7 @@
       "response_change_unit": "toip-change-4a2d091304da",
       "response_timestamp": "2026-09-18T17:17:00Z",
       "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
@@ -24838,7 +24787,7 @@
       "response_change_unit": "toip-change-b2a92a4c47e2",
       "response_timestamp": "2026-09-21T23:44:03Z",
       "created_at": "2026-09-14T02:03:44Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/5ea4ec243bbd50dee27da2a0b7f45f051bacf385",
         "https://github.com/decentralized-identity/did-jwt-vc/pull/158",
@@ -24870,7 +24819,7 @@
       "response_change_unit": "toip-change-1906cd56024f",
       "response_timestamp": "2026-09-21T16:11:42Z",
       "created_at": "2026-09-23T21:07:38Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/pull/297",
         "https://github.com/decentralized-identity/didwebvh-py/issues/33",
@@ -24902,7 +24851,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T22:31:17Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/issues/295",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -24935,7 +24884,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T10:08:41Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh-ts/commit/5838e48a065adb7dc58f4694347037366274c7ec",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -24967,7 +24916,7 @@
       "response_change_unit": "toip-change-a300091fec5e",
       "response_timestamp": "2026-09-19T17:25:31Z",
       "created_at": "2026-09-20T06:47:17Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/171",
         "https://github.com/decentralized-identity/didwebvh-ts/commit/c5d82f72c23b30d694a641e3669ac94307aaa256",
@@ -25000,7 +24949,7 @@
       "response_change_unit": "toip-change-0d756280880c",
       "response_timestamp": "2026-09-23T18:10:22Z",
       "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
@@ -25035,7 +24984,7 @@
       "response_change_unit": "toip-change-db7522b124af",
       "response_timestamp": "2026-09-23T11:37:37Z",
       "created_at": "2026-09-18T12:48:33Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/338",
         "https://github.com/decentralized-identity/did-jwt/commit/470fe5d8850711ba2be845fa352d0b753600a772",
@@ -25069,7 +25018,7 @@
       "response_change_unit": "toip-change-e906292a73ce",
       "response_timestamp": "2026-09-23T11:37:43Z",
       "created_at": "2026-09-16T11:26:49Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/164",
         "https://github.com/decentralized-identity/did-resolver/commit/607da04b6aaa1a80cc22378fd07ab8a6ce9ebf65",
@@ -25103,7 +25052,7 @@
       "response_change_unit": "toip-change-72ecb9b2cdb1",
       "response_timestamp": "2026-10-06T16:50:52Z",
       "created_at": "2026-10-08T08:48:03Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/web-did-resolver/commit/5a7be84c4d39ac6b22fb37f8d29657f79597195a",
         "https://github.com/decentralized-identity/web-did-resolver/pull/152",
@@ -25136,7 +25085,7 @@
       "response_change_unit": "toip-change-d90b7a0e9f47",
       "response_timestamp": "2026-09-24T13:26:29Z",
       "created_at": "2026-09-23T05:03:05Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
         "https://github.com/decentralized-identity/did-resolver/pull/175",
@@ -25170,7 +25119,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-03T01:34:48Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/358",
         "https://github.com/decentralized-identity/did-jwt/commit/609d684b5c6505227445bda47fa21a3ae41f57c0",
@@ -25202,7 +25151,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-09-15T22:11:06Z",
-      "last_observed_at": "2026-10-10T02:15:35.311427+00:00",
+      "last_observed_at": "2026-10-10T05:18:26.260984+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/thisdid/pull/2",
         "https://github.com/decentralized-identity/didwebvh-test-suite/commit/f98baa75b1d648dea84b0dd201eeac9f9cbc94d1",

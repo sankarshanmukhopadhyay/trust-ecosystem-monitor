@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "w3c",
-  "generated_at": "2026-10-10T02:16:10.905306+00:00",
+  "generated_at": "2026-10-10T05:19:01.851304+00:00",
   "period": {
-    "since": "2026-10-03T02:16:10.905306+00:00",
-    "until": "2026-10-10T02:16:10.905306+00:00",
+    "since": "2026-10-03T05:19:01.851304+00:00",
+    "until": "2026-10-10T05:19:01.851304+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-10T02:05:19.231081+00:00"
+    "previous_snapshot": "2026-10-10T02:16:10.905306+00:00"
   },
   "repositories": [
     {
@@ -21,7 +21,7 @@
       "url": "https://github.com/w3c/webauthn",
       "description": "Web Authentication: An API for accessing Public Key Credentials",
       "created_at": "2016-02-08T14:51:38Z",
-      "updated_at": "2026-10-09T04:18:50Z",
+      "updated_at": "2026-10-10T03:58:28Z",
       "pushed_at": "2026-10-06T15:19:45Z",
       "archived": false,
       "fork": false,
@@ -526,7 +526,7 @@
       "description": "W3C Verifiable Credentials v2.0 Specification",
       "created_at": "2016-11-15T20:14:42Z",
       "updated_at": "2026-09-30T15:27:39Z",
-      "pushed_at": "2026-10-09T06:49:53Z",
+      "pushed_at": "2026-10-10T03:51:35Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -689,6 +689,19 @@
   ],
   "events": [
     {
+      "kind": "pull_request",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-10T04:12:01Z",
+      "title": "First version of the 2.1 version of the vocabulary.",
+      "url": "https://github.com/w3c/vc-data-model/pull/1652",
+      "number": 1652,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
       "kind": "issue",
       "repository": "w3c/vc-data-integrity",
       "portfolio": "Verifiable Credentials",
@@ -710,19 +723,6 @@
       "title": "added a >CE Marking Product Conformity Example< in appendix D",
       "url": "https://github.com/w3c/vc-recognized-entities/pull/141",
       "number": 141,
-      "sha": null,
-      "state": "open",
-      "materiality": 3
-    },
-    {
-      "kind": "pull_request",
-      "repository": "w3c/vc-data-model",
-      "portfolio": "Verifiable Credentials",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-09T13:12:02Z",
-      "title": "First version of the 2.1 version of the vocabulary.",
-      "url": "https://github.com/w3c/vc-data-model/pull/1652",
-      "number": 1652,
       "sha": null,
       "state": "open",
       "materiality": 3
@@ -1363,24 +1363,51 @@
       "sha": null,
       "state": "open",
       "materiality": 2
-    },
-    {
-      "kind": "pull_request",
-      "repository": "w3c/did-extensions",
-      "portfolio": "Identifiers & Control",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T04:37:59Z",
-      "title": "Register did:sigelo",
-      "url": "https://github.com/w3c/did-extensions/pull/764",
-      "number": 764,
-      "sha": null,
-      "state": "open",
-      "materiality": 3
     }
   ],
   "assertions": [],
   "collection_errors": [],
   "change_units": [
+    {
+      "id": "toip-change-2c4d15aa8d0d",
+      "repository": "w3c/vc-data-model",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "First version of the 2.1 version of the vocabulary.",
+      "timestamp": "2026-10-10T04:12:01Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-model/pull/1652"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "w3c/vc-data-model",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-10T04:12:01Z",
+          "title": "First version of the 2.1 version of the vocabulary.",
+          "url": "https://github.com/w3c/vc-data-model/pull/1652",
+          "number": 1652,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "version"
+        ],
+        "evidence_state": "derived"
+      }
+    },
     {
       "id": "toip-change-bc23d4494c09",
       "repository": "w3c/vc-data-integrity",
@@ -1455,46 +1482,6 @@
         "confidence": "low",
         "matched_terms": [],
         "evidence_state": "insufficient"
-      }
-    },
-    {
-      "id": "toip-change-2c4d15aa8d0d",
-      "repository": "w3c/vc-data-model",
-      "portfolio": "Verifiable Credentials",
-      "repo_kind": "repository",
-      "title": "First version of the 2.1 version of the vocabulary.",
-      "timestamp": "2026-10-09T13:12:02Z",
-      "materiality": 3,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/w3c/vc-data-model/pull/1652"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "w3c/vc-data-model",
-          "portfolio": "Verifiable Credentials",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-09T13:12:02Z",
-          "title": "First version of the 2.1 version of the vocabulary.",
-          "url": "https://github.com/w3c/vc-data-model/pull/1652",
-          "number": 1652,
-          "sha": null,
-          "state": "open",
-          "materiality": 3
-        }
-      ],
-      "semantic_change": {
-        "type": "release",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "version"
-        ],
-        "evidence_state": "derived"
       }
     },
     {
@@ -3360,44 +3347,6 @@
         ],
         "evidence_state": "derived"
       }
-    },
-    {
-      "id": "toip-change-f348ed1c6871",
-      "repository": "w3c/did-extensions",
-      "portfolio": "Identifiers & Control",
-      "repo_kind": "repository",
-      "title": "Register did:sigelo",
-      "timestamp": "2026-10-03T04:37:59Z",
-      "materiality": 3,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/w3c/did-extensions/pull/764"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "w3c/did-extensions",
-          "portfolio": "Identifiers & Control",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T04:37:59Z",
-          "title": "Register did:sigelo",
-          "url": "https://github.com/w3c/did-extensions/pull/764",
-          "number": 764,
-          "sha": null,
-          "state": "open",
-          "materiality": 3
-        }
-      ],
-      "semantic_change": {
-        "type": "unknown",
-        "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
-      }
     }
   ],
   "lifecycle_changes": [],
@@ -3417,24 +3366,6 @@
       "semantic_change_type": "unknown",
       "evidence": [
         "https://github.com/w3c/did-extensions/pull/761"
-      ],
-      "evidence_state": "observed"
-    },
-    {
-      "id": "tem-relationship-0f7f48b628fe",
-      "source_repository": "w3c/did-extensions",
-      "target_repository": "w3c/did",
-      "source_portfolio": "Identifiers & Control",
-      "target_portfolio": "Identifiers & Control",
-      "relationship_type": "observed-reference",
-      "claim_strength": "observed",
-      "formal_dependency": false,
-      "recognition_inferred": false,
-      "authority_inferred": false,
-      "source_change_unit": "toip-change-f348ed1c6871",
-      "semantic_change_type": "unknown",
-      "evidence": [
-        "https://github.com/w3c/did-extensions/pull/764"
       ],
       "evidence_state": "observed"
     },
@@ -3537,24 +3468,6 @@
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
     {
-      "id": "tem-propagation-f6758948685e",
-      "state": "insufficient_history",
-      "referencing_repository": "w3c/did-extensions",
-      "referenced_repository": "w3c/did",
-      "relationship_id": "tem-relationship-0f7f48b628fe",
-      "trigger_change_unit": null,
-      "responding_change_unit": "toip-change-f348ed1c6871",
-      "trigger_timestamp": null,
-      "response_timestamp": "2026-10-03T04:37:59Z",
-      "relationship_evidence": [
-        "https://github.com/w3c/did-extensions/pull/764"
-      ],
-      "evidence": [
-        "https://github.com/w3c/did-extensions/pull/764"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
-    },
-    {
       "id": "tem-propagation-79cb3eb71514",
       "state": "insufficient_history",
       "referencing_repository": "w3c/did-resolution",
@@ -3594,7 +3507,7 @@
       "response_change_unit": "toip-change-19942188859e",
       "response_timestamp": "2026-10-06T05:42:47Z",
       "created_at": "2026-10-04T17:24:34Z",
-      "last_observed_at": "2026-10-10T02:16:10.905306+00:00",
+      "last_observed_at": "2026-10-10T05:19:01.851304+00:00",
       "evidence": [
         "https://github.com/w3c/did/issues/937",
         "https://github.com/w3c/did-extensions/pull/752",

@@ -9,7 +9,8 @@ on:
       - '.github/workflows/collect-weekly.yml'
       - 'organizations/**'
       - 'relationships/**'
-      - 'trust_ecosystem_monitor/**'
+      # Collector publication is explicitly dispatched or scheduled; unrelated
+      # library changes must not consume GitHub API quota on every main push.
   schedule:
     - cron: '30 21 * * 0'
 
