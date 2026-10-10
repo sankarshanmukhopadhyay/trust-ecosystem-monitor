@@ -41,3 +41,7 @@ ToIP allowlist. The query remains unscoped, and `scope_verified=false` even
 when all pages returned by the bounded query are enumerated. A source owner
 must confirm which spaces and groups belong in the reporting inventory and
 what reuse rights apply before records can enter public historical reports.
+
+## Scope reconciliation register (10 October 2026)
+
+The live space identity is now verified as `22970380` / `HOME` ([diagnostic #38017349744](https://github.com/sankarshanmukhopadhyay/trust-ecosystem-monitor/actions/runs/38017349744)). Public ToIP Steering Committee and WG pages corroborate `HOME` as relevant, **not exhaustive**. The current source-owner authority, reuse rights and LFX historical scope remain unresolved. See [ToIP external-source scope reconciliation](toip-source-scope-reconciliation.md) for the evidence matrix, missing decisions and next gate.
