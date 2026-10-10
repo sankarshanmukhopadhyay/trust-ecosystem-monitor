@@ -14,6 +14,7 @@ on:
       - 'trust_ecosystem_monitor/monthly_report.py'
       - 'trust_ecosystem_monitor/monthly_html.py'
       - 'tests/test_monthly_html.py'
+      - 'tests/test_monthly_lfx.py'
       - 'tests/test_monthly_sources.py'
       - 'tests/test_monthly.py'
       - '.github/workflows/monthly-prototype.yml'
