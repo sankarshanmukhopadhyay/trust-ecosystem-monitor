@@ -28,7 +28,13 @@ class WorkflowGovernanceTests(unittest.TestCase):
         self.assertIn("- main", self.text)
         self.assertIn("'.github/workflows/collect-weekly.yml'", self.text)
         self.assertIn("'organizations/**'", self.text)
-        self.assertIn("'trust_ecosystem_monitor/**'", self.text)
+        self.assertNotIn("'trust_ecosystem_monitor/**'", self.text)
+
+    def test_library_changes_do_not_trigger_expensive_collection(self):
+        # Weekly collection remains available on schedule or manual dispatch.
+        self.assertIn("workflow_dispatch:", self.text)
+        self.assertIn("schedule:", self.text)
+        self.assertNotIn("'trust_ecosystem_monitor/**'", self.text)
 
 
 if __name__ == "__main__":
