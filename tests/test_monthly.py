@@ -47,6 +47,25 @@ class MonthlyTests(unittest.TestCase):
         second["coverage_complete"] = False
         self.assertEqual(continuity(first, second)[0]["classification"], "evidence_insufficient")
 
+    @patch("trust_ecosystem_monitor.monthly.github_pages")
+    def test_discovery_failure_is_not_complete(self, pages):
+        pages.side_effect = RuntimeError("pagination limit")
+        result = collect_month("trustoverip", "2026-09", "token")
+        self.assertFalse(result["coverage_complete"])
+        self.assertEqual(result["evidence"], [])
+        self.assertIn("discovery", result["coverage"][0])
+
+    @patch("trust_ecosystem_monitor.monthly.github_pages")
+    def test_prefix_scope(self, pages):
+        pages.side_effect = [
+            iter([{"full_name": "trustoverip/dtgwg-example"}, {"full_name": "trustoverip/admin"}]),
+            iter([]),
+            iter([]),
+        ]
+        result = collect_month("trustoverip", "2026-09", "token", prefixes=["dtgwg-"])
+        self.assertEqual([row["repository"] for row in result["coverage"]], ["trustoverip/dtgwg-example"])
+        self.assertTrue(result["coverage_complete"])
+
     def test_explicit_repository_scope_rejects_cross_org(self):
         with self.assertRaises(ValueError):
             collect_month("trustoverip", "2026-08", "token", ["other/a"])
