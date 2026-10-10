@@ -110,3 +110,11 @@ python -m trust_ecosystem_monitor.monthly_confluence authorized-confluence-expor
 ```
 
 The adapter reports `partial` coverage and records **page updates**, not independently verified decisions. It does not claim live Confluence API access or a complete historical change log. The existing monthly report accepts a combined meeting manifest; separately imported Confluence and LFX manifests must be combined and validated before use.
+
+To combine two authorized source exports and generate a report with both sources:
+
+```sh
+python -m trust_ecosystem_monitor.monthly_merge_sources --month 2026-09 --output monthly-prototype/2026-09-meetings.json monthly-prototype/2026-09-confluence.json monthly-prototype/2026-09-lfx.json
+python -m trust_ecosystem_monitor.monthly_report monthly-prototype/2026-09.json --meetings monthly-prototype/2026-09-meetings.json --output monthly-prototype/2026-09-report.md
+python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-report.md --output monthly-prototype/2026-09-report.html
+```
