@@ -26,6 +26,10 @@ on:
       - 'tests/test_monthly.py'
       - '.github/workflows/monthly-prototype.yml'
 
+concurrency:
+  group: monthly-prototype-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
