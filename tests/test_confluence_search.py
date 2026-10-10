@@ -48,6 +48,19 @@ class SearchTests(unittest.TestCase):
         self.assertNotIn("confidential", str(result))
         self.assertNotIn("private-123", str(result))
 
+    def test_alternate_top_level_space_and_field_shapes(self):
+        payload = {"results": [
+            {"space": {"key": "PUBLIC"}, "title": "do not retain"},
+            {"content": {"space": {"key": "OTHER"}}},
+            {"resultGlobalContainer": {"title": "not a space"}},
+        ], "_links": {}}
+        result = search_month("2026-09", opener=lambda req, timeout: Response(payload))
+        self.assertEqual(result["observed_space_keys"], ["OTHER", "PUBLIC"])
+        self.assertEqual(result["missing_space_count"], 1)
+        self.assertEqual(result["space_key_origins"], ["content.space", "result.space"])
+        self.assertNotIn("do not retain", str(result))
+        self.assertFalse(result["scope_verified"])
+
     def test_http_denial_is_unavailable(self):
         def opener(req, timeout):
             raise HTTPError(req.full_url, 403, "Forbidden", {}, None)
