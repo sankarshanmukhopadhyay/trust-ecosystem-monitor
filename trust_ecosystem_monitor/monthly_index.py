@@ -40,10 +40,24 @@ Publication depends on a successful evidence collection; failed GitHub quota-lim
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--output", type=Path)
+    parser.add_argument("--link-home", type=Path)
     args = parser.parse_args()
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    args.output.write_text(render_index(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")), encoding="utf-8")
+    if bool(args.output) == bool(args.link_home):
+        parser.error("choose exactly one of --output or --link-home")
+    if args.output:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        args.output.write_text(render_index(datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M")), encoding="utf-8")
+    else:
+        if not args.link_home.is_file():
+            raise FileNotFoundError(args.link_home)
+        source = args.link_home.read_text(encoding="utf-8")
+        link = '<p><a href="monthly/index.html">Historical ToIP monthly HTML previews (GitHub-only partial evidence)</a></p>'
+        if 'href="monthly/index.html"' not in source:
+            if "</main>" not in source:
+                raise ValueError("homepage has no main section")
+            source = source.replace("</main>", link + "</main>", 1)
+            args.link_home.write_text(source, encoding="utf-8")
 
 
 if __name__ == "__main__":
