@@ -7,6 +7,7 @@ on:
       - main
     paths:
       - 'trust_ecosystem_monitor/monthly.py'
+      - 'trust_ecosystem_monitor/monthly_lfx.py'
       - 'trust_ecosystem_monitor/monthly_compare.py'
       - 'trust_ecosystem_monitor/monthly_continuity.py'
       - 'trust_ecosystem_monitor/monthly_meetings.py'
@@ -36,17 +37,21 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           python -m trust_ecosystem_monitor.monthly --org trustoverip --month 2026-08 --output monthly-prototype \
-            --repo trustoverip/dtgwg-rahp-tf \
-            --repo trustoverip/dtgwg-cred-spec \
-            --repo trustoverip/tswg-trust-registry-protocol
+            --prefix dtgwg- \
+            --prefix tswg- \
+            --prefix aimwg- \
+            --prefix ctwg- \
+            --prefix egwg-
       - name: Collect September 2026 GitHub evidence
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           python -m trust_ecosystem_monitor.monthly --org trustoverip --month 2026-09 --output monthly-prototype \
-            --repo trustoverip/dtgwg-rahp-tf \
-            --repo trustoverip/dtgwg-cred-spec \
-            --repo trustoverip/tswg-trust-registry-protocol
+            --prefix dtgwg- \
+            --prefix tswg- \
+            --prefix aimwg- \
+            --prefix ctwg- \
+            --prefix egwg-
       - name: Render source-aware monthly reports
         run: |
           python -m trust_ecosystem_monitor.monthly_report monthly-prototype/2026-08.json --output monthly-prototype/2026-08-report.md
