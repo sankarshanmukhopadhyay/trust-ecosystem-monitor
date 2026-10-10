@@ -36,6 +36,18 @@ class SearchTests(unittest.TestCase):
         self.assertNotIn("secret", str(result))
         self.assertNotIn("Private title", str(result))
 
+    def test_space_keys_aggregate_without_page_identifiers(self):
+        payload = {"results": [
+            {"title": "confidential", "content": {"space": {"key": "TOIP"}, "id": "private-123"}},
+            {"content": {"space": {"key": "TOIP"}}},
+            {"content": {"space": {"key": "OTHER"}}},
+        ], "_links": {}}
+        result = search_month("2026-09", opener=lambda req, timeout: Response(payload))
+        self.assertEqual(result["observed_space_keys"], ["OTHER", "TOIP"])
+        self.assertFalse(result["scope_verified"])
+        self.assertNotIn("confidential", str(result))
+        self.assertNotIn("private-123", str(result))
+
     def test_http_denial_is_unavailable(self):
         def opener(req, timeout):
             raise HTTPError(req.full_url, 403, "Forbidden", {}, None)

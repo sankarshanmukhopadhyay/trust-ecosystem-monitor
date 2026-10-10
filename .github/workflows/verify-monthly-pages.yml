@@ -1,0 +1,34 @@
+name: Verify published monthly HTML
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/verify-monthly-pages.yml'
+      - 'trust_ecosystem_monitor/monthly_index.py'
+
+permissions:
+  contents: read
+
+jobs:
+  public-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Verify public landing page and linked reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://sankarshanmukhopadhyay.github.io/trust-ecosystem-monitor/monthly"
+          tmp="$(mktemp -d)"
+          trap 'rm -rf "$tmp"' EXIT
+          for page in index.html 2026-08-report.html 2026-09-report.html 2026-08-overview.html 2026-09-overview.html 2026-08-to-2026-09.html; do
+            echo "Checking $page"
+            curl --fail --location --silent --show-error --retry 3 --retry-delay 5 --max-time 20 "$base/$page" -o "$tmp/$page"
+            grep -Eqi '<!doctype html|<html' "$tmp/$page"
+          done
+          grep -Fq 'GitHub-only partial evidence' "$tmp/index.html"
+          grep -Fq 'Confluence' "$tmp/index.html"
+          grep -Fq 'LFX' "$tmp/index.html"
+          echo "Public monthly Pages smoke verification passed"

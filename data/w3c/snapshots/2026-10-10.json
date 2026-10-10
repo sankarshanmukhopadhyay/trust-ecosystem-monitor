@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "w3c",
-  "generated_at": "2026-10-10T01:53:52.457232+00:00",
+  "generated_at": "2026-10-10T02:05:19.231081+00:00",
   "period": {
-    "since": "2026-10-03T01:53:52.457232+00:00",
-    "until": "2026-10-10T01:53:52.457232+00:00",
+    "since": "2026-10-03T02:05:19.231081+00:00",
+    "until": "2026-10-10T02:05:19.231081+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-10T01:19:12.224673+00:00"
+    "previous_snapshot": "2026-10-10T01:53:52.457232+00:00"
   },
   "repositories": [
     {
@@ -3594,7 +3594,7 @@
       "response_change_unit": "toip-change-19942188859e",
       "response_timestamp": "2026-10-06T05:42:47Z",
       "created_at": "2026-10-04T17:24:34Z",
-      "last_observed_at": "2026-10-10T01:53:52.457232+00:00",
+      "last_observed_at": "2026-10-10T02:05:19.231081+00:00",
       "evidence": [
         "https://github.com/w3c/did/issues/937",
         "https://github.com/w3c/did-extensions/pull/752",

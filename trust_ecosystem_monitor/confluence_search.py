@@ -34,6 +34,8 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
     count = 0
     batches = 0
     total = None
+    space_keys = set()
+    missing_space = 0
     while url and batches < max_batches:
         parsed = urlsplit(url)
         if parsed.scheme != "https" or parsed.netloc != "lf-toip.atlassian.net" or parsed.path not in ("/wiki/rest/api/search", "/wiki/rest/api/content/search", "/rest/api/search"):
@@ -56,6 +58,15 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
             return {**result, "coverage": "unavailable", "reason": "unexpected_schema", "batches_fetched": batches}
         batches += 1
         count += min(len(data["results"]), limit)
+        # Collect only aggregate public space identifiers, not page data.
+        for item in data["results"]:
+            content = item.get("content") if isinstance(item, dict) else None
+            space = content.get("space") if isinstance(content, dict) else None
+            key = space.get("key") if isinstance(space, dict) else None
+            if isinstance(key, str) and 0 < len(key) <= 100:
+                space_keys.add(key)
+            else:
+                missing_space += 1
         if isinstance(data.get("totalSize"), int):
             total = data["totalSize"]
         links = data.get("_links") if isinstance(data.get("_links"), dict) else {}
@@ -77,6 +88,9 @@ def search_month(month: str, *, opener=urlopen, limit: int = 25, max_batches: in
             url = candidate
         else:
             url = None
+    result["observed_space_keys"] = sorted(space_keys)
+    result["missing_space_count"] = missing_space
+    result["scope_verified"] = False
     result["sample_count"] = count
     result["total_size"] = total
     result["batches_fetched"] = batches
