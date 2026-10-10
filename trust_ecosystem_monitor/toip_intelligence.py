@@ -30,7 +30,7 @@ def shell(title: str, body: str, *, up: str = "../") -> str:
             'a{overflow-wrap:anywhere} .notice{border-left:4px solid #666;padding:0 1rem}'
             '</style></head><body><nav><a href="' + up + '">Intelligence</a>'
             '<a href="' + up + 'coverage/">Coverage</a><a href="' + up + 'methodology/">Methodology</a>'
-            '<a href="../../monthly/index.html">GitHub monthly reports</a></nav><main>'
+            '<a href="../../../monthly/index.html">GitHub monthly reports</a></nav><main>'
             + body + '</main></body></html>\n')
 
 
@@ -71,7 +71,7 @@ def month_page(data: dict) -> str:
             '<p>Confluence: public HOME space identity and bounded historical search metadata verified; '
             'authoritative scope, reuse rights and evidence classification pending. '
             'LFX: explicitly deferred, not zero activity.</p>'
-            '<p><a href="../../monthly/' + month + '-report.html">Underlying GitHub activity report</a> · '
+            '<p><a href="../../../monthly/' + month + '-report.html">Underlying GitHub activity report</a> · '
             '<a href="../coverage/">Coverage details</a> · <a href="../methodology/">Inference rules</a></p>')
     return shell("ToIP intelligence " + month, body)
 
