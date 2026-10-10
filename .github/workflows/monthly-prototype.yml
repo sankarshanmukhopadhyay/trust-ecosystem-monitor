@@ -1,0 +1,90 @@
+name: Historical ToIP monthly evidence prototype
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - feat/61-monthly-evidence-foundation
+    paths:
+      - 'trust_ecosystem_monitor/monthly.py'
+      - 'trust_ecosystem_monitor/monthly_lfx.py'
+      - 'trust_ecosystem_monitor/monthly_confluence.py'
+      - 'trust_ecosystem_monitor/monthly_merge_sources.py'
+      - 'trust_ecosystem_monitor/monthly_overview.py'
+      - 'tests/test_monthly_overview.py'
+      - 'tests/test_monthly_merge_sources.py'
+      - 'tests/test_monthly_confluence.py'
+      - 'trust_ecosystem_monitor/monthly_compare.py'
+      - 'trust_ecosystem_monitor/monthly_continuity.py'
+      - 'trust_ecosystem_monitor/monthly_meetings.py'
+      - 'trust_ecosystem_monitor/monthly_report.py'
+      - 'trust_ecosystem_monitor/monthly_html.py'
+      - 'tests/test_monthly_html.py'
+      - 'tests/test_monthly_lfx.py'
+      - 'tests/test_monthly_sources.py'
+      - 'tests/test_monthly.py'
+      - '.github/workflows/monthly-prototype.yml'
+
+concurrency:
+  group: monthly-prototype-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  prototype:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate monthly implementation
+        run: python -m unittest discover -s tests
+      - name: Collect August 2026 GitHub evidence
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python -m trust_ecosystem_monitor.monthly --org trustoverip --month 2026-08 --output monthly-prototype \
+            --prefix dtgwg- \
+            --prefix tswg- \
+            --prefix aimwg- \
+            --prefix ctwg- \
+            --prefix egwg-
+      - name: Collect September 2026 GitHub evidence
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python -m trust_ecosystem_monitor.monthly --org trustoverip --month 2026-09 --output monthly-prototype \
+            --prefix dtgwg- \
+            --prefix tswg- \
+            --prefix aimwg- \
+            --prefix ctwg- \
+            --prefix egwg-
+      - name: Render source-aware monthly reports
+        run: |
+          python -m trust_ecosystem_monitor.monthly_report monthly-prototype/2026-08.json --output monthly-prototype/2026-08-report.md
+          python -m trust_ecosystem_monitor.monthly_report monthly-prototype/2026-09.json --output monthly-prototype/2026-09-report.md
+      - name: Compare observed evidence
+        run: |
+          python -m trust_ecosystem_monitor.monthly_compare monthly-prototype/2026-08.json monthly-prototype/2026-09.json --output monthly-prototype
+      - name: Render portfolio overview reports
+        run: |
+          python -m trust_ecosystem_monitor.monthly_overview monthly-prototype/2026-08.json --output monthly-prototype/2026-08-overview.md
+          python -m trust_ecosystem_monitor.monthly_overview monthly-prototype/2026-09.json --output monthly-prototype/2026-09-overview.md
+      - name: Render HTML previews
+        run: |
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-report.md --output monthly-prototype/2026-08-report.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-report.md --output monthly-prototype/2026-09-report.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-to-2026-09.md --output monthly-prototype/2026-08-to-2026-09.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-overview.md --output monthly-prototype/2026-08-overview.html
+          python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-overview.md --output monthly-prototype/2026-09-overview.html
+      - name: Upload prototype evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: toip-aug-sep-2026-monthly-prototype
+          path: monthly-prototype/
+          retention-days: 30

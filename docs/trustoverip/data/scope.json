@@ -22,7 +22,7 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-10-05T00:03:09.546585+00:00",
+  "generated_at": "2026-10-10T01:18:22.709848+00:00",
   "counts": {
     "discovered": 118,
     "included": 118,
@@ -1694,7 +1694,7 @@
       "repository": "trustoverip/spec-up-t-old",
       "url": "https://github.com/trustoverip/spec-up-t-old",
       "portfolio": "Spec-Up",
-      "lifecycle": "dormant",
+      "lifecycle": "archived",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -2054,7 +2054,7 @@
       "repository": "trustoverip/tswg-trust-registry-query-language",
       "url": "https://github.com/trustoverip/tswg-trust-registry-query-language",
       "portfolio": "TSWG",
-      "lifecycle": "dormant",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
