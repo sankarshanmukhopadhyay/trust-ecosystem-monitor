@@ -17,6 +17,7 @@ def portfolio(repository: str) -> str:
 def render(manifest: dict, *, examples_per_portfolio: int = 8) -> str:
     evidence = manifest["evidence"]
     buckets = defaultdict(list)
+    scoped_groups = {portfolio(row["repository"]) for row in manifest["coverage"] if row["repository"].count("/") == 1}
     for item in evidence:
         buckets[portfolio(item["repository"])].append(item)
     lines = [
@@ -29,16 +30,19 @@ def render(manifest: dict, *, examples_per_portfolio: int = 8) -> str:
         "| Portfolio | Repositories with events | Opened | Closed | Merged |",
         "| --- | ---: | ---: | ---: | ---: |",
     ]
-    for group in sorted(buckets):
+    for group in sorted(scoped_groups | set(buckets)):
         items = buckets[group]
         counts = Counter(item["event"] for item in items)
         lines.append(f"| {group} | {len(set(item['repository'] for item in items))} | {counts['opened']} | {counts['closed']} | {counts['merged']} |")
     if not buckets:
         lines.append("| No observed events | 0 | 0 | 0 | 0 |")
     lines.extend(["", "## Selected source-linked observations", ""])
-    for group in sorted(buckets):
+    for group in sorted(scoped_groups | set(buckets)):
         items = buckets[group]
         lines.extend([f"### {group}", ""])
+        if not items:
+            lines.extend(["No lifecycle events observed in the selected repositories for this portfolio. This does not establish inactivity.", ""])
+            continue
         # A merged PR is an observable transition, not an independently verified deliverable.
         priority = {"merged": 0, "closed": 1, "opened": 2}
         chosen = sorted(items, key=lambda x: (priority.get(x["event"], 3), x["occurred_at"], x["id"]))[:examples_per_portfolio]
