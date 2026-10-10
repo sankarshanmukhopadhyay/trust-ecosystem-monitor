@@ -112,7 +112,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
         "methodology": "Historical GitHub issue and PR lifecycle events; not a complete record of work or decisions",
         "evidence": evidence,
         "coverage": coverage,
-        "coverage_complete": all(entry["issues"] == "complete" and entry["pull_requests"] == "complete" for entry in coverage),
+        "coverage_complete": bool(coverage) and all(entry["issues"] == "complete" and entry["pull_requests"] == "complete" for entry in coverage),
         "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
         "collection_scope": ("explicit repositories: " + ", ".join(repositories)) if repositories is not None else "all public organization repositories; admission-tier filtering not yet applied",
     }
