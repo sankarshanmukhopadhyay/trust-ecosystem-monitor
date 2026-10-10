@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "decentralized-identity",
-  "generated_at": "2026-10-10T01:18:34.129900+00:00",
+  "generated_at": "2026-10-10T01:53:09.589382+00:00",
   "period": {
-    "since": "2026-10-03T01:18:34.129900+00:00",
-    "until": "2026-10-10T01:18:34.129900+00:00",
+    "since": "2026-10-03T01:53:09.589382+00:00",
+    "until": "2026-10-10T01:53:09.589382+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-05T00:03:20.927246+00:00"
+    "previous_snapshot": "2026-10-10T01:18:34.129900+00:00"
   },
   "repositories": [
     {
@@ -13223,58 +13223,6 @@
       "sha": null,
       "state": "closed",
       "materiality": 3
-    },
-    {
-      "kind": "pull_request",
-      "repository": "decentralized-identity/web-did-resolver",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T01:35:37Z",
-      "title": "chore(deps): update pnpm to v12.8.1",
-      "url": "https://github.com/decentralized-identity/web-did-resolver/pull/149",
-      "number": 149,
-      "sha": null,
-      "state": "merged",
-      "materiality": 4
-    },
-    {
-      "kind": "commit",
-      "repository": "decentralized-identity/web-did-resolver",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T01:35:36Z",
-      "title": "chore(deps): update pnpm to v12.8.1 (#149)",
-      "url": "https://github.com/decentralized-identity/web-did-resolver/commit/b4e1caf9457aaabf948905552da33628681b8394",
-      "number": null,
-      "sha": "b4e1caf9457aaabf948905552da33628681b8394",
-      "state": null,
-      "materiality": 1
-    },
-    {
-      "kind": "pull_request",
-      "repository": "decentralized-identity/did-jwt",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T01:34:48Z",
-      "title": "chore(deps): update pnpm to v12.8.1",
-      "url": "https://github.com/decentralized-identity/did-jwt/pull/358",
-      "number": 358,
-      "sha": null,
-      "state": "merged",
-      "materiality": 4
-    },
-    {
-      "kind": "commit",
-      "repository": "decentralized-identity/did-jwt",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T01:34:47Z",
-      "title": "chore(deps): update pnpm to v12.8.1 (#358)",
-      "url": "https://github.com/decentralized-identity/did-jwt/commit/609d684b5c6505227445bda47fa21a3ae41f57c0",
-      "number": null,
-      "sha": "609d684b5c6505227445bda47fa21a3ae41f57c0",
-      "state": null,
-      "materiality": 1
     }
   ],
   "assertions": [
@@ -20419,112 +20367,6 @@
         "matched_terms": [],
         "evidence_state": "insufficient"
       }
-    },
-    {
-      "id": "toip-change-7f5052f037c2",
-      "repository": "decentralized-identity/web-did-resolver",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "title": "chore(deps): update pnpm to v12.8.1",
-      "timestamp": "2026-10-03T01:35:37Z",
-      "materiality": 4,
-      "event_kinds": [
-        "commit",
-        "pull_request"
-      ],
-      "event_count": 2,
-      "evidence": [
-        "https://github.com/decentralized-identity/web-did-resolver/pull/149",
-        "https://github.com/decentralized-identity/web-did-resolver/commit/b4e1caf9457aaabf948905552da33628681b8394"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "decentralized-identity/web-did-resolver",
-          "portfolio": "Implementations & Tooling",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T01:35:37Z",
-          "title": "chore(deps): update pnpm to v12.8.1",
-          "url": "https://github.com/decentralized-identity/web-did-resolver/pull/149",
-          "number": 149,
-          "sha": null,
-          "state": "merged",
-          "materiality": 4
-        },
-        {
-          "kind": "commit",
-          "repository": "decentralized-identity/web-did-resolver",
-          "portfolio": "Implementations & Tooling",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T01:35:36Z",
-          "title": "chore(deps): update pnpm to v12.8.1 (#149)",
-          "url": "https://github.com/decentralized-identity/web-did-resolver/commit/b4e1caf9457aaabf948905552da33628681b8394",
-          "number": null,
-          "sha": "b4e1caf9457aaabf948905552da33628681b8394",
-          "state": null,
-          "materiality": 1
-        }
-      ],
-      "semantic_change": {
-        "type": "unknown",
-        "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
-      }
-    },
-    {
-      "id": "toip-change-20738c8200ee",
-      "repository": "decentralized-identity/did-jwt",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "title": "chore(deps): update pnpm to v12.8.1",
-      "timestamp": "2026-10-03T01:34:48Z",
-      "materiality": 4,
-      "event_kinds": [
-        "commit",
-        "pull_request"
-      ],
-      "event_count": 2,
-      "evidence": [
-        "https://github.com/decentralized-identity/did-jwt/pull/358",
-        "https://github.com/decentralized-identity/did-jwt/commit/609d684b5c6505227445bda47fa21a3ae41f57c0"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "decentralized-identity/did-jwt",
-          "portfolio": "Implementations & Tooling",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T01:34:48Z",
-          "title": "chore(deps): update pnpm to v12.8.1",
-          "url": "https://github.com/decentralized-identity/did-jwt/pull/358",
-          "number": 358,
-          "sha": null,
-          "state": "merged",
-          "materiality": 4
-        },
-        {
-          "kind": "commit",
-          "repository": "decentralized-identity/did-jwt",
-          "portfolio": "Implementations & Tooling",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T01:34:47Z",
-          "title": "chore(deps): update pnpm to v12.8.1 (#358)",
-          "url": "https://github.com/decentralized-identity/did-jwt/commit/609d684b5c6505227445bda47fa21a3ae41f57c0",
-          "number": null,
-          "sha": "609d684b5c6505227445bda47fa21a3ae41f57c0",
-          "state": null,
-          "materiality": 1
-        }
-      ],
-      "semantic_change": {
-        "type": "unknown",
-        "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
-      }
     }
   ],
   "lifecycle_changes": [],
@@ -21722,207 +21564,105 @@
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
     {
-      "id": "tem-propagation-19ce9f74c292",
+      "id": "tem-propagation-cb290ab7b8c8",
       "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
-      "referenced_repository": "decentralized-identity/did-jwt",
-      "relationship_id": "tem-relationship-2ac467217b17",
-      "trigger_change_unit": "toip-change-20738c8200ee",
-      "responding_change_unit": null,
-      "trigger_timestamp": "2026-10-03T01:34:48Z",
-      "response_timestamp": null,
-      "trigger_semantic_change_type": "unknown",
-      "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "evidence": [
-        "https://github.com/decentralized-identity/did-jwt/pull/358",
-        "https://github.com/decentralized-identity/did-jwt/commit/609d684b5c6505227445bda47fa21a3ae41f57c0",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
-    },
-    {
-      "id": "tem-propagation-248ce79d83f3",
-      "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
-      "referenced_repository": "decentralized-identity/did-jwt",
-      "relationship_id": "tem-relationship-2ac467217b17",
-      "trigger_change_unit": "toip-change-39170d40de27",
-      "responding_change_unit": null,
-      "trigger_timestamp": "2026-10-06T06:28:53Z",
-      "response_timestamp": null,
-      "trigger_semantic_change_type": "unknown",
-      "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "evidence": [
-        "https://github.com/decentralized-identity/did-jwt/pull/359",
-        "https://github.com/decentralized-identity/did-jwt/commit/0d31b433de863dce07f3fa0aeefdd3dc18fd1f26",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
-    },
-    {
-      "id": "tem-propagation-b1306d7001c5",
-      "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
-      "referenced_repository": "decentralized-identity/did-jwt",
-      "relationship_id": "tem-relationship-2ac467217b17",
-      "trigger_change_unit": "toip-change-f4136f0ba3ff",
-      "responding_change_unit": null,
-      "trigger_timestamp": "2026-10-07T12:25:07Z",
-      "response_timestamp": null,
-      "trigger_semantic_change_type": "unknown",
-      "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "evidence": [
-        "https://github.com/decentralized-identity/did-jwt/pull/360",
-        "https://github.com/decentralized-identity/did-jwt/commit/f26311204822c39840028e0ca8f50e0d5e16fab6",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
-    },
-    {
-      "id": "tem-propagation-b5e8c283571c",
-      "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
-      "referenced_repository": "decentralized-identity/did-jwt",
-      "relationship_id": "tem-relationship-2ac467217b17",
-      "trigger_change_unit": "toip-change-2a4a597dc31c",
-      "responding_change_unit": null,
-      "trigger_timestamp": "2026-10-08T20:45:45Z",
-      "response_timestamp": null,
-      "trigger_semantic_change_type": "unknown",
-      "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "evidence": [
-        "https://github.com/decentralized-identity/did-jwt/commit/8b038d00a680443ef784069875d0a2fb54b28864",
-        "https://github.com/decentralized-identity/did-jwt/pull/361",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
-    },
-    {
-      "id": "tem-propagation-e4af85ee47ec",
-      "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
-      "referenced_repository": "decentralized-identity/did-jwt",
-      "relationship_id": "tem-relationship-2ac467217b17",
-      "trigger_change_unit": "toip-change-474302a55541",
-      "responding_change_unit": null,
-      "trigger_timestamp": "2026-10-10T00:22:16Z",
-      "response_timestamp": null,
-      "trigger_semantic_change_type": "dependency",
-      "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "evidence": [
-        "https://github.com/decentralized-identity/did-jwt/issues/194",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
-    },
-    {
-      "id": "tem-propagation-be927f9bdec8",
-      "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
+      "referencing_repository": "decentralized-identity/veramo",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-c1337cfd9c3b",
-      "trigger_change_unit": "toip-change-ee45f9b9d05e",
-      "responding_change_unit": null,
-      "trigger_timestamp": "2026-10-06T05:10:14Z",
-      "response_timestamp": null,
-      "trigger_semantic_change_type": "unknown",
-      "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "evidence": [
-        "https://github.com/decentralized-identity/did-resolver/pull/181",
-        "https://github.com/decentralized-identity/did-resolver/commit/0d5cda6439283f105f99a959266f79a34d8159ae",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
-    },
-    {
-      "id": "tem-propagation-9ab70f0a7391",
-      "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
-      "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-c1337cfd9c3b",
+      "relationship_id": "tem-relationship-d1f38459dc08",
       "trigger_change_unit": "toip-change-9cfdc3436593",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-10-07T08:28:16Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "unknown",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
+        "https://github.com/decentralized-identity/veramo/pull/1516"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/deb1df3a045c38853a15a13ca4a66407524d6190",
         "https://github.com/decentralized-identity/did-resolver/pull/182",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
+        "https://github.com/decentralized-identity/veramo/pull/1516"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
     {
-      "id": "tem-propagation-14dc7c5d1ab2",
+      "id": "tem-propagation-8624d96b4688",
       "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
+      "referencing_repository": "decentralized-identity/veramo",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-c1337cfd9c3b",
+      "relationship_id": "tem-relationship-d1f38459dc08",
       "trigger_change_unit": "toip-change-f5cb1338f627",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-10-08T17:26:19Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "unknown",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
+        "https://github.com/decentralized-identity/veramo/pull/1516"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/183",
         "https://github.com/decentralized-identity/did-resolver/commit/ef702b51522758fb33812c6bcf76207548fd8277",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
+        "https://github.com/decentralized-identity/veramo/pull/1516"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
     {
-      "id": "tem-propagation-36d49b9965bf",
+      "id": "tem-propagation-de3793a64ea5",
       "state": "no_follow_up_observed",
-      "referencing_repository": "decentralized-identity/did-jwt-vc",
+      "referencing_repository": "decentralized-identity/veramo",
       "referenced_repository": "decentralized-identity/did-resolver",
-      "relationship_id": "tem-relationship-c1337cfd9c3b",
+      "relationship_id": "tem-relationship-d1f38459dc08",
       "trigger_change_unit": "toip-change-035c9defc8a1",
       "responding_change_unit": null,
       "trigger_timestamp": "2026-10-10T00:21:41Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "dependency",
       "relationship_evidence": [
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
+        "https://github.com/decentralized-identity/veramo/pull/1516"
       ],
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/issues/97",
-        "https://github.com/decentralized-identity/did-jwt-vc/pull/168",
-        "https://github.com/decentralized-identity/did-jwt-vc/commit/0c0c6e78556303d8a943e2e23bc7a646298c009e"
+        "https://github.com/decentralized-identity/veramo/pull/1516"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-9c766c70ce57",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/veramo",
+      "referenced_repository": "decentralized-identity/web-did-resolver",
+      "relationship_id": "tem-relationship-fed677b36eb0",
+      "trigger_change_unit": "toip-change-328a2ee36a00",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-10-08T08:48:03Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "unknown",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/veramo/pull/1516"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/web-did-resolver/commit/5a7be84c4d39ac6b22fb37f8d29657f79597195a",
+        "https://github.com/decentralized-identity/web-did-resolver/pull/152",
+        "https://github.com/decentralized-identity/veramo/pull/1516"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
+    },
+    {
+      "id": "tem-propagation-a93ff16a571a",
+      "state": "no_follow_up_observed",
+      "referencing_repository": "decentralized-identity/veramo",
+      "referenced_repository": "decentralized-identity/web-did-resolver",
+      "relationship_id": "tem-relationship-fed677b36eb0",
+      "trigger_change_unit": "toip-change-4860ec44b1f0",
+      "responding_change_unit": null,
+      "trigger_timestamp": "2026-10-10T00:22:40Z",
+      "response_timestamp": null,
+      "trigger_semantic_change_type": "dependency",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/veramo/pull/1516"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/web-did-resolver/issues/103",
+        "https://github.com/decentralized-identity/veramo/pull/1516"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority. No follow-up observed is not evidence that follow-up was required."
     },
@@ -25064,7 +24804,7 @@
       "response_change_unit": "toip-change-4a2d091304da",
       "response_timestamp": "2026-09-18T17:17:00Z",
       "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
@@ -25098,7 +24838,7 @@
       "response_change_unit": "toip-change-b2a92a4c47e2",
       "response_timestamp": "2026-09-21T23:44:03Z",
       "created_at": "2026-09-14T02:03:44Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/5ea4ec243bbd50dee27da2a0b7f45f051bacf385",
         "https://github.com/decentralized-identity/did-jwt-vc/pull/158",
@@ -25130,7 +24870,7 @@
       "response_change_unit": "toip-change-1906cd56024f",
       "response_timestamp": "2026-09-21T16:11:42Z",
       "created_at": "2026-09-23T21:07:38Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/pull/297",
         "https://github.com/decentralized-identity/didwebvh-py/issues/33",
@@ -25162,7 +24902,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T22:31:17Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/issues/295",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -25195,7 +24935,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T10:08:41Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh-ts/commit/5838e48a065adb7dc58f4694347037366274c7ec",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -25227,7 +24967,7 @@
       "response_change_unit": "toip-change-a300091fec5e",
       "response_timestamp": "2026-09-19T17:25:31Z",
       "created_at": "2026-09-20T06:47:17Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/171",
         "https://github.com/decentralized-identity/didwebvh-ts/commit/c5d82f72c23b30d694a641e3669ac94307aaa256",
@@ -25260,7 +25000,7 @@
       "response_change_unit": "toip-change-0d756280880c",
       "response_timestamp": "2026-09-23T18:10:22Z",
       "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
@@ -25295,7 +25035,7 @@
       "response_change_unit": "toip-change-db7522b124af",
       "response_timestamp": "2026-09-23T11:37:37Z",
       "created_at": "2026-09-18T12:48:33Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/338",
         "https://github.com/decentralized-identity/did-jwt/commit/470fe5d8850711ba2be845fa352d0b753600a772",
@@ -25329,7 +25069,7 @@
       "response_change_unit": "toip-change-e906292a73ce",
       "response_timestamp": "2026-09-23T11:37:43Z",
       "created_at": "2026-09-16T11:26:49Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/164",
         "https://github.com/decentralized-identity/did-resolver/commit/607da04b6aaa1a80cc22378fd07ab8a6ce9ebf65",
@@ -25363,7 +25103,7 @@
       "response_change_unit": "toip-change-d90b7a0e9f47",
       "response_timestamp": "2026-09-24T13:26:29Z",
       "created_at": "2026-09-23T05:03:05Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
         "https://github.com/decentralized-identity/did-resolver/pull/175",
@@ -25397,7 +25137,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-03T01:34:48Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/358",
         "https://github.com/decentralized-identity/did-jwt/commit/609d684b5c6505227445bda47fa21a3ae41f57c0",
@@ -25429,11 +25169,42 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-09-15T22:11:06Z",
-      "last_observed_at": "2026-10-10T01:18:34.129900+00:00",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/thisdid/pull/2",
         "https://github.com/decentralized-identity/didwebvh-test-suite/commit/f98baa75b1d648dea84b0dd201eeac9f9cbc94d1",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/20"
+      ],
+      "authority": {
+        "owner": "trust-ecosystem-monitor",
+        "scope": "derived_observation",
+        "upstream_action_authorized": false
+      },
+      "interpretation": "Monitor-owned observation proposition only. A watch does not establish dependency, causation, compatibility impact, compliance, recognition, authority, prediction, breakage, or an upstream obligation. Trigger observation requires reassessment; it does not automatically resolve the proposition."
+    },
+    {
+      "id": "tem-watch-0a18d4344468",
+      "kind": "follow_up_after_referenced_change",
+      "proposition": "Observe whether decentralized-identity/veramo records later explicit follow-up after observed changes in decentralized-identity/web-did-resolver.",
+      "state": "waiting_external",
+      "source_repository": "decentralized-identity/veramo",
+      "target_repository": "decentralized-identity/web-did-resolver",
+      "trigger": {
+        "type": "explicit_follow_up_observed",
+        "condition": "A later change in decentralized-identity/veramo explicitly references decentralized-identity/web-did-resolver after the watched target change."
+      },
+      "source_relationship_id": "tem-relationship-fed677b36eb0",
+      "source_propagation_id": "tem-propagation-9c766c70ce57",
+      "trigger_change_unit": "toip-change-328a2ee36a00",
+      "trigger_timestamp": "2026-10-08T08:48:03Z",
+      "response_change_unit": null,
+      "response_timestamp": null,
+      "created_at": "2026-10-08T08:48:03Z",
+      "last_observed_at": "2026-10-10T01:53:09.589382+00:00",
+      "evidence": [
+        "https://github.com/decentralized-identity/web-did-resolver/commit/5a7be84c4d39ac6b22fb37f8d29657f79597195a",
+        "https://github.com/decentralized-identity/web-did-resolver/pull/152",
+        "https://github.com/decentralized-identity/veramo/pull/1516"
       ],
       "authority": {
         "owner": "trust-ecosystem-monitor",
