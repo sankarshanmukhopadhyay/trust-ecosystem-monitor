@@ -10,6 +10,8 @@ on:
       - 'trust_ecosystem_monitor/monthly.py'
       - 'trust_ecosystem_monitor/monthly_lfx.py'
       - 'trust_ecosystem_monitor/monthly_confluence.py'
+      - 'trust_ecosystem_monitor/monthly_merge_sources.py'
+      - 'tests/test_monthly_merge_sources.py'
       - 'tests/test_monthly_confluence.py'
       - 'trust_ecosystem_monitor/monthly_compare.py'
       - 'trust_ecosystem_monitor/monthly_continuity.py'
