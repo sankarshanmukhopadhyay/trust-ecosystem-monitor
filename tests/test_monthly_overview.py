@@ -9,6 +9,11 @@ class MonthlyOverviewTests(unittest.TestCase):
         self.assertEqual(portfolio("trustoverip/tswg-trust-registry-protocol"), "TSWG")
         self.assertEqual(portfolio("trustoverip/unclassified"), "Other / unclassified")
 
+    def test_scoped_portfolio_with_no_events_is_visible(self):
+        report = render({"period": "2026-09", "collection_scope": "test", "coverage_complete": True, "coverage": [{"repository": "trustoverip/ctwg-glossary"}], "evidence": []})
+        self.assertIn("### CTWG", report)
+        self.assertIn("does not establish inactivity", report)
+
     def test_summary_cites_source_and_limits_inference(self):
         item = {"repository": "trustoverip/dtgwg-example", "event": "merged", "kind": "pull_requests", "id": "one", "title": "Example", "occurred_at": "2026-09-10T00:00:00Z", "url": "https://github.com/trustoverip/dtgwg-example/pull/1"}
         report = render({"period": "2026-09", "collection_scope": "test", "coverage_complete": True, "coverage": [{"repository": "trustoverip/dtgwg-example"}], "evidence": [item]})
