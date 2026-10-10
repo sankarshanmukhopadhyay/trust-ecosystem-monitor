@@ -31,6 +31,27 @@ class GitHubRateLimitTests(unittest.TestCase):
         self.assertNotIn("rate limited", str(raised.exception))
         self.assertNotIn("private payload", str(raised.exception))
 
+    def test_short_retry_then_success(self):
+        err = self.error(429, {"Retry-After": "1"}, "hidden")
+        class Success:
+            def __enter__(self): return self
+            def __exit__(self, *args): return False
+            def read(self): return b'{"ok": true}'
+        with patch("urllib.request.urlopen", side_effect=[err, Success()]) as request:
+            with patch("trust_ecosystem_monitor.engine.time.sleep") as sleep:
+                self.assertEqual(self.client.get("/repos/example/repo"), {"ok": True})
+        self.assertEqual(request.call_count, 2)
+        sleep.assert_called_once_with(1.0)
+
+    def test_long_retry_fails_without_sleep(self):
+        err = self.error(429, {"Retry-After": "3600"}, "hidden")
+        with patch("urllib.request.urlopen", side_effect=err) as request:
+            with patch("trust_ecosystem_monitor.engine.time.sleep") as sleep:
+                with self.assertRaisesRegex(RuntimeError, "rate limited"):
+                    self.client.get("/repos/example/repo")
+        self.assertEqual(request.call_count, 1)
+        sleep.assert_not_called()
+
     def test_429_retry_after(self):
         err = self.error(429, {"Retry-After": "60"}, "hidden")
         with patch("urllib.request.urlopen", side_effect=err):
