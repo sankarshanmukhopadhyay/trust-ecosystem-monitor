@@ -93,7 +93,7 @@ def collect_month(org: str, month: str, token: str) -> dict:
                                 "url": item["html_url"],
                                 "title": item.get("title", ""),
                             })
-            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, RuntimeError) as exc:
+            except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, RuntimeError, KeyError) as exc:
                 status[kind] = f"unavailable: {type(exc).__name__}: {exc}"
         coverage.append(status)
     evidence = list({entry["id"]: entry for entry in evidence}.values())
@@ -105,6 +105,7 @@ def collect_month(org: str, month: str, token: str) -> dict:
         "methodology": "Historical GitHub issue and PR lifecycle events; not a complete record of work or decisions",
         "evidence": evidence,
         "coverage": coverage,
+        "coverage_complete": all(entry["issues"] == "complete" and entry["pull_requests"] == "complete" for entry in coverage),
         "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
     }
 
@@ -121,6 +122,8 @@ def render_markdown(result: dict) -> str:
         "## Evidence",
         "",
     ]
+    lines.append(f"GitHub collection complete for enumerated repositories: **{result['coverage_complete']}**.")
+    lines.append("")
     for item in result["evidence"]:
         lines.append(f"- {item['occurred_at'][:10]} — {item['repository']}: {item['kind']} #{item['id'].split(':')[-2]} {item['event']} — [{item['title'].replace(chr(10), ' ')}]({item['url']})")
     lines.extend(["", "## Source coverage", ""])
