@@ -53,3 +53,34 @@ python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-08-report.
 ```
 
 The GitHub Actions artifact is a preview delivery mechanism; publication to a ToIP-controlled site remains a separate governance and deployment decision.
+
+## Expanded GitHub and LFX evidence scope
+
+The expanded prototype selects public repositories by the ToIP profile's DTG, TSWG, AIMWG, CTWG and EGWG name prefixes, rather than the original three explicit repositories. This is a **prefix-scoped sample**, not a complete inventory of every ToIP GitHub repository; missing portfolios and nonconforming repository names remain out of scope. Collection completeness is assessed only within the selected scope. The GitHub token's permissions and rate limits may produce partial coverage, which must be reported.
+
+LFX meeting data can be incorporated from an authorized JSON export. This does **not** claim a live LFX API integration. The expected export structure is:
+
+```json
+{
+  "meetings": [
+    {
+      "started_at": "2026-09-12T14:00:00Z",
+      "url": "https://example.org/meeting/1",
+      "group": "DTG",
+      "title": "Weekly call"
+    }
+  ]
+}
+```
+
+The URL above is a schema illustration, not a claim of an actual meeting. Run:
+
+```sh
+python -m trust_ecosystem_monitor.monthly_lfx authorized-lfx-export.json --month 2026-09 --output monthly-prototype/2026-09-meetings.json
+python -m trust_ecosystem_monitor.monthly_report monthly-prototype/2026-09.json --meetings monthly-prototype/2026-09-meetings.json --output monthly-prototype/2026-09-report.md
+python -m trust_ecosystem_monitor.monthly_html monthly-prototype/2026-09-report.md --output monthly-prototype/2026-09-report.html
+```
+
+The importer reports LFX coverage as **partial** because a supplied export cannot prove the completeness of all LFX meetings. It records meeting listings as discussions, not decisions or deliverables. Until an authorized export is provided and included in the report-generation workflow, CI-generated reports continue to state LFX `not_checked`. Confluence is likewise not checked.
+
+No credentials, attendance lists, private minutes, or restricted source text should be committed to the repository.
