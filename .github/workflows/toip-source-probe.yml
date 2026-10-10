@@ -31,7 +31,7 @@ jobs:
         run: python -m trust_ecosystem_monitor.confluence_search --month 2026-09 --output confluence-september-search.json
       - name: Summarize observed public Confluence space candidates
         run: |
-          python -c "import json; [(lambda d,m: print(m, 'observed_space_keys',d.get('observed_space_keys',[]),'missing_space_count',d.get('missing_space_count'),'scope_verified',d.get('scope_verified'),'coverage',d.get('coverage')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
+          python -c "import json; [(lambda d,m: print(m, 'field_shapes',d.get('observed_field_shapes',[]),'space_key_origins',d.get('space_key_origins',[]),'observed_space_keys',d.get('observed_space_keys',[]),'missing_space_count',d.get('missing_space_count'),'scope_verified',d.get('scope_verified'),'coverage',d.get('coverage')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
       - name: Summarize historical search results
         run: |
           python -c "import json; [(lambda d,m: print(m, 'coverage',d.get('coverage'),'count',d.get('sample_count'),'total',d.get('total_size'),'http',d.get('http_status'),'reason',d.get('reason'),'rejected_path',d.get('rejected_path')))(json.load(open('confluence-'+m+'-search.json')),m) for m in ('august','september')]"
