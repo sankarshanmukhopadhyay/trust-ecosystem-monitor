@@ -1,28 +1,32 @@
-# ToIP Confluence and cross-source evidence contract (v0.1)
+# ToIP cross-source evidence contract (v0.1)
 
-Tracking: [#63](https://github.com/sankarshanmukhopadhyay/trust-ecosystem-monitor/issues/63), [#82](https://github.com/sankarshanmukhopadhyay/trust-ecosystem-monitor/issues/82).
+**Tracking:** #63 (source use, acquisition, reports), #82 (correlation and inference), #81 (Pages), #65 (GitHub quota).
 
-## Admission gates
+## Governance and source admission
 
-The `toip_evidence_contract` module provides an offline validation and bounded correlation primitive. It does **not** fetch Confluence content, confer publication permission, assert ToIP authority or modify existing GitHub-only publication.
+The project sponsor `sankarshanmukhopadhyay` authorizes the bounded ToIP experiment under [the 2026-10-11 decision](toip-confluence-experimental-authorization.md). Separate ToIP organizational approval is not a project acceptance requirement. **This does not grant third-party reuse rights or establish official ToIP endorsement.** Applicable access/reuse conditions must be reviewed independently and recorded before asserting approval.
 
-1. **Source inventory:** the public `HOME` space identity is verified, but authoritative ToIP coverage and permitted reuse are not. Keep `scope_verified=false`; 22/36 last-modified search hits are metadata matches, not admitted observations.
-2. **Explicit approval:** a calling workflow must supply `approved_confluence=True` only after a dated, evidenced source-scope/reuse decision. Each Confluence record separately requires `publication_approved=True`. Do not set these flags to force tests or bypass owner review.
-3. **Provenance:** every observation needs source, stable source ID, canonical HTTPS URL, timezone-aware occurrence time, kind, summary and an explicit curator-verified subject ID. Duplicates are rejected.
-4. **Semantic restraint:** `page_update` is distinct from `decision`. Decisions require explicit decision evidence; no page revision or meeting listing is promoted to approval or adoption.
-5. **Inference:** a cross-source reference requires **both** GitHub and approved Confluence records with the same curated subject ID. Temporal proximity, similar words, and shared repository/group alone are insufficient. The result does not claim causal sequence or governance approval.
-6. **Privacy:** this primitive does not store raw source bodies or credentials. Downstream renderers must separately HTML-escape user-provided summaries, enforce publication allowlists, and preserve source coverage.
+The existing `toip_evidence_contract` validates observations and conservative correlations offline. The `toip_confluence_admission` module adds structural authorization and independent review bindings. They do **not** fetch external review evidence, authenticate a declarant, certify source rights or perform production collection.
 
-## Work remaining before public cross-source findings
+## Required evidence properties
 
-- Confirm authoritative ToIP Confluence source scope and permitted metadata/record reuse, with a dated decision register (#63).
-- Build and verify bounded authorized Confluence acquisition, version provenance, completeness states and privacy filtering (#63).
-- Bind validated records to a reviewable curator subject-mapping file; extend the contract to require evidence of the subject relationship, not only its asserted ID (#82).
-- Integrate approved findings into monthly Markdown/HTML with reproducibility, representative link checks, and negative fixtures (#82).
-- Confirm the public Pages deployment independently (#81). LFX remains deferred (#80).
+1. **Source and scope:** A numeric approved Confluence space ID and bounded reporting period; candidate `HOME` ID `22970380` is not a complete inventory. Historical 22/36 last-modified matches are diagnostic search results, not admitted observations.
+2. **Authorization:** `approved_confluence=True` and record `publication_approved=True` must be consequences of a dated sponsor decision **plus** independently reviewed applicable source-use compliance and qualified record evidence. They are not switches to bypass admission. Sponsor policy `toip_experiment_2026_10_11` requires a review-evidence URL.
+3. **Provenance:** Stable source ID, canonical HTTPS URL, timezone-aware occurrence time, retrieval provenance, page version, record kind, summary, subject ID and reviewable subject-evidence URL. Duplicates must not inflate counts.
+4. **Semantics:** `page_update` means page activity only. A modification, meeting listing or contemporaneous GitHub PR does not establish a governance decision, adoption or causal implementation.
+5. **Correlation:** Require both GitHub and independently admitted Confluence records with the same curator-reviewed subject, supported by a verifiable link on each side. Similar names, timestamps or shared groups alone are insufficient.
+6. **Publication:** Preserve per-source coverage, unavailable/partial states, exclusions and uncertainty. Escape HTML; never include raw page bodies, secrets or restricted material by default.
 
-**Current release:** GitHub-only bounded inference is implemented; cross-source publication is blocked until these gates are satisfied.
+## Negative tests and assurance limitations
 
-## Reviewable subject mapping requirement (next increment)
+Current component tests cover invalid authorization/revocation, wrong source or period, missing review, mismatched page/version/subject, duplicate/unsafe references, absent Confluence, unsupported decisions and offline-renderer publication-mode rejection. These prove **structural rejection**, not the authenticity of human review assertions or the accuracy of live source content.
 
-A common `subject_id` alone is insufficient for a public cross-source finding. Both source records must now provide an HTTPS `subject_evidence_url` for review. If either reference is absent or unsafe, inference is suppressed, not guessed. This is an additional mechanical gate, **not independent proof that the linked records refer to the same subject**. Human verification and the source-owner rights decision remain mandatory before publication. Existing GitHub-only pages are unchanged.
+## Work outstanding before a public combined report
+
+- [ ] Independently document source-use conditions and approved metadata fields; complete real August/September bounded acquisition with version and coverage evidence.
+- [ ] Curate and independently verify representative source URLs and subject mappings; admit only reviewed records.
+- [ ] Integrate admitted observations into reproducible source-aware JSON/Markdown/HTML with coverage appendix.
+- [ ] Test real/sanitized end-to-end positive and negative cases, publication safety and GitHub-only regression.
+- [ ] Verify public Pages routes and source links (#81). LFX is deferred (#80).
+
+The synthetic-only HTML preview is **NOT FOR PUBLICATION**. No genuine cross-source finding has yet been verified or published.

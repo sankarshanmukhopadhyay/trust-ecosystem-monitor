@@ -1,19 +1,23 @@
-# Confluence metadata acquisition readiness (#63)
+# ToIP Confluence acquisition readiness (#63)
 
-This is an **offline-tested, authorization-gated** acquisition primitive, not a scheduled collector or a declaration of approved ToIP Confluence scope. It does not run in the Pages workflow and cannot publish records automatically.
+## Current status
 
-The caller must supply both `scope_approved=True` and `reuse_approved=True`, plus an approved numeric space-ID set, after documenting a dated source-owner decision. Neither flag is presently justified by the public `HOME` discovery alone. The implementation issues only bounded GET requests to the verified ToIP Confluence host, with a finite page budget, bounded response size, timeout, constrained pagination, stable page IDs and v2 space identity checks.
+A bounded, read-only, offline-tested **metadata** acquisition primitive exists; it is not an automatically scheduled or publication-admitted collector. The current project sponsor authorization is documented in [the experimental authorization decision](toip-confluence-experimental-authorization.md). A separate ToIP source-owner approval is **not** a project prerequisite, but source-use compliance and independent evidence qualification still are.
 
-The result intentionally reports `coverage=partial`, `historical_completeness_verified=false`, and `publication_admitted=false`. Page bodies, titles, attachments and attendee data are not collected. Page metadata is classified `metadata_only`, never as an adopted decision.
+The initial candidate scope is public `lf-toip.atlassian.net` space `HOME` (`22970380`), August and September 2026. It is not a verified complete ToIP source inventory. Public last-modified matches (22/36) do not establish full history.
 
-Tests exercise denied approval, metadata minimization, out-of-scope exclusion, unsafe pagination, pagination cycles and failed metadata lookups.
+The collector requires `scope_approved=True`, `reuse_approved=True`, and a bounded numeric space-ID allowlist. These are caller assertions, **not** evidence that third-party rights exist. A live operator must record the sponsor decision and separately review applicable source terms, licensing, privacy and permissible metadata reuse before asserting them. Do not treat the source's public availability as blanket republication rights.
 
-## Before use against live sources
+The primitive performs bounded GET requests to the expected host, constrains pagination, validates stable page IDs and space identity, limits response size and lookups, and reports incomplete coverage. It does not fetch page bodies, titles, attachments or attendee data. Metadata remains `page_update` / `metadata_only`, not a governance decision. Collection does not automatically admit records to reports.
 
-- Obtain and record source-owner scope and reuse decisions, including permissible retention, public summary fields and historical period.
-- Verify Confluence CQL query and response pagination semantics against the live endpoint; do not assume fixture success implies real API interoperability.
-- Add independent retrieval timestamps, digests and complete enumeration proof before claiming full coverage.
-- Review privacy, source links and content licensing before connecting the adapter to the report generator.
-- Do not use these metadata records to satisfy #82 cross-source inference acceptance without independent subject-reference evidence.
+## Production-readiness checklist
 
-LFX is deferred under #80. GitHub Pages verification remains #81.
+- [ ] Record dated source-use compliance review, permitted metadata fields, exclusions and retention; do not assert compliance solely from sponsor authorization.
+- [ ] Verify live CQL response and pagination semantics, source IDs, page versions and historical date windows against real endpoint responses.
+- [ ] Run bounded August/September retrieval with retrieval timestamps, safe URLs, duplicate detection, terminal-page diagnostics and explicit partial coverage.
+- [ ] Independently verify representative links and subject mapping; quarantine denied, missing or unreviewed records.
+- [ ] Add end-to-end negative tests for missing/denied/partial source, malformed payloads, duplicates, unsupported inference and unsafe publication.
+- [ ] Wire **admitted** records to reproducible JSON/Markdown/HTML reporting without exposing restricted data, secrets or source payloads.
+- [ ] Complete Pages verification (#81) and operational quota acceptance (#65).
+
+Unit tests exercise denied approval, out-of-scope records, unsafe or backward pagination, pagination cycles, oversized pages and failed lookups. These are structural controls, **not** evidence of live historical acquisition or rights verification. Cross-source findings remain #82; LFX is deferred (#80).
