@@ -60,6 +60,8 @@ class ConvergenceTests(unittest.TestCase):
             self.assertIn("Work in progress", toip)
             landing = (root / "intelligence/toip/index.html").read_text()
             self.assertIn('href="2026/"', landing)
+            self.assertIn("LFX", landing)
+            self.assertIn("Missing evidence is not evidence of inactivity", landing)
             self.assertNotIn('href="2026-08/', landing)
 
     def test_annual_prefers_latest_tracked_discussion_without_changing_month(self):
