@@ -99,7 +99,11 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git fetch origin generated-observations
           parent=$(git rev-parse origin/generated-observations)
-          git add docs
+          # Reset the index to the generated branch tree before staging docs.
+          # Otherwise git write-tree uses main's tracked code files, silently
+          # replacing the generated branch's full repository tree.
+          git read-tree "$parent"
+          git add -A -- docs
           tree=$(git write-tree)
           parent_tree=$(git rev-parse "${parent}^{tree}")
           if [ "$tree" != "$parent_tree" ]; then
