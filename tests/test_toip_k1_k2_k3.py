@@ -41,7 +41,8 @@ class ContentKnowledgeTests(unittest.TestCase):
         self.assertIn("proposal_language", result["sections"][0]["language_signals"])
         self.assertEqual(result["github_references"], [GH])
         self.assertRegex(result["sections"][0]["basis_sha256"], r"^[a-f0-9]{64}$")
-        self.assertNotIn("Review whether permission", str(result))
+        self.assertLessEqual(len(result["sections"][0]["brief_source_excerpt"]), 160)
+        self.assertEqual(result["sections"][1]["brief_source_excerpt"], "")
         self.assertEqual(extract(BODY), result)
 
     def test_reject_unbounded_body(self):
@@ -71,7 +72,7 @@ class ContentKnowledgeTests(unittest.TestCase):
         self.assertIn("Proposal", BODY)
         self.assertIn("not human-reviewed", page)
         self.assertNotIn("approved by ToIP", page)
-        self.assertNotIn("Review whether permission claims", page)
+        self.assertIn("Source excerpt:", page)
 
     def test_escaping_untrusted_section_text(self):
         cf = content()
