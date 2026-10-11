@@ -59,7 +59,7 @@ def render(github: dict, confluence: dict, content: dict | None = None) -> str:
                  "; no adopted outcome inferred)</small>" if cues else "")
             )
         summary = ("<ul><li>" + "</li><li>".join(descriptions) + "</li></ul>") if descriptions else (
-            escape("Headings identify recorded topics: " + ", ".join(headings[:5])) if headings else
+            escape("Headings identify these recorded topics: " + ", ".join(headings[:5])) if headings else
             escape("No source-grounded section abstract is available for this page."))
         page_rows.append('<li><a href="' + escape(link, quote=True) + '">' +
                          escape(str(page.get("title") or "Confluence page")) + '</a> — ' +
@@ -89,7 +89,7 @@ def render(github: dict, confluence: dict, content: dict | None = None) -> str:
                         'treated as observed references. Title/section term overlap is shown as a '
                         'candidate for review, not confirmed correspondence.</p>' +
                         ('<ul>' + "".join(relation_rows) + '</ul>' if relation_rows else
-                         '<p>No explicit or candidate source-linked connections identified in the bounded evidence.</p>') +
+                         '<p>No verified page-to-GitHub relationship established; no explicit or candidate source-linked connections identified in the bounded evidence.</p>') +
                         '</section>')
     body = ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
             "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
