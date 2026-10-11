@@ -88,6 +88,10 @@ jobs:
           <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ecosystem intelligence</title></head><body><main><h1>Ecosystem intelligence</h1><p>Independent evidence-based ecosystem reporting.</p><p><a href="toip/">ToIP ecosystem intelligence</a></p></main></body></html>
           EOF
           python -c "from pathlib import Path; p=Path('docs/index.html'); s=p.read_text(); link='<p><a href=\"intelligence/toip/\">ToIP ecosystem intelligence (source-aware preview)</a></p>'; s=s.replace('</main>',link+'</main>',1) if 'href=\"intelligence/toip/\"' not in s else s; p.write_text(s)"
+      - name: Publish experimental public GitHub and Confluence discovery views
+        run: |
+          python -m trust_ecosystem_monitor.toip_experimental_combined \
+            --github-dir monthly-prototype --site docs/intelligence/toip
       - name: Publish independently admitted cross-source reports when supplied
         env:
           # Repository-maintained, reviewed admission manifests only.
