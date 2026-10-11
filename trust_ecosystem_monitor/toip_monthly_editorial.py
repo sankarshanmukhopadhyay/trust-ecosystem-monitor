@@ -37,7 +37,7 @@ def present(github, content, legacy_html: str) -> str:
     assessments.sort(key=lambda x: (order[x[0][0]], x[1]["portfolio"], x[1]["url"]))
     review = sum(p[0] == "Review first" for p, d in assessments)
     pages = content.get("pages", [])
-    usable = [p for p in pages if p.get("page_kind") == "substantive" and p.get("section_abstracts")]
+    usable = [p for p in pages if p.get("page_kind", "substantive") == "substantive" and p.get("section_abstracts")]
     administrative = len(pages) - len(usable)
     source_rows = []
     for page in usable:
@@ -46,7 +46,7 @@ def present(github, content, legacy_html: str) -> str:
                 raise ValueError("untraceable Confluence statement")
             cues = ", ".join(section.get("language_signals", [])) or "none"
             label = section.get("abstract", "No supported content interpretation.")
-            source_rows.append('<tr><td>' + _a(page["url"], page["title"]) +
+            source_rows.append('<tr><td>' + _a(page.get("url") or "https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/" + str(page["id"]), page["title"]) +
                 '<br><small>Page version ' + escape(str(page.get("version", "unknown"))) +
                 ' · retrieved version may postdate reporting month</small></td><td>' +
                 escape(section.get("section", "General")) + '</td><td>' +
