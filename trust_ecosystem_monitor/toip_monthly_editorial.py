@@ -50,7 +50,10 @@ def present(github, content, legacy_html: str) -> str:
                 '<br><small>Page version ' + escape(str(page.get("version", "unknown"))) +
                 ' · retrieved version may postdate reporting month</small></td><td>' +
                 escape(section.get("section", "General")) + '</td><td>' +
-                escape(label) + '</td><td>' + escape(cues) +
+                escape(label) +
+                ('<p><small>Source excerpt: “' + escape(section["brief_source_excerpt"]) +
+                 '”</small></p>' if section.get("brief_source_excerpt") else "") +
+                '</td><td>' + escape(cues) +
                 '<br><small>Wording cues only; no decision inferred</small></td></tr>')
     development_rows = []
     for (level, reason), d in assessments:
