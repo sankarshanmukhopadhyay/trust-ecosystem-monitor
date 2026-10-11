@@ -15,7 +15,7 @@ def inputs():
           "coverage": "partial", "observations": [
               dict(CONFLUENCE, authorization_decision_id="synthetic",
                    independent_review_evidence_url="https://example.org/review")],
-          "reviewed_github_observations": [GITHUB]}
+          "reviewed_github_observations": [dict(GITHUB, id="gh-1")]}
     return gh, cf
 
 
@@ -65,7 +65,7 @@ class CombinedReportTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "exact collected event"):
             compose(gh, cf)
         gh, cf = inputs()
-        cf["reviewed_github_observations"][0] = dict(GITHUB, occurred_at="2026-08-04T00:00:00Z")
+        cf["reviewed_github_observations"][0] = dict(GITHUB, id="gh-1", occurred_at="2026-08-04T00:00:00Z")
         with self.assertRaisesRegex(ValueError, "exact collected event"):
             compose(gh, cf)
 
