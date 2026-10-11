@@ -8,6 +8,7 @@ from .confluence_search import search_month
 from .toip_confluence_content_signals import collect as collect_content
 from .toip_monthly_knowledge import render_developments
 from .toip_monthly_cross_source import correlate
+from .toip_monthly_editorial import present
 
 MONTHS = ("2026-08", "2026-09")
 SOURCE = "https://lf-toip.atlassian.net/wiki/spaces/HOME/overview"
@@ -16,7 +17,7 @@ RUN = "https://github.com/sankarshanmukhopadhyay/trust-ecosystem-monitor/actions
 
 def render(github: dict, confluence: dict, content: dict | None = None) -> str:
     month = github.get("period")
-    if month not in MONTHS or confluence.get("month") != month:
+    if (not isinstance(month, str) or len(month) != 7 or month[4] != "-" or not month[:4].isdigit() or not month[5:].isdigit() or not 1 <= int(month[5:]) <= 12 or confluence.get("month") != month):
         raise ValueError("reporting period mismatch")
     events = github.get("evidence")
     if not isinstance(events, list):
@@ -111,7 +112,7 @@ def render(github: dict, confluence: dict, content: dict | None = None) -> str:
             "\">Workflow and source code</a>. Public endpoints are accessed without an Atlassian app. "
             "Missing or inaccessible data is not zero activity. This is not a ToIP endorsement, "
             "decision record, or assured report.</p></main></body></html>\n")
-    return body
+    return present(github, content, body)
 
 
 def publish(github_dir: Path, site: Path, *, search=search_month) -> list[str]:

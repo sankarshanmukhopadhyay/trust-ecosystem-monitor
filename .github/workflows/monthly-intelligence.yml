@@ -1,0 +1,82 @@
+name: Publish completed-month ToIP intelligence
+
+on:
+  workflow_dispatch:
+  schedule:
+    # 02:40 UTC on day 2, after previous month has closed.
+    - cron: '40 2 2 * *'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  monthly:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate implementation
+        run: python -m unittest discover -s tests
+      - name: Resolve closed month from UTC calendar
+        run: |
+          # Calculation is verified against UTC first day of current month.
+          echo "MONTH=$(date -u -d "$(date -u +%Y-%m-01) -1 day" +%Y-%m)" >> "$GITHUB_ENV"
+      - name: Collect bounded historical GitHub evidence
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python -m trust_ecosystem_monitor.monthly --org trustoverip --month "$MONTH" --output monthly-prototype \
+            --prefix dtgwg- --prefix tswg- --prefix aimwg- --prefix ctwg- --prefix egwg-
+      - name: Restore generated site
+        run: |
+          git fetch origin generated-observations
+          git checkout origin/generated-observations -- docs
+      - name: Generate source-aware monthly knowledge
+        run: |
+          python -m trust_ecosystem_monitor.toip_monthly_one \
+            --month "$MONTH" --github-dir monthly-prototype --site docs/intelligence/toip
+      - name: Validate staged monthly page
+        run: |
+          test -s "docs/intelligence/toip/$MONTH/experimental-combined.html"
+          python -m trust_ecosystem_monitor.toip_publication_readiness --site docs
+      - name: Retain validated monthly site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin generated-observations
+          parent=$(git rev-parse origin/generated-observations)
+          git read-tree "$parent"
+          git add -A -- docs
+          tree=$(git write-tree)
+          if [ "$tree" != "$(git rev-parse "${parent}^{tree}")" ]; then
+            commit=$(printf '%s\n' "chore(monitor): completed-month intelligence $MONTH" | git commit-tree "$tree" -p "$parent")
+            git push origin "$commit:refs/heads/generated-observations"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: toip-completed-month-intelligence
+          path: |
+            docs/intelligence/toip/
+            monthly-prototype/
+          retention-days: 30
+      - uses: actions/configure-pages@v6
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: docs
+      - name: Deploy TEM and monthly intelligence
+        id: deployment
+        uses: actions/deploy-pages@v5
