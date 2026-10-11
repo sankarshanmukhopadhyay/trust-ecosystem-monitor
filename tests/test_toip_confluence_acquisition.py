@@ -27,6 +27,19 @@ class AcquisitionTests(unittest.TestCase):
         self.assertEqual(data["records"][0]["version"], 3)
         self.assertNotIn("title", data["records"][0])
 
+    def test_oversized_search_page_is_not_processed(self):
+        calls = []
+        def oversized(path):
+            calls.append(path)
+            return {"results": [{"id": str(i)} for i in range(51)], "_links": {}}
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=oversized)
+        self.assertIn("oversized_search_page", data["diagnostics"])
+        self.assertEqual(data["records"], [])
+        self.assertEqual(data["metadata_lookups_attempted"], 0)
+        self.assertFalse(data["search_terminated_normally"])
+        self.assertEqual(len(calls), 1)
+
     def test_wrong_space_excluded(self):
         data = acquire_metadata("2026-08", approved_space_ids={"123"},
                                 scope_approved=True, reuse_approved=True, fetch=fixture)
