@@ -91,7 +91,11 @@ jobs:
           else
             parent=$(git rev-parse HEAD)
           fi
-          git add data docs
+          # Stage against the actual generated-branch parent, not main's
+          # index. Main and generated-observations may have different trees.
+          # This preserves files outside data/docs in generated-observations.
+          git read-tree "$parent"
+          git add -A -- data docs
           tree=$(git write-tree)
           parent_tree=$(git rev-parse "${parent}^{tree}")
           if [ "$branch_exists" = false ] || [ "$tree" != "$parent_tree" ]; then

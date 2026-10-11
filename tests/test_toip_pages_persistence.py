@@ -29,6 +29,14 @@ class ToIPPagesPersistenceTests(unittest.TestCase):
         self.assertIn('git rev-parse "${parent}^{tree}"', self.monthly)
         self.assertIn("contents: write", self.monthly)
 
+    def test_weekly_preserves_generated_parent_tree(self):
+        self.assertIn('git read-tree "$parent"', self.weekly)
+        self.assertIn("git add -A -- data docs", self.weekly)
+        self.assertLess(self.weekly.index('git read-tree "$parent"'),
+                        self.weekly.index("git add -A -- data docs"))
+        self.assertLess(self.weekly.index("git add -A -- data docs"),
+                        self.weekly.index("git write-tree"))
+
     def test_no_main_branch_publication_push(self):
         self.assertNotIn("git push origin main", self.monthly)
         self.assertNotIn("git push origin HEAD:main", self.monthly)
