@@ -59,6 +59,22 @@ class CombinedReportTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             compose(gh, cf)
 
+    def test_reject_same_url_but_different_event_identity(self):
+        gh, cf = inputs()
+        cf["reviewed_github_observations"][0] = dict(GITHUB, id="different-event")
+        with self.assertRaisesRegex(ValueError, "exact collected event"):
+            compose(gh, cf)
+        gh, cf = inputs()
+        cf["reviewed_github_observations"][0] = dict(GITHUB, occurred_at="2026-08-04T00:00:00Z")
+        with self.assertRaisesRegex(ValueError, "exact collected event"):
+            compose(gh, cf)
+
+    def test_reject_ambiguous_duplicate_collected_events(self):
+        gh, cf = inputs()
+        gh["evidence"].append(dict(gh["evidence"][0]))
+        with self.assertRaisesRegex(ValueError, "ambiguous duplicate"):
+            compose(gh, cf)
+
     def test_reject_missing_coverage(self):
         gh, cf = inputs()
         cf.pop("coverage")
