@@ -144,12 +144,12 @@ def ingest(data, github, content, *, observed_at, tracked_pages=None):
         ledger.append({"observed_at": when, "observed_in": month, **record})
         key = "source:" + ident + ":" + fingerprint
         data["revision_notices"].append({
-            "key": key, "kind": "source_version_change", "period": month,
+            "key": key, "kind": ("source_version_change" if latest["version"] != version else "interpretation_method_change"), "period": month,
             "observed_at": when, "source": record["url"], "page_id": ident,
             "previous_version": latest["version"], "current_version": version,
             "prior_digest": latest["content_fingerprint"], "current_digest": fingerprint,
             "impact": "review_required",
-            "explanation": "Observed source version or interpreted content changed. Effect on prior findings has not been established.",
+            "explanation": ("Public page version changed; historical interpretation requires review." if latest["version"] != version else "Extraction results changed while the page version stayed constant; source text change is not established."),
             "first_observed_in": latest["observed_in"],
         })
     data["revision_notices"].sort(key=lambda x: (x["observed_at"], x["key"]))
