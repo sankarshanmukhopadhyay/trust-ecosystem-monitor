@@ -89,6 +89,11 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
         if len(data["results"]) > PAGE_SIZE:
             diagnostics.append("oversized_search_page")
             break
+        reported_size = data.get("size")
+        if (reported_size is not None
+                and (type(reported_size) is not int or reported_size != len(data["results"]))):
+            diagnostics.append("inconsistent_search_size")
+            break
         for hit in data["results"]:
             if not isinstance(hit, dict) or not str(hit.get("id", "")).isdigit():
                 diagnostics.append("malformed_hit")
@@ -125,7 +130,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
             })
         nxt = data.get("_links", {}).get("next") if isinstance(data.get("_links"), dict) else None
         if not nxt:
-            if data.get("size") == PAGE_SIZE:
+            if len(data["results"]) == PAGE_SIZE:
                 diagnostics.append("possible_truncation")
             terminal_page_seen = True
             break

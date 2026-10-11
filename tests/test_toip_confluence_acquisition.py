@@ -40,6 +40,31 @@ class AcquisitionTests(unittest.TestCase):
         self.assertFalse(data["search_terminated_normally"])
         self.assertEqual(len(calls), 1)
 
+    def test_inconsistent_search_size_quarantines_page_before_lookups(self):
+        for size in (0, 2, True, "1", -1):
+            with self.subTest(size=size):
+                calls = []
+                def inconsistent(path):
+                    calls.append(path)
+                    if path.startswith("/wiki/rest/api/content/search?"):
+                        return {"results": [{"id": "42"}], "size": size, "_links": {}}
+                    raise AssertionError("metadata lookup must not occur")
+                data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                        scope_approved=True, reuse_approved=True, fetch=inconsistent)
+                self.assertEqual(data["records"], [])
+                self.assertEqual(data["metadata_lookups_attempted"], 0)
+                self.assertEqual(len(calls), 1)
+                self.assertIn("inconsistent_search_size", data["diagnostics"])
+                self.assertFalse(data["search_terminated_normally"])
+
+    def test_full_search_page_without_next_reports_possible_truncation(self):
+        def full(path):
+            return {"results": [{"id": str(i)} for i in range(50)], "_links": {}}
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=full)
+        self.assertIn("possible_truncation", data["diagnostics"])
+        self.assertFalse(data["historical_completeness_verified"])
+
     def test_wrong_space_excluded(self):
         data = acquire_metadata("2026-08", approved_space_ids={"123"},
                                 scope_approved=True, reuse_approved=True, fetch=fixture)
