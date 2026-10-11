@@ -45,6 +45,7 @@ def replace_intelligence_landing(site: Path, year=2026):
             'subsequent source revisions become available.</p>'
             '<p><a href="' + str(year) + '/">Open the CY ' + str(year) +
             ' intelligence report</a></p></div>'
+            '<p class="muted"><strong>Coverage disclosure:</strong> LFX meeting and other LFX source records are not admitted to the combined intelligence. Public Confluence discovery is bounded and cannot establish complete ToIP meeting coverage. Missing evidence is not evidence of inactivity.</p>'
             '<p class="muted">Legacy monthly evidence routes are retained '
             'for audit and citation, but are not separate primary reports.</p>'
             '</main></body></html>\n')
