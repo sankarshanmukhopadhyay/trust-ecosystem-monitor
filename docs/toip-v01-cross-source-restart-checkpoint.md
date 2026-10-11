@@ -1,3 +1,5 @@
+> **2026-10-11 decision update:** The project sponsor (`sankarshanmukhopadhyay`) is the definitive authority for the monitor's experimental collection, analysis, reporting and inference using lawfully accessible ToIP Confluence information. Separate ToIP organizational approval is no longer a project governance prerequisite. This does **not** waive applicable access/reuse restrictions or third-party rights, nor does it constitute ToIP endorsement. The existing code's `source_owner` gate is not satisfied by pretending the sponsor owns Confluence: it requires an explicit, tested policy rebaseline before live admission. Evidence, privacy, independent review, coverage and publication gates remain in force. PRs #92, #93 and #94 are merged; the checkpoint's historical PR #92 open status is superseded.
+
 # ToIP v0.1 cross-source release — restart checkpoint (2026-10-10)
 
 ## Binding release decision
