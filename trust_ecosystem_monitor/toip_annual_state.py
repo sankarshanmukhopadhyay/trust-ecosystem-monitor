@@ -36,6 +36,7 @@ def _source(page):
         "version": page.get("version"),
         "version_created_at": page.get("version_created_at"),
         "page_kind": page.get("page_kind", "unknown"),
+        "github_references": page.get("github_references", []),
         "content_fingerprint": _digest({
             "sections": [(s.get("basis_sha256"), s.get("abstract")) for s in sections],
             "headings": page.get("topic_headings", []),
