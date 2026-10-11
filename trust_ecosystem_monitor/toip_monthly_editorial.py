@@ -86,8 +86,8 @@ def present(github, content, legacy_html: str) -> str:
                (sum(x["state"] == "explicit_reference" for x in links), "explicit cross-source links"),
                (review, "review-first observations"))
     summary = ('<header><div class="bar"><span class="brand">Trust Ecosystem Monitor</span>'
-               '<a href="../../">ToIP intelligence</a><a href="../../coverage/">Coverage</a>'
-               '<a href="../../methodology/">Method</a></div></header>'
+               '<a href="../">ToIP intelligence</a><a href="../coverage/">Coverage</a>'
+               '<a href="../methodology/">Method</a></div></header>'
                '<main><h1>Monthly ToIP intelligence · ' + escape(period) + '</h1>'
                '<p class="lede">Independent evidence-based monthly brief. '
                'Attention rankings are editorial review order, not project severity. '
