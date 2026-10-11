@@ -10,6 +10,9 @@ from .site_backend import STYLE
 from .toip_annual_state import read, ingest, write, validate
 from .toip_confluence_content_signals import collect
 from .toip_tracked_sources import inspect
+from .toip_monthly_knowledge import build_developments, topic_groups
+from .toip_monthly_editorial import priority
+from .toip_monthly_cross_source import correlate
 
 def link(url, label):
     if not (url.startswith("https://github.com/") or
@@ -28,11 +31,29 @@ def render(state):
     validate(state)
     year = state["year"]
     monthly, sources, chronicle = [], [], []
+    ranked, relations = [], []
     unique_sources, events = set(), 0
     for month, entry in sorted(state["months"].items()):
         snapshot = entry["observation"]
         github = {x["url"]: x for x in snapshot["github"]["evidence"] if x.get("url")}
         events += len(github)
+        recovered = [{"id": p["id"], "title": p["title"],
+                      "github_references": p.get("github_references", []),
+                      "section_abstracts": [{"section": x["heading"],
+                          "abstract": x["abstract"]} for x in p["evidence"]]}
+                     for p in snapshot["confluence"]["sources"]]
+        relationships = correlate({"period": month, "evidence": list(snapshot["github"]["evidence"])},
+                                  {"month": month, "pages": recovered})
+        explicit = {x["github"] for x in relationships if x["state"] == "explicit_reference"}
+        for item in build_developments(snapshot["github"]["evidence"]):
+            (grade, reason) = priority(item, item["url"] in explicit)
+            ranked.append(({"Review first": 0, "Notable": 1, "Context": 2}[grade], month, grade, reason, item))
+        for rel in relationships:
+            relations.append('<tr><td>' + escape(month) + '</td><td>' +
+                             escape("Explicit link" if rel["state"] == "explicit_reference" else "Candidate") +
+                             '</td><td>' + escape(rel["subject"]) + '</td><td>' +
+                             link(rel["page"], "Confluence") + ' · ' +
+                             link(rel["github"], "GitHub") + '</td></tr>')
         rows = []
         for row in github.values():
             representation = link(row["url"], row.get("title", "GitHub observation"))
@@ -52,6 +73,14 @@ def render(state):
                          str(len(snapshot["confluence"]["sources"])) +
                          ' Confluence pages observed retrospectively.</p><details><summary>Monthly artifact evidence</summary><ul>' +
                          ''.join(rows) + '</ul></details></section>')
+    ranked.sort(key=lambda x: (x[0], x[1], x[4]["portfolio"], x[4]["url"]))
+    attention_rows = []
+    for _, month, grade, reason, item in ranked[:80]:
+        attention_rows.append('<tr><td>' + escape(grade) + '</td><td>' +
+                              escape(month) + '</td><td>' + escape(item["portfolio"]) +
+                              ' / ' + escape(item["semantic"].replace("_", " ")) +
+                              '</td><td>' + link(item["url"], item["title"]) + '</td><td>' +
+                              escape(reason) + '</td></tr>')
     revisions = []
     for notice in reversed(state["revision_notices"]):
         source = notice["source"]
@@ -74,6 +103,15 @@ def render(state):
             str(len(unique_sources)) + '</strong><span>Confluence pages</span></div>'
             '<div class="metric"><strong>' + str(len(revisions)) +
             '</strong><span>revision notices</span></div></div>'
+            '<h2>Prioritized year-to-date developments</h2>'
+            '<p>Attention ranking reuses TEM monthly semantic classifications. '
+            'It is a review ordering rather than institutional severity or a '
+            'validated conclusion about adoption.</p>' +
+            table(["Review order", "Month", "Workstream", "Development", "Basis"],
+                  attention_rows) +
+            '<h2>Cross-source relationships</h2><p>Direct links are observed '
+            'references; lexical candidates remain unverified.</p>' +
+            table(["Month", "Strength", "Subject", "Evidence"], relations[:100]) +
             '<h2>Year-to-date observed developments</h2>' +
             table(["Month", "GitHub source", "Observed lifecycle"], monthly[:120]) +
             '<h2>What the public Confluence records describe</h2><p>Descriptions '
