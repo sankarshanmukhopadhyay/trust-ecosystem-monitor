@@ -106,8 +106,12 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
             parser = TextSections()
             parser.feed(body)
             interpreted = extract(body)
+            page_kind = ("administrative" if re.search(
+                r"template|calendar|standing agenda|meeting logistics|home page|"
+                r"index of meeting|instructions|code of conduct", title, re.I)
+                else "substantive" if interpreted["sections"] else "content_poor")
             result["pages"].append({
-                "id": identifier, "title": title,
+                "id": identifier, "title": title, "page_kind": page_kind,
                 "url": "https://" + HOST + "/wiki/spaces/HOME/pages/" + identifier,
                 "version": (page.get("version") or {}).get("number"),
                 "version_created_at": (page.get("version") or {}).get("createdAt"),
