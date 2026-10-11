@@ -105,7 +105,7 @@ def render(github: dict, confluence: dict, content: dict | None = None) -> str:
             ". All sampled space identities resolved to HOME. Coverage: <strong>sample only</strong>; "
             "not historical version reconstruction, independent admission, or proof of publication rights.</p>"
             "<p>Discovery query semantics: page last-modified month, not creation or meeting date. "
-            "A page may have multiple historical updates; this view does not assert their number or contents.</p>"
+            "A page may have multiple historical updates; this view does not assert their number or contents.</p>" +
             relation_section +
             "<h2>Reproducibility and limitations</h2><p><a href=\"" + RUN +
             "\">Workflow and source code</a>. Public endpoints are accessed without an Atlassian app. "
