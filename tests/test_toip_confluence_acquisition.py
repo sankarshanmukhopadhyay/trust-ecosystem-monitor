@@ -70,6 +70,20 @@ class AcquisitionTests(unittest.TestCase):
                                 scope_approved=True, reuse_approved=True, fetch=extra)
         self.assertIn("unsafe_pagination", data["diagnostics"])
 
+    def test_rejects_backward_pagination_without_refetch(self):
+        starts = []
+        def backward(path):
+            start = int(parse_qs(urlsplit(path).query)["start"][0])
+            starts.append(start)
+            next_start = 50 if start == 0 else 25
+            return {"results": [], "_links": {"next": path.replace(
+                f"start={start}", f"start={next_start}")}}
+        data = acquire_metadata("2026-08", approved_space_ids={"22970380"},
+                                scope_approved=True, reuse_approved=True, fetch=backward)
+        self.assertEqual(starts, [0, 50])
+        self.assertIn("unsafe_pagination", data["diagnostics"])
+        self.assertFalse(data["search_terminated_normally"])
+
     def test_valid_pagination_preserves_scope(self):
         calls = []
         def pages(path):
