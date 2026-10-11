@@ -33,6 +33,8 @@ RELEVANT = {"github.com", "lf-toip.atlassian.net", "trustoverip.org",
 def canonical(url):
     if not isinstance(url, str):
         return None
+    if url.startswith("/wiki/"):
+        url = "https://lf-toip.atlassian.net" + url
     parsed = urlsplit(unescape(url))
     if parsed.scheme != "https" or not parsed.hostname or parsed.username or parsed.password:
         return None
@@ -83,7 +85,10 @@ class DiscussionParser(HTMLParser):
         if self.active in ("h1", "h2", "h3"):
             self.heading = text[:120] or "General"
         elif text:
-            self.blocks.append((self.heading, text, list(dict.fromkeys(self.links))))
+            plain = re.findall(r"https://[^\s<>]+", text)
+            references = [canonical(u.rstrip(".,;)")) for u in plain]
+            self.blocks.append((self.heading, text, list(dict.fromkeys(
+                u for u in self.links + references if u))))
         self.active = None
         self.buf = []
         self.links = []
