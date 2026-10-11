@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "w3c",
-  "generated_at": "2026-10-10T05:19:01.851304+00:00",
+  "generated_at": "2026-10-11T04:26:00.218526+00:00",
   "period": {
-    "since": "2026-10-03T05:19:01.851304+00:00",
-    "until": "2026-10-10T05:19:01.851304+00:00",
+    "since": "2026-10-04T04:26:00.218526+00:00",
+    "until": "2026-10-11T04:26:00.218526+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-10T02:16:10.905306+00:00"
+    "previous_snapshot": "2026-10-10T05:19:01.851304+00:00"
   },
   "repositories": [
     {
@@ -21,7 +21,7 @@
       "url": "https://github.com/w3c/webauthn",
       "description": "Web Authentication: An API for accessing Public Key Credentials",
       "created_at": "2016-02-08T14:51:38Z",
-      "updated_at": "2026-10-10T03:58:28Z",
+      "updated_at": "2026-10-10T07:00:34Z",
       "pushed_at": "2026-10-06T15:19:45Z",
       "archived": false,
       "fork": false,
@@ -147,7 +147,7 @@
       "url": "https://github.com/w3c/did-extensions",
       "description": "Decentralized Identifier Ecosystem Extensions",
       "created_at": "2020-02-11T17:25:04Z",
-      "updated_at": "2026-10-02T08:39:30Z",
+      "updated_at": "2026-10-10T08:15:38Z",
       "pushed_at": "2026-10-01T14:58:16Z",
       "archived": false,
       "fork": false,
@@ -689,11 +689,24 @@
   ],
   "events": [
     {
+      "kind": "issue",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-10T19:08:30Z",
+      "title": "Idea: Merkle-tree aggregation mode for SHoC to reduce derived proof size from O(N) to O(k log N)",
+      "url": "https://github.com/w3c/vc-data-integrity/issues/369",
+      "number": 369,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
       "kind": "pull_request",
       "repository": "w3c/vc-data-model",
       "portfolio": "Verifiable Credentials",
       "repo_kind": "repository",
-      "timestamp": "2026-10-10T04:12:01Z",
+      "timestamp": "2026-10-10T17:04:32Z",
       "title": "First version of the 2.1 version of the vocabulary.",
       "url": "https://github.com/w3c/vc-data-model/pull/1652",
       "number": 1652,
@@ -703,13 +716,13 @@
     },
     {
       "kind": "issue",
-      "repository": "w3c/vc-data-integrity",
+      "repository": "w3c/vcalm",
       "portfolio": "Verifiable Credentials",
       "repo_kind": "repository",
-      "timestamp": "2026-10-09T16:24:47Z",
-      "title": "Idea: Merkle-tree aggregation mode for SHoC to reduce derived proof size from O(N) to O(k log N)",
-      "url": "https://github.com/w3c/vc-data-integrity/issues/369",
-      "number": 369,
+      "timestamp": "2026-10-10T07:10:43Z",
+      "title": "Add normative reference to `jsonata` definition.",
+      "url": "https://github.com/w3c/vcalm/issues/686",
+      "number": 686,
       "sha": null,
       "state": "open",
       "materiality": 2
@@ -983,19 +996,6 @@
       "title": "Handling the unregistered `application/mdoc` media type.",
       "url": "https://github.com/w3c/vcalm/issues/712",
       "number": 712,
-      "sha": null,
-      "state": "open",
-      "materiality": 2
-    },
-    {
-      "kind": "issue",
-      "repository": "w3c/vcalm",
-      "portfolio": "Verifiable Credentials",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-06T19:45:02Z",
-      "title": "Add normative reference to `jsonata` definition.",
-      "url": "https://github.com/w3c/vcalm/issues/686",
-      "number": 686,
       "sha": null,
       "state": "open",
       "materiality": 2
@@ -1337,44 +1337,56 @@
       "sha": null,
       "state": "open",
       "materiality": 3
-    },
-    {
-      "kind": "issue",
-      "repository": "w3c/did-resolution",
-      "portfolio": "Identifiers & Control",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T23:31:08Z",
-      "title": "Section 12.1: no status code or `Content-Type` rule for a complete DID resolution result",
-      "url": "https://github.com/w3c/did-resolution/issues/365",
-      "number": 365,
-      "sha": null,
-      "state": "open",
-      "materiality": 2
-    },
-    {
-      "kind": "issue",
-      "repository": "w3c/webauthn",
-      "portfolio": "Authentication",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-03T18:58:04Z",
-      "title": "Deprecate AuthenticatorAttachment in favor of PublicKeyCredentialHints. ",
-      "url": "https://github.com/w3c/webauthn/issues/2053",
-      "number": 2053,
-      "sha": null,
-      "state": "open",
-      "materiality": 2
     }
   ],
   "assertions": [],
   "collection_errors": [],
   "change_units": [
     {
+      "id": "toip-change-bc23d4494c09",
+      "repository": "w3c/vc-data-integrity",
+      "portfolio": "Verifiable Credentials",
+      "repo_kind": "repository",
+      "title": "Idea: Merkle-tree aggregation mode for SHoC to reduce derived proof size from O(N) to O(k log N)",
+      "timestamp": "2026-10-10T19:08:30Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/w3c/vc-data-integrity/issues/369"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "w3c/vc-data-integrity",
+          "portfolio": "Verifiable Credentials",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-10T19:08:30Z",
+          "title": "Idea: Merkle-tree aggregation mode for SHoC to reduce derived proof size from O(N) to O(k log N)",
+          "url": "https://github.com/w3c/vc-data-integrity/issues/369",
+          "number": 369,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
       "id": "toip-change-2c4d15aa8d0d",
       "repository": "w3c/vc-data-model",
       "portfolio": "Verifiable Credentials",
       "repo_kind": "repository",
       "title": "First version of the 2.1 version of the vocabulary.",
-      "timestamp": "2026-10-10T04:12:01Z",
+      "timestamp": "2026-10-10T17:04:32Z",
       "materiality": 3,
       "event_kinds": [
         "pull_request"
@@ -1389,7 +1401,7 @@
           "repository": "w3c/vc-data-model",
           "portfolio": "Verifiable Credentials",
           "repo_kind": "repository",
-          "timestamp": "2026-10-10T04:12:01Z",
+          "timestamp": "2026-10-10T17:04:32Z",
           "title": "First version of the 2.1 version of the vocabulary.",
           "url": "https://github.com/w3c/vc-data-model/pull/1652",
           "number": 1652,
@@ -1409,41 +1421,43 @@
       }
     },
     {
-      "id": "toip-change-bc23d4494c09",
-      "repository": "w3c/vc-data-integrity",
+      "id": "toip-change-f0746b122556",
+      "repository": "w3c/vcalm",
       "portfolio": "Verifiable Credentials",
       "repo_kind": "repository",
-      "title": "Idea: Merkle-tree aggregation mode for SHoC to reduce derived proof size from O(N) to O(k log N)",
-      "timestamp": "2026-10-09T16:24:47Z",
+      "title": "Add normative reference to `jsonata` definition.",
+      "timestamp": "2026-10-10T07:10:43Z",
       "materiality": 2,
       "event_kinds": [
         "issue"
       ],
       "event_count": 1,
       "evidence": [
-        "https://github.com/w3c/vc-data-integrity/issues/369"
+        "https://github.com/w3c/vcalm/issues/686"
       ],
       "events": [
         {
           "kind": "issue",
-          "repository": "w3c/vc-data-integrity",
+          "repository": "w3c/vcalm",
           "portfolio": "Verifiable Credentials",
           "repo_kind": "repository",
-          "timestamp": "2026-10-09T16:24:47Z",
-          "title": "Idea: Merkle-tree aggregation mode for SHoC to reduce derived proof size from O(N) to O(k log N)",
-          "url": "https://github.com/w3c/vc-data-integrity/issues/369",
-          "number": 369,
+          "timestamp": "2026-10-10T07:10:43Z",
+          "title": "Add normative reference to `jsonata` definition.",
+          "url": "https://github.com/w3c/vcalm/issues/686",
+          "number": 686,
           "sha": null,
           "state": "open",
           "materiality": 2
         }
       ],
       "semantic_change": {
-        "type": "unknown",
+        "type": "protocol_semantics",
         "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
+        "confidence": "moderate",
+        "matched_terms": [
+          "normative"
+        ],
+        "evidence_state": "derived"
       }
     },
     {
@@ -2237,46 +2251,6 @@
         "confidence": "low",
         "matched_terms": [],
         "evidence_state": "insufficient"
-      }
-    },
-    {
-      "id": "toip-change-f0746b122556",
-      "repository": "w3c/vcalm",
-      "portfolio": "Verifiable Credentials",
-      "repo_kind": "repository",
-      "title": "Add normative reference to `jsonata` definition.",
-      "timestamp": "2026-10-06T19:45:02Z",
-      "materiality": 2,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/w3c/vcalm/issues/686"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "w3c/vcalm",
-          "portfolio": "Verifiable Credentials",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-06T19:45:02Z",
-          "title": "Add normative reference to `jsonata` definition.",
-          "url": "https://github.com/w3c/vcalm/issues/686",
-          "number": 686,
-          "sha": null,
-          "state": "open",
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "protocol_semantics",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "normative"
-        ],
-        "evidence_state": "derived"
       }
     },
     {
@@ -3267,86 +3241,6 @@
         ],
         "evidence_state": "derived"
       }
-    },
-    {
-      "id": "toip-change-ff92e34723b4",
-      "repository": "w3c/did-resolution",
-      "portfolio": "Identifiers & Control",
-      "repo_kind": "repository",
-      "title": "Section 12.1: no status code or `Content-Type` rule for a complete DID resolution result",
-      "timestamp": "2026-10-03T23:31:08Z",
-      "materiality": 2,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/w3c/did-resolution/issues/365"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "w3c/did-resolution",
-          "portfolio": "Identifiers & Control",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T23:31:08Z",
-          "title": "Section 12.1: no status code or `Content-Type` rule for a complete DID resolution result",
-          "url": "https://github.com/w3c/did-resolution/issues/365",
-          "number": 365,
-          "sha": null,
-          "state": "open",
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "lifecycle",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "status"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-8d5a772ff751",
-      "repository": "w3c/webauthn",
-      "portfolio": "Authentication",
-      "repo_kind": "repository",
-      "title": "Deprecate AuthenticatorAttachment in favor of PublicKeyCredentialHints. ",
-      "timestamp": "2026-10-03T18:58:04Z",
-      "materiality": 2,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/w3c/webauthn/issues/2053"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "w3c/webauthn",
-          "portfolio": "Authentication",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-03T18:58:04Z",
-          "title": "Deprecate AuthenticatorAttachment in favor of PublicKeyCredentialHints. ",
-          "url": "https://github.com/w3c/webauthn/issues/2053",
-          "number": 2053,
-          "sha": null,
-          "state": "open",
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "lifecycle",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "deprecat"
-        ],
-        "evidence_state": "derived"
-      }
     }
   ],
   "lifecycle_changes": [],
@@ -3404,24 +3298,6 @@
         "https://github.com/w3c/did-resolution/pull/344"
       ],
       "evidence_state": "observed"
-    },
-    {
-      "id": "tem-relationship-99e214a4756e",
-      "source_repository": "w3c/did-resolution",
-      "target_repository": "w3c/did",
-      "source_portfolio": "Identifiers & Control",
-      "target_portfolio": "Identifiers & Control",
-      "relationship_type": "observed-reference",
-      "claim_strength": "observed",
-      "formal_dependency": false,
-      "recognition_inferred": false,
-      "authority_inferred": false,
-      "source_change_unit": "toip-change-ff92e34723b4",
-      "semantic_change_type": "lifecycle",
-      "evidence": [
-        "https://github.com/w3c/did-resolution/issues/365"
-      ],
-      "evidence_state": "observed"
     }
   ],
   "change_propagation": [
@@ -3466,24 +3342,6 @@
         "https://github.com/w3c/did-resolution/pull/364"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
-    },
-    {
-      "id": "tem-propagation-79cb3eb71514",
-      "state": "insufficient_history",
-      "referencing_repository": "w3c/did-resolution",
-      "referenced_repository": "w3c/did",
-      "relationship_id": "tem-relationship-99e214a4756e",
-      "trigger_change_unit": null,
-      "responding_change_unit": "toip-change-ff92e34723b4",
-      "trigger_timestamp": null,
-      "response_timestamp": "2026-10-03T23:31:08Z",
-      "relationship_evidence": [
-        "https://github.com/w3c/did-resolution/issues/365"
-      ],
-      "evidence": [
-        "https://github.com/w3c/did-resolution/issues/365"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     }
   ],
   "cross_portfolio_seams": [],
@@ -3507,7 +3365,7 @@
       "response_change_unit": "toip-change-19942188859e",
       "response_timestamp": "2026-10-06T05:42:47Z",
       "created_at": "2026-10-04T17:24:34Z",
-      "last_observed_at": "2026-10-10T05:19:01.851304+00:00",
+      "last_observed_at": "2026-10-11T04:26:00.218526+00:00",
       "evidence": [
         "https://github.com/w3c/did/issues/937",
         "https://github.com/w3c/did-extensions/pull/752",
