@@ -13,6 +13,7 @@ from urllib.parse import urlencode, urlsplit, urljoin
 from urllib.request import Request, urlopen
 from .confluence_search import BASE as SEARCH_URL
 from .toip_content_interpretation import extract
+from .toip_discussion_blocks import extract_discussions
 
 HOST = "lf-toip.atlassian.net"
 HOME = "22970380"
@@ -106,10 +107,11 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
             parser = TextSections()
             parser.feed(body)
             interpreted = extract(body)
+            discussions = extract_discussions(body)
             page_kind = ("administrative" if re.search(
                 r"template|calendar|standing agenda|meeting logistics|home page|"
                 r"index of meeting|instructions|code of conduct", title, re.I)
-                else "substantive" if interpreted["sections"] else "content_poor")
+                else "substantive" if discussions["sections"] else "content_poor")
             result["pages"].append({
                 "id": identifier, "title": title, "page_kind": page_kind,
                 "url": "https://" + HOST + "/wiki/spaces/HOME/pages/" + identifier,
@@ -117,6 +119,7 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
                 "version_created_at": (page.get("version") or {}).get("createdAt"),
                 "topic_headings": parser.headings[:8],
                 "section_abstracts": interpreted["sections"],
+                "discussion_blocks": discussions["sections"],
                 "github_references": interpreted["github_references"],
                 "summary_method": interpreted["summary_method"],
                 "text_sections_inspected": interpreted["text_sections_inspected"],
