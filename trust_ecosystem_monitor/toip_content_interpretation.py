@@ -79,6 +79,51 @@ def _canonical_github(value: str) -> str | None:
     return "https://github.com" + parsed.path.rstrip("/") if m else None
 
 
+# Common repeated meeting administration is not substantive intelligence.
+BOILERPLATE = re.compile(
+    r"antitrust|competition law|intellectual property rights|\bipr\b|"
+    r"code of conduct|recording consent|meeting etiquette|join zoom|zoom meeting|"
+    r"calendar invite|linux foundation|copyright|license agreement|"
+    r"confidentiality notice|safe harbor|working group charter",
+    re.I,
+)
+SUBSTANTIVE = re.compile(
+    r"\b(propos|discuss|clarif|decid|agreed|question|issue|risk|"
+    r"protocol|credential|authority|delegat|governance|schema|"
+    r"interop|test|assur|implement|review|specif|verif|privacy|"
+    r"action item|next step|follow.up)\w*",
+    re.I,
+)
+
+
+def _substance(heading: str, passage: str) -> bool:
+    if BOILERPLATE.search(heading) or BOILERPLATE.search(passage[:150]):
+        return False
+    if len(passage) < 45 or not SUBSTANTIVE.search(passage):
+        return False
+    # Repeated logistics and section titles should not outrank discussion.
+    if re.search(r"^(attendance|attendees|regrets|meeting link|time|date|"
+                 r"roll call|administrative|agenda|welcome|introduction)$", heading.strip(), re.I):
+        return False
+    return True
+
+
+def _meaning(heading: str, passage: str, terms: list[str], cues: list[str]) -> str:
+    topic = ", ".join(terms[:3])
+    if "question_language" in cues:
+        frame = "The record raises or examines a question involving "
+    elif "proposal_language" in cues:
+        frame = "The record contains proposal or option language concerning "
+    elif "action_language" in cues:
+        frame = "The record mentions follow-up or action language concerning "
+    elif "decision_language" in cues:
+        frame = "The record uses decision-related language concerning "
+    else:
+        frame = "The record discusses "
+    # Qualify source language rather than asserting an actual decision, task
+    # assignment, temporal event or editorial conclusion.
+    return frame + topic + "."
+ 
 def extract(body: str, *, max_sections: int = 6) -> dict:
     if not isinstance(body, str) or len(body) > 250_000 or not 1 <= max_sections <= 10:
         raise ValueError("unbounded or invalid Confluence body")
@@ -88,6 +133,8 @@ def extract(body: str, *, max_sections: int = 6) -> dict:
     for heading, passage in parser.sections:
         if len(summaries) >= max_sections:
             break
+        if not _substance(heading, passage):
+            continue
         terms = _terms(passage)
         if not terms:
             continue
@@ -96,7 +143,7 @@ def extract(body: str, *, max_sections: int = 6) -> dict:
         # action was assigned, an answer was resolved or a decision authorized.
         summaries.append({
             "section": heading,
-            "abstract": "Text under this section addresses " + ", ".join(terms[:5]) + ".",
+            "abstract": _meaning(heading, passage, terms, categories),
             "language_signals": categories,
             "basis_sha256": hashlib.sha256(passage.encode("utf-8")).hexdigest(),
             "evidence_basis": "current_public_page_section_text",
@@ -108,4 +155,4 @@ def extract(body: str, *, max_sections: int = 6) -> dict:
             links.add(url)
     return {"sections": summaries, "github_references": sorted(links),
             "text_sections_inspected": len(parser.sections),
-            "summary_method": "deterministic_term_and_cue_extraction_v1"}
+            "summary_method": "bounded_substantive_cue_synthesis_v2"}
