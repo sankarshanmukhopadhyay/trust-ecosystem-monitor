@@ -52,6 +52,20 @@ class GitHubRateLimitTests(unittest.TestCase):
         self.assertEqual(request.call_count, 1)
         sleep.assert_not_called()
 
+    def test_nonfinite_retry_headers_fail_closed_without_sleep(self):
+        for header, value in (("Retry-After", "nan"),
+                              ("Retry-After", "inf"),
+                              ("X-RateLimit-Reset", "nan"),
+                              ("X-RateLimit-Reset", "inf")):
+            with self.subTest(header=header, value=value):
+                err = self.error(429, {header: value}, "hidden")
+                with patch("urllib.request.urlopen", side_effect=err) as request:
+                    with patch("trust_ecosystem_monitor.engine.time.sleep") as sleep:
+                        with self.assertRaisesRegex(RuntimeError, "rate limited"):
+                            self.client.get("/repos/example/repo")
+                self.assertEqual(request.call_count, 1)
+                sleep.assert_not_called()
+
     def test_429_retry_after(self):
         err = self.error(429, {"Retry-After": "60"}, "hidden")
         with patch("urllib.request.urlopen", side_effect=err):
