@@ -100,6 +100,12 @@ jobs:
               --github-dir monthly-prototype --admitted-dir "$ADMITTED_DIR" \
               --site docs/intelligence/toip
           else
+            # The restored generated branch may contain reports from a prior
+            # authorized run. Never republish them after admission inputs vanish.
+            rm -f docs/intelligence/toip/2026-08/cross-source.html
+            rm -f docs/intelligence/toip/2026-08/cross-source.md
+            rm -f docs/intelligence/toip/2026-09/cross-source.html
+            rm -f docs/intelligence/toip/2026-09/cross-source.md
             echo "No admitted Confluence manifests; publishing GitHub-only intelligence"
           fi
       - name: Verify local Pages publication readiness

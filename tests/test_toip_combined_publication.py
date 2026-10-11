@@ -45,6 +45,30 @@ class CombinedPublicationTests(unittest.TestCase):
                 self.assertIn('href="cross-source.html"',
                               (site / month / "index.html").read_text())
 
+    def test_missing_destination_shell_fails_before_writing_reports(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            gh, cf, site = self.prepare(Path(tmp))
+            (site / "2026-09/index.html").unlink()
+            with self.assertRaisesRegex(ValueError, "missing intelligence HTML shell"):
+                publish(gh, cf, site)
+            self.assertFalse((site / "2026-08/cross-source.html").exists())
+
+    def test_combined_publication_reconciles_github_only_disclosures(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            gh, cf, site = self.prepare(Path(tmp))
+            (site / "index.html").write_text(
+                "<html><main>The current public release uses GitHub issue/PR lifecycle evidence; "
+                "Confluence discovery is documented but its records are not yet admitted as historical activity."
+                "</main></html>")
+            (site / "2026-08/index.html").write_text(
+                "<html><main>Confluence source identity is verified but historical page activity "
+                "is not yet admitted as report evidence.</main></html>")
+            publish(gh, cf, site)
+            self.assertIn("independently admitted Confluence",
+                          (site / "index.html").read_text())
+            self.assertNotIn("not yet admitted",
+                             (site / "2026-08/index.html").read_text())
+
     def test_missing_second_month_leaves_site_unmodified(self):
         with tempfile.TemporaryDirectory() as tmp:
             gh, cf, site = self.prepare(Path(tmp))
