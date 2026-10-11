@@ -92,6 +92,12 @@ jobs:
         run: |
           python -m trust_ecosystem_monitor.toip_experimental_combined \
             --github-dir monthly-prototype --site docs/intelligence/toip
+      - name: Build cumulative CY 2026 intelligence baseline
+        run: |
+          python -m trust_ecosystem_monitor.toip_annual \
+            --month 2026-08 --github-dir monthly-prototype --site docs/intelligence/toip
+          python -m trust_ecosystem_monitor.toip_annual \
+            --month 2026-09 --github-dir monthly-prototype --site docs/intelligence/toip
       - name: Publish independently admitted cross-source reports when supplied
         env:
           # Repository-maintained, reviewed admission manifests only.
