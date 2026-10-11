@@ -7,6 +7,7 @@ from pathlib import Path
 from .confluence_search import search_month
 from .toip_confluence_content_signals import collect as collect_content
 from .toip_monthly_knowledge import render_developments
+from .toip_monthly_cross_source import correlate
 
 MONTHS = ("2026-08", "2026-09")
 SOURCE = "https://lf-toip.atlassian.net/wiki/spaces/HOME/overview"
@@ -40,23 +41,56 @@ def render(github: dict, confluence: dict, content: dict | None = None) -> str:
         headings = page.get("topic_headings") or []
         if not isinstance(headings, list) or not all(isinstance(h, str) for h in headings):
             raise ValueError("invalid Confluence headings")
-        summary = ("Headings identify these recorded topics: " + ", ".join(headings[:5]) +
-                   ".") if headings else "No substantive heading-based summary can be supported from available page content."
+        sections = page.get("section_abstracts", [])
+        if not isinstance(sections, list):
+            raise ValueError("invalid Confluence section abstracts")
+        descriptions = []
+        for section in sections[:6]:
+            if not isinstance(section, dict) or not isinstance(section.get("abstract"), str) or not section.get("basis_sha256"):
+                raise ValueError("section abstract without text provenance")
+            cues = section.get("language_signals", [])
+            if not isinstance(cues, list) or not all(cue in (
+                    "question_language", "proposal_language", "action_language", "decision_language") for cue in cues):
+                raise ValueError("unrecognized Confluence evidence cues")
+            descriptions.append(
+                escape(str(section.get("section", "General"))) + ": " +
+                escape(section["abstract"]) +
+                (" <small>(wording signals: " + escape(", ".join(cues)) +
+                 "; no adopted outcome inferred)</small>" if cues else "")
+            )
+        summary = ("<ul><li>" + "</li><li>".join(descriptions) + "</li></ul>") if descriptions else (
+            escape("Headings identify recorded topics: " + ", ".join(headings[:5])) if headings else
+            escape("No source-grounded section abstract is available for this page."))
         page_rows.append('<li><a href="' + escape(link, quote=True) + '">' +
                          escape(str(page.get("title") or "Confluence page")) + '</a> — ' +
-                         escape(summary) + ' <small>(version ' +
+                         summary + ' <small>(version ' +
                          escape(str(page.get("version") or "unknown")) + ')</small></li>')
     confluence_knowledge = (
         '<section><h2>What Confluence records describe</h2>'
         '<p>Page headings are extracted from public page content as <strong>descriptive topic signals</strong>, '
-        'not semantic abstracts, approved decisions, or evidence that discussions occurred during this month. '
-        'Historical CQL finds pages last modified in the period, possibly describing earlier meetings.</p>' +
+        'Keyword-derived abstracts and wording cues are not human-reviewed meeting summaries or approved decisions. '
+        'Historical CQL finds pages last modified in the period; the current public page version may be newer than the month.</p>' +
         ('<ul>' + "".join(page_rows) + '</ul>' if page_rows else
          '<p>No page-level content signals could be extracted. No account of the recorded discussion can be substantiated.</p>') +
         '<p>Page content available for topic extraction: ' + str(len(page_rows)) +
         '; unavailable or out-of-scope records: ' +
         escape(str(content.get("unavailable_count", 0))) +
         '. The source collection is bounded and may be incomplete.</p></section>')
+    relations = correlate(github, content)
+    relation_rows = []
+    for relation in relations:
+        label = ("Explicit hyperlink" if relation["state"] == "explicit_reference" else "Candidate topic overlap")
+        relation_rows.append('<li><strong>' + escape(label) + '</strong>: ' +
+                             '<a href="' + escape(relation["page"], quote=True) + '">Confluence page</a> → ' +
+                             '<a href="' + escape(relation["github"], quote=True) + '">' +
+                             escape(relation["subject"]) + '</a>. ' + escape(relation["basis"]) +
+                             ' <small>' + escape(relation["limitations"]) + '</small></li>')
+    relation_section = ('<section><h2>Connections across sources</h2><p>Only direct hyperlinks are '
+                        'treated as observed references. Title/section term overlap is shown as a '
+                        'candidate for review, not confirmed correspondence.</p>' +
+                        ('<ul>' + "".join(relation_rows) + '</ul>' if relation_rows else
+                         '<p>No explicit or candidate source-linked connections identified in the bounded evidence.</p>') +
+                        '</section>')
     body = ("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">"
             "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">"
             "<title>Experimental ToIP combined evidence — " + month + "</title></head><body><main>"
@@ -72,9 +106,7 @@ def render(github: dict, confluence: dict, content: dict | None = None) -> str:
             "not historical version reconstruction, independent admission, or proof of publication rights.</p>"
             "<p>Discovery query semantics: page last-modified month, not creation or meeting date. "
             "A page may have multiple historical updates; this view does not assert their number or contents.</p>"
-            "<h2>Cross-source interpretation</h2><p>No verified page-to-GitHub subject-level "
-            "correlation is established by these aggregate Confluence counts. The two source "
-            "signals are shown together solely to test the reporting and information architecture.</p>"
+            relation_section +
             "<h2>Reproducibility and limitations</h2><p><a href=\"" + RUN +
             "\">Workflow and source code</a>. Public endpoints are accessed without an Atlassian app. "
             "Missing or inaccessible data is not zero activity. This is not a ToIP endorsement, "
