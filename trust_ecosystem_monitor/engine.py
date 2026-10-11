@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 import shutil
 import tempfile
@@ -62,12 +63,16 @@ class GitHubClient(core.GitHubClient):
                 delay = None
                 if retry_after is not None:
                     try:
-                        delay = max(0.0, float(retry_after))
+                        candidate = float(retry_after)
+                        if math.isfinite(candidate):
+                            delay = max(0.0, candidate)
                     except ValueError:
                         pass
                 elif reset is not None:
                     try:
-                        delay = max(0.0, float(reset) - time.time() + 1.0)
+                        candidate = float(reset)
+                        if math.isfinite(candidate):
+                            delay = max(0.0, candidate - time.time() + 1.0)
                     except ValueError:
                         pass
                 if attempt < 2 and delay is not None and delay <= 5:
