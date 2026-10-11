@@ -64,7 +64,7 @@ def render(github: dict, confluence: dict, content: dict | None = None) -> str:
             "<h1>Experimental combined ToIP intelligence — " + month + "</h1>"
             "<p><strong>Experimental; non-authoritative.</strong> GitHub lifecycle observations and public "
             "Confluence last-modified discovery counts are presented together, not correlated as governance decisions.</p>"
-            "<p>" + str(len(events)) + " observed GitHub lifecycle events in the configured repository set.</p>" + developments + confluence_knowledge
+            "<p>" + str(len(events)) + " observed GitHub lifecycle events in the configured repository set.</p>" + developments + confluence_knowledge +
             "<h2>Confluence public discovery</h2><p><a href=\"" + SOURCE + "\">ToIP HOME space</a> "
             "(space ID 22970380). Public CQL search returned " + str(count) +
             " matching results (reported total " + str(total) + ") for pages last modified in " + month +
