@@ -2,6 +2,13 @@ name: Historical ToIP monthly evidence prototype
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'trust_ecosystem_monitor/toip_monthly_knowledge.py'
+      - 'trust_ecosystem_monitor/toip_confluence_content_signals.py'
+      - 'trust_ecosystem_monitor/toip_experimental_combined.py'
+      - '.github/workflows/monthly-prototype.yml'
 
 concurrency:
   group: pages
