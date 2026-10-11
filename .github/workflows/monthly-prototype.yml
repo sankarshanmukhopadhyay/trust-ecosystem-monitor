@@ -5,10 +5,10 @@ on:
 
 concurrency:
   group: pages
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -21,6 +21,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -88,6 +90,22 @@ jobs:
           python -c "from pathlib import Path; p=Path('docs/index.html'); s=p.read_text(); link='<p><a href=\"intelligence/toip/\">ToIP ecosystem intelligence (source-aware preview)</a></p>'; s=s.replace('</main>',link+'</main>',1) if 'href=\"intelligence/toip/\"' not in s else s; p.write_text(s)"
       - name: Verify local Pages publication readiness
         run: python -m trust_ecosystem_monitor.toip_publication_readiness --site docs
+      - name: Persist public intelligence pages for subsequent weekly deployments
+        run: |
+          # Weekly deployment restores docs from generated-observations. Persist
+          # the validated monthly site there first, so a later weekly run cannot
+          # silently remove the intelligence routes.
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin generated-observations
+          parent=$(git rev-parse origin/generated-observations)
+          git add docs
+          tree=$(git write-tree)
+          parent_tree=$(git rev-parse "${parent}^{tree}")
+          if [ "$tree" != "$parent_tree" ]; then
+            commit=$(printf '%s\\n' "chore(monitor): persist ToIP intelligence Pages" | git commit-tree "$tree" -p "$parent")
+            git push origin "$commit:refs/heads/generated-observations"
+          fi
       - name: Upload public HTML preview bundle
         uses: actions/upload-artifact@v4
         with:
