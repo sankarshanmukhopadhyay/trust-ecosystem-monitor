@@ -46,8 +46,16 @@ def validate_authorization_decision(decision: dict, *, as_of: str,
     for key in ("decision_id", "issuer", "issuer_role", "reviewer", "rationale"):
         if not isinstance(decision.get(key), str) or not decision[key].strip():
             raise ValueError(f"{key} required")
-    if decision["issuer_role"] != "source_owner":
-        raise ValueError("source-owner authority required")
+    role = decision["issuer_role"]
+    if role == "experiment_sponsor":
+        if (decision.get("issuer") != "sankarshanmukhopadhyay"
+                or decision.get("policy_basis") != "toip_experiment_2026_10_11"
+                or decision.get("source_use_compliance_verified") is not True
+                or decision.get("independent_source_use_review_url") is None):
+            raise ValueError("experimental sponsor policy or source-use compliance missing")
+        _https(decision["independent_source_use_review_url"])
+    elif role != "source_owner":
+        raise ValueError("unsupported authorization authority")
     if decision.get("authority_independently_verified") is not True:
         raise ValueError("independent authority verification required")
     if decision.get("decision") != "approved":
