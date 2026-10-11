@@ -81,7 +81,7 @@ def render(state):
             ledger = state["source_ledger"].get(observed_page["id"], [])
             page = ledger[-1] if ledger else observed_page
             blocks = page.get("discussions", [])
-            if blocks and page.get("page_kind") == "substantive":
+            if blocks and page.get("page_kind") != "administrative":
                 details = []
                 for block in blocks[:5]:
                     references = block.get("references", [])[:5]
