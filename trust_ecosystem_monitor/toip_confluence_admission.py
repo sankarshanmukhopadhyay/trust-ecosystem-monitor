@@ -55,7 +55,7 @@ def validate_authorization_decision(decision: dict, *, as_of: str,
     if decision.get("revoked") is not False:
         raise ValueError("revoked or indeterminate authorization")
     if revoked_ids is None:
-        raise ValueError("current revocation register required")
+        raise ValueError("revocation register required; freshness must be verified externally")
     if decision["decision_id"] in revoked_ids:
         raise ValueError("authorization revoked by register")
     scope = decision.get("scope")
@@ -100,6 +100,16 @@ def admit_qualified_confluence(qualification: dict, decision: dict, *,
         raise ValueError("qualification must remain quarantined")
     if not isinstance(independent_review, dict):
         raise ValueError("independent review required")
+    # A reviewer assertion must identify the exact qualification and decision.
+    # These bindings are structural, not authentication of the reviewer.
+    if independent_review.get("authorization_decision_id") != decision["decision_id"]:
+        raise ValueError("independent review authorization binding mismatch")
+    if independent_review.get("page_source_id") != qualification.get("page_version", {}).get("source_id"):
+        raise ValueError("independent review page binding mismatch")
+    if independent_review.get("page_version") != qualification.get("page_version", {}).get("version"):
+        raise ValueError("independent review version binding mismatch")
+    if independent_review.get("subject_id") != qualification.get("candidate", {}).get("subject_id"):
+        raise ValueError("independent review subject binding mismatch")
     if independent_review.get("approved") is not True:
         raise ValueError("independent evidence review approval required")
     reviewer = independent_review.get("reviewer")

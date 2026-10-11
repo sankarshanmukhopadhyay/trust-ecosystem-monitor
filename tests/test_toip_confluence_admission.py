@@ -25,7 +25,10 @@ def independent():
     return {"approved": True, "reviewer": "independent-reviewer",
             "source_links_verified": True, "subject_mapping_verified": True,
             "review_evidence_url": "https://example.org/review",
-            "reviewed_at": "2026-10-10T09:30:00Z"}
+            "reviewed_at": "2026-10-10T09:30:00Z",
+            "authorization_decision_id": "synthetic-1",
+            "page_source_id": "42", "page_version": 3,
+            "subject_id": "synthetic-subject"}
 
 
 def admit(q=None, d=None, i=None, revoked=None):
@@ -42,6 +45,22 @@ class AdmissionTests(unittest.TestCase):
         self.assertEqual(result["page_version"], 3)
         self.assertEqual(result["authorization_decision_id"], "synthetic-1")
         self.assertEqual(infer_correlations([result], approved_confluence=True), [])
+
+    def test_review_wrong_decision(self):
+        with self.assertRaises(ValueError):
+            admit(i=dict(independent(), authorization_decision_id="other"))
+
+    def test_review_wrong_page_version(self):
+        with self.assertRaises(ValueError):
+            admit(i=dict(independent(), page_version=2))
+
+    def test_review_wrong_page_identity(self):
+        with self.assertRaises(ValueError):
+            admit(i=dict(independent(), page_source_id="43"))
+
+    def test_review_wrong_subject(self):
+        with self.assertRaises(ValueError):
+            admit(i=dict(independent(), subject_id="other-subject"))
 
     def test_wrong_period(self):
         d = decision()
