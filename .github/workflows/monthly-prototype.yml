@@ -118,6 +118,8 @@ jobs:
             rm -f docs/intelligence/toip/2026-09/cross-source.md
             echo "No admitted Confluence manifests; publishing GitHub-only intelligence"
           fi
+      - name: Converge public ToIP intelligence navigation
+        run: python -m trust_ecosystem_monitor.toip_navigation --site docs
       - name: Verify local Pages publication readiness
         run: python -m trust_ecosystem_monitor.toip_publication_readiness --site docs
       - name: Persist public intelligence pages for subsequent weekly deployments

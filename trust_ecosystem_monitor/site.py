@@ -6,6 +6,7 @@ from datetime import datetime
 from pathlib import Path
 
 from . import site_backend
+from .toip_navigation import add_to_toip_overview
 
 
 PROJECT_TITLE = "Trust Ecosystem Monitor"
@@ -112,6 +113,9 @@ def render_site(root: str | Path = ".") -> None:
         text = _brand_html(path.read_text(encoding="utf-8"), profile)
         text = _add_taxonomy_nav(text)
         path.write_text(_add_catalog_nav(text, "../index.html"), encoding="utf-8")
+
+    if str(profile.get("id", "")) == "trustoverip" or docs.name == "trustoverip":
+        add_to_toip_overview(docs / "index.html")
 
     reports = docs / "reports"
     if reports.exists():

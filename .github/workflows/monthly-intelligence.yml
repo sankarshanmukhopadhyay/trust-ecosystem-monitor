@@ -49,6 +49,8 @@ jobs:
         run: |
           python -m trust_ecosystem_monitor.toip_annual \
             --month "$MONTH" --github-dir monthly-prototype --site docs/intelligence/toip
+      - name: Converge public ToIP intelligence navigation
+        run: python -m trust_ecosystem_monitor.toip_navigation --site docs
       - name: Validate staged monthly page
         run: |
           test -s "docs/intelligence/toip/${MONTH%-*}/index.html"
