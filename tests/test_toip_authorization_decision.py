@@ -35,6 +35,41 @@ class DecisionTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validate_authorization_decision(decision(), as_of=NOW, revoked_ids={"synthetic-1"})
 
+    def test_bounded_experiment_sponsor_policy(self):
+        d = dict(decision(), issuer="sankarshanmukhopadhyay",
+                 issuer_role="experiment_sponsor",
+                 policy_basis="toip_experiment_2026_10_11",
+                 source_use_compliance_verified=True,
+                 independent_source_use_review_url="https://example.org/source-use-review")
+        self.assertEqual(validate_authorization_decision(
+            d, as_of=NOW, revoked_ids=set())["issuer_role"], "experiment_sponsor")
+
+    def test_sponsor_requires_source_use_review(self):
+        d = dict(decision(), issuer="sankarshanmukhopadhyay",
+                 issuer_role="experiment_sponsor",
+                 policy_basis="toip_experiment_2026_10_11",
+                 source_use_compliance_verified=True)
+        with self.assertRaises(ValueError):
+            validate_authorization_decision(d, as_of=NOW, revoked_ids=set())
+
+    def test_sponsor_cannot_self_assert_compliance_without_gate(self):
+        d = dict(decision(), issuer="sankarshanmukhopadhyay",
+                 issuer_role="experiment_sponsor",
+                 policy_basis="toip_experiment_2026_10_11",
+                 source_use_compliance_verified=False,
+                 independent_source_use_review_url="https://example.org/review")
+        with self.assertRaises(ValueError):
+            validate_authorization_decision(d, as_of=NOW, revoked_ids=set())
+
+    def test_wrong_sponsor_rejected(self):
+        d = dict(decision(), issuer="someone-else",
+                 issuer_role="experiment_sponsor",
+                 policy_basis="toip_experiment_2026_10_11",
+                 source_use_compliance_verified=True,
+                 independent_source_use_review_url="https://example.org/review")
+        with self.assertRaises(ValueError):
+            validate_authorization_decision(d, as_of=NOW, revoked_ids=set())
+
     def test_expiry_blocks_approval(self):
         with self.assertRaises(ValueError):
             validate_authorization_decision(decision(), as_of="2026-12-01T00:00:00Z", revoked_ids=set())
