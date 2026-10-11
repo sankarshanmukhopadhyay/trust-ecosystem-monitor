@@ -86,6 +86,9 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
         if not isinstance(data, dict) or not isinstance(data.get("results"), list):
             diagnostics.append("malformed_response")
             break
+        if len(data["results"]) > PAGE_SIZE:
+            diagnostics.append("oversized_search_page")
+            break
         for hit in data["results"]:
             if not isinstance(hit, dict) or not str(hit.get("id", "")).isdigit():
                 diagnostics.append("malformed_hit")
