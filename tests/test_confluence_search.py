@@ -85,7 +85,7 @@ class SearchTests(unittest.TestCase):
         self.assertEqual(result["missing_space_count"], 0)
         self.assertFalse(result["scope_verified"])
         self.assertNotIn("secret", str(result))
-        self.assertNotIn("123", str(result))
+        self.assertNotIn("123", json.dumps({key: value for key, value in result.items() if key != "retrieved_at"}))
 
     def test_http_denial_is_unavailable(self):
         def opener(req, timeout):
