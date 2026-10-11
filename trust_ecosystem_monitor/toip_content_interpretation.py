@@ -144,6 +144,9 @@ def extract(body: str, *, max_sections: int = 6) -> dict:
         summaries.append({
             "section": heading,
             "abstract": _meaning(heading, passage, terms, categories),
+            # One tightly bounded evidence excerpt per source page; other
+            # sections are paraphrase and hashes only. Never copy full minutes.
+            "brief_source_excerpt": " ".join(passage.split())[:160] if not summaries else "",
             "language_signals": categories,
             "basis_sha256": hashlib.sha256(passage.encode("utf-8")).hexdigest(),
             "evidence_basis": "current_public_page_section_text",
