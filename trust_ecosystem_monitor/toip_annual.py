@@ -27,7 +27,7 @@ def reference_link(url):
         return ""
     parsed = urlsplit(url)
     allowed = {"github.com", "lf-toip.atlassian.net", "trustoverip.org",
-               "w3.org", "identity.foundation", "ietf.org", "datatracker.ietf.org"}
+               "w3.org", "www.w3.org", "identity.foundation", "ietf.org", "datatracker.ietf.org"}
     if (parsed.scheme != "https" or not parsed.hostname or
         (parsed.hostname not in allowed and not parsed.hostname.endswith(".github.io")) or
         parsed.username or parsed.password or len(url) > 600):
