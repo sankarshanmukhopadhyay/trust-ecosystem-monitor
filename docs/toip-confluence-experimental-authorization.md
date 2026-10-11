@@ -1,8 +1,10 @@
+> **Superseding project decision — 2026-10-11:** The experiment sponsor, GitHub user `sankarshanmukhopadhyay`, has expressly authorized the monitor's bounded ToIP experiment to use lawfully accessible Confluence information to generate reports and evidence-based inferences about ToIP activities. For **project governance**, this is the definitive authorization; separate ToIP organizational approval is not a project acceptance prerequisite. This declaration does not confer third-party intellectual-property rights, override access or reuse restrictions, establish ToIP endorsement, or certify the accuracy of source records. Publication still requires applicable source-use compliance, provenance, independent evidence review, privacy safeguards and accurate coverage disclosure. The earlier narrower sponsor-only experiment limitation below is superseded only to this extent.
+
 # Experimental Confluence authorization declaration
 
 **Recorded:** 2026-10-10  
 **Experiment sponsor / declarant:** GitHub user [`sankarshanmukhopadhyay`](https://github.com/sankarshanmukhopadhyay)  
-**Status:** Sponsor authorization only; **not** ToIP/Confluence source-owner approval.  
+**Status:** Sponsor-approved project research, reporting and inference; **not** ToIP/Confluence source-owner approval or third-party rights grant.  
 **Tracking:** [#63](https://github.com/sankarshanmukhopadhyay/trust-ecosystem-monitor/issues/63), [#82](https://github.com/sankarshanmukhopadhyay/trust-ecosystem-monitor/issues/82).
 
 ## Declaration and scope
