@@ -71,7 +71,7 @@ def validate(data):
             raise ValueError("monthly observation digest mismatch")
     return data
 
-def ingest(data, github, content, *, observed_at):
+def ingest(data, github, content, *, observed_at, tracked_pages=None):
     """Record new monthly snapshot once and append new observed source versions.
 
     Reruns of the same month don't overwrite history. If independently
@@ -90,7 +90,6 @@ def ingest(data, github, content, *, observed_at):
         },
         "confluence": {
             "coverage": content.get("coverage", "sample_only"),
-            "retrieved_at": content.get("retrieved_at", when),
             "source_count": len(content.get("pages", [])),
             "unavailable_count": content.get("unavailable_count", 0),
             "sources": [_source(p) for p in content.get("pages", [])],
@@ -113,7 +112,11 @@ def ingest(data, github, content, *, observed_at):
                 "impact": "review_required",
                 "explanation": "Newly collected evidence differs from the immutable first observation. Earlier report is not overwritten.",
             })
-    for record in observation["confluence"]["sources"]:
+    # Previously tracked pages are re-inspected without being counted as
+    # newly observed monthly discussions or recast into that month.
+    seen = {p["id"] for p in observation["confluence"]["sources"]}
+    tracked = [_source(p) for p in (tracked_pages or []) if str(p.get("id", "")) not in seen]
+    for record in observation["confluence"]["sources"] + tracked:
         ident = record["id"]
         ledger = data["source_ledger"].setdefault(ident, [])
         fingerprint = record["content_fingerprint"]
