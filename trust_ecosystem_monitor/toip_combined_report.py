@@ -78,13 +78,13 @@ def markdown(report):
 
 
 
-def _safe_link(url):
+def _safe_link(url, *, review=False):
     if not isinstance(url, str):
         raise ValueError("source URL required")
     parsed = urlsplit(url)
     if (parsed.scheme != "https" or not parsed.hostname or parsed.username
             or parsed.password or parsed.port is not None or parsed.fragment
-            or parsed.hostname not in ("github.com", "lf-toip.atlassian.net")):
+            or (not review and parsed.hostname not in ("github.com", "lf-toip.atlassian.net"))):
         raise ValueError("unsafe cross-source report URL")
     return '<a href="' + escape(url, quote=True) + '">' + escape(url) + '</a>'
 
@@ -110,7 +110,7 @@ def html(report):
         lines.append('<li>' + escape(item["occurred_at"][:10]) + ': ' +
                      escape(item["summary"]) + ' (' + _safe_link(item["url"]) +
                      '); independent review: ' +
-                     _safe_link(item["independent_review_evidence_url"]) + '</li>')
+                     _safe_link(item["independent_review_evidence_url"], review=True) + '</li>')
     lines.append('</ul><h2>Reviewed cross-source references</h2><ul>')
     for finding in report["findings"]:
         lines.append('<li>' + escape(finding["subject_id"]) + ': ' +
