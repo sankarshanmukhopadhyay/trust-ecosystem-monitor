@@ -67,7 +67,7 @@ class ContentKnowledgeTests(unittest.TestCase):
         page = render(github(), confluence(), content())
         self.assertIn("Connections across sources", page)
         self.assertIn("Explicit hyperlink", page)
-        self.assertIn("Text under this section addresses", page)
+        self.assertIn("The record raises or examines a question", page)
         self.assertIn("Proposal", BODY)
         self.assertIn("not human-reviewed", page)
         self.assertNotIn("approved by ToIP", page)
