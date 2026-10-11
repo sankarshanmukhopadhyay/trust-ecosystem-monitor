@@ -10,4 +10,4 @@ The admitted Confluence manifest must have `period`, `publication_admitted=true`
 
 Negative tests cover missing admission, synthetic flag, period mismatch, out-of-month observations, missing independent-review provenance, unsupported mapping, missing coverage and HTML injection. A positive synthetic fixture exercises composition only; it does not establish a real report. Public Pages deployment and live August/September verification remain #63/#81.
 
-The HTML renderer permits only github.com and lf-toip.atlassian.net source links, and rejects unsafe schemes, embedded credentials, ports and fragments. Review links must be from these same hosts under the current renderer policy; any other review-evidence host requires a separately reviewed allowlist policy and tests before public use.
+The HTML renderer permits only github.com and lf-toip.atlassian.net for **source** links. Independent review evidence may use another HTTPS host; the renderer rejects unsafe schemes, embedded credentials, ports and fragments. A valid HTTPS review link is not proof of authenticity or actual independent review.
