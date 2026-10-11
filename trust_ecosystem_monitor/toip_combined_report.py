@@ -133,10 +133,7 @@ def main():
     (args.output / (name + ".json")).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     md = markdown(report)
     (args.output / (name + ".md")).write_text(md)
-    (args.output / (name + ".html")).write_text(
-        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
-        '<title>ToIP cross-source evidence</title></head><body><main><pre>'
-        + escape(md, quote=True) + '</pre></main></body></html>\n')
+    (args.output / (name + ".html")).write_text(html(report))
 
 
 if __name__ == "__main__":
