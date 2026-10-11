@@ -45,13 +45,14 @@ jobs:
         run: |
           git fetch origin generated-observations
           git checkout origin/generated-observations -- docs
-      - name: Generate source-aware monthly knowledge
+      - name: Update cumulative calendar-year intelligence
         run: |
-          python -m trust_ecosystem_monitor.toip_monthly_one \
+          python -m trust_ecosystem_monitor.toip_annual \
             --month "$MONTH" --github-dir monthly-prototype --site docs/intelligence/toip
       - name: Validate staged monthly page
         run: |
-          test -s "docs/intelligence/toip/$MONTH/experimental-combined.html"
+          test -s "docs/intelligence/toip/${MONTH%-*}/index.html"
+          test -s "docs/intelligence/toip/${MONTH%-*}/data/manifest.json"
           python -m trust_ecosystem_monitor.toip_publication_readiness --site docs
       - name: Retain validated monthly site
         run: |

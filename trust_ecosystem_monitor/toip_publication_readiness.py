@@ -86,6 +86,19 @@ def check(root: Path) -> list[str]:
                 errors.append("Experimental knowledge section missing: " + month + ": " + marker)
         if "<script>" in html:
             errors.append("Unexpected executable script in combined report: " + month)
+    # An annual manifest must always have a readable, source-linked annual view.
+    annual_base = root / "intelligence/toip"
+    for manifest in annual_base.glob("20[0-9][0-9]/data/manifest.json"):
+        report = manifest.parents[1] / "index.html"
+        if not report.is_file():
+            errors.append("Missing annual intelligence page: " + str(report.relative_to(root)))
+            continue
+        annual = report.read_text(encoding="utf-8")
+        for required in ("Prioritized year-to-date developments",
+                         "Subsequent source revisions", "Monthly chronicle",
+                         "Confluence", "Experimental"):
+            if required.lower() not in annual.lower():
+                errors.append("Missing annual intelligence marker: " + required)
     return errors
 
 
