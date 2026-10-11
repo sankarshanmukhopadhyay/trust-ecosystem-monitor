@@ -12,6 +12,7 @@ import re
 from urllib.parse import urlencode, urlsplit, urljoin
 from urllib.request import Request, urlopen
 from .confluence_search import BASE as SEARCH_URL
+from .toip_content_interpretation import extract
 
 HOST = "lf-toip.atlassian.net"
 HOME = "22970380"
@@ -76,7 +77,7 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
     cql = 'type = page AND lastmodified >= "' + start.strftime("%Y-%m-%d") + (
         '" AND lastmodified < "' + end.strftime("%Y-%m-%d") + '"')
     url = SEARCH_URL + "?" + urlencode({"cql": cql, "limit": max_items})
-    result = {"month": month, "coverage": "sample_only", "content_use": "experimental_heading_signals",
+    result = {"month": month, "coverage": "sample_only", "content_use": "experimental_section_abstracts",
               "pages": [], "unavailable_count": 0, "next_page_present": False,
               "retrieved_at": datetime.now(timezone.utc).isoformat()}
     data = _get(url, opener=opener)
@@ -104,12 +105,17 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
                 body = ""
             parser = TextSections()
             parser.feed(body)
+            interpreted = extract(body)
             result["pages"].append({
                 "id": identifier, "title": title,
                 "url": "https://" + HOST + "/wiki/spaces/HOME/pages/" + identifier,
                 "version": (page.get("version") or {}).get("number"),
                 "version_created_at": (page.get("version") or {}).get("createdAt"),
                 "topic_headings": parser.headings[:8],
+                "section_abstracts": interpreted["sections"],
+                "github_references": interpreted["github_references"],
+                "summary_method": interpreted["summary_method"],
+                "text_sections_inspected": interpreted["text_sections_inspected"],
                 "content_signal": "headings_only" if parser.headings else "no_extractable_headings",
             })
         except (OSError, ValueError, UnicodeError, TimeoutError, json.JSONDecodeError):

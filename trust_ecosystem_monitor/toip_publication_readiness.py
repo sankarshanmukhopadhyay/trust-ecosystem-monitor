@@ -71,6 +71,21 @@ def check(root: Path) -> list[str]:
         for marker in ("Confluence", "GitHub", "Pending / deferred", "publication rights"):
             if marker.lower() not in coverage.lower():
                 errors.append("Missing coverage marker: " + marker)
+    # When experimental combined pages are staged, require meaningful
+    # knowledge sections rather than accepting a bare lifecycle list.
+    for month in ("2026-08", "2026-09"):
+        path = root / "intelligence/toip" / month / "experimental-combined.html"
+        if not path.is_file():
+            continue  # Legacy GitHub-only fixtures are supported.
+        html = path.read_text(encoding="utf-8")
+        for marker in ("What changed: evidence-backed developments",
+                       "What Confluence records describe",
+                       "Connections across sources",
+                       "Experimental; non-authoritative"):
+            if marker not in html:
+                errors.append("Experimental knowledge section missing: " + month + ": " + marker)
+        if "<script>" in html:
+            errors.append("Unexpected executable script in combined report: " + month)
     return errors
 
 
