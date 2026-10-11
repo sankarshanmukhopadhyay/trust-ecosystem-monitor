@@ -60,6 +60,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
     path = "/wiki/rest/api/content/search?" + urlencode({"cql": cql, "limit": PAGE_SIZE, "start": 0})
     expected_query = {"cql": [cql], "limit": [str(PAGE_SIZE)]}
     seen_pages = set()
+    previous_start = -1
     seen_ids = set()
     records = []
     diagnostics = []
@@ -71,6 +72,11 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
             diagnostics.append("pagination_cycle")
             break
         seen_pages.add(path)
+        current_start = int(parse_qs(urlsplit(path).query)["start"][0])
+        if current_start <= previous_start:
+            diagnostics.append("non_monotonic_pagination")
+            break
+        previous_start = current_start
         try:
             data = fetch(path)
         except (AcquisitionError, ValueError, KeyError, TypeError):
@@ -133,7 +139,7 @@ def acquire_metadata(month: str, *, approved_space_ids: set[str],
                      and params["cql"] == expected_query["cql"]
                      and params["limit"] == expected_query["limit"]
                      and params["start"][0].isdigit()
-                     and int(params["start"][0]) > 0)
+                     and int(params["start"][0]) > current_start)
         except (ValueError, KeyError):
             valid = False
         if not valid:
