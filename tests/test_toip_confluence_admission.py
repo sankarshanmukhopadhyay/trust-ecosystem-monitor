@@ -46,6 +46,18 @@ class AdmissionTests(unittest.TestCase):
         self.assertEqual(result["authorization_decision_id"], "synthetic-1")
         self.assertEqual(infer_correlations([result], approved_confluence=True), [])
 
+    def test_missing_page_version_is_rejected_cleanly(self):
+        q = qualified()
+        q.pop("page_version")
+        with self.assertRaisesRegex(ValueError, "version-bound candidate required"):
+            admit(q=q)
+
+    def test_null_candidate_is_rejected_cleanly(self):
+        q = qualified()
+        q["candidate"] = None
+        with self.assertRaisesRegex(ValueError, "version-bound candidate required"):
+            admit(q=q)
+
     def test_review_wrong_decision(self):
         with self.assertRaises(ValueError):
             admit(i=dict(independent(), authorization_decision_id="other"))
