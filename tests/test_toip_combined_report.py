@@ -1,6 +1,6 @@
 import unittest
 from tests.test_toip_evidence_contract import GITHUB, CONFLUENCE
-from trust_ecosystem_monitor.toip_combined_report import compose, markdown, main
+from trust_ecosystem_monitor.toip_combined_report import compose, markdown, main, html
 from unittest.mock import patch
 from tempfile import TemporaryDirectory
 from pathlib import Path
@@ -64,6 +64,19 @@ class CombinedReportTests(unittest.TestCase):
         cf.pop("coverage")
         with self.assertRaises(ValueError):
             compose(gh, cf)
+
+    def test_html_has_clickable_source_and_review_links(self):
+        gh, cf = inputs()
+        page = html(compose(gh, cf))
+        self.assertIn('<a href="https://github.com/org/repo/pull/12">', page)
+        self.assertIn('<a href="https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/45">', page)
+        self.assertIn('<a href="https://example.org/review">', page)
+
+    def test_html_rejects_unsafe_source_url(self):
+        gh, cf = inputs()
+        gh["evidence"][0]["url"] = "javascript:alert(1)"
+        with self.assertRaises(ValueError):
+            html(compose(gh, cf))
 
     def test_html_escapes_untrusted_text(self):
         gh, cf = inputs()

@@ -6,6 +6,7 @@ from html import escape
 import json
 import argparse
 from pathlib import Path
+from urllib.parse import urlsplit
 
 
 def compose(github, confluence):
@@ -76,6 +77,50 @@ def markdown(report):
     return "\n".join(lines)
 
 
+
+def _safe_link(url, *, review=False):
+    if not isinstance(url, str):
+        raise ValueError("source URL required")
+    parsed = urlsplit(url)
+    if (parsed.scheme != "https" or not parsed.hostname or parsed.username
+            or parsed.password or parsed.port is not None or parsed.fragment
+            or (not review and parsed.hostname not in ("github.com", "lf-toip.atlassian.net"))):
+        raise ValueError("unsafe cross-source report URL")
+    return '<a href="' + escape(url, quote=True) + '">' + escape(url) + '</a>'
+
+
+def html(report):
+    lines = [
+        '<!doctype html><html lang="en"><head><meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width,initial-scale=1">',
+        '<title>ToIP cross-source evidence</title></head><body><main>',
+        '<h1>ToIP cross-source evidence — ' + escape(report["period"]) + '</h1>',
+        '<p>Independent experiment; not an official ToIP determination.</p>',
+        '<h2>Source coverage</h2><ul>',
+        '<li>GitHub complete for enumerated repositories: ' +
+        str(report["coverage"]["github_complete"]) + '</li>',
+        '<li>Confluence: ' + escape(report["coverage"]["confluence"]) + '</li></ul>',
+        '<h2>GitHub activity</h2><ul>',
+    ]
+    for item in report["github_events"]:
+        lines.append('<li>' + escape(item["occurred_at"][:10]) + ': ' +
+                     escape(item["title"]) + ' (' + _safe_link(item["url"]) + ')</li>')
+    lines.append('</ul><h2>Admitted Confluence page updates</h2><ul>')
+    for item in report["confluence_observations"]:
+        lines.append('<li>' + escape(item["occurred_at"][:10]) + ': ' +
+                     escape(item["summary"]) + ' (' + _safe_link(item["url"]) +
+                     '); independent review: ' +
+                     _safe_link(item["independent_review_evidence_url"], review=True) + '</li>')
+    lines.append('</ul><h2>Reviewed cross-source references</h2><ul>')
+    for finding in report["findings"]:
+        lines.append('<li>' + escape(finding["subject_id"]) + ': ' +
+                     escape(finding["statement"]) + '</li>')
+    if not report["findings"]:
+        lines.append('<li>No independently supported cross-source relationship established.</li>')
+    lines.extend(['</ul><h2>Limitations</h2><p>' + escape(report["limitations"]) +
+                  '</p></main></body></html>'])
+    return "\n".join(lines) + "\n"
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--github", type=Path, required=True)
@@ -88,10 +133,7 @@ def main():
     (args.output / (name + ".json")).write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
     md = markdown(report)
     (args.output / (name + ".md")).write_text(md)
-    (args.output / (name + ".html")).write_text(
-        '<!doctype html><html lang="en"><head><meta charset="utf-8">'
-        '<title>ToIP cross-source evidence</title></head><body><main><pre>'
-        + escape(md, quote=True) + '</pre></main></body></html>\n')
+    (args.output / (name + ".html")).write_text(html(report))
 
 
 if __name__ == "__main__":
