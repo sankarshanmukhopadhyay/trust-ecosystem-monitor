@@ -20,6 +20,20 @@ def link(url, label):
         raise ValueError("invalid source URL")
     return '<a href="' + escape(url, quote=True) + '">' + escape(str(label)) + '</a>'
 
+def reference_link(url):
+    """Only safe, supported external citation hosts may be rendered."""
+    from urllib.parse import urlsplit
+    if not isinstance(url, str):
+        return ""
+    parsed = urlsplit(url)
+    allowed = {"github.com", "lf-toip.atlassian.net", "trustoverip.org",
+               "w3.org", "identity.foundation", "ietf.org", "datatracker.ietf.org"}
+    if (parsed.scheme != "https" or not parsed.hostname or
+        (parsed.hostname not in allowed and not parsed.hostname.endswith(".github.io")) or
+        parsed.username or parsed.password or len(url) > 600):
+        return ""
+    return '<a rel="noopener noreferrer" href="' + escape(url, quote=True) + '">' + escape(parsed.hostname) + '</a>'
+
 def table(columns, rows):
     return ('<div class="table-wrap"><table><thead><tr>' +
             ''.join('<th scope="col">' + escape(x) + '</th>' for x in columns) +
@@ -60,13 +74,36 @@ def render(state):
             monthly.append('<tr><td>' + escape(month) + '</td><td>' +
                            representation + '</td><td>' + escape(str(row.get("event", ""))) + '</td></tr>')
             rows.append('<li>' + representation + '</li>')
-        for page in snapshot["confluence"]["sources"]:
-            unique_sources.add(page["id"])
-            summary = "; ".join(x["abstract"] for x in page["evidence"][:2])
+        for observed_page in snapshot["confluence"]["sources"]:
+            unique_sources.add(observed_page["id"])
+            # Original month evidence remains immutable. Display the newest
+            # inspected interpretation with an explicit observed-version label.
+            ledger = state["source_ledger"].get(observed_page["id"], [])
+            page = ledger[-1] if ledger else observed_page
+            blocks = page.get("discussions", [])
+            if blocks and page.get("page_kind") == "substantive":
+                details = []
+                for block in blocks[:5]:
+                    references = block.get("references", [])[:5]
+                    refs = ' '.join(reference_link(url) for url in references)
+                    details.append('<div class="discussion"><strong>' +
+                                   escape(block.get("heading", "Discussion")) + '</strong>: ' +
+                                   escape(block.get("summary", "")) +
+                                   ('<p><small>References: ' + refs + '</small></p>' if refs else '') +
+                                   '<small>Evidence block ' +
+                                   escape(str(block.get("source_block_number", "unknown"))) +
+                                   '; classification is provisional</small></div>')
+                summary = ''.join(details)
+            else:
+                summary = escape('; '.join(v.get("abstract", "") for v in page.get("evidence", [])[:2]) or
+                                 "No defensible substantive discussion available; re-inspection required.")
+            is_later = (page.get("version") != observed_page.get("version") or
+                        page.get("content_fingerprint") != observed_page.get("content_fingerprint"))
             sources.append('<tr><td>' + escape(month) + '</td><td>' +
-                           link(page["url"], page["title"]) + ' <small>(v' +
-                           escape(str(page["version"])) + ')</small></td><td>' +
-                           escape(summary or "No substantive summary supported") + '</td></tr>')
+                           link(page["url"], page["title"]) + ' <small>(observed version ' +
+                           escape(str(page["version"])) + ')</small>' +
+                           (' <small>Updated interpretation; original month evidence preserved.</small>' if is_later else '') +
+                           '</td><td>' + summary + '</td></tr>')
         chronicle.append('<section id="month-' + escape(month) + '"><h3>' + escape(month) +
                          '</h3><p>First collected ' + escape(entry["observed_at"]) +
                          '; ' + str(len(github)) + ' distinct GitHub artifacts and ' +
@@ -114,10 +151,10 @@ def render(state):
             table(["Month", "Strength", "Subject", "Evidence"], relations[:100]) +
             '<h2>Year-to-date observed developments</h2>' +
             table(["Month", "GitHub source", "Observed lifecycle"], monthly[:120]) +
-            '<h2>What the public Confluence records describe</h2><p>Descriptions '
+            '<h2>Substantive Confluence discussion and references</h2><p>Selected evidence passages '
             'derive from bounded text sections of the public version retrieved when observed, '
             'which may be newer than the stated reporting month.</p>' +
-            table(["Observed month", "Page and version", "Description"], sources[:120]) +
+            table(["Observed month", "Page and version", "Discussion and linked references"], sources[:120]) +
             '<h2>Subsequent source revisions</h2><p>Changed versions and content '
             'fingerprints trigger review notices; TEM does not automatically '
             'invalidate or rewrite a historical finding.</p>' +
