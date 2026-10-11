@@ -28,7 +28,7 @@ QUESTION = re.compile(r"\?|\b(question|whether|clarif(?:y|ication)|unresolved)\b
 PROPOSAL = re.compile(r"\b(propos(?:e|al|ed)|suggest|option|alternative)\b", re.I)
 ACTION = re.compile(r"\b(action|follow.up|next step|assigned|todo)\b", re.I)
 RELEVANT = {"github.com", "lf-toip.atlassian.net", "trustoverip.org",
-            "w3.org", "identity.foundation", "ietf.org", "datatracker.ietf.org"}
+            "w3.org", "www.w3.org", "identity.foundation", "ietf.org", "www.ietf.org", "datatracker.ietf.org"}
 
 def canonical(url):
     if not isinstance(url, str):
