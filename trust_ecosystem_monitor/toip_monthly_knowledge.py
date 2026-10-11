@@ -38,10 +38,13 @@ def build_developments(evidence: list[dict]) -> list[dict]:
     grouped = defaultdict(list)
     for item in evidence:
         if not isinstance(item, dict) or not all(item.get(k) for k in
-                ("repository", "kind", "url", "occurred_at", "title", "event")):
+                ("url", "occurred_at", "title")):
             raise ValueError("incomplete monthly GitHub evidence")
         _link(item["url"], item["title"])
-        grouped[_key(item)].append(item)
+        normalized = {**item, "repository": item.get("repository") or "unknown/unknown",
+                      "kind": item.get("kind") or "issues",
+                      "event": item.get("event") or "observed"}
+        grouped[_key(normalized)].append(normalized)
     developments = []
     for (repository, kind, url), rows in grouped.items():
         rows.sort(key=lambda x: (x["occurred_at"], x["event"]))
