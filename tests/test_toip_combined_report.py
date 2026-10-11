@@ -15,7 +15,7 @@ def inputs():
           "coverage": "partial", "observations": [
               dict(CONFLUENCE, authorization_decision_id="synthetic",
                    independent_review_evidence_url="https://example.org/review")],
-          "reviewed_github_observations": [GITHUB]}
+          "reviewed_github_observations": [dict(GITHUB, id="gh-1")]}
     return gh, cf
 
 
@@ -57,6 +57,22 @@ class CombinedReportTests(unittest.TestCase):
         gh, cf = inputs()
         cf["reviewed_github_observations"][0] = dict(GITHUB, url="https://github.com/other")
         with self.assertRaises(ValueError):
+            compose(gh, cf)
+
+    def test_reject_same_url_but_different_event_identity(self):
+        gh, cf = inputs()
+        cf["reviewed_github_observations"][0] = dict(GITHUB, id="different-event")
+        with self.assertRaisesRegex(ValueError, "exact collected event"):
+            compose(gh, cf)
+        gh, cf = inputs()
+        cf["reviewed_github_observations"][0] = dict(GITHUB, id="gh-1", occurred_at="2026-08-04T00:00:00Z")
+        with self.assertRaisesRegex(ValueError, "exact collected event"):
+            compose(gh, cf)
+
+    def test_reject_ambiguous_duplicate_collected_events(self):
+        gh, cf = inputs()
+        gh["evidence"].append(dict(gh["evidence"][0]))
+        with self.assertRaisesRegex(ValueError, "ambiguous duplicate"):
             compose(gh, cf)
 
     def test_reject_missing_coverage(self):

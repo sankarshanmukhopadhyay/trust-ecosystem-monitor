@@ -26,4 +26,19 @@ jobs:
           grep -Fq 'GitHub-only partial evidence' "$tmp/index.html"
           grep -Fq 'Confluence' "$tmp/index.html"
           grep -Fq 'LFX' "$tmp/index.html"
-          echo "Public monthly Pages smoke verification passed"
+          intelligence="https://sankarshanmukhopadhyay.github.io/trust-ecosystem-monitor/intelligence"
+          for route in index.html toip/index.html toip/2026-08/index.html toip/2026-09/index.html toip/coverage/index.html toip/methodology/index.html; do
+            echo "Checking intelligence/$route"
+            filename="${route//\//_}"
+            curl --fail --location --silent --show-error --retry 3 --retry-delay 5 --max-time 20 "$intelligence/$route" -o "$tmp/$filename"
+            grep -Eqi '<!doctype html|<html' "$tmp/$filename"
+          done
+          grep -Fq 'href="2026-08/"' "$tmp/toip_index.html"
+          grep -Fq 'href="2026-09/"' "$tmp/toip_index.html"
+          grep -Fq 'href="coverage/"' "$tmp/toip_index.html"
+          grep -Fq 'href="methodology/"' "$tmp/toip_index.html"
+          for month in 2026-08 2026-09; do
+            grep -Fq 'Underlying GitHub activity report' "$tmp/toip_${month}_index.html"
+            grep -Fq 'Confluence' "$tmp/toip_${month}_index.html"
+          done
+          echo "Public monthly and ToIP Intelligence Pages smoke verification passed"

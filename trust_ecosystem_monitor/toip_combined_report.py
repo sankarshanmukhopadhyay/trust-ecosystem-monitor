@@ -34,9 +34,17 @@ def compose(github, confluence):
     mapped = confluence.get("reviewed_github_observations", [])
     if not isinstance(mapped, list):
         raise ValueError("reviewed mappings must be an array")
-    observed_urls = {event.get("url") for event in github_events}
-    if any(item.get("source") != "github" or item.get("url") not in observed_urls for item in mapped):
-        raise ValueError("reviewed GitHub mapping is not collected")
+    # URLs alone are not stable event identities: the same issue/PR URL can
+    # represent multiple lifecycle events with different timestamps and IDs.
+    event_keys = [(event.get("id"), event.get("url"), event.get("occurred_at"))
+                  for event in github_events]
+    if len(set(event_keys)) != len(event_keys):
+        raise ValueError("ambiguous duplicate GitHub event identity")
+    observed = set(event_keys)
+    if any(item.get("source") != "github"
+           or (item.get("id"), item.get("url"), item.get("occurred_at")) not in observed
+           for item in mapped):
+        raise ValueError("reviewed GitHub mapping is not an exact collected event")
     return {
         "period": github["period"],
         "github_events": github_events,
