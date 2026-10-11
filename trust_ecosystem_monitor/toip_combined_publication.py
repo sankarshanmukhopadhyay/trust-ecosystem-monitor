@@ -31,6 +31,11 @@ def publish(github_dir: Path, admitted_dir: Path, site_dir: Path) -> list[str]:
         if not cf.get("observations"):
             raise ValueError("real admitted Confluence observations required for " + month)
         reports[month] = compose(gh, cf)
+    # Check destination shells before writing any combined publication.
+    targets = [site_dir / "index.html"] + [site_dir / month / "index.html" for month in MONTHS]
+    for target in targets:
+        if not target.is_file() or "</main>" not in target.read_text(encoding="utf-8"):
+            raise ValueError("missing intelligence HTML shell: " + str(target))
     for month, report in reports.items():
         folder = site_dir / month
         folder.mkdir(parents=True, exist_ok=True)
@@ -41,6 +46,13 @@ def publish(github_dir: Path, admitted_dir: Path, site_dir: Path) -> list[str]:
         index = folder / "index.html"
         original = index.read_text(encoding="utf-8")
         link = '<p><a href="cross-source.html">Admitted GitHub + Confluence evidence</a></p>'
+        original = original.replace(
+            "Confluence source identity is verified but historical page activity is not yet admitted as report evidence.",
+            "Confluence page updates in the linked cross-source report are independently admitted; coverage remains bounded."
+        ).replace(
+            "authoritative scope, reuse rights and evidence classification pending.",
+            "Admitted page versions are linked in the cross-source report; other activity remains unassessed."
+        )
         if 'href="cross-source.html"' not in original:
             if "</main>" not in original:
                 raise ValueError("missing monthly intelligence HTML shell")
@@ -51,10 +63,26 @@ def publish(github_dir: Path, admitted_dir: Path, site_dir: Path) -> list[str]:
         '<li><a href="' + escape(month) + '/cross-source.html">' +
         escape(month) + ' — GitHub + Confluence</a></li>' for month in MONTHS
     ) + '</ul></section>'
+    original = original.replace(
+        "The current public release uses GitHub issue/PR lifecycle evidence; Confluence discovery is documented "
+        "but its records are not yet admitted as historical activity.",
+        "This release includes GitHub lifecycle evidence and independently admitted Confluence page updates; "
+        "source coverage remains bounded."
+    )
     if 'href="2026-08/cross-source.html"' not in original:
         if "</main>" not in original:
             raise ValueError("missing intelligence index HTML shell")
         home.write_text(original.replace("</main>", links + "</main>", 1), encoding="utf-8")
+    coverage = site_dir / "coverage/index.html"
+    if coverage.is_file():
+        original = coverage.read_text(encoding="utf-8")
+        original = original.replace(
+            "Scope and publication rights not established; page updates are not governance decisions; "
+            "these 58 matches are not ingested into monthly activity",
+            "The 58 discovery matches are not themselves admitted. Only independently reviewed page versions "
+            "linked from the cross-source reports are published; page updates are not governance decisions"
+        )
+        coverage.write_text(original, encoding="utf-8")
     return list(reports)
 
 
