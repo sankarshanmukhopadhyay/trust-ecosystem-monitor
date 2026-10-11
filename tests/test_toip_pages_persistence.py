@@ -24,7 +24,9 @@ class ToIPPagesPersistenceTests(unittest.TestCase):
     def test_generated_branch_is_the_handoff(self):
         self.assertIn('git push origin "$commit:refs/heads/generated-observations"', self.monthly)
         self.assertIn("git checkout origin/generated-observations -- data docs", self.weekly)
-        self.assertIn("git add docs", self.monthly)
+        self.assertIn('git read-tree "$parent"', self.monthly)
+        self.assertIn("git add -A -- docs", self.monthly)
+        self.assertIn('git rev-parse "${parent}^{tree}"', self.monthly)
         self.assertIn("contents: write", self.monthly)
 
     def test_no_main_branch_publication_push(self):
