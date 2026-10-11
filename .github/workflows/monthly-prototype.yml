@@ -88,6 +88,20 @@ jobs:
           <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ecosystem intelligence</title></head><body><main><h1>Ecosystem intelligence</h1><p>Independent evidence-based ecosystem reporting.</p><p><a href="toip/">ToIP ecosystem intelligence</a></p></main></body></html>
           EOF
           python -c "from pathlib import Path; p=Path('docs/index.html'); s=p.read_text(); link='<p><a href=\"intelligence/toip/\">ToIP ecosystem intelligence (source-aware preview)</a></p>'; s=s.replace('</main>',link+'</main>',1) if 'href=\"intelligence/toip/\"' not in s else s; p.write_text(s)"
+      - name: Publish independently admitted cross-source reports when supplied
+        env:
+          # Repository-maintained, reviewed admission manifests only.
+          # Absence is an explicit GitHub-only result, not permission to
+          # reinterpret raw Confluence metadata as admitted observations.
+          ADMITTED_DIR: admitted-toip-confluence
+        run: |
+          if [ -d "$ADMITTED_DIR" ]; then
+            python -m trust_ecosystem_monitor.toip_combined_publication \
+              --github-dir monthly-prototype --admitted-dir "$ADMITTED_DIR" \
+              --site docs/intelligence/toip
+          else
+            echo "No admitted Confluence manifests; publishing GitHub-only intelligence"
+          fi
       - name: Verify local Pages publication readiness
         run: python -m trust_ecosystem_monitor.toip_publication_readiness --site docs
       - name: Persist public intelligence pages for subsequent weekly deployments
