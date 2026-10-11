@@ -2,11 +2,6 @@ name: Verify published monthly HTML
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - '.github/workflows/verify-monthly-pages.yml'
-      - 'trust_ecosystem_monitor/monthly_index.py'
 
 permissions:
   contents: read
