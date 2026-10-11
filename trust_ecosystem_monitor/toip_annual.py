@@ -1,0 +1,140 @@
+"""Single annual intelligence page, regenerated from immutable monthly evidence."""
+from __future__ import annotations
+import argparse
+from datetime import datetime, timezone
+from html import escape
+import json
+from pathlib import Path
+from .monthly import month_bounds
+from .site_backend import STYLE
+from .toip_annual_state import read, ingest, write, validate
+from .toip_confluence_content_signals import collect
+from .toip_tracked_sources import inspect
+
+def link(url, label):
+    if not (url.startswith("https://github.com/") or
+            url.startswith("https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/")):
+        raise ValueError("invalid source URL")
+    return '<a href="' + escape(url, quote=True) + '">' + escape(str(label)) + '</a>'
+
+def table(columns, rows):
+    return ('<div class="table-wrap"><table><thead><tr>' +
+            ''.join('<th scope="col">' + escape(x) + '</th>' for x in columns) +
+            '</tr></thead><tbody>' + (''.join(rows) if rows else
+            '<tr><td colspan="' + str(len(columns)) + '">No observations available</td></tr>') +
+            '</tbody></table></div>')
+
+def render(state):
+    validate(state)
+    year = state["year"]
+    monthly, sources, chronicle = [], [], []
+    unique_sources, events = set(), 0
+    for month, entry in sorted(state["months"].items()):
+        snapshot = entry["observation"]
+        github = {x["url"]: x for x in snapshot["github"]["evidence"] if x.get("url")}
+        events += len(github)
+        rows = []
+        for row in github.values():
+            representation = link(row["url"], row.get("title", "GitHub observation"))
+            monthly.append('<tr><td>' + escape(month) + '</td><td>' +
+                           representation + '</td><td>' + escape(str(row.get("event", ""))) + '</td></tr>')
+            rows.append('<li>' + representation + '</li>')
+        for page in snapshot["confluence"]["sources"]:
+            unique_sources.add(page["id"])
+            summary = "; ".join(x["abstract"] for x in page["evidence"][:2])
+            sources.append('<tr><td>' + escape(month) + '</td><td>' +
+                           link(page["url"], page["title"]) + ' <small>(v' +
+                           escape(str(page["version"])) + ')</small></td><td>' +
+                           escape(summary or "No substantive summary supported") + '</td></tr>')
+        chronicle.append('<section id="month-' + escape(month) + '"><h3>' + escape(month) +
+                         '</h3><p>First collected ' + escape(entry["observed_at"]) +
+                         '; ' + str(len(github)) + ' distinct GitHub artifacts and ' +
+                         str(len(snapshot["confluence"]["sources"])) +
+                         ' Confluence pages observed retrospectively.</p><details><summary>Monthly artifact evidence</summary><ul>' +
+                         ''.join(rows) + '</ul></details></section>')
+    revisions = []
+    for notice in reversed(state["revision_notices"]):
+        source = notice["source"]
+        label = link(source, "Source") if source.startswith(
+            "https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/") else escape(source)
+        revisions.append('<tr><td>' + escape(notice["observed_at"]) + '</td><td>' +
+                         label + '</td><td>' + escape(notice["kind"].replace("_", " ")) +
+                         '</td><td>' + escape(notice["explanation"]) +
+                         '</td><td>' + escape(notice["impact"]) + '</td></tr>')
+    body = ('<header><div class="bar"><strong class="brand">Trust Ecosystem Monitor</strong>'
+            '<a href="../">ToIP intelligence</a><a href="../coverage/">Coverage</a></div></header>'
+            '<main><h1>ToIP calendar-year intelligence · ' + str(year) + '</h1>'
+            '<p class="lede">A cumulative, source-linked account of recorded developments and '
+            'subsequent evidence revisions. Historical observations are immutable.</p>'
+            '<p><strong>Independent experimental report.</strong> Retrospective source observations '
+            'do not establish meeting dates, decisions, publication rights or formal authority.</p>'
+            '<div class="metrics"><div class="metric"><strong>' + str(len(state["months"])) +
+            '</strong><span>months retained</span></div><div class="metric"><strong>' +
+            str(events) + '</strong><span>monthly GitHub artifacts</span></div><div class="metric"><strong>' +
+            str(len(unique_sources)) + '</strong><span>Confluence pages</span></div>'
+            '<div class="metric"><strong>' + str(len(revisions)) +
+            '</strong><span>revision notices</span></div></div>'
+            '<h2>Year-to-date observed developments</h2>' +
+            table(["Month", "GitHub source", "Observed lifecycle"], monthly[:120]) +
+            '<h2>What the public Confluence records describe</h2><p>Descriptions '
+            'derive from bounded text sections of the public version retrieved when observed, '
+            'which may be newer than the stated reporting month.</p>' +
+            table(["Observed month", "Page and version", "Description"], sources[:120]) +
+            '<h2>Subsequent source revisions</h2><p>Changed versions and content '
+            'fingerprints trigger review notices; TEM does not automatically '
+            'invalidate or rewrite a historical finding.</p>' +
+            table(["Observed", "Source", "Change", "Reason", "Disposition"], revisions) +
+            '<h2>Monthly chronicle</h2>' + ''.join(chronicle) +
+            '<h2>Evidence and limitations</h2><p>First observations are preserved in '
+            'the annual manifest. Missing historical source versions cannot be reconstructed. '
+            'Absence of observations does not prove inactivity. Source-use permission '
+            'and review of substantive interpretation remain separate requirements.</p></main>'
+            '<footer>Independent TEM annual intelligence; non-authoritative</footer>')
+    return ('<!doctype html><html lang="en"><head><meta charset="utf-8">'
+            '<meta name="viewport" content="width=device-width,initial-scale=1">'
+            '<title>TEM calendar year ' + str(year) + '</title><style>' + STYLE +
+            '.table-wrap{overflow-x:auto}</style></head><body>' + body + '</body></html>\n')
+
+def publish(month, github_dir: Path, site: Path, *,
+            content_collect=collect, tracked_collect=inspect, observed_at=None):
+    month_bounds(month)
+    year = int(month[:4])
+    when = observed_at or datetime.now(timezone.utc).isoformat()
+    annual = site / str(year)
+    manifest = annual / "data" / "manifest.json"
+    state = read(manifest, year)
+    github = json.loads((github_dir / (month + ".json")).read_text(encoding="utf-8"))
+    if github.get("period") != month:
+        raise ValueError("GitHub period mismatch")
+    content = content_collect(month)
+    if content.get("month") != month or content.get("coverage") != "sample_only":
+        raise ValueError("Confluence month or coverage mismatch")
+    ids = sorted(state["source_ledger"], key=int)
+    tracked = tracked_collect(ids) if ids else {"pages": [], "unavailable": []}
+    updated = ingest(state, github, content, observed_at=when, tracked_pages=tracked["pages"])
+    page = render(updated)
+    index = site / "index.html"
+    if not index.is_file():
+        raise ValueError("missing ToIP index")
+    old = index.read_text(encoding="utf-8")
+    marker = 'href="' + str(year) + '/"'
+    if marker not in old:
+        if "</main>" not in old:
+            raise ValueError("missing ToIP main shell")
+        old = old.replace("</main>", '<p><a ' + marker + '>CY ' + str(year) +
+                          ' cumulative intelligence</a></p></main>', 1)
+    write(manifest, updated)
+    (annual / "index.html").write_text(page, encoding="utf-8")
+    index.write_text(old, encoding="utf-8")
+    return annual / "index.html"
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("--month", required=True)
+    p.add_argument("--github-dir", required=True, type=Path)
+    p.add_argument("--site", required=True, type=Path)
+    args = p.parse_args()
+    print("Cumulative intelligence:", publish(args.month, args.github_dir, args.site))
+
+if __name__ == "__main__":
+    main()
