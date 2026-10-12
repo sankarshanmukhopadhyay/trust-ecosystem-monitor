@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "decentralized-identity",
-  "generated_at": "2026-10-11T04:25:22.958039+00:00",
+  "generated_at": "2026-10-12T00:40:52.898881+00:00",
   "period": {
-    "since": "2026-10-04T04:25:22.958039+00:00",
-    "until": "2026-10-11T04:25:22.958039+00:00",
+    "since": "2026-10-05T00:40:52.898881+00:00",
+    "until": "2026-10-12T00:40:52.898881+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-10T05:18:26.260984+00:00"
+    "previous_snapshot": "2026-10-11T04:25:22.958039+00:00"
   },
   "repositories": [
     {
@@ -334,7 +334,7 @@
       "description": "Create and verify W3C Verifiable Credentials and Presentations in JWT format",
       "created_at": "2019-07-22T20:20:06Z",
       "updated_at": "2026-10-08T17:31:53Z",
-      "pushed_at": "2026-10-11T04:22:43Z",
+      "pushed_at": "2026-10-12T00:23:17Z",
       "archived": false,
       "fork": false,
       "default_branch": "master",
@@ -2011,7 +2011,7 @@
       "description": "Universal did-resolver for javascript environments",
       "created_at": "2018-02-20T16:33:55Z",
       "updated_at": "2026-10-08T17:26:24Z",
-      "pushed_at": "2026-10-11T04:22:48Z",
+      "pushed_at": "2026-10-12T00:21:28Z",
       "archived": false,
       "fork": false,
       "default_branch": "master",
@@ -2946,8 +2946,8 @@
       "url": "https://github.com/decentralized-identity/universal-registrar",
       "description": "Universal Registrar implementation and drivers.",
       "created_at": "2017-09-29T13:01:11Z",
-      "updated_at": "2026-09-27T06:57:17Z",
-      "pushed_at": "2026-09-27T06:57:14Z",
+      "updated_at": "2026-10-11T17:36:13Z",
+      "pushed_at": "2026-10-11T17:36:10Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -3024,8 +3024,8 @@
       "url": "https://github.com/decentralized-identity/universal-resolver",
       "description": "Universal Resolver implementation and drivers.",
       "created_at": "2017-08-01T18:25:42Z",
-      "updated_at": "2026-10-09T02:02:35Z",
-      "pushed_at": "2026-10-11T01:04:23Z",
+      "updated_at": "2026-10-11T21:46:11Z",
+      "pushed_at": "2026-10-11T21:46:07Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -3376,7 +3376,7 @@
       "description": "Create and verify DID verifiable JWT's in Javascript",
       "created_at": "2018-02-24T02:00:53Z",
       "updated_at": "2026-10-08T20:45:51Z",
-      "pushed_at": "2026-10-11T04:22:44Z",
+      "pushed_at": "2026-10-12T00:21:27Z",
       "archived": false,
       "fork": false,
       "default_branch": "master",
@@ -3414,8 +3414,8 @@
       "url": "https://github.com/decentralized-identity/ethr-did-resolver",
       "description": "DID resolver for Ethereum Addresses with support for key management",
       "created_at": "2018-03-31T18:40:19Z",
-      "updated_at": "2026-10-09T00:23:20Z",
-      "pushed_at": "2026-10-11T04:22:15Z",
+      "updated_at": "2026-10-11T18:05:29Z",
+      "pushed_at": "2026-10-12T00:21:58Z",
       "archived": false,
       "fork": false,
       "default_branch": "master",
@@ -3649,7 +3649,7 @@
       "description": "A JavaScript Framework for Verifiable Data",
       "created_at": "2019-11-12T14:18:17Z",
       "updated_at": "2026-10-08T15:09:25Z",
-      "pushed_at": "2026-10-11T00:23:18Z",
+      "pushed_at": "2026-10-12T00:24:15Z",
       "archived": false,
       "fork": false,
       "default_branch": "next",
@@ -10508,24 +10508,24 @@
   ],
   "events": [
     {
-      "kind": "pull_request",
+      "kind": "issue",
       "repository": "decentralized-identity/veramo",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "timestamp": "2026-10-11T04:24:09Z",
-      "title": "chore(deps): update devdeps (major)",
-      "url": "https://github.com/decentralized-identity/veramo/pull/1372",
-      "number": 1372,
+      "timestamp": "2026-10-12T00:24:14Z",
+      "title": "Dependency Dashboard",
+      "url": "https://github.com/decentralized-identity/veramo/issues/1102",
+      "number": 1102,
       "sha": null,
       "state": "open",
-      "materiality": 3
+      "materiality": 2
     },
     {
       "kind": "pull_request",
       "repository": "decentralized-identity/veramo",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "timestamp": "2026-10-11T04:23:51Z",
+      "timestamp": "2026-10-12T00:23:21Z",
       "title": "fix(deps): update all non-major dependencies",
       "url": "https://github.com/decentralized-identity/veramo/pull/1232",
       "number": 1232,
@@ -10535,23 +10535,10 @@
     },
     {
       "kind": "issue",
-      "repository": "decentralized-identity/did-resolver",
-      "portfolio": "Identifiers & Discovery",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-11T04:22:47Z",
-      "title": "Dependency Dashboard",
-      "url": "https://github.com/decentralized-identity/did-resolver/issues/97",
-      "number": 97,
-      "sha": null,
-      "state": "open",
-      "materiality": 2
-    },
-    {
-      "kind": "issue",
       "repository": "decentralized-identity/did-jwt-vc",
       "portfolio": "Claims & Credentials",
       "repo_kind": "repository",
-      "timestamp": "2026-10-11T04:22:42Z",
+      "timestamp": "2026-10-12T00:23:16Z",
       "title": "Dependency Dashboard",
       "url": "https://github.com/decentralized-identity/did-jwt-vc/issues/88",
       "number": 88,
@@ -10561,10 +10548,36 @@
     },
     {
       "kind": "issue",
+      "repository": "decentralized-identity/ethr-did-resolver",
+      "portfolio": "Implementations & Tooling",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-12T00:21:57Z",
+      "title": "Dependency Dashboard",
+      "url": "https://github.com/decentralized-identity/ethr-did-resolver/issues/141",
+      "number": 141,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "decentralized-identity/did-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-12T00:21:26Z",
+      "title": "Dependency Dashboard",
+      "url": "https://github.com/decentralized-identity/did-resolver/issues/97",
+      "number": 97,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
       "repository": "decentralized-identity/did-jwt",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "timestamp": "2026-10-11T04:22:42Z",
+      "timestamp": "2026-10-12T00:21:26Z",
       "title": "Dependency Dashboard",
       "url": "https://github.com/decentralized-identity/did-jwt/issues/194",
       "number": 194,
@@ -10573,17 +10586,199 @@
       "materiality": 2
     },
     {
-      "kind": "issue",
-      "repository": "decentralized-identity/ethr-did-resolver",
-      "portfolio": "Implementations & Tooling",
+      "kind": "pull_request",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
       "repo_kind": "repository",
-      "timestamp": "2026-10-11T04:22:14Z",
-      "title": "Dependency Dashboard",
-      "url": "https://github.com/decentralized-identity/ethr-did-resolver/issues/141",
-      "number": 141,
+      "timestamp": "2026-10-11T22:40:39Z",
+      "title": "feat(witness): API method for verify-then-sign behaviour for log entries",
+      "url": "https://github.com/decentralized-identity/didwebvh-ts/pull/201",
+      "number": 201,
       "sha": null,
       "state": "open",
-      "materiality": 2
+      "materiality": 3
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T21:46:07Z",
+      "title": "[skip ci] prepare for next development iteration",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+      "number": null,
+      "sha": "cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T21:45:56Z",
+      "title": "[skip ci] prepare release 1.13.0",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/fca3814576667abc797cc5e786c8718a11b65bd9",
+      "number": null,
+      "sha": "fca3814576667abc797cc5e786c8718a11b65bd9",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T21:01:56Z",
+      "title": "Support POST for drivers",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/cbe4bb2007614d7fec5d673e8fa269bcf4b9a2b8",
+      "number": null,
+      "sha": "cbe4bb2007614d7fec5d673e8fa269bcf4b9a2b8",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T20:58:34Z",
+      "title": "Update did:cid driver to 0.2.1",
+      "url": "https://github.com/decentralized-identity/universal-resolver/pull/595",
+      "number": 595,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:45:59Z",
+      "title": "[skip ci] prepare for next development iteration",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0",
+      "number": null,
+      "sha": "d1414400a02e8a6a3330e943829b44774311acc0",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:45:50Z",
+      "title": "[skip ci] prepare release 1.12.0",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/083561f8a53720c8d877349da546d443e9b69639",
+      "number": null,
+      "sha": "083561f8a53720c8d877349da546d443e9b69639",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-registrar",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:36:09Z",
+      "title": "[skip ci] prepare for next development iteration",
+      "url": "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a",
+      "number": null,
+      "sha": "14f0330cafc7b7034c95b32f847fdd3404697d3a",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-registrar",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:35:56Z",
+      "title": "[skip ci] prepare release 1.20.0",
+      "url": "https://github.com/decentralized-identity/universal-registrar/commit/3b567f4f40b8c135efcb41edb3696a7b4e92a9bc",
+      "number": null,
+      "sha": "3b567f4f40b8c135efcb41edb3696a7b4e92a9bc",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:21:11Z",
+      "title": "Upgrade deps",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/4a9cc4b84aa131f99a161151ac8cda00ead20ef3",
+      "number": null,
+      "sha": "4a9cc4b84aa131f99a161151ac8cda00ead20ef3",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:21:11Z",
+      "title": "ObjectMapper -> JsonMapper",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/5eb7c53dbb1d4585df1187a3ad512ee32ecc81e8",
+      "number": null,
+      "sha": "5eb7c53dbb1d4585df1187a3ad512ee32ecc81e8",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:17:18Z",
+      "title": "Updates for HTTP POST and HTTP headers support",
+      "url": "https://github.com/decentralized-identity/universal-resolver/commit/f1eb86ca060fdde310a6a62d6cb11792f848221d",
+      "number": null,
+      "sha": "f1eb86ca060fdde310a6a62d6cb11792f848221d",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "decentralized-identity/universal-registrar",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T17:16:36Z",
+      "title": "Upgrade deps",
+      "url": "https://github.com/decentralized-identity/universal-registrar/commit/bc434b8e44b58eb41cbc5979a026f6cbbc89ac3b",
+      "number": null,
+      "sha": "bc434b8e44b58eb41cbc5979a026f6cbbc89ac3b",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "decentralized-identity/didcomm-messaging",
+      "portfolio": "DIDComm",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T16:04:27Z",
+      "title": "Add writerslogic/didcomm-ts to the implementations list",
+      "url": "https://github.com/decentralized-identity/didcomm-messaging/pull/467",
+      "number": 467,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "decentralized-identity/veramo",
+      "portfolio": "Implementations & Tooling",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T08:22:07Z",
+      "title": "chore(deps): update devdeps (major)",
+      "url": "https://github.com/decentralized-identity/veramo/pull/1372",
+      "number": 1372,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
     },
     {
       "kind": "issue",
@@ -10633,19 +10828,6 @@
       "title": "Clarify that identity-assertion failure codes don't invalidate the C2PA Manifest",
       "url": "https://github.com/decentralized-identity/cawg-identity-assertion/issues/289",
       "number": 289,
-      "sha": null,
-      "state": "open",
-      "materiality": 2
-    },
-    {
-      "kind": "issue",
-      "repository": "decentralized-identity/veramo",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-11T00:23:16Z",
-      "title": "Dependency Dashboard",
-      "url": "https://github.com/decentralized-identity/veramo/issues/1102",
-      "number": 1102,
       "sha": null,
       "state": "open",
       "materiality": 2
@@ -10831,19 +11013,6 @@
       "sha": null,
       "state": "merged",
       "materiality": 4
-    },
-    {
-      "kind": "pull_request",
-      "repository": "decentralized-identity/didcomm-messaging",
-      "portfolio": "DIDComm",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-09T21:30:04Z",
-      "title": "Add writerslogic/didcomm-ts to the implementations list",
-      "url": "https://github.com/decentralized-identity/didcomm-messaging/pull/467",
-      "number": 467,
-      "sha": null,
-      "state": "open",
-      "materiality": 3
     },
     {
       "kind": "pull_request",
@@ -12040,19 +12209,6 @@
       "sha": "22344745c0275bdf3d6d95fb9ff6e3390fa84616",
       "state": null,
       "materiality": 1
-    },
-    {
-      "kind": "pull_request",
-      "repository": "decentralized-identity/didwebvh-ts",
-      "portfolio": "DID Methods",
-      "repo_kind": "repository",
-      "timestamp": "2026-10-08T09:10:16Z",
-      "title": "feat(witness): API method for verify-then-sign behaviour for log entries",
-      "url": "https://github.com/decentralized-identity/didwebvh-ts/pull/201",
-      "number": 201,
-      "sha": null,
-      "state": "open",
-      "materiality": 3
     },
     {
       "kind": "commit",
@@ -13443,41 +13599,43 @@
   ],
   "change_units": [
     {
-      "id": "toip-change-40bce2365d45",
+      "id": "toip-change-53a9236b213c",
       "repository": "decentralized-identity/veramo",
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
-      "title": "chore(deps): update devdeps (major)",
-      "timestamp": "2026-10-11T04:24:09Z",
-      "materiality": 3,
+      "title": "Dependency Dashboard",
+      "timestamp": "2026-10-12T00:24:14Z",
+      "materiality": 2,
       "event_kinds": [
-        "pull_request"
+        "issue"
       ],
       "event_count": 1,
       "evidence": [
-        "https://github.com/decentralized-identity/veramo/pull/1372"
+        "https://github.com/decentralized-identity/veramo/issues/1102"
       ],
       "events": [
         {
-          "kind": "pull_request",
+          "kind": "issue",
           "repository": "decentralized-identity/veramo",
           "portfolio": "Implementations & Tooling",
           "repo_kind": "repository",
-          "timestamp": "2026-10-11T04:24:09Z",
-          "title": "chore(deps): update devdeps (major)",
-          "url": "https://github.com/decentralized-identity/veramo/pull/1372",
-          "number": 1372,
+          "timestamp": "2026-10-12T00:24:14Z",
+          "title": "Dependency Dashboard",
+          "url": "https://github.com/decentralized-identity/veramo/issues/1102",
+          "number": 1102,
           "sha": null,
           "state": "open",
-          "materiality": 3
+          "materiality": 2
         }
       ],
       "semantic_change": {
-        "type": "unknown",
+        "type": "dependency",
         "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
+        "confidence": "moderate",
+        "matched_terms": [
+          "depend"
+        ],
+        "evidence_state": "derived"
       }
     },
     {
@@ -13486,7 +13644,7 @@
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
       "title": "fix(deps): update all non-major dependencies",
-      "timestamp": "2026-10-11T04:23:51Z",
+      "timestamp": "2026-10-12T00:23:21Z",
       "materiality": 3,
       "event_kinds": [
         "pull_request"
@@ -13501,7 +13659,7 @@
           "repository": "decentralized-identity/veramo",
           "portfolio": "Implementations & Tooling",
           "repo_kind": "repository",
-          "timestamp": "2026-10-11T04:23:51Z",
+          "timestamp": "2026-10-12T00:23:21Z",
           "title": "fix(deps): update all non-major dependencies",
           "url": "https://github.com/decentralized-identity/veramo/pull/1232",
           "number": 1232,
@@ -13521,52 +13679,12 @@
       }
     },
     {
-      "id": "toip-change-035c9defc8a1",
-      "repository": "decentralized-identity/did-resolver",
-      "portfolio": "Identifiers & Discovery",
-      "repo_kind": "repository",
-      "title": "Dependency Dashboard",
-      "timestamp": "2026-10-11T04:22:47Z",
-      "materiality": 2,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/decentralized-identity/did-resolver/issues/97"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "decentralized-identity/did-resolver",
-          "portfolio": "Identifiers & Discovery",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-11T04:22:47Z",
-          "title": "Dependency Dashboard",
-          "url": "https://github.com/decentralized-identity/did-resolver/issues/97",
-          "number": 97,
-          "sha": null,
-          "state": "open",
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "dependency",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "depend"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
       "id": "toip-change-feee6f67615f",
       "repository": "decentralized-identity/did-jwt-vc",
       "portfolio": "Claims & Credentials",
       "repo_kind": "repository",
       "title": "Dependency Dashboard",
-      "timestamp": "2026-10-11T04:22:42Z",
+      "timestamp": "2026-10-12T00:23:16Z",
       "materiality": 2,
       "event_kinds": [
         "issue"
@@ -13581,50 +13699,10 @@
           "repository": "decentralized-identity/did-jwt-vc",
           "portfolio": "Claims & Credentials",
           "repo_kind": "repository",
-          "timestamp": "2026-10-11T04:22:42Z",
+          "timestamp": "2026-10-12T00:23:16Z",
           "title": "Dependency Dashboard",
           "url": "https://github.com/decentralized-identity/did-jwt-vc/issues/88",
           "number": 88,
-          "sha": null,
-          "state": "open",
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "dependency",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "depend"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-474302a55541",
-      "repository": "decentralized-identity/did-jwt",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "title": "Dependency Dashboard",
-      "timestamp": "2026-10-11T04:22:42Z",
-      "materiality": 2,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/decentralized-identity/did-jwt/issues/194"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "decentralized-identity/did-jwt",
-          "portfolio": "Implementations & Tooling",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-11T04:22:42Z",
-          "title": "Dependency Dashboard",
-          "url": "https://github.com/decentralized-identity/did-jwt/issues/194",
-          "number": 194,
           "sha": null,
           "state": "open",
           "materiality": 2
@@ -13646,7 +13724,7 @@
       "portfolio": "Implementations & Tooling",
       "repo_kind": "repository",
       "title": "Dependency Dashboard",
-      "timestamp": "2026-10-11T04:22:14Z",
+      "timestamp": "2026-10-12T00:21:57Z",
       "materiality": 2,
       "event_kinds": [
         "issue"
@@ -13661,7 +13739,7 @@
           "repository": "decentralized-identity/ethr-did-resolver",
           "portfolio": "Implementations & Tooling",
           "repo_kind": "repository",
-          "timestamp": "2026-10-11T04:22:14Z",
+          "timestamp": "2026-10-12T00:21:57Z",
           "title": "Dependency Dashboard",
           "url": "https://github.com/decentralized-identity/ethr-did-resolver/issues/141",
           "number": 141,
@@ -13678,6 +13756,624 @@
           "depend"
         ],
         "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-035c9defc8a1",
+      "repository": "decentralized-identity/did-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "Dependency Dashboard",
+      "timestamp": "2026-10-12T00:21:26Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/did-resolver/issues/97"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/did-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-12T00:21:26Z",
+          "title": "Dependency Dashboard",
+          "url": "https://github.com/decentralized-identity/did-resolver/issues/97",
+          "number": 97,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "dependency",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "depend"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-474302a55541",
+      "repository": "decentralized-identity/did-jwt",
+      "portfolio": "Implementations & Tooling",
+      "repo_kind": "repository",
+      "title": "Dependency Dashboard",
+      "timestamp": "2026-10-12T00:21:26Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/did-jwt/issues/194"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "decentralized-identity/did-jwt",
+          "portfolio": "Implementations & Tooling",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-12T00:21:26Z",
+          "title": "Dependency Dashboard",
+          "url": "https://github.com/decentralized-identity/did-jwt/issues/194",
+          "number": 194,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "dependency",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "depend"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-edd614737914",
+      "repository": "decentralized-identity/didwebvh-ts",
+      "portfolio": "DID Methods",
+      "repo_kind": "repository",
+      "title": "feat(witness): API method for verify-then-sign behaviour for log entries",
+      "timestamp": "2026-10-11T22:40:39Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didwebvh-ts/pull/201"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "decentralized-identity/didwebvh-ts",
+          "portfolio": "DID Methods",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T22:40:39Z",
+          "title": "feat(witness): API method for verify-then-sign behaviour for log entries",
+          "url": "https://github.com/decentralized-identity/didwebvh-ts/pull/201",
+          "number": 201,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "api",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "api"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-4c1a6b37eda4",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "[skip ci] prepare for next development iteration",
+      "timestamp": "2026-10-11T21:46:07Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+        "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T21:46:07Z",
+          "title": "[skip ci] prepare for next development iteration",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+          "number": null,
+          "sha": "cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:45:59Z",
+          "title": "[skip ci] prepare for next development iteration",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0",
+          "number": null,
+          "sha": "d1414400a02e8a6a3330e943829b44774311acc0",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "ci"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-5a80ee73520a",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "[skip ci] prepare release 1.13.0",
+      "timestamp": "2026-10-11T21:45:56Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/fca3814576667abc797cc5e786c8718a11b65bd9",
+        "https://github.com/decentralized-identity/universal-resolver/commit/083561f8a53720c8d877349da546d443e9b69639"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T21:45:56Z",
+          "title": "[skip ci] prepare release 1.13.0",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/fca3814576667abc797cc5e786c8718a11b65bd9",
+          "number": null,
+          "sha": "fca3814576667abc797cc5e786c8718a11b65bd9",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:45:50Z",
+          "title": "[skip ci] prepare release 1.12.0",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/083561f8a53720c8d877349da546d443e9b69639",
+          "number": null,
+          "sha": "083561f8a53720c8d877349da546d443e9b69639",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "release"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-e7eabe792fe7",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "Support POST for drivers",
+      "timestamp": "2026-10-11T21:01:56Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/cbe4bb2007614d7fec5d673e8fa269bcf4b9a2b8"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T21:01:56Z",
+          "title": "Support POST for drivers",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/cbe4bb2007614d7fec5d673e8fa269bcf4b9a2b8",
+          "number": null,
+          "sha": "cbe4bb2007614d7fec5d673e8fa269bcf4b9a2b8",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-a66f09bc9222",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "Update did:cid driver to 0.2.1",
+      "timestamp": "2026-10-11T20:58:34Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/pull/595"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T20:58:34Z",
+          "title": "Update did:cid driver to 0.2.1",
+          "url": "https://github.com/decentralized-identity/universal-resolver/pull/595",
+          "number": 595,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "ci"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-f1751cb9818f",
+      "repository": "decentralized-identity/universal-registrar",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "[skip ci] prepare for next development iteration",
+      "timestamp": "2026-10-11T17:36:09Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-registrar",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:36:09Z",
+          "title": "[skip ci] prepare for next development iteration",
+          "url": "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a",
+          "number": null,
+          "sha": "14f0330cafc7b7034c95b32f847fdd3404697d3a",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "ci"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-986b6c67fb63",
+      "repository": "decentralized-identity/universal-registrar",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "[skip ci] prepare release 1.20.0",
+      "timestamp": "2026-10-11T17:35:56Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/3b567f4f40b8c135efcb41edb3696a7b4e92a9bc"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-registrar",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:35:56Z",
+          "title": "[skip ci] prepare release 1.20.0",
+          "url": "https://github.com/decentralized-identity/universal-registrar/commit/3b567f4f40b8c135efcb41edb3696a7b4e92a9bc",
+          "number": null,
+          "sha": "3b567f4f40b8c135efcb41edb3696a7b4e92a9bc",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "release"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-8af363782f47",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "Upgrade deps",
+      "timestamp": "2026-10-11T17:21:11Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/4a9cc4b84aa131f99a161151ac8cda00ead20ef3"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:21:11Z",
+          "title": "Upgrade deps",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/4a9cc4b84aa131f99a161151ac8cda00ead20ef3",
+          "number": null,
+          "sha": "4a9cc4b84aa131f99a161151ac8cda00ead20ef3",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-5b2985169887",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "ObjectMapper -> JsonMapper",
+      "timestamp": "2026-10-11T17:21:11Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/5eb7c53dbb1d4585df1187a3ad512ee32ecc81e8"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:21:11Z",
+          "title": "ObjectMapper -> JsonMapper",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/5eb7c53dbb1d4585df1187a3ad512ee32ecc81e8",
+          "number": null,
+          "sha": "5eb7c53dbb1d4585df1187a3ad512ee32ecc81e8",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-8bec4fad6601",
+      "repository": "decentralized-identity/universal-resolver",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "Updates for HTTP POST and HTTP headers support",
+      "timestamp": "2026-10-11T17:17:18Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/f1eb86ca060fdde310a6a62d6cb11792f848221d"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-resolver",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:17:18Z",
+          "title": "Updates for HTTP POST and HTTP headers support",
+          "url": "https://github.com/decentralized-identity/universal-resolver/commit/f1eb86ca060fdde310a6a62d6cb11792f848221d",
+          "number": null,
+          "sha": "f1eb86ca060fdde310a6a62d6cb11792f848221d",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "api",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "http"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-6ffccbd942f0",
+      "repository": "decentralized-identity/universal-registrar",
+      "portfolio": "Identifiers & Discovery",
+      "repo_kind": "repository",
+      "title": "Upgrade deps",
+      "timestamp": "2026-10-11T17:16:36Z",
+      "materiality": 1,
+      "event_kinds": [
+        "commit"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/bc434b8e44b58eb41cbc5979a026f6cbbc89ac3b"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "decentralized-identity/universal-registrar",
+          "portfolio": "Identifiers & Discovery",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T17:16:36Z",
+          "title": "Upgrade deps",
+          "url": "https://github.com/decentralized-identity/universal-registrar/commit/bc434b8e44b58eb41cbc5979a026f6cbbc89ac3b",
+          "number": null,
+          "sha": "bc434b8e44b58eb41cbc5979a026f6cbbc89ac3b",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-289359edd12c",
+      "repository": "decentralized-identity/didcomm-messaging",
+      "portfolio": "DIDComm",
+      "repo_kind": "repository",
+      "title": "Add writerslogic/didcomm-ts to the implementations list",
+      "timestamp": "2026-10-11T16:04:27Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/didcomm-messaging/pull/467"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "decentralized-identity/didcomm-messaging",
+          "portfolio": "DIDComm",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T16:04:27Z",
+          "title": "Add writerslogic/didcomm-ts to the implementations list",
+          "url": "https://github.com/decentralized-identity/didcomm-messaging/pull/467",
+          "number": 467,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "implementation",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "implement"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-40bce2365d45",
+      "repository": "decentralized-identity/veramo",
+      "portfolio": "Implementations & Tooling",
+      "repo_kind": "repository",
+      "title": "chore(deps): update devdeps (major)",
+      "timestamp": "2026-10-11T08:22:07Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/decentralized-identity/veramo/pull/1372"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "decentralized-identity/veramo",
+          "portfolio": "Implementations & Tooling",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T08:22:07Z",
+          "title": "chore(deps): update devdeps (major)",
+          "url": "https://github.com/decentralized-identity/veramo/pull/1372",
+          "number": 1372,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
       }
     },
     {
@@ -13834,46 +14530,6 @@
         "confidence": "moderate",
         "matched_terms": [
           "code"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-53a9236b213c",
-      "repository": "decentralized-identity/veramo",
-      "portfolio": "Implementations & Tooling",
-      "repo_kind": "repository",
-      "title": "Dependency Dashboard",
-      "timestamp": "2026-10-11T00:23:16Z",
-      "materiality": 2,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/decentralized-identity/veramo/issues/1102"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "decentralized-identity/veramo",
-          "portfolio": "Implementations & Tooling",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-11T00:23:16Z",
-          "title": "Dependency Dashboard",
-          "url": "https://github.com/decentralized-identity/veramo/issues/1102",
-          "number": 1102,
-          "sha": null,
-          "state": "open",
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "dependency",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "depend"
         ],
         "evidence_state": "derived"
       }
@@ -14539,46 +15195,6 @@
         "confidence": "moderate",
         "matched_terms": [
           "release"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-289359edd12c",
-      "repository": "decentralized-identity/didcomm-messaging",
-      "portfolio": "DIDComm",
-      "repo_kind": "repository",
-      "title": "Add writerslogic/didcomm-ts to the implementations list",
-      "timestamp": "2026-10-09T21:30:04Z",
-      "materiality": 3,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/decentralized-identity/didcomm-messaging/pull/467"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "decentralized-identity/didcomm-messaging",
-          "portfolio": "DIDComm",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-09T21:30:04Z",
-          "title": "Add writerslogic/didcomm-ts to the implementations list",
-          "url": "https://github.com/decentralized-identity/didcomm-messaging/pull/467",
-          "number": 467,
-          "sha": null,
-          "state": "open",
-          "materiality": 3
-        }
-      ],
-      "semantic_change": {
-        "type": "implementation",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "implement"
         ],
         "evidence_state": "derived"
       }
@@ -17470,46 +18086,6 @@
         "confidence": "moderate",
         "matched_terms": [
           "fix"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-edd614737914",
-      "repository": "decentralized-identity/didwebvh-ts",
-      "portfolio": "DID Methods",
-      "repo_kind": "repository",
-      "title": "feat(witness): API method for verify-then-sign behaviour for log entries",
-      "timestamp": "2026-10-08T09:10:16Z",
-      "materiality": 3,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/decentralized-identity/didwebvh-ts/pull/201"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "decentralized-identity/didwebvh-ts",
-          "portfolio": "DID Methods",
-          "repo_kind": "repository",
-          "timestamp": "2026-10-08T09:10:16Z",
-          "title": "feat(witness): API method for verify-then-sign behaviour for log entries",
-          "url": "https://github.com/decentralized-identity/didwebvh-ts/pull/201",
-          "number": 201,
-          "sha": null,
-          "state": "open",
-          "materiality": 3
-        }
-      ],
-      "semantic_change": {
-        "type": "api",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "api"
         ],
         "evidence_state": "derived"
       }
@@ -21752,6 +22328,24 @@
       "evidence_state": "observed"
     },
     {
+      "id": "tem-relationship-502900e96f78",
+      "source_repository": "decentralized-identity/universal-registrar",
+      "target_repository": "decentralized-identity/ion",
+      "source_portfolio": "Identifiers & Discovery",
+      "target_portfolio": "Sidetree / ION",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-f1751cb9818f",
+      "semantic_change_type": "implementation",
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a"
+      ],
+      "evidence_state": "observed"
+    },
+    {
       "id": "tem-relationship-aaffd7770100",
       "source_repository": "decentralized-identity/universal-resolver",
       "target_repository": "decentralized-identity/ion",
@@ -21804,6 +22398,25 @@
       "semantic_change_type": "release",
       "evidence": [
         "https://github.com/decentralized-identity/universal-resolver/pull/544"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-720625f10fa2",
+      "source_repository": "decentralized-identity/universal-resolver",
+      "target_repository": "decentralized-identity/ion",
+      "source_portfolio": "Identifiers & Discovery",
+      "target_portfolio": "Sidetree / ION",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-4c1a6b37eda4",
+      "semantic_change_type": "implementation",
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+        "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0"
       ],
       "evidence_state": "observed"
     },
@@ -22197,7 +22810,7 @@
       "relationship_id": "tem-relationship-d1f38459dc08",
       "trigger_change_unit": "toip-change-035c9defc8a1",
       "responding_change_unit": null,
-      "trigger_timestamp": "2026-10-11T04:22:47Z",
+      "trigger_timestamp": "2026-10-12T00:21:26Z",
       "response_timestamp": null,
       "trigger_semantic_change_type": "dependency",
       "relationship_evidence": [
@@ -22643,7 +23256,7 @@
       "trigger_change_unit": null,
       "responding_change_unit": "toip-change-289359edd12c",
       "trigger_timestamp": null,
-      "response_timestamp": "2026-10-09T21:30:04Z",
+      "response_timestamp": "2026-10-11T16:04:27Z",
       "relationship_evidence": [
         "https://github.com/decentralized-identity/didcomm-messaging/pull/467"
       ],
@@ -22661,7 +23274,7 @@
       "trigger_change_unit": null,
       "responding_change_unit": "toip-change-289359edd12c",
       "trigger_timestamp": null,
-      "response_timestamp": "2026-10-09T21:30:04Z",
+      "response_timestamp": "2026-10-11T16:04:27Z",
       "relationship_evidence": [
         "https://github.com/decentralized-identity/didcomm-messaging/pull/467"
       ],
@@ -23159,6 +23772,24 @@
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
     {
+      "id": "tem-propagation-1534ef86fe4f",
+      "state": "insufficient_history",
+      "referencing_repository": "decentralized-identity/universal-registrar",
+      "referenced_repository": "decentralized-identity/ion",
+      "relationship_id": "tem-relationship-502900e96f78",
+      "trigger_change_unit": null,
+      "responding_change_unit": "toip-change-f1751cb9818f",
+      "trigger_timestamp": null,
+      "response_timestamp": "2026-10-11T17:36:09Z",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
       "id": "tem-propagation-2e5c6b897e12",
       "state": "insufficient_history",
       "referencing_repository": "decentralized-identity/universal-resolver",
@@ -23213,6 +23844,26 @@
       ],
       "evidence": [
         "https://github.com/decentralized-identity/universal-resolver/pull/544"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-cb37e49cebae",
+      "state": "insufficient_history",
+      "referencing_repository": "decentralized-identity/universal-resolver",
+      "referenced_repository": "decentralized-identity/ion",
+      "relationship_id": "tem-relationship-720625f10fa2",
+      "trigger_change_unit": null,
+      "responding_change_unit": "toip-change-4c1a6b37eda4",
+      "trigger_timestamp": null,
+      "response_timestamp": "2026-10-11T21:46:07Z",
+      "relationship_evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+        "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0"
+      ],
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+        "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
@@ -24359,6 +25010,39 @@
       "materiality": 1
     },
     {
+      "id": "toip-seam-f7d5f8c00466",
+      "strength": "explicit-reference",
+      "source_portfolio": "Identifiers & Discovery",
+      "target_portfolio": "Sidetree / ION",
+      "source_repository": "decentralized-identity/universal-resolver",
+      "target_repository": "decentralized-identity/ion",
+      "summary": "decentralized-identity/universal-resolver references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+        "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 1
+    },
+    {
+      "id": "toip-seam-bbf7a445b29c",
+      "strength": "explicit-reference",
+      "source_portfolio": "Identifiers & Discovery",
+      "target_portfolio": "Sidetree / ION",
+      "source_repository": "decentralized-identity/universal-registrar",
+      "target_repository": "decentralized-identity/ion",
+      "summary": "decentralized-identity/universal-registrar references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 1
+    },
+    {
       "id": "toip-seam-2225af788d52",
       "strength": "explicit-reference",
       "source_portfolio": "Secure Data Storage / DWN",
@@ -25265,6 +25949,21 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-a55a0aedacb9",
+      "category": "cross-portfolio-seam",
+      "subject": "decentralized-identity/universal-resolver",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "decentralized-identity/universal-resolver references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-resolver/commit/cd9e317fb55f08ad8b0cfd4e4ea9ec1433329cb1",
+        "https://github.com/decentralized-identity/universal-resolver/commit/d1414400a02e8a6a3330e943829b44774311acc0"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-a659d24bd5f8",
       "category": "cross-portfolio-seam",
       "subject": "decentralized-identity/bbs-signature",
@@ -25401,6 +26100,20 @@
       "summary": "decentralized-identity/delegated-authority-evaluations references decentralized-identity/ion in a current change unit.",
       "evidence": [
         "https://github.com/decentralized-identity/delegated-authority-evaluations/pull/11"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-d21b102284ad",
+      "category": "cross-portfolio-seam",
+      "subject": "decentralized-identity/universal-registrar",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "decentralized-identity/universal-registrar references decentralized-identity/ion in a current change unit.",
+      "evidence": [
+        "https://github.com/decentralized-identity/universal-registrar/commit/14f0330cafc7b7034c95b32f847fdd3404697d3a"
       ],
       "disposition": null
     },
@@ -25676,7 +26389,7 @@
       "response_change_unit": "toip-change-4a2d091304da",
       "response_timestamp": "2026-09-18T17:17:00Z",
       "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
@@ -25710,7 +26423,7 @@
       "response_change_unit": "toip-change-b2a92a4c47e2",
       "response_timestamp": "2026-09-21T23:44:03Z",
       "created_at": "2026-09-14T02:03:44Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/5ea4ec243bbd50dee27da2a0b7f45f051bacf385",
         "https://github.com/decentralized-identity/did-jwt-vc/pull/158",
@@ -25742,7 +26455,7 @@
       "response_change_unit": "toip-change-1906cd56024f",
       "response_timestamp": "2026-09-21T16:11:42Z",
       "created_at": "2026-09-23T21:07:38Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/pull/297",
         "https://github.com/decentralized-identity/didwebvh-py/issues/33",
@@ -25774,7 +26487,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T22:31:17Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh/issues/295",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -25807,7 +26520,7 @@
       "response_change_unit": "toip-change-1ed29a7f2173",
       "response_timestamp": "2026-09-22T22:50:08Z",
       "created_at": "2026-09-16T10:08:41Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/didwebvh-ts/commit/5838e48a065adb7dc58f4694347037366274c7ec",
         "https://github.com/decentralized-identity/didwebvh-test-suite/pull/21",
@@ -25839,7 +26552,7 @@
       "response_change_unit": "toip-change-a300091fec5e",
       "response_timestamp": "2026-09-19T17:25:31Z",
       "created_at": "2026-09-20T06:47:17Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/171",
         "https://github.com/decentralized-identity/didwebvh-ts/commit/c5d82f72c23b30d694a641e3669ac94307aaa256",
@@ -25872,7 +26585,7 @@
       "response_change_unit": "toip-change-0d756280880c",
       "response_timestamp": "2026-09-23T18:10:22Z",
       "created_at": "2026-09-19T09:13:09Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/170",
         "https://github.com/decentralized-identity/did-resolver/commit/04ffc6700ccb88ca44332cb96911ed5e9fa3becc",
@@ -25907,7 +26620,7 @@
       "response_change_unit": "toip-change-db7522b124af",
       "response_timestamp": "2026-09-23T11:37:37Z",
       "created_at": "2026-09-18T12:48:33Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/338",
         "https://github.com/decentralized-identity/did-jwt/commit/470fe5d8850711ba2be845fa352d0b753600a772",
@@ -25941,7 +26654,7 @@
       "response_change_unit": "toip-change-e906292a73ce",
       "response_timestamp": "2026-09-23T11:37:43Z",
       "created_at": "2026-09-16T11:26:49Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/pull/164",
         "https://github.com/decentralized-identity/did-resolver/commit/607da04b6aaa1a80cc22378fd07ab8a6ce9ebf65",
@@ -25975,7 +26688,7 @@
       "response_change_unit": "toip-change-72ecb9b2cdb1",
       "response_timestamp": "2026-10-06T16:50:52Z",
       "created_at": "2026-10-08T08:48:03Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/web-did-resolver/commit/5a7be84c4d39ac6b22fb37f8d29657f79597195a",
         "https://github.com/decentralized-identity/web-did-resolver/pull/152",
@@ -26008,7 +26721,7 @@
       "response_change_unit": "toip-change-d90b7a0e9f47",
       "response_timestamp": "2026-09-24T13:26:29Z",
       "created_at": "2026-09-23T05:03:05Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-resolver/commit/076a972c40b55312912826761c67535460fd27da",
         "https://github.com/decentralized-identity/did-resolver/pull/175",
@@ -26042,7 +26755,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-03T01:34:48Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/did-jwt/pull/358",
         "https://github.com/decentralized-identity/did-jwt/commit/609d684b5c6505227445bda47fa21a3ae41f57c0",
@@ -26074,7 +26787,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-09-15T22:11:06Z",
-      "last_observed_at": "2026-10-11T04:25:22.958039+00:00",
+      "last_observed_at": "2026-10-12T00:40:52.898881+00:00",
       "evidence": [
         "https://github.com/decentralized-identity/thisdid/pull/2",
         "https://github.com/decentralized-identity/didwebvh-test-suite/commit/f98baa75b1d648dea84b0dd201eeac9f9cbc94d1",

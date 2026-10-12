@@ -1,17 +1,17 @@
 {
   "schema_version": "0.2",
   "organization": "trustoverip",
-  "generated_at": "2026-10-11T04:25:11.625116+00:00",
+  "generated_at": "2026-10-12T00:40:39.668954+00:00",
   "period": {
-    "since": "2026-10-04T04:25:11.625116+00:00",
-    "until": "2026-10-11T04:25:11.625116+00:00",
+    "since": "2026-10-05T00:40:39.668954+00:00",
+    "until": "2026-10-12T00:40:39.668954+00:00",
     "lookback_days": 7
   },
   "provenance": {
     "source": "GitHub REST API",
     "collector": "trust-ecosystem-monitor",
     "deterministic_classification": true,
-    "previous_snapshot": "2026-10-10T05:18:15.023408+00:00"
+    "previous_snapshot": "2026-10-11T04:25:11.625116+00:00"
   },
   "repositories": [
     {
@@ -1036,7 +1036,7 @@
       "description": null,
       "created_at": "2026-03-10T11:04:03Z",
       "updated_at": "2026-10-07T10:21:51Z",
-      "pushed_at": "2026-10-08T10:46:44Z",
+      "pushed_at": "2026-10-11T23:36:38Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -1152,8 +1152,8 @@
       "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf",
       "description": "Trust Tasks - Transport Agnostic protocol for managing Tasks",
       "created_at": "2026-03-10T11:03:53Z",
-      "updated_at": "2026-10-10T19:38:04Z",
-      "pushed_at": "2026-10-10T19:39:08Z",
+      "updated_at": "2026-10-11T17:41:42Z",
+      "pushed_at": "2026-10-11T17:42:44Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -1308,8 +1308,8 @@
       "url": "https://github.com/trustoverip/dtgwg-vsc-registry",
       "description": null,
       "created_at": "2026-09-24T10:06:07Z",
-      "updated_at": "2026-10-10T14:30:05Z",
-      "pushed_at": "2026-10-10T14:30:02Z",
+      "updated_at": "2026-10-11T21:09:28Z",
+      "pushed_at": "2026-10-11T21:09:27Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -1347,8 +1347,8 @@
       "url": "https://github.com/trustoverip/dtgwg-vti-spec",
       "description": null,
       "created_at": "2026-09-02T18:15:22Z",
-      "updated_at": "2026-10-05T10:08:07Z",
-      "pushed_at": "2026-10-10T09:11:39Z",
+      "updated_at": "2026-10-11T11:25:09Z",
+      "pushed_at": "2026-10-11T19:33:47Z",
       "archived": false,
       "fork": false,
       "default_branch": "main",
@@ -4619,6 +4619,825 @@
   ],
   "events": [
     {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T23:44:47Z",
+      "title": "Runtime evidence request for keys/sign-jws and keys/sign-csr protocol-signature tasks",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/issues/752",
+      "number": 752,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "issue",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T23:37:01Z",
+      "title": "method(assurance): deliver a usable shared RAHP baseline through upstream convergence",
+      "url": "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17",
+      "number": 17,
+      "sha": null,
+      "state": "open",
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T23:36:48Z",
+      "title": "fix(validation): fail closed on missing schema dependency (Increment 4)",
+      "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22",
+      "number": 22,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T23:34:32Z",
+      "title": "feat(validation): compose review checks with shared vocabulary (Increment 3)",
+      "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/21",
+      "number": 21,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T23:29:24Z",
+      "title": "test(adoption): add retained-source TRQP replay (Increment 1)",
+      "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19",
+      "number": 19,
+      "sha": null,
+      "state": "open",
+      "materiality": 3
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-vsc-registry",
+      "portfolio": "DTG",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T21:09:24Z",
+      "title": "Worker: pass a 304 from the asset store through instead of reporting it as a redirect (#29)",
+      "url": "https://github.com/trustoverip/dtgwg-vsc-registry/commit/b1de2f11c3e8399f9d07b897e998db911b7d3c59",
+      "number": null,
+      "sha": "b1de2f11c3e8399f9d07b897e998db911b7d3c59",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-vsc-registry",
+      "portfolio": "DTG",
+      "repo_kind": "repository",
+      "timestamp": "2026-10-11T21:09:24Z",
+      "title": "Worker: pass a 304 from the asset store through instead of reporting it as a redirect",
+      "url": "https://github.com/trustoverip/dtgwg-vsc-registry/pull/29",
+      "number": 29,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-vti-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-10-11T19:35:41Z",
+      "title": "Specify trigger links: the QR code or link that starts an exchange with a wallet (VTI-LNK-001 \u2013 124)",
+      "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/58",
+      "number": 58,
+      "sha": null,
+      "state": "open",
+      "materiality": 4
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:44Z",
+      "title": "trust-tasks-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:40Z",
+      "title": "trust-tasks-tsp-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:36Z",
+      "title": "trust-tasks-proof-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:32Z",
+      "title": "trust-tasks-https-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:29Z",
+      "title": "trust-tasks-didcomm-v1-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:25Z",
+      "title": "trust-tasks-didcomm-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:21Z",
+      "title": "trust-tasks-capability-client-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:42:17Z",
+      "title": "trust-tasks-rs-v0.30.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.30.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:41:37Z",
+      "title": "chore: release 11 packages (#751)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/b9c679aae201879643f641752ffe19af6fe91f90",
+      "number": null,
+      "sha": "b9c679aae201879643f641752ffe19af6fe91f90",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T17:41:37Z",
+      "title": "chore: release 11 packages",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/751",
+      "number": 751,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T16:01:23Z",
+      "title": "spec(rooms)!: rooms/info and rooms/usage require a proof, like every other rooms/* task (#750)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/7c49f71a300e2632fe135b8d2c7b705747a5d29a",
+      "number": null,
+      "sha": "7c49f71a300e2632fe135b8d2c7b705747a5d29a",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T16:01:23Z",
+      "title": "spec(rooms)!: rooms/info and rooms/usage require a proof, like every other rooms/* task",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/750",
+      "number": 750,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:41Z",
+      "title": "trust-tasks-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:36Z",
+      "title": "trust-tasks-tsp-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:31Z",
+      "title": "trust-tasks-proof-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:25Z",
+      "title": "trust-tasks-https-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:20Z",
+      "title": "trust-tasks-didcomm-v1-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:15Z",
+      "title": "trust-tasks-didcomm-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:10Z",
+      "title": "trust-tasks-capability-client-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:15:06Z",
+      "title": "trust-tasks-rs-v0.29.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.29.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:14:23Z",
+      "title": "chore: release 11 packages",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/748",
+      "number": 748,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T15:14:22Z",
+      "title": "chore: release 11 packages (#748)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/a8d5959fd9e5a585b05f3c7722f111d89f8ad84b",
+      "number": null,
+      "sha": "a8d5959fd9e5a585b05f3c7722f111d89f8ad84b",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T14:47:04Z",
+      "title": "feat(keys): sign-jws and sign-csr \u2014 protocol signatures from a VTA-held key",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/749",
+      "number": 749,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T14:47:03Z",
+      "title": "feat(keys): sign-jws and sign-csr \u2014 protocol signatures from a VTA-held key (#749)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/e5354095432a9824e091b4e1889e8e0c2c8aca60",
+      "number": null,
+      "sha": "e5354095432a9824e091b4e1889e8e0c2c8aca60",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T14:27:06Z",
+      "title": "spec(rooms): define the sealed record body, signed by its author and bound to its location",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/747",
+      "number": 747,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T14:27:05Z",
+      "title": "spec(rooms): define the sealed record body, signed by its author and bound to its location (#747)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c98afcf7da9ad4a5f5eb53bbfff5ea14de5e2cc4",
+      "number": null,
+      "sha": "c98afcf7da9ad4a5f5eb53bbfff5ea14de5e2cc4",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:49:13Z",
+      "title": "trust-tasks-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:49:09Z",
+      "title": "trust-tasks-tsp-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:49:04Z",
+      "title": "trust-tasks-proof-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:49:00Z",
+      "title": "trust-tasks-https-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:48:56Z",
+      "title": "trust-tasks-didcomm-v1-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:48:52Z",
+      "title": "trust-tasks-didcomm-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:48:48Z",
+      "title": "trust-tasks-capability-client-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:48:43Z",
+      "title": "trust-tasks-rs-v0.28.1",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.1",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:47:58Z",
+      "title": "chore: release 11 packages",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/746",
+      "number": 746,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T12:47:57Z",
+      "title": "chore: release 11 packages (#746)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/bcf9f97d5d304950e09739e8b926ec4e2868564c",
+      "number": null,
+      "sha": "bcf9f97d5d304950e09739e8b926ec4e2868564c",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T11:50:49Z",
+      "title": "feat(vtc): wallet presentation sessions for a join \u2014 start and status",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/745",
+      "number": 745,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T11:50:48Z",
+      "title": "feat(vtc): wallet presentation sessions for a join \u2014 start and status (#745)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/f092fef181faec6419f1dad0d8b20b02c6911819",
+      "number": null,
+      "sha": "f092fef181faec6419f1dad0d8b20b02c6911819",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-vti-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-10-11T11:40:14Z",
+      "title": "Keep the trigger-link format protocol-neutral; make the Trust Task first request VTI's adoption (VTI-LNK-054, 055, 057)",
+      "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/59",
+      "number": 59,
+      "sha": null,
+      "state": "merged",
+      "materiality": 5
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-vti-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-10-11T11:25:04Z",
+      "title": "A foreign-protocol interface serves an exchange a task began, and is a binding rather than a parallel interface (VTI-OPS-095 \u2013 099, VTI-CRD-024 \u2013 025) (#60)",
+      "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/dc1ec07d42ec5c0054037795c06dbead608fbc5b",
+      "number": null,
+      "sha": "dc1ec07d42ec5c0054037795c06dbead608fbc5b",
+      "state": null,
+      "materiality": 2
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-vti-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "timestamp": "2026-10-11T11:25:04Z",
+      "title": "A foreign-protocol interface serves an exchange a task began, and is a binding rather than a parallel interface (VTI-OPS-095 \u2013 099, VTI-CRD-024 \u2013 025)",
+      "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/60",
+      "number": 60,
+      "sha": null,
+      "state": "merged",
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:40:12Z",
+      "title": "trust-tasks-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:40:08Z",
+      "title": "trust-tasks-tsp-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:40:04Z",
+      "title": "trust-tasks-proof-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:40:00Z",
+      "title": "trust-tasks-https-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:39:55Z",
+      "title": "trust-tasks-didcomm-v1-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:39:51Z",
+      "title": "trust-tasks-didcomm-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:39:47Z",
+      "title": "trust-tasks-capability-client-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "release",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:39:43Z",
+      "title": "trust-tasks-rs-v0.28.0",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.0",
+      "number": null,
+      "sha": null,
+      "state": null,
+      "materiality": 5
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:39:00Z",
+      "title": "chore: release 11 packages (#744)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/774f58182086906ab5adcb73b1d6dba5190fc93a",
+      "number": null,
+      "sha": "774f58182086906ab5adcb73b1d6dba5190fc93a",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T08:39:00Z",
+      "title": "chore: release 11 packages",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/744",
+      "number": 744,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T07:46:54Z",
+      "title": "spec(rooms)!: an unauthorized room request is refused with the standard permissionDenied",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/743",
+      "number": 743,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T07:46:53Z",
+      "title": "spec(rooms)!: an unauthorized room request is refused with the standard permissionDenied (#743)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/854c5a51ca5afb8a1cefd43adbbe9f89950b2377",
+      "number": null,
+      "sha": "854c5a51ca5afb8a1cefd43adbbe9f89950b2377",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "commit",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T07:26:25Z",
+      "title": "feat(rs): declared error codes carry their detailsSchema, and a titled variant no longer generates doctests (#742)",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+      "number": null,
+      "sha": "1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+      "state": null,
+      "materiality": 1
+    },
+    {
+      "kind": "pull_request",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "timestamp": "2026-10-11T07:26:25Z",
+      "title": "feat(rs): declared error codes carry their detailsSchema, and a titled variant no longer generates doctests",
+      "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742",
+      "number": 742,
+      "sha": null,
+      "state": "merged",
+      "materiality": 4
+    },
+    {
       "kind": "release",
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
@@ -4828,19 +5647,6 @@
     },
     {
       "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-10T17:02:21Z",
-      "title": "Specify trigger links: the QR code or link that starts an exchange with a wallet (VTI-LNK-001 \u2013 116)",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/58",
-      "number": 58,
-      "sha": null,
-      "state": "open",
-      "materiality": 4
-    },
-    {
-      "kind": "pull_request",
       "repository": "trustoverip/dtgwg-vsc-registry",
       "portfolio": "DTG",
       "repo_kind": "repository",
@@ -4864,19 +5670,6 @@
       "sha": "e6f3ea48c354be5904d1ca3c4c387e5a2bc0dbaf",
       "state": null,
       "materiality": 1
-    },
-    {
-      "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-10T09:11:49Z",
-      "title": "Keep the trigger-link format protocol-neutral; make the Trust Task first request VTI's adoption (VTI-LNK-054, 055, 057)",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/59",
-      "number": 59,
-      "sha": null,
-      "state": "open",
-      "materiality": 4
     },
     {
       "kind": "issue",
@@ -5100,19 +5893,6 @@
       "materiality": 1
     },
     {
-      "kind": "issue",
-      "repository": "trustoverip/dtgwg-rahp-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-08T10:47:15Z",
-      "title": "method(assurance): deliver a usable shared RAHP baseline through upstream convergence",
-      "url": "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17",
-      "number": 17,
-      "sha": null,
-      "state": "open",
-      "materiality": 2
-    },
-    {
       "kind": "pull_request",
       "repository": "trustoverip/dtgwg-rahp-tf",
       "portfolio": "DTG",
@@ -5121,19 +5901,6 @@
       "title": "feat(review): bind examination evidence to review records (Increment 2)",
       "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/20",
       "number": 20,
-      "sha": null,
-      "state": "open",
-      "materiality": 3
-    },
-    {
-      "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-rahp-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "timestamp": "2026-10-08T10:47:12Z",
-      "title": "test(adoption): add retained-source TRQP replay (Increment 1)",
-      "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19",
-      "number": 19,
       "sha": null,
       "state": "open",
       "materiality": 3
@@ -6762,97 +7529,6 @@
       "sha": null,
       "state": "merged",
       "materiality": 4
-    },
-    {
-      "kind": "issue",
-      "repository": "trustoverip/dtgwg-cred-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-04T19:17:39Z",
-      "title": "Should a VTC's identifier be required to be \"public\", or may a restricted community be \"directed\"?",
-      "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/75",
-      "number": 75,
-      "sha": null,
-      "state": "open",
-      "materiality": 3
-    },
-    {
-      "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-cred-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-04T19:05:08Z",
-      "title": "Update correlation scope; minor wording things before",
-      "url": "https://github.com/trustoverip/dtgwg-cred-spec/pull/74",
-      "number": 74,
-      "sha": null,
-      "state": "open",
-      "materiality": 4
-    },
-    {
-      "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-cred-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-04T13:15:52Z",
-      "title": "Update: Introduction; promote Specification Versioning to a normative\u2026",
-      "url": "https://github.com/trustoverip/dtgwg-cred-spec/pull/73",
-      "number": 73,
-      "sha": null,
-      "state": "open",
-      "materiality": 4
-    },
-    {
-      "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-04T06:11:56Z",
-      "title": "Single-administrator mode is one person, under as many identifiers as they hold (VTI-APV-022, VTI-ACL-052)",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-      "number": 55,
-      "sha": null,
-      "state": "merged",
-      "materiality": 5
-    },
-    {
-      "kind": "commit",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-04T06:11:55Z",
-      "title": "Single-administrator mode is one person, under as many identifiers as they hold (VTI-APV-022, VTI-ACL-052) (#55)",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad",
-      "number": null,
-      "sha": "7e6faa2d178a8d6de906e0fe26925afd9bda8bad",
-      "state": null,
-      "materiality": 2
-    },
-    {
-      "kind": "pull_request",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-04T06:05:02Z",
-      "title": "A subject may relabel its own entry, and a sole administrator in single-administrator mode may edit its own (VTI-ACL-052)",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-      "number": 54,
-      "sha": null,
-      "state": "merged",
-      "materiality": 5
-    },
-    {
-      "kind": "commit",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "timestamp": "2026-10-04T06:05:01Z",
-      "title": "A subject may relabel its own entry, and a sole administrator in single-administrator mode may edit its own (VTI-ACL-052) (#54)",
-      "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7",
-      "number": null,
-      "sha": "a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7",
-      "state": null,
-      "materiality": 2
     }
   ],
   "assertions": [
@@ -6954,18 +7630,315 @@
   ],
   "change_units": [
     {
+      "id": "toip-change-97e5b195b67a",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "Runtime evidence request for keys/sign-jws and keys/sign-csr protocol-signature tasks",
+      "timestamp": "2026-10-11T23:44:47Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/issues/752"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T23:44:47Z",
+          "title": "Runtime evidence request for keys/sign-jws and keys/sign-csr protocol-signature tasks",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/issues/752",
+          "number": 752,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "protocol"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-3140fc85370b",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "method(assurance): deliver a usable shared RAHP baseline through upstream convergence",
+      "timestamp": "2026-10-11T23:37:01Z",
+      "materiality": 2,
+      "event_kinds": [
+        "issue"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17"
+      ],
+      "events": [
+        {
+          "kind": "issue",
+          "repository": "trustoverip/dtgwg-rahp-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T23:37:01Z",
+          "title": "method(assurance): deliver a usable shared RAHP baseline through upstream convergence",
+          "url": "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17",
+          "number": 17,
+          "sha": null,
+          "state": "open",
+          "materiality": 2
+        }
+      ],
+      "semantic_change": {
+        "type": "dependency",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "upstream"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-73dd002f6e46",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "fix(validation): fail closed on missing schema dependency (Increment 4)",
+      "timestamp": "2026-10-11T23:36:48Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-rahp-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T23:36:48Z",
+          "title": "fix(validation): fail closed on missing schema dependency (Increment 4)",
+          "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22",
+          "number": 22,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "schema",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "schema"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-80a112935e9b",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "feat(validation): compose review checks with shared vocabulary (Increment 3)",
+      "timestamp": "2026-10-11T23:34:32Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/21"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-rahp-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T23:34:32Z",
+          "title": "feat(validation): compose review checks with shared vocabulary (Increment 3)",
+          "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/21",
+          "number": 21,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-a4acc891ee66",
+      "repository": "trustoverip/dtgwg-rahp-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "test(adoption): add retained-source TRQP replay (Increment 1)",
+      "timestamp": "2026-10-11T23:29:24Z",
+      "materiality": 3,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-rahp-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T23:29:24Z",
+          "title": "test(adoption): add retained-source TRQP replay (Increment 1)",
+          "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19",
+          "number": 19,
+          "sha": null,
+          "state": "open",
+          "materiality": 3
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-3dad624f14c9",
+      "repository": "trustoverip/dtgwg-vsc-registry",
+      "portfolio": "DTG",
+      "repo_kind": "repository",
+      "title": "Worker: pass a 304 from the asset store through instead of reporting it as a redirect",
+      "timestamp": "2026-10-11T21:09:24Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vsc-registry/commit/b1de2f11c3e8399f9d07b897e998db911b7d3c59",
+        "https://github.com/trustoverip/dtgwg-vsc-registry/pull/29"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-vsc-registry",
+          "portfolio": "DTG",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T21:09:24Z",
+          "title": "Worker: pass a 304 from the asset store through instead of reporting it as a redirect (#29)",
+          "url": "https://github.com/trustoverip/dtgwg-vsc-registry/commit/b1de2f11c3e8399f9d07b897e998db911b7d3c59",
+          "number": null,
+          "sha": "b1de2f11c3e8399f9d07b897e998db911b7d3c59",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-vsc-registry",
+          "portfolio": "DTG",
+          "repo_kind": "repository",
+          "timestamp": "2026-10-11T21:09:24Z",
+          "title": "Worker: pass a 304 from the asset store through instead of reporting it as a redirect",
+          "url": "https://github.com/trustoverip/dtgwg-vsc-registry/pull/29",
+          "number": 29,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "unknown",
+        "method": "deterministic-keyword-v1",
+        "confidence": "low",
+        "matched_terms": [],
+        "evidence_state": "insufficient"
+      }
+    },
+    {
+      "id": "toip-change-8d017c3b06d6",
+      "repository": "trustoverip/dtgwg-vti-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Specify trigger links: the QR code or link that starts an exchange with a wallet (VTI-LNK-001 \u2013 124)",
+      "timestamp": "2026-10-11T19:35:41Z",
+      "materiality": 4,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vti-spec/pull/58"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-vti-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-10-11T19:35:41Z",
+          "title": "Specify trigger links: the QR code or link that starts an exchange with a wallet (VTI-LNK-001 \u2013 124)",
+          "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/58",
+          "number": 58,
+          "sha": null,
+          "state": "open",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
       "id": "toip-change-d5271d36a451",
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
       "repo_kind": "task-force",
-      "title": "trust-tasks-v0.27.8",
-      "timestamp": "2026-10-10T19:39:09Z",
+      "title": "trust-tasks-v0.30.0",
+      "timestamp": "2026-10-11T17:42:44Z",
       "materiality": 5,
       "event_kinds": [
         "release"
       ],
-      "event_count": 8,
+      "event_count": 16,
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.7",
@@ -6976,6 +7949,110 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.5"
       ],
       "events": [
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:44Z",
+          "title": "trust-tasks-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:17Z",
+          "title": "trust-tasks-rs-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:41Z",
+          "title": "trust-tasks-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:06Z",
+          "title": "trust-tasks-rs-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:49:13Z",
+          "title": "trust-tasks-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:48:43Z",
+          "title": "trust-tasks-rs-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:40:12Z",
+          "title": "trust-tasks-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:39:43Z",
+          "title": "trust-tasks-rs-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
         {
           "kind": "release",
           "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -7094,20 +8171,76 @@
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
       "repo_kind": "task-force",
-      "title": "trust-tasks-tsp-v0.27.8",
-      "timestamp": "2026-10-10T19:39:05Z",
+      "title": "trust-tasks-tsp-v0.30.0",
+      "timestamp": "2026-10-11T17:42:40Z",
       "materiality": 5,
       "event_kinds": [
         "release"
       ],
-      "event_count": 4,
+      "event_count": 8,
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.6",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.5"
       ],
       "events": [
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:40Z",
+          "title": "trust-tasks-tsp-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:36Z",
+          "title": "trust-tasks-tsp-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:49:09Z",
+          "title": "trust-tasks-tsp-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:40:08Z",
+          "title": "trust-tasks-tsp-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
         {
           "kind": "release",
           "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -7174,20 +8307,76 @@
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
       "repo_kind": "task-force",
-      "title": "trust-tasks-proof-v0.27.8",
-      "timestamp": "2026-10-10T19:39:01Z",
+      "title": "trust-tasks-proof-v0.30.0",
+      "timestamp": "2026-10-11T17:42:36Z",
       "materiality": 5,
       "event_kinds": [
         "release"
       ],
-      "event_count": 4,
+      "event_count": 8,
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.6",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.5"
       ],
       "events": [
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:36Z",
+          "title": "trust-tasks-proof-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:31Z",
+          "title": "trust-tasks-proof-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:49:04Z",
+          "title": "trust-tasks-proof-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:40:04Z",
+          "title": "trust-tasks-proof-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
         {
           "kind": "release",
           "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -7254,20 +8443,76 @@
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
       "repo_kind": "task-force",
-      "title": "trust-tasks-https-v0.27.8",
-      "timestamp": "2026-10-10T19:38:57Z",
+      "title": "trust-tasks-https-v0.30.0",
+      "timestamp": "2026-10-11T17:42:32Z",
       "materiality": 5,
       "event_kinds": [
         "release"
       ],
-      "event_count": 4,
+      "event_count": 8,
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.5"
       ],
       "events": [
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:32Z",
+          "title": "trust-tasks-https-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:25Z",
+          "title": "trust-tasks-https-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:49:00Z",
+          "title": "trust-tasks-https-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:40:00Z",
+          "title": "trust-tasks-https-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
         {
           "kind": "release",
           "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -7336,14 +8581,22 @@
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
       "repo_kind": "task-force",
-      "title": "trust-tasks-didcomm-v1-v0.27.8",
-      "timestamp": "2026-10-10T19:38:53Z",
+      "title": "trust-tasks-didcomm-v1-v0.30.0",
+      "timestamp": "2026-10-11T17:42:29Z",
       "materiality": 5,
       "event_kinds": [
         "release"
       ],
-      "event_count": 8,
+      "event_count": 16,
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.7",
@@ -7354,6 +8607,110 @@
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.5"
       ],
       "events": [
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:29Z",
+          "title": "trust-tasks-didcomm-v1-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:25Z",
+          "title": "trust-tasks-didcomm-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:20Z",
+          "title": "trust-tasks-didcomm-v1-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:15Z",
+          "title": "trust-tasks-didcomm-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:48:56Z",
+          "title": "trust-tasks-didcomm-v1-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:48:52Z",
+          "title": "trust-tasks-didcomm-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:39:55Z",
+          "title": "trust-tasks-didcomm-v1-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:39:51Z",
+          "title": "trust-tasks-didcomm-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
         {
           "kind": "release",
           "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -7472,20 +8829,76 @@
       "repository": "trustoverip/dtgwg-trust-tasks-tf",
       "portfolio": "DTG",
       "repo_kind": "task-force",
-      "title": "trust-tasks-capability-client-v0.27.8",
-      "timestamp": "2026-10-10T19:38:46Z",
+      "title": "trust-tasks-capability-client-v0.30.0",
+      "timestamp": "2026-10-11T17:42:21Z",
       "materiality": 5,
       "event_kinds": [
         "release"
       ],
-      "event_count": 4,
+      "event_count": 8,
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.6",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.5"
       ],
       "events": [
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:42:21Z",
+          "title": "trust-tasks-capability-client-v0.30.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.30.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:15:10Z",
+          "title": "trust-tasks-capability-client-v0.29.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.29.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:48:48Z",
+          "title": "trust-tasks-capability-client-v0.28.1",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.1",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
+        {
+          "kind": "release",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:39:47Z",
+          "title": "trust-tasks-capability-client-v0.28.0",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.0",
+          "number": null,
+          "sha": null,
+          "state": null,
+          "materiality": 5
+        },
         {
           "kind": "release",
           "repository": "trustoverip/dtgwg-trust-tasks-tf",
@@ -7544,6 +8957,652 @@
         "method": "event-kind-v1",
         "confidence": "high",
         "matched_terms": [],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-54ac827df5ce",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "chore: release 11 packages",
+      "timestamp": "2026-10-11T17:41:37Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/b9c679aae201879643f641752ffe19af6fe91f90",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/751"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:41:37Z",
+          "title": "chore: release 11 packages (#751)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/b9c679aae201879643f641752ffe19af6fe91f90",
+          "number": null,
+          "sha": "b9c679aae201879643f641752ffe19af6fe91f90",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T17:41:37Z",
+          "title": "chore: release 11 packages",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/751",
+          "number": 751,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "release"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-7f8e56c2357d",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "spec(rooms)!: rooms/info and rooms/usage require a proof, like every other rooms/* task",
+      "timestamp": "2026-10-11T16:01:23Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/7c49f71a300e2632fe135b8d2c7b705747a5d29a",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/750"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T16:01:23Z",
+          "title": "spec(rooms)!: rooms/info and rooms/usage require a proof, like every other rooms/* task (#750)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/7c49f71a300e2632fe135b8d2c7b705747a5d29a",
+          "number": null,
+          "sha": "7c49f71a300e2632fe135b8d2c7b705747a5d29a",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T16:01:23Z",
+          "title": "spec(rooms)!: rooms/info and rooms/usage require a proof, like every other rooms/* task",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/750",
+          "number": 750,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-b2cb0e715fac",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "chore: release 11 packages",
+      "timestamp": "2026-10-11T15:14:23Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/748",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/a8d5959fd9e5a585b05f3c7722f111d89f8ad84b"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:14:23Z",
+          "title": "chore: release 11 packages",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/748",
+          "number": 748,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T15:14:22Z",
+          "title": "chore: release 11 packages (#748)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/a8d5959fd9e5a585b05f3c7722f111d89f8ad84b",
+          "number": null,
+          "sha": "a8d5959fd9e5a585b05f3c7722f111d89f8ad84b",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "release"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-944b035ac6e3",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "feat(keys): sign-jws and sign-csr \u2014 protocol signatures from a VTA-held key",
+      "timestamp": "2026-10-11T14:47:04Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/749",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/e5354095432a9824e091b4e1889e8e0c2c8aca60"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T14:47:04Z",
+          "title": "feat(keys): sign-jws and sign-csr \u2014 protocol signatures from a VTA-held key",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/749",
+          "number": 749,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T14:47:03Z",
+          "title": "feat(keys): sign-jws and sign-csr \u2014 protocol signatures from a VTA-held key (#749)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/e5354095432a9824e091b4e1889e8e0c2c8aca60",
+          "number": null,
+          "sha": "e5354095432a9824e091b4e1889e8e0c2c8aca60",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "protocol"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-e20deb7f2c52",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "spec(rooms): define the sealed record body, signed by its author and bound to its location",
+      "timestamp": "2026-10-11T14:27:06Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/747",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c98afcf7da9ad4a5f5eb53bbfff5ea14de5e2cc4"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T14:27:06Z",
+          "title": "spec(rooms): define the sealed record body, signed by its author and bound to its location",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/747",
+          "number": 747,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T14:27:05Z",
+          "title": "spec(rooms): define the sealed record body, signed by its author and bound to its location (#747)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c98afcf7da9ad4a5f5eb53bbfff5ea14de5e2cc4",
+          "number": null,
+          "sha": "c98afcf7da9ad4a5f5eb53bbfff5ea14de5e2cc4",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "specification",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "spec"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-fcc32b15fe04",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "chore: release 11 packages",
+      "timestamp": "2026-10-11T12:47:58Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/746",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/bcf9f97d5d304950e09739e8b926ec4e2868564c"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:47:58Z",
+          "title": "chore: release 11 packages",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/746",
+          "number": 746,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T12:47:57Z",
+          "title": "chore: release 11 packages (#746)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/bcf9f97d5d304950e09739e8b926ec4e2868564c",
+          "number": null,
+          "sha": "bcf9f97d5d304950e09739e8b926ec4e2868564c",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "release"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-046f51e362a8",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "feat(vtc): wallet presentation sessions for a join \u2014 start and status",
+      "timestamp": "2026-10-11T11:50:49Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/745",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/f092fef181faec6419f1dad0d8b20b02c6911819"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T11:50:49Z",
+          "title": "feat(vtc): wallet presentation sessions for a join \u2014 start and status",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/745",
+          "number": 745,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T11:50:48Z",
+          "title": "feat(vtc): wallet presentation sessions for a join \u2014 start and status (#745)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/f092fef181faec6419f1dad0d8b20b02c6911819",
+          "number": null,
+          "sha": "f092fef181faec6419f1dad0d8b20b02c6911819",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "lifecycle",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "status"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-908d2e48e13c",
+      "repository": "trustoverip/dtgwg-vti-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "Keep the trigger-link format protocol-neutral; make the Trust Task first request VTI's adoption (VTI-LNK-054, 055, 057)",
+      "timestamp": "2026-10-11T11:40:14Z",
+      "materiality": 5,
+      "event_kinds": [
+        "pull_request"
+      ],
+      "event_count": 1,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vti-spec/pull/59"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-vti-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-10-11T11:40:14Z",
+          "title": "Keep the trigger-link format protocol-neutral; make the Trust Task first request VTI's adoption (VTI-LNK-054, 055, 057)",
+          "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/59",
+          "number": 59,
+          "sha": null,
+          "state": "merged",
+          "materiality": 5
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "protocol"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-ec160793dee4",
+      "repository": "trustoverip/dtgwg-vti-spec",
+      "portfolio": "DTG",
+      "repo_kind": "specification",
+      "title": "A foreign-protocol interface serves an exchange a task began, and is a binding rather than a parallel interface (VTI-OPS-095 \u2013 099, VTI-CRD-024 \u2013 025)",
+      "timestamp": "2026-10-11T11:25:04Z",
+      "materiality": 5,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vti-spec/commit/dc1ec07d42ec5c0054037795c06dbead608fbc5b",
+        "https://github.com/trustoverip/dtgwg-vti-spec/pull/60"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-vti-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-10-11T11:25:04Z",
+          "title": "A foreign-protocol interface serves an exchange a task began, and is a binding rather than a parallel interface (VTI-OPS-095 \u2013 099, VTI-CRD-024 \u2013 025) (#60)",
+          "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/dc1ec07d42ec5c0054037795c06dbead608fbc5b",
+          "number": null,
+          "sha": "dc1ec07d42ec5c0054037795c06dbead608fbc5b",
+          "state": null,
+          "materiality": 2
+        },
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-vti-spec",
+          "portfolio": "DTG",
+          "repo_kind": "specification",
+          "timestamp": "2026-10-11T11:25:04Z",
+          "title": "A foreign-protocol interface serves an exchange a task began, and is a binding rather than a parallel interface (VTI-OPS-095 \u2013 099, VTI-CRD-024 \u2013 025)",
+          "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/60",
+          "number": 60,
+          "sha": null,
+          "state": "merged",
+          "materiality": 5
+        }
+      ],
+      "semantic_change": {
+        "type": "protocol_semantics",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "protocol"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-76423e718211",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "chore: release 11 packages",
+      "timestamp": "2026-10-11T08:39:00Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/774f58182086906ab5adcb73b1d6dba5190fc93a",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/744"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:39:00Z",
+          "title": "chore: release 11 packages (#744)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/774f58182086906ab5adcb73b1d6dba5190fc93a",
+          "number": null,
+          "sha": "774f58182086906ab5adcb73b1d6dba5190fc93a",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T08:39:00Z",
+          "title": "chore: release 11 packages",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/744",
+          "number": 744,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "release",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "release"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-2ba1a671e4e2",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "spec(rooms)!: an unauthorized room request is refused with the standard permissionDenied",
+      "timestamp": "2026-10-11T07:46:54Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/743",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/854c5a51ca5afb8a1cefd43adbbe9f89950b2377"
+      ],
+      "events": [
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T07:46:54Z",
+          "title": "spec(rooms)!: an unauthorized room request is refused with the standard permissionDenied",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/743",
+          "number": 743,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        },
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T07:46:53Z",
+          "title": "spec(rooms)!: an unauthorized room request is refused with the standard permissionDenied (#743)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/854c5a51ca5afb8a1cefd43adbbe9f89950b2377",
+          "number": null,
+          "sha": "854c5a51ca5afb8a1cefd43adbbe9f89950b2377",
+          "state": null,
+          "materiality": 1
+        }
+      ],
+      "semantic_change": {
+        "type": "authority",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "authoriz",
+          "permission"
+        ],
+        "evidence_state": "derived"
+      }
+    },
+    {
+      "id": "toip-change-786cfbc82b22",
+      "repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "portfolio": "DTG",
+      "repo_kind": "task-force",
+      "title": "feat(rs): declared error codes carry their detailsSchema, and a titled variant no longer generates doctests",
+      "timestamp": "2026-10-11T07:26:25Z",
+      "materiality": 4,
+      "event_kinds": [
+        "commit",
+        "pull_request"
+      ],
+      "event_count": 2,
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742"
+      ],
+      "events": [
+        {
+          "kind": "commit",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T07:26:25Z",
+          "title": "feat(rs): declared error codes carry their detailsSchema, and a titled variant no longer generates doctests (#742)",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+          "number": null,
+          "sha": "1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+          "state": null,
+          "materiality": 1
+        },
+        {
+          "kind": "pull_request",
+          "repository": "trustoverip/dtgwg-trust-tasks-tf",
+          "portfolio": "DTG",
+          "repo_kind": "task-force",
+          "timestamp": "2026-10-11T07:26:25Z",
+          "title": "feat(rs): declared error codes carry their detailsSchema, and a titled variant no longer generates doctests",
+          "url": "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742",
+          "number": 742,
+          "sha": null,
+          "state": "merged",
+          "materiality": 4
+        }
+      ],
+      "semantic_change": {
+        "type": "schema",
+        "method": "deterministic-keyword-v1",
+        "confidence": "moderate",
+        "matched_terms": [
+          "schema"
+        ],
         "evidence_state": "derived"
       }
     },
@@ -7762,46 +9821,6 @@
       }
     },
     {
-      "id": "toip-change-8d017c3b06d6",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Specify trigger links: the QR code or link that starts an exchange with a wallet (VTI-LNK-001 \u2013 116)",
-      "timestamp": "2026-10-10T17:02:21Z",
-      "materiality": 4,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/58"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-vti-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-10T17:02:21Z",
-          "title": "Specify trigger links: the QR code or link that starts an exchange with a wallet (VTI-LNK-001 \u2013 116)",
-          "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/58",
-          "number": 58,
-          "sha": null,
-          "state": "open",
-          "materiality": 4
-        }
-      ],
-      "semantic_change": {
-        "type": "specification",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "spec"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
       "id": "toip-change-8d54e20f88f0",
       "repository": "trustoverip/dtgwg-vsc-registry",
       "portfolio": "DTG",
@@ -7852,46 +9871,6 @@
         "confidence": "low",
         "matched_terms": [],
         "evidence_state": "insufficient"
-      }
-    },
-    {
-      "id": "toip-change-908d2e48e13c",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Keep the trigger-link format protocol-neutral; make the Trust Task first request VTI's adoption (VTI-LNK-054, 055, 057)",
-      "timestamp": "2026-10-10T09:11:49Z",
-      "materiality": 4,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/59"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-vti-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-10T09:11:49Z",
-          "title": "Keep the trigger-link format protocol-neutral; make the Trust Task first request VTI's adoption (VTI-LNK-054, 055, 057)",
-          "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/59",
-          "number": 59,
-          "sha": null,
-          "state": "open",
-          "materiality": 4
-        }
-      ],
-      "semantic_change": {
-        "type": "protocol_semantics",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "protocol"
-        ],
-        "evidence_state": "derived"
       }
     },
     {
@@ -8463,46 +10442,6 @@
       }
     },
     {
-      "id": "toip-change-3140fc85370b",
-      "repository": "trustoverip/dtgwg-rahp-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "title": "method(assurance): deliver a usable shared RAHP baseline through upstream convergence",
-      "timestamp": "2026-10-08T10:47:15Z",
-      "materiality": 2,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "trustoverip/dtgwg-rahp-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-08T10:47:15Z",
-          "title": "method(assurance): deliver a usable shared RAHP baseline through upstream convergence",
-          "url": "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17",
-          "number": 17,
-          "sha": null,
-          "state": "open",
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "dependency",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "upstream"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
       "id": "toip-change-96dc4ae5cdaf",
       "repository": "trustoverip/dtgwg-rahp-tf",
       "portfolio": "DTG",
@@ -8527,44 +10466,6 @@
           "title": "feat(review): bind examination evidence to review records (Increment 2)",
           "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/20",
           "number": 20,
-          "sha": null,
-          "state": "open",
-          "materiality": 3
-        }
-      ],
-      "semantic_change": {
-        "type": "unknown",
-        "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
-      }
-    },
-    {
-      "id": "toip-change-a4acc891ee66",
-      "repository": "trustoverip/dtgwg-rahp-tf",
-      "portfolio": "DTG",
-      "repo_kind": "task-force",
-      "title": "test(adoption): add retained-source TRQP replay (Increment 1)",
-      "timestamp": "2026-10-08T10:47:12Z",
-      "materiality": 3,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-rahp-tf",
-          "portfolio": "DTG",
-          "repo_kind": "task-force",
-          "timestamp": "2026-10-08T10:47:12Z",
-          "title": "test(adoption): add retained-source TRQP replay (Increment 1)",
-          "url": "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19",
-          "number": 19,
           "sha": null,
           "state": "open",
           "materiality": 3
@@ -12112,232 +14013,6 @@
         ],
         "evidence_state": "derived"
       }
-    },
-    {
-      "id": "toip-change-9b118d6d49eb",
-      "repository": "trustoverip/dtgwg-cred-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Should a VTC's identifier be required to be \"public\", or may a restricted community be \"directed\"?",
-      "timestamp": "2026-10-04T19:17:39Z",
-      "materiality": 3,
-      "event_kinds": [
-        "issue"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/issues/75"
-      ],
-      "events": [
-        {
-          "kind": "issue",
-          "repository": "trustoverip/dtgwg-cred-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-04T19:17:39Z",
-          "title": "Should a VTC's identifier be required to be \"public\", or may a restricted community be \"directed\"?",
-          "url": "https://github.com/trustoverip/dtgwg-cred-spec/issues/75",
-          "number": 75,
-          "sha": null,
-          "state": "open",
-          "materiality": 3
-        }
-      ],
-      "semantic_change": {
-        "type": "protocol_semantics",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "should "
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-ad9e666ce74b",
-      "repository": "trustoverip/dtgwg-cred-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Update correlation scope; minor wording things before",
-      "timestamp": "2026-10-04T19:05:08Z",
-      "materiality": 4,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/74"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-cred-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-04T19:05:08Z",
-          "title": "Update correlation scope; minor wording things before",
-          "url": "https://github.com/trustoverip/dtgwg-cred-spec/pull/74",
-          "number": 74,
-          "sha": null,
-          "state": "open",
-          "materiality": 4
-        }
-      ],
-      "semantic_change": {
-        "type": "privacy",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "correlation"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-7e05855908b2",
-      "repository": "trustoverip/dtgwg-cred-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Update: Introduction; promote Specification Versioning to a normative\u2026",
-      "timestamp": "2026-10-04T13:15:52Z",
-      "materiality": 4,
-      "event_kinds": [
-        "pull_request"
-      ],
-      "event_count": 1,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/73"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-cred-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-04T13:15:52Z",
-          "title": "Update: Introduction; promote Specification Versioning to a normative\u2026",
-          "url": "https://github.com/trustoverip/dtgwg-cred-spec/pull/73",
-          "number": 73,
-          "sha": null,
-          "state": "open",
-          "materiality": 4
-        }
-      ],
-      "semantic_change": {
-        "type": "protocol_semantics",
-        "method": "deterministic-keyword-v1",
-        "confidence": "moderate",
-        "matched_terms": [
-          "normative"
-        ],
-        "evidence_state": "derived"
-      }
-    },
-    {
-      "id": "toip-change-7cf7f24e447e",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "Single-administrator mode is one person, under as many identifiers as they hold (VTI-APV-022, VTI-ACL-052)",
-      "timestamp": "2026-10-04T06:11:56Z",
-      "materiality": 5,
-      "event_kinds": [
-        "commit",
-        "pull_request"
-      ],
-      "event_count": 2,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-vti-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-04T06:11:56Z",
-          "title": "Single-administrator mode is one person, under as many identifiers as they hold (VTI-APV-022, VTI-ACL-052)",
-          "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-          "number": 55,
-          "sha": null,
-          "state": "merged",
-          "materiality": 5
-        },
-        {
-          "kind": "commit",
-          "repository": "trustoverip/dtgwg-vti-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-04T06:11:55Z",
-          "title": "Single-administrator mode is one person, under as many identifiers as they hold (VTI-APV-022, VTI-ACL-052) (#55)",
-          "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad",
-          "number": null,
-          "sha": "7e6faa2d178a8d6de906e0fe26925afd9bda8bad",
-          "state": null,
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "unknown",
-        "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
-      }
-    },
-    {
-      "id": "toip-change-79e2fa322cfe",
-      "repository": "trustoverip/dtgwg-vti-spec",
-      "portfolio": "DTG",
-      "repo_kind": "specification",
-      "title": "A subject may relabel its own entry, and a sole administrator in single-administrator mode may edit its own (VTI-ACL-052)",
-      "timestamp": "2026-10-04T06:05:02Z",
-      "materiality": 5,
-      "event_kinds": [
-        "commit",
-        "pull_request"
-      ],
-      "event_count": 2,
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7"
-      ],
-      "events": [
-        {
-          "kind": "pull_request",
-          "repository": "trustoverip/dtgwg-vti-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-04T06:05:02Z",
-          "title": "A subject may relabel its own entry, and a sole administrator in single-administrator mode may edit its own (VTI-ACL-052)",
-          "url": "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-          "number": 54,
-          "sha": null,
-          "state": "merged",
-          "materiality": 5
-        },
-        {
-          "kind": "commit",
-          "repository": "trustoverip/dtgwg-vti-spec",
-          "portfolio": "DTG",
-          "repo_kind": "specification",
-          "timestamp": "2026-10-04T06:05:01Z",
-          "title": "A subject may relabel its own entry, and a sole administrator in single-administrator mode may edit its own (VTI-ACL-052) (#54)",
-          "url": "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7",
-          "number": null,
-          "sha": "a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7",
-          "state": null,
-          "materiality": 2
-        }
-      ],
-      "semantic_change": {
-        "type": "unknown",
-        "method": "deterministic-keyword-v1",
-        "confidence": "low",
-        "matched_terms": [],
-        "evidence_state": "insufficient"
-      }
     }
   ],
   "lifecycle_changes": [],
@@ -12415,8 +14090,8 @@
       "evidence_state": "observed"
     },
     {
-      "id": "tem-relationship-8ec564568c68",
-      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "id": "tem-relationship-59015d5893a1",
+      "source_repository": "trustoverip/dtgwg-rahp-tf",
       "target_repository": "trustoverip/SC",
       "source_portfolio": "DTG",
       "target_portfolio": "Admin-Governance",
@@ -12425,10 +14100,10 @@
       "formal_dependency": false,
       "recognition_inferred": false,
       "authority_inferred": false,
-      "source_change_unit": "toip-change-ad9e666ce74b",
-      "semantic_change_type": "privacy",
+      "source_change_unit": "toip-change-73dd002f6e46",
+      "semantic_change_type": "schema",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/74"
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22"
       ],
       "evidence_state": "observed"
     },
@@ -12447,6 +14122,25 @@
       "semantic_change_type": "governance",
       "evidence": [
         "https://github.com/trustoverip/dtgwg-rahp-tf/commit/9ab60bc285adeeeb8e2e743bda5b609736ad56b6"
+      ],
+      "evidence_state": "observed"
+    },
+    {
+      "id": "tem-relationship-3079ad8cf405",
+      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "target_repository": "trustoverip/SC",
+      "source_portfolio": "DTG",
+      "target_portfolio": "Admin-Governance",
+      "relationship_type": "observed-reference",
+      "claim_strength": "observed",
+      "formal_dependency": false,
+      "recognition_inferred": false,
+      "authority_inferred": false,
+      "source_change_unit": "toip-change-786cfbc82b22",
+      "semantic_change_type": "schema",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742"
       ],
       "evidence_state": "observed"
     },
@@ -12501,6 +14195,10 @@
       "source_change_unit": "toip-change-049f2a838a3a",
       "semantic_change_type": "api",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
@@ -12561,44 +14259,6 @@
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c875883656a87e9135b6ef195f92de24874dfd39",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/729"
-      ],
-      "evidence_state": "observed"
-    },
-    {
-      "id": "tem-relationship-6c2762a83110",
-      "source_repository": "trustoverip/dtgwg-vti-spec",
-      "target_repository": "trustoverip/admin",
-      "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "relationship_type": "observed-reference",
-      "claim_strength": "observed",
-      "formal_dependency": false,
-      "recognition_inferred": false,
-      "authority_inferred": false,
-      "source_change_unit": "toip-change-79e2fa322cfe",
-      "semantic_change_type": "unknown",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7"
-      ],
-      "evidence_state": "observed"
-    },
-    {
-      "id": "tem-relationship-477a358f65a7",
-      "source_repository": "trustoverip/dtgwg-vti-spec",
-      "target_repository": "trustoverip/admin",
-      "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "relationship_type": "observed-reference",
-      "claim_strength": "observed",
-      "formal_dependency": false,
-      "recognition_inferred": false,
-      "authority_inferred": false,
-      "source_change_unit": "toip-change-7cf7f24e447e",
-      "semantic_change_type": "unknown",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad"
       ],
       "evidence_state": "observed"
     },
@@ -12981,20 +14641,20 @@
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
     {
-      "id": "tem-propagation-b0e702d18212",
+      "id": "tem-propagation-8597632b48fb",
       "state": "insufficient_history",
-      "referencing_repository": "trustoverip/dtgwg-cred-spec",
+      "referencing_repository": "trustoverip/dtgwg-rahp-tf",
       "referenced_repository": "trustoverip/SC",
-      "relationship_id": "tem-relationship-8ec564568c68",
+      "relationship_id": "tem-relationship-59015d5893a1",
       "trigger_change_unit": null,
-      "responding_change_unit": "toip-change-ad9e666ce74b",
+      "responding_change_unit": "toip-change-73dd002f6e46",
       "trigger_timestamp": null,
-      "response_timestamp": "2026-10-04T19:05:08Z",
+      "response_timestamp": "2026-10-11T23:36:48Z",
       "relationship_evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/74"
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22"
       ],
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/74"
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
@@ -13013,6 +14673,26 @@
       ],
       "evidence": [
         "https://github.com/trustoverip/dtgwg-rahp-tf/commit/9ab60bc285adeeeb8e2e743bda5b609736ad56b6"
+      ],
+      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
+    },
+    {
+      "id": "tem-propagation-6cd0b1f6f9a1",
+      "state": "insufficient_history",
+      "referencing_repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "referenced_repository": "trustoverip/SC",
+      "relationship_id": "tem-relationship-3079ad8cf405",
+      "trigger_change_unit": null,
+      "responding_change_unit": "toip-change-786cfbc82b22",
+      "trigger_timestamp": null,
+      "response_timestamp": "2026-10-11T07:26:25Z",
+      "relationship_evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742"
+      ],
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
@@ -13063,14 +14743,22 @@
       "trigger_change_unit": null,
       "responding_change_unit": "toip-change-049f2a838a3a",
       "trigger_timestamp": null,
-      "response_timestamp": "2026-10-10T19:38:57Z",
+      "response_timestamp": "2026-10-11T17:42:32Z",
       "relationship_evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.5"
       ],
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
@@ -13133,46 +14821,6 @@
       "evidence": [
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/c875883656a87e9135b6ef195f92de24874dfd39",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/729"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
-    },
-    {
-      "id": "tem-propagation-032a49713571",
-      "state": "insufficient_history",
-      "referencing_repository": "trustoverip/dtgwg-vti-spec",
-      "referenced_repository": "trustoverip/admin",
-      "relationship_id": "tem-relationship-6c2762a83110",
-      "trigger_change_unit": null,
-      "responding_change_unit": "toip-change-79e2fa322cfe",
-      "trigger_timestamp": null,
-      "response_timestamp": "2026-10-04T06:05:02Z",
-      "relationship_evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7"
-      ],
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7"
-      ],
-      "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
-    },
-    {
-      "id": "tem-propagation-7517e6e65e8d",
-      "state": "insufficient_history",
-      "referencing_repository": "trustoverip/dtgwg-vti-spec",
-      "referenced_repository": "trustoverip/admin",
-      "relationship_id": "tem-relationship-477a358f65a7",
-      "trigger_change_unit": null,
-      "responding_change_unit": "toip-change-7cf7f24e447e",
-      "trigger_timestamp": null,
-      "response_timestamp": "2026-10-04T06:11:56Z",
-      "relationship_evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad"
-      ],
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad"
       ],
       "interpretation": "Temporal monitor observation only. It does not establish causation, formal dependency, compatibility impact, compliance obligation, recognition, or authority."
     },
@@ -13331,6 +14979,10 @@
       "target_repository": "trustoverip/tt",
       "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/tt in a current change unit.",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
@@ -13342,49 +14994,16 @@
       "materiality": 5
     },
     {
-      "id": "toip-seam-3be2b6184809",
-      "strength": "explicit-reference",
-      "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "source_repository": "trustoverip/dtgwg-vti-spec",
-      "target_repository": "trustoverip/admin",
-      "summary": "trustoverip/dtgwg-vti-spec references trustoverip/admin in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad"
-      ],
-      "relationship_class": "cross-portfolio",
-      "review_materiality": "derived",
-      "review_required": true,
-      "materiality": 5
-    },
-    {
-      "id": "toip-seam-147e7d3c5b54",
-      "strength": "explicit-reference",
-      "source_portfolio": "DTG",
-      "target_portfolio": "Unclassified",
-      "source_repository": "trustoverip/dtgwg-vti-spec",
-      "target_repository": "trustoverip/admin",
-      "summary": "trustoverip/dtgwg-vti-spec references trustoverip/admin in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7"
-      ],
-      "relationship_class": "cross-portfolio",
-      "review_materiality": "derived",
-      "review_required": true,
-      "materiality": 5
-    },
-    {
-      "id": "toip-seam-102574bc8d80",
+      "id": "toip-seam-f853c74ae21b",
       "strength": "explicit-reference",
       "source_portfolio": "DTG",
       "target_portfolio": "Admin-Governance",
-      "source_repository": "trustoverip/dtgwg-cred-spec",
+      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
       "target_repository": "trustoverip/SC",
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/74"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742"
       ],
       "relationship_class": "cross-portfolio",
       "review_materiality": "derived",
@@ -13451,12 +15070,12 @@
       "source_portfolio": "AIMWG",
       "target_portfolio": "DTG",
       "source_repository": "trustoverip/aimwg-trust-enabled-agents",
-      "target_repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "target_repository": "trustoverip/dtgwg-vsc-registry",
       "summary": "Related portfolios AIMWG and DTG both contain material change units in this observation window; cross-review may be warranted.",
       "materiality": 4,
       "evidence": [
         "https://github.com/trustoverip/aimwg-trust-enabled-agents/pull/21",
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.8"
+        "https://github.com/trustoverip/dtgwg-vsc-registry/commit/b1de2f11c3e8399f9d07b897e998db911b7d3c59"
       ]
     },
     {
@@ -13501,12 +15120,12 @@
       "review_required": true,
       "source_portfolio": "DTG",
       "target_portfolio": "KERI Suite",
-      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "source_repository": "trustoverip/dtgwg-vsc-registry",
       "target_repository": "trustoverip/kswg-dossier-specification",
       "summary": "Related portfolios DTG and KERI Suite both contain material change units in this observation window; cross-review may be warranted.",
       "materiality": 4,
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.8",
+        "https://github.com/trustoverip/dtgwg-vsc-registry/commit/b1de2f11c3e8399f9d07b897e998db911b7d3c59",
         "https://github.com/trustoverip/kswg-dossier-specification/pull/36"
       ]
     },
@@ -13518,12 +15137,12 @@
       "review_required": true,
       "source_portfolio": "DTG",
       "target_portfolio": "TSWG",
-      "source_repository": "trustoverip/dtgwg-trust-tasks-tf",
+      "source_repository": "trustoverip/dtgwg-vsc-registry",
       "target_repository": "trustoverip/tswg-tsp-specification",
       "summary": "Related portfolios DTG and TSWG both contain material change units in this observation window; cross-review may be warranted.",
       "materiality": 4,
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.8",
+        "https://github.com/trustoverip/dtgwg-vsc-registry/commit/b1de2f11c3e8399f9d07b897e998db911b7d3c59",
         "https://github.com/trustoverip/tswg-tsp-specification/pull/86"
       ]
     },
@@ -13560,6 +15179,22 @@
         "https://github.com/trustoverip/kswg-dossier-specification/pull/36",
         "https://github.com/trustoverip/tswg-tsp-specification/pull/86"
       ]
+    },
+    {
+      "id": "toip-seam-e298a7bb3429",
+      "strength": "explicit-reference",
+      "source_portfolio": "DTG",
+      "target_portfolio": "Admin-Governance",
+      "source_repository": "trustoverip/dtgwg-rahp-tf",
+      "target_repository": "trustoverip/SC",
+      "summary": "trustoverip/dtgwg-rahp-tf references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22"
+      ],
+      "relationship_class": "cross-portfolio",
+      "review_materiality": "derived",
+      "review_required": true,
+      "materiality": 3
     },
     {
       "id": "toip-seam-20b2966bd8eb",
@@ -13749,27 +15384,16 @@
       "materiality": 5,
       "urgency": 2,
       "assurance_impact": 2,
-      "summary": "trust-tasks-https-v0.27.8",
+      "summary": "trust-tasks-https-v0.30.0",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.5"
-      ],
-      "disposition": null
-    },
-    {
-      "id": "toip-finding-0889f8b9904c",
-      "category": "cross-portfolio-seam",
-      "subject": "trustoverip/dtgwg-vti-spec",
-      "status": "open",
-      "materiality": 5,
-      "urgency": 2,
-      "assurance_impact": 3,
-      "summary": "trustoverip/dtgwg-vti-spec references trustoverip/admin in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7"
       ],
       "disposition": null
     },
@@ -13781,8 +15405,12 @@
       "materiality": 5,
       "urgency": 2,
       "assurance_impact": 2,
-      "summary": "trust-tasks-tsp-v0.27.8",
+      "summary": "trust-tasks-tsp-v0.30.0",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-tsp-v0.27.6",
@@ -13798,8 +15426,16 @@
       "materiality": 5,
       "urgency": 2,
       "assurance_impact": 2,
-      "summary": "trust-tasks-didcomm-v1-v0.27.8",
+      "summary": "trust-tasks-didcomm-v1-v0.30.0",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.28.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-didcomm-v1-v0.27.7",
@@ -13812,21 +15448,6 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-3e3e37a7433a",
-      "category": "cross-portfolio-seam",
-      "subject": "trustoverip/dtgwg-vti-spec",
-      "status": "open",
-      "materiality": 5,
-      "urgency": 2,
-      "assurance_impact": 3,
-      "summary": "trustoverip/dtgwg-vti-spec references trustoverip/admin in a current change unit.",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad"
-      ],
-      "disposition": null
-    },
-    {
       "id": "toip-finding-50d130991269",
       "category": "material-change",
       "subject": "trustoverip/dtgwg-trust-tasks-tf",
@@ -13834,8 +15455,16 @@
       "materiality": 5,
       "urgency": 2,
       "assurance_impact": 2,
-      "summary": "trust-tasks-v0.27.8",
+      "summary": "trust-tasks-v0.30.0",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.28.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-rs-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-v0.27.7",
@@ -13877,6 +15506,21 @@
       "disposition": null
     },
     {
+      "id": "toip-finding-72b62466cbf5",
+      "category": "material-change",
+      "subject": "trustoverip/dtgwg-vti-spec",
+      "status": "open",
+      "materiality": 5,
+      "urgency": 2,
+      "assurance_impact": 2,
+      "summary": "A foreign-protocol interface serves an exchange a task began, and is a binding rather than a parallel interface (VTI-OPS-095 \u2013 099, VTI-CRD-024 \u2013 025)",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vti-spec/commit/dc1ec07d42ec5c0054037795c06dbead608fbc5b",
+        "https://github.com/trustoverip/dtgwg-vti-spec/pull/60"
+      ],
+      "disposition": null
+    },
+    {
       "id": "toip-finding-73f7940411fa",
       "category": "material-change",
       "subject": "trustoverip/dtgwg-vti-spec",
@@ -13907,21 +15551,6 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-85d6ed30baa9",
-      "category": "material-change",
-      "subject": "trustoverip/dtgwg-vti-spec",
-      "status": "open",
-      "materiality": 5,
-      "urgency": 2,
-      "assurance_impact": 2,
-      "summary": "Single-administrator mode is one person, under as many identifiers as they hold (VTI-APV-022, VTI-ACL-052)",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/55",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/7e6faa2d178a8d6de906e0fe26925afd9bda8bad"
-      ],
-      "disposition": null
-    },
-    {
       "id": "toip-finding-9187069f2d58",
       "category": "material-change",
       "subject": "trustoverip/spec-up-t",
@@ -13937,21 +15566,6 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-a324ca4509ac",
-      "category": "material-change",
-      "subject": "trustoverip/dtgwg-vti-spec",
-      "status": "open",
-      "materiality": 5,
-      "urgency": 2,
-      "assurance_impact": 2,
-      "summary": "A subject may relabel its own entry, and a sole administrator in single-administrator mode may edit its own (VTI-ACL-052)",
-      "evidence": [
-        "https://github.com/trustoverip/dtgwg-vti-spec/pull/54",
-        "https://github.com/trustoverip/dtgwg-vti-spec/commit/a61a51244d2e2ea65ba4f777c6f09f1f8aa172c7"
-      ],
-      "disposition": null
-    },
-    {
       "id": "toip-finding-b25f4576059a",
       "category": "cross-portfolio-seam",
       "subject": "trustoverip/dtgwg-trust-tasks-tf",
@@ -13961,6 +15575,10 @@
       "assurance_impact": 3,
       "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/tt in a current change unit.",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-https-v0.27.6",
@@ -13976,12 +15594,30 @@
       "materiality": 5,
       "urgency": 2,
       "assurance_impact": 2,
-      "summary": "trust-tasks-proof-v0.27.8",
+      "summary": "trust-tasks-proof-v0.30.0",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.6",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-proof-v0.27.5"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-c3b6440c0093",
+      "category": "material-change",
+      "subject": "trustoverip/dtgwg-vti-spec",
+      "status": "open",
+      "materiality": 5,
+      "urgency": 2,
+      "assurance_impact": 2,
+      "summary": "Keep the trigger-link format protocol-neutral; make the Trust Task first request VTI's adoption (VTI-LNK-054, 055, 057)",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-vti-spec/pull/59"
       ],
       "disposition": null
     },
@@ -13993,8 +15629,12 @@
       "materiality": 5,
       "urgency": 2,
       "assurance_impact": 2,
-      "summary": "trust-tasks-capability-client-v0.27.8",
+      "summary": "trust-tasks-capability-client-v0.30.0",
       "evidence": [
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.30.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.29.0",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.1",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.28.0",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.8",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.7",
         "https://github.com/trustoverip/dtgwg-trust-tasks-tf/releases/tag/trust-tasks-capability-client-v0.27.6",
@@ -14018,16 +15658,17 @@
       "disposition": null
     },
     {
-      "id": "toip-finding-3dd9844dfc52",
+      "id": "toip-finding-35d282a35d43",
       "category": "cross-portfolio-seam",
-      "subject": "trustoverip/dtgwg-cred-spec",
+      "subject": "trustoverip/dtgwg-trust-tasks-tf",
       "status": "open",
       "materiality": 4,
       "urgency": 2,
       "assurance_impact": 3,
-      "summary": "trustoverip/dtgwg-cred-spec references trustoverip/SC in a current change unit.",
+      "summary": "trustoverip/dtgwg-trust-tasks-tf references trustoverip/SC in a current change unit.",
       "evidence": [
-        "https://github.com/trustoverip/dtgwg-cred-spec/pull/74"
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/commit/1b1d50d7eb7719a0d61bb17c634fbce8c868ec43",
+        "https://github.com/trustoverip/dtgwg-trust-tasks-tf/pull/742"
       ],
       "disposition": null
     },
@@ -14159,6 +15800,20 @@
       "summary": "trustoverip/kswg-dossier-specification references trustoverip/spec-up-t in a current change unit. Classified as tooling/publication evidence; no material cross-portfolio review is inferred from the reference alone.",
       "evidence": [
         "https://github.com/trustoverip/kswg-dossier-specification/pull/36"
+      ],
+      "disposition": null
+    },
+    {
+      "id": "toip-finding-420bb3b9e50d",
+      "category": "cross-portfolio-seam",
+      "subject": "trustoverip/dtgwg-rahp-tf",
+      "status": "open",
+      "materiality": 3,
+      "urgency": 2,
+      "assurance_impact": 3,
+      "summary": "trustoverip/dtgwg-rahp-tf references trustoverip/SC in a current change unit.",
+      "evidence": [
+        "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22"
       ],
       "disposition": null
     },
@@ -14364,7 +16019,7 @@
       "response_change_unit": "toip-change-c5fea5c2d259",
       "response_timestamp": "2026-10-08T18:44:26Z",
       "created_at": "2026-09-30T20:35:56Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/issues/140",
         "https://github.com/trustoverip/kswg-dossier-specification/pull/36",
@@ -14396,7 +16051,7 @@
       "response_change_unit": "toip-change-38d269042c08",
       "response_timestamp": "2026-09-24T10:00:38Z",
       "created_at": "2026-09-23T13:28:32Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/4964b286cf8ce19d31c30228a43a8d964daed447",
         "https://github.com/trustoverip/spec-up-t-website/commit/5c27fb0cea1c1491e2d4f18dae47edb176010d22",
@@ -14428,7 +16083,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/ctwg-main-glossary/issues/49"
@@ -14458,7 +16113,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-agent-names-spec/pull/9"
@@ -14488,7 +16143,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-cred-spec/commit/94af2d89ed04e6f27011ef8ee6ca5acf70755a78",
@@ -14519,7 +16174,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-08T10:12:49Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/governance/commit/12e3ac283a5fdc69bc434680d718cd4fc0a7d637",
         "https://github.com/trustoverip/dtgwg-rahp-tf/commit/9ab60bc285adeeeb8e2e743bda5b609736ad56b6",
@@ -14550,7 +16205,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-trust-tasks-spec/commit/bf667f3e8506b7fb2c3e96665b7060e2ebaad806",
@@ -14581,7 +16236,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-vds-spec/pull/14",
@@ -14612,7 +16267,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-vti-spec/pull/50",
@@ -14643,7 +16298,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/dtgwg-zkp-spec/pull/14"
@@ -14673,7 +16328,7 @@
       "response_change_unit": null,
       "response_timestamp": null,
       "created_at": "2026-10-07T14:57:33Z",
-      "last_observed_at": "2026-10-11T04:25:11.625116+00:00",
+      "last_observed_at": "2026-10-12T00:40:39.668954+00:00",
       "evidence": [
         "https://github.com/trustoverip/spec-up-t/commit/66f36fab8413756801230dc49c5fca5dc2c4f585",
         "https://github.com/trustoverip/toip-template/pull/17"
