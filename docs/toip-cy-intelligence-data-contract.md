@@ -32,13 +32,13 @@ This data contract describes an independent Trust Ecosystem Monitor (TEM) observ
 
 The data is not:
 
-- an official ToIP inventory;
-- a ToIP, LFDT, Linux Foundation, WG or TF statement;
-- a meeting record;
-- a decision register;
-- evidence of adoption, approval, implementation quality or interoperability;
-- source-owner authorization to republish Confluence, LFX, Zoom or meeting content;
-- an admitted cross-source intelligence finding surface.
+- not an official ToIP inventory;
+- not a ToIP, LFDT, Linux Foundation, WG or TF statement;
+- not a meeting record;
+- not a decision register;
+- not evidence of adoption, approval, implementation quality or interoperability;
+- not source-owner authorization to republish Confluence, LFX, Zoom or meeting content;
+- not an admitted cross-source intelligence finding surface.
 
 The annual manifest is suitable for ML tooling that needs to inspect observed GitHub lifecycle activity, candidate WG/TF reader grouping, annual chronology, evidence URLs and provenance boundaries.
 
