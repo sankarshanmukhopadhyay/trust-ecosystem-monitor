@@ -13,6 +13,7 @@ from .toip_tracked_sources import inspect
 from .toip_monthly_knowledge import build_developments, topic_groups
 from .toip_monthly_editorial import priority
 from .toip_monthly_cross_source import correlate
+from .toip_wgtf_report import render_wgtf_first_section
 
 def link(url, label):
     if not (url.startswith("https://github.com/") or
@@ -139,7 +140,8 @@ def render(state):
             str(events) + '</strong><span>monthly GitHub artifacts</span></div><div class="metric"><strong>' +
             str(len(unique_sources)) + '</strong><span>Confluence pages</span></div>'
             '<div class="metric"><strong>' + str(len(revisions)) +
-            '</strong><span>revision notices</span></div></div>'
+            '</strong><span>revision notices</span></div></div>' +
+            render_wgtf_first_section(state) +
             '<h2>Prioritized year-to-date developments</h2>'
             '<p>Attention ranking reuses TEM monthly semantic classifications. '
             'It is a review ordering rather than institutional severity or a '

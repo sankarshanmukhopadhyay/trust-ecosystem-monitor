@@ -1,8 +1,9 @@
-"""WG/TF-first annual report prototype tests."""
+"""WG/TF-first annual report prototype and integration tests."""
 import tempfile
 import unittest
 from pathlib import Path
 
+from trust_ecosystem_monitor.toip_annual import render as render_annual
 from trust_ecosystem_monitor.toip_annual_state import empty, ingest
 from trust_ecosystem_monitor.toip_wgtf_report import (
     build_wgtf_development_groups,
@@ -91,6 +92,16 @@ class WGTFReportTests(unittest.TestCase):
         self.assertIn("not_official", html)
         self.assertIn("toip:dtwg", html)
         self.assertIn("trustoverip/unmapped-demo", html)
+
+    def test_annual_render_includes_wgtf_section_without_authority_claim(self):
+        html = render_annual(self._state())
+        self.assertIn("WG/TF-first candidate view", html)
+        self.assertIn("Digital Trust Working Group", html)
+        self.assertIn("Technical Stack Working Group", html)
+        self.assertIn("Unmapped / unknown ToIP body", html)
+        self.assertIn("not an official ToIP", html)
+        self.assertIn("Prioritized year-to-date developments", html)
+        self.assertIn("Evidence and limitations", html)
 
     def test_invalid_or_missing_registry_renders_unavailable_not_silent_fallback(self):
         with tempfile.TemporaryDirectory() as tmp:
