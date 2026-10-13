@@ -9,14 +9,14 @@ from __future__ import annotations
 from html.parser import HTMLParser
 from html import unescape
 from urllib.parse import urlsplit
-from collections import Counter
 import hashlib
 import re
 
 BOILER = re.compile(r"antitrust|intellectual property|\bipr\b|code of conduct|"
                     r"zoom|calendar invite|copyright|license|membership|"
                     r"roll call|attendance|attendees|apologies|meeting logistics|"
-                    r"new members|introductions|housekeeping", re.I)
+                    r"new members|introductions|housekeeping|member list|"
+                    r"terms of reference|meeting schedule|standing agenda|charter", re.I)
 MATTERS = re.compile(r"\b(proposal|propose|proposed|question|discuss|concern|"
                      r"issue|risk|decision|decided|agreed|resolved|action|"
                      r"follow.up|assigned|next steps?|open question|"
@@ -30,6 +30,13 @@ ACTION = re.compile(r"\b(action|follow.up|next step|assigned|todo)\b", re.I)
 RELEVANT = {"github.com", "lf-toip.atlassian.net", "trustoverip.org",
             "w3.org", "www.w3.org", "identity.foundation", "ietf.org", "www.ietf.org", "datatracker.ietf.org"}
 
+INTERPRETATION_LIMITS = [
+    "extractive_passage_only",
+    "no_outcome_inferred",
+    "no_authority_inferred",
+    "no_adoption_or_implementation_inferred",
+]
+
 def canonical(url):
     if not isinstance(url, str):
         return None
@@ -40,7 +47,7 @@ def canonical(url):
         return None
     if parsed.hostname not in RELEVANT and not parsed.hostname.endswith(".github.io"):
         return None
-    if len(url) > 600 or any(ch in url for ch in ('"', "'", "<", ">", "\n", "\r")):
+    if len(url) > 600 or any(ch in url for ch in ('\"', "'", "<", ">", "\n", "\r")):
         return None
     return unescape(url).split("#", 1)[0]
 
@@ -119,6 +126,17 @@ def _signal(text):
             signals.append(name)
     return signals
 
+def _kind(language):
+    if "question_language" in language:
+        return "Question / clarification"
+    if "proposal_language" in language:
+        return "Proposal / alternative"
+    if "action_language" in language:
+        return "Action / follow-up wording"
+    if "decision_language" in language:
+        return "Decision-related wording (not an established decision)"
+    return "Technical discussion"
+
 def extract_discussions(body, *, max_blocks=8):
     if not isinstance(body, str) or len(body) > 250000 or not 1 <= max_blocks <= 12:
         raise ValueError("invalid bounded Confluence content")
@@ -140,15 +158,13 @@ def extract_discussions(body, *, max_blocks=8):
         if len(best) > 200:
             excerpt = excerpt.rsplit(" ", 1)[0] + "…"
         language = _signal(text)
-        kind = ("Question / clarification" if "question_language" in language else
-                "Proposal / alternative" if "proposal_language" in language else
-                "Action / follow-up wording" if "action_language" in language else
-                "Decision-related wording (unverified)" if "decision_language" in language else
-                "Technical discussion")
+        kind = _kind(language)
         selected.append({
             "section": heading, "abstract": kind + ": " + excerpt,
             "brief_source_excerpt": excerpt[:160],
             "language_signals": language,
+            "outcome_state": "not_established",
+            "interpretation_limits": list(INTERPRETATION_LIMITS),
             "basis_sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
             "evidence_basis": "selected_substantive_source_passage",
             "rank": score, "source_block_number": position + 1,
@@ -162,6 +178,6 @@ def extract_discussions(body, *, max_blocks=8):
     return {
         "sections": selected, "github_references": github_refs,
         "text_sections_inspected": len(parser.blocks),
-        "summary_method": "evidence_sentence_selection_scored_v3",
-        "disclosure": "Extractive, selected passages; no approval or outcome inferred.",
+        "summary_method": "evidence_sentence_selection_scored_v4",
+        "disclosure": "Extractive, selected passages; no approval, decision, adoption or outcome inferred.",
     }
