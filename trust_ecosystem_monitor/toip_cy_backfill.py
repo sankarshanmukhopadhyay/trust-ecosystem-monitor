@@ -3,7 +3,7 @@
 This module intentionally does not expand Confluence, LFX, Zoom, meeting or
 cross-source claims. It fills missing annual months from bounded GitHub issue
 and pull-request lifecycle observations, then renders the annual report with
-Confluence represented as unavailable for those backfilled months.
+empty Confluence source sets for those backfilled months.
 """
 from __future__ import annotations
 
@@ -57,11 +57,16 @@ def previous_completed_month(now: datetime | None = None) -> str:
 
 
 def github_only_content(month: str) -> dict:
-    """Create an explicit no-Confluence observation for GitHub-only backfill."""
+    """Create an explicit empty-Confluence observation for GitHub-only backfill.
+
+    The annual publisher currently accepts `sample_only` Confluence coverage.
+    We therefore represent the gated source set as an empty sample while the
+    backfill summary and workflow/docs carry the explicit GitHub-only boundary.
+    """
     month_bounds(month)
     return {
         "month": month,
-        "coverage": "github_only_backfill_no_confluence",
+        "coverage": "sample_only",
         "pages": [],
         "unavailable_count": 0,
         "boundary": (
@@ -109,7 +114,7 @@ def backfill(
         "org": org,
         "start": start,
         "end": end,
-        "scope": "github_only_backfill_no_confluence",
+        "scope": "github_only_backfill_no_confluence_or_lfx",
         "prefixes": selected_prefixes,
         "processed": [],
         "skipped_existing": [],
