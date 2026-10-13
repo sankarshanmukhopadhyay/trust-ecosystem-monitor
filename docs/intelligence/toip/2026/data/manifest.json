@@ -25107,6 +25107,32 @@
       "period": "2026-09",
       "prior_digest": "f6bc1d8f6cecab4c0b28f3a12b60599a9614a4a231041142330512904c95a1b6",
       "source": "monthly-run"
+    },
+    {
+      "current_digest": "9bfdf1dbfcb2bc5cf48f43c481b413cd04b4f10915317c47551eb20e20c3b149",
+      "explanation": "Newly collected evidence differs from the immutable first observation. Earlier report is not overwritten.",
+      "impact": "review_required",
+      "key": "month:2026-09:9bfdf1dbfcb2bc5cf48f43c481b413cd04b4f10915317c47551eb20e20c3b149",
+      "kind": "month_reobservation",
+      "observed_at": "2026-10-13T13:45:11.916907+00:00",
+      "period": "2026-09",
+      "prior_digest": "f6bc1d8f6cecab4c0b28f3a12b60599a9614a4a231041142330512904c95a1b6",
+      "source": "monthly-run"
+    },
+    {
+      "current_digest": "e7f6a3d0751a68e00ee7a7fce52999c61d555651956c8cf595c8c29a584a5dbd",
+      "current_version": 34,
+      "explanation": "Public page version changed; historical interpretation requires review.",
+      "first_observed_in": "2026-08",
+      "impact": "review_required",
+      "key": "source:363331586:e7f6a3d0751a68e00ee7a7fce52999c61d555651956c8cf595c8c29a584a5dbd",
+      "kind": "source_version_change",
+      "observed_at": "2026-10-13T13:45:11.916907+00:00",
+      "page_id": "363331586",
+      "period": "2026-09",
+      "previous_version": 31,
+      "prior_digest": "285edaaaac9d614d958ef45876d8182d8c62a8d64931f3c27c3b27a532ff4940",
+      "source": "https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/363331586"
     }
   ],
   "schema": "tem-cy-intelligence-v1",
@@ -31782,6 +31808,176 @@
         "url": "https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/363331586",
         "version": 31,
         "version_created_at": "2026-09-30T15:00:58.427Z"
+      },
+      {
+        "content_fingerprint": "e7f6a3d0751a68e00ee7a7fce52999c61d555651956c8cf595c8c29a584a5dbd",
+        "discussions": [
+          {
+            "basis_sha256": "a92ea7303b8daada2ad3d53a7337c6fc3bdd55dd04d665d53b421f5bf6594d02",
+            "heading": "Agenda Items and Notes",
+            "references": [
+              "https://github.com/trustoverip/dtgwg-rahp-tf/issues/9",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17"
+            ],
+            "signal": [
+              "proposal_language"
+            ],
+            "source_block_number": 16,
+            "summary": "Proposal / alternative: to check with @Ry Jones about switching to a new upstream repo: [update] · to post the spec-author requirements as issues: partly covered by #9 (adoption proposal) and #17 (convergence tracker)…"
+          },
+          {
+            "basis_sha256": "36ac9c1f6011171810952f234dee6a289f815500f7eae86e85f3e278d6e2d0d7",
+            "heading": "Agenda Items and Notes",
+            "references": [
+              "https://github.com/trustoverip/dtgwg-rahp-tf/pull/16",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/pull/10",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/pull/11",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/pull/12",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/pull/15",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17",
+              "https://github.com/sankarshanmukhopadhyay/rahp-toolkit"
+            ],
+            "signal": [
+              "question_language",
+              "action_language"
+            ],
+            "source_block_number": 19,
+            "summary": "Question / clarification: The next step is to determine whether the discrepancy reflects an example defect, an ambiguity in the specification, or an intentional semantic distinction before considering any upstream…"
+          },
+          {
+            "basis_sha256": "e19d44d9ee83c42a9987965c0080ce6317067e625ac1c21d0f9f7f94f4c61ef1",
+            "heading": "Agenda Items and Notes",
+            "references": [
+              "https://github.com/trustoverip/dtgwg-rahp-tf/pull/21",
+              "https://github.com/trustoverip/dtgwg-rahp-tf/blob/main/method/vocabularies.yaml"
+            ],
+            "signal": [
+              "question_language",
+              "proposal_language"
+            ],
+            "source_block_number": 24,
+            "summary": "Question / clarification: #21 adds a hard-coded check to stop them drifting · Proposal: move them into method/vocabularies.yaml with definitions, so there's one model and one validator; Nicky drafts the definitions ·…"
+          },
+          {
+            "basis_sha256": "ad20e3108ad416a92e9c2cb78d24d9150ef2fb99aca9f6d0f61d891d7753bffc",
+            "heading": "Agenda Items and Notes",
+            "references": [],
+            "signal": [
+              "question_language",
+              "proposal_language"
+            ],
+            "source_block_number": 32,
+            "summary": "Question / clarification: In several cases, the implementation has effectively become the primary expression of the underlying method.By comparison, other work within the Trust over IP ecosystem generally follows a different…"
+          },
+          {
+            "basis_sha256": "4193a84a0a892ac40f2ab1e4a158e41e97197f0647a1fd0ba03f188b678dcbcf",
+            "heading": "Agenda Items and Notes (including all relevant links)",
+            "references": [],
+            "signal": [
+              "question_language",
+              "action_language"
+            ],
+            "source_block_number": 199,
+            "summary": "Question / clarification: What Is the Harm Pathway — and Is There a Proportional Remedy?For any credential action (invitation, verification, issuance, revocation, registry write):What is the worst realistic harm that could…"
+          },
+          {
+            "basis_sha256": "af1dce6b6600d010896381d21d62a36002e6941ed461ad2f2f494dc8e0f7d77a",
+            "heading": "Agenda Items and Notes (including all relevant links)",
+            "references": [
+              "https://trustoverip.org/wp-content/uploads/Practical-Steps-for-Overcoming-Human-Harm-Challenges-In-Digital-Identity-Ecosystems-V1.0-2023-05-24.pdf",
+              "https://github.com/trustoverip/dtgwg-cred-tf/discussions/27",
+              "https://github.com/trustoverip/dtgwg-cred-tf/discussions/22"
+            ],
+            "signal": [
+              "question_language",
+              "proposal_language",
+              "action_language"
+            ],
+            "source_block_number": 224,
+            "summary": "Question / clarification: QUESTION for WG - can we attach a RAHP tag and then draw across all github discussions to look for patterns and be able to draw together deliverables e.g., requirements definition in the…"
+          },
+          {
+            "basis_sha256": "d60bf0340c4cea238a293274e9a832c9561c85cc8ea61d0a7a2b791801540115",
+            "heading": "Agenda Items and Notes (including all relevant links)",
+            "references": [],
+            "signal": [
+              "question_language",
+              "decision_language",
+              "action_language"
+            ],
+            "source_block_number": 245,
+            "summary": "Question / clarification: We could learn from them?Action: to provide connection and see if they can join us to share learnings and activities"
+          },
+          {
+            "basis_sha256": "5aaf3ecefdf4d1910a7c16fcb87e8dea23cf2554b93b17bd89b34cf978a211a5",
+            "heading": "Agenda Items and Notes (including all relevant links)",
+            "references": [],
+            "signal": [
+              "question_language",
+              "decision_language"
+            ],
+            "source_block_number": 293,
+            "summary": "Question / clarification: The First Person Credential: A Sociotechnical Analysis of Digital Trust, Interpersonal Harm, and the Right to Be…"
+          }
+        ],
+        "evidence": [
+          {
+            "abstract": "The record discusses provide, updates, points.",
+            "basis_sha256": "ae91bd2fc0fc2e37682662b9bbf1debfb92b2f076d7eb09bad1a17dda858419c",
+            "heading": "General"
+          },
+          {
+            "abstract": "The record contains proposal or option language concerning check, jones, switching.",
+            "basis_sha256": "bbb99989bcc03c948e55a02ee2b0ddd1c2580becb9bd5f1d1da9ab17cd10b839",
+            "heading": "Agenda Items and Notes"
+          },
+          {
+            "abstract": "The record discusses create, upstream, issue.",
+            "basis_sha256": "0223e1b37d665ecd0906daa090a315052e70dd98a4c858c3bee8e4c273a6112a",
+            "heading": "Agenda Items and Notes"
+          },
+          {
+            "abstract": "The record discusses evidence, assessment, increments.",
+            "basis_sha256": "74ca7d5b3b162bbef3ef9c1764152c36dc74ddb2ffd08dd5b26f24b1cfda249f",
+            "heading": "Agenda Items and Notes"
+          },
+          {
+            "abstract": "The record discusses plan, sets, increments.",
+            "basis_sha256": "7e1968183aeeb7feaa5e3eaa82099a707702a2deabdb777d244d69625f6b787c",
+            "heading": "Agenda Items and Notes"
+          },
+          {
+            "abstract": "The record discusses review, validation, increment.",
+            "basis_sha256": "b7e2b7abdf2ec6bd439f1e69114fadb8b63af792778e0e0fe7ba9567edef6df2",
+            "heading": "Agenda Items and Notes"
+          }
+        ],
+        "github_references": [
+          "https://github.com/sankarshanmukhopadhyay/rahp-toolkit/issues/311",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/issues/17",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/issues/9",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/10",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/11",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/12",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/14",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/15",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/16",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/18",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/19",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/20",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/21",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/22",
+          "https://github.com/trustoverip/dtgwg-rahp-tf/pull/6"
+        ],
+        "id": "363331586",
+        "observed_at": "2026-10-13T13:45:11.916907+00:00",
+        "observed_in": "2026-09",
+        "page_kind": "substantive",
+        "title": "Meetings RAHP Task Force",
+        "url": "https://lf-toip.atlassian.net/wiki/spaces/HOME/pages/363331586",
+        "version": 34,
+        "version_created_at": "2026-10-13T04:05:41.819Z"
       }
     ],
     "438009857": [
