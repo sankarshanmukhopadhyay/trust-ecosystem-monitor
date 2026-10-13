@@ -8,6 +8,7 @@ from pathlib import Path
 
 from .toip_confluence_acquisition import acquire_metadata
 from .toip_confluence_admission import validate_authorization_decision
+from .toip_publication_boundary import assert_metadata_publication_boundary
 
 
 def collect(decision: dict, *, review: dict, revoked_ids: set[str],
@@ -16,6 +17,8 @@ def collect(decision: dict, *, review: dict, revoked_ids: set[str],
 
     Caller must independently establish authenticity of decision and review.
     A successful collection is not publication admission or legal verification.
+    The returned artifact is mechanically checked against the metadata-only
+    publication boundary before it can be written by the CLI.
     """
     validate_authorization_decision(decision, as_of=as_of, revoked_ids=revoked_ids)
     if (not isinstance(review, dict)
@@ -36,7 +39,7 @@ def collect(decision: dict, *, review: dict, revoked_ids: set[str],
                          retrieved_at=as_of, fetch=fetch)
         for month in months
     ]
-    return {
+    return assert_metadata_publication_boundary({
         "schema_version": "1",
         "type": "toip_confluence_metadata_acquisition",
         "authorization_decision_id": decision["decision_id"],
@@ -44,7 +47,7 @@ def collect(decision: dict, *, review: dict, revoked_ids: set[str],
         "retrieved_at": as_of,
         "publication_admitted": False,
         "results": results,
-    }
+    })
 
 
 def main() -> None:
