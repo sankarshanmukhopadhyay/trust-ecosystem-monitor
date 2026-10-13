@@ -12,11 +12,21 @@ The former K4 extractor selected the first few keyword-bearing paragraphs. The n
 
 - source section and original source block number;
 - a short **extractive** evidence statement labelled by question/proposal/action/decision-related *wording*;
+- explicit `outcome_state=not_established` and interpretation limits stating that no outcome, authority, adoption or implementation is inferred from the selected passage;
 - SHA-256 of its full parsed source block;
 - up to 8 HTTPS links from that block (GitHub issues/PRs, Confluence, W3C, IETF and explicitly allowed reference domains);
 - disclosed limitations: a discussion and referenced resource do **not** establish adoption, decision, assigned owner or a verified relationship.
 
 This is materially more faithful to document content than a list of headings or keywords, **but not a comprehensive editorial summary**: the chosen passage may omit competing alternatives, qualifications or a conclusion elsewhere. Public source rights and source-owner approval remain separately gated.
+
+### Negative extraction boundary
+
+Parser fixtures deliberately cover pages and passages that must not become governance findings:
+
+- charter, membership, terms-of-reference and meeting-schedule pages are administrative context unless separately admitted as substantive discussion evidence;
+- attendance, roll call, housekeeping, Zoom/calendar logistics and standing notices are excluded even when they contain community terminology;
+- decision-like words such as `agreed`, `approved`, `resolved` or `consensus` are recorded only as **language signals** unless an independently admitted outcome record establishes the decision;
+- every selected block remains `not_established` at the outcome layer until source-use, record admission and human review gates say otherwise.
 
 The annual manifest retains selected bounded evidence and links without persisting full meeting minutes. Its historical monthly observation is immutable, while the displayed interpretation can use a newer inspected version from the source-version ledger, with a visible notice that historical evidence was preserved. A page with the same version but a changed extraction result creates an `interpretation_method_change`, **not** a false claim that the source page itself changed.
 
