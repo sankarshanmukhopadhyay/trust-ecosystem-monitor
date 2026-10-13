@@ -1,0 +1,134 @@
+{
+  "schema_version": "1",
+  "registry_status": "curated_incomplete",
+  "official_toip_inventory": false,
+  "source_owner_authority_verified": false,
+  "complete_group_inventory": false,
+  "disclosure": "Curator-scoped seed registry for reader grouping. This is not an official ToIP inventory, authority record, charter register, meeting register or source-owner approval.",
+  "entities": [
+    {
+      "id": "toip:dtwg",
+      "name": "Digital Trust Working Group",
+      "entity_type": "working_group",
+      "authority_state": "not_official",
+      "lifecycle_state": "unknown",
+      "official_status_asserted": false,
+      "confidence": "medium",
+      "curator_rationale": "Repository names and public ToIP-facing project surfaces indicate DTWG/DTG-related work, but this seed does not verify current charter status or full group lifecycle.",
+      "provenance": [
+        {
+          "label": "Observed public GitHub organization repository naming",
+          "state": "candidate",
+          "url": "https://github.com/trustoverip/dtgwg-rahp-tf"
+        }
+      ],
+      "mappings": {
+        "repositories": [
+          {
+            "full_name": "trustoverip/dtgwg-rahp-tf",
+            "url": "https://github.com/trustoverip/dtgwg-rahp-tf",
+            "mapping_state": "candidate",
+            "confidence": "medium"
+          },
+          {
+            "full_name": "trustoverip/dtgwg-cred-spec",
+            "url": "https://github.com/trustoverip/dtgwg-cred-spec",
+            "mapping_state": "candidate",
+            "confidence": "medium"
+          }
+        ],
+        "confluence": [
+          {
+            "space_id": "22970380",
+            "mapping_state": "candidate",
+            "confidence": "low"
+          }
+        ],
+        "meeting_series": [
+          {
+            "label": "DTWG meeting series",
+            "mapping_state": "not_checked",
+            "held_state": "not_checked",
+            "confidence": "low"
+          }
+        ]
+      }
+    },
+    {
+      "id": "toip:tswg",
+      "name": "Technical Stack Working Group",
+      "entity_type": "working_group",
+      "authority_state": "not_official",
+      "lifecycle_state": "unknown",
+      "official_status_asserted": false,
+      "confidence": "medium",
+      "curator_rationale": "Repository names and public ToIP-facing project surfaces indicate TSWG-related work, but this seed does not verify current charter status, membership or lifecycle.",
+      "provenance": [
+        {
+          "label": "Observed public GitHub organization repository naming",
+          "state": "candidate",
+          "url": "https://github.com/trustoverip/tswg-trust-registry-protocol"
+        }
+      ],
+      "mappings": {
+        "repositories": [
+          {
+            "full_name": "trustoverip/tswg-trust-registry-protocol",
+            "url": "https://github.com/trustoverip/tswg-trust-registry-protocol",
+            "mapping_state": "candidate",
+            "confidence": "medium"
+          },
+          {
+            "full_name": "trustoverip/tswg-tsp-specification",
+            "url": "https://github.com/trustoverip/tswg-tsp-specification",
+            "mapping_state": "candidate",
+            "confidence": "medium"
+          }
+        ],
+        "confluence": [
+          {
+            "space_id": "22970380",
+            "mapping_state": "candidate",
+            "confidence": "low"
+          }
+        ],
+        "meeting_series": [
+          {
+            "label": "TSWG meeting series",
+            "mapping_state": "not_checked",
+            "held_state": "not_checked",
+            "confidence": "low"
+          }
+        ]
+      }
+    },
+    {
+      "id": "toip:governance-stack",
+      "name": "Governance Stack work area",
+      "entity_type": "task_force",
+      "authority_state": "not_verified",
+      "lifecycle_state": "unknown",
+      "official_status_asserted": false,
+      "confidence": "low",
+      "curator_rationale": "The work area is included only as a placeholder for future subject grouping; official body status and current lifecycle are not verified.",
+      "provenance": [
+        {
+          "label": "Curator placeholder pending authoritative inventory",
+          "state": "not_checked"
+        }
+      ],
+      "mappings": {
+        "repositories": [],
+        "confluence": [],
+        "meeting_series": [
+          {
+            "label": "Governance Stack meeting or discussion series",
+            "mapping_state": "not_checked",
+            "held_state": "not_checked",
+            "confidence": "low"
+          }
+        ]
+      }
+    }
+  ]
+}
