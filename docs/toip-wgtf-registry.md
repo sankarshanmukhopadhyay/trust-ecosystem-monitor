@@ -1,0 +1,65 @@
+# ToIP WG/TF identity registry — curated incomplete seed
+
+## Purpose
+
+The ToIP cumulative intelligence work needs a reader-facing way to group evidence by recognizable working group, task force, committee or work area before the report can become useful to humans. The current GitHub- and page-centric view is operationally auditable but not yet organized around the bodies through which ToIP work is actually understood.
+
+`data/trustoverip/wgtf-registry.json` is a **curated incomplete seed registry** for that grouping problem. It is a product and modelling scaffold, not an authority record.
+
+## Explicit non-claims
+
+The registry does **not** assert:
+
+- an official ToIP working-group inventory;
+- source-owner authority or ToIP endorsement;
+- complete group, task force, committee or meeting coverage;
+- current charter validity, membership, chairs or lifecycle state;
+- that a scheduled meeting was held;
+- that Confluence or LFX evidence may be republished;
+- that repository naming alone proves institutional ownership.
+
+Every entity must therefore carry `official_status_asserted=false`, an incomplete/curated disclosure, provenance, mapping confidence and an authority state such as `not_official` or `not_verified`.
+
+## Model boundary
+
+The schema supports the following reader-facing concepts:
+
+- entity identity: stable local `toip:*` ID, name and entity type;
+- authority boundary: explicit non-official or not-verified status;
+- lifecycle uncertainty: active, inactive, historical or unknown;
+- provenance: candidate or verified public references;
+- mappings: repositories, Confluence references and meeting series;
+- meeting state: `not_checked`, `unknown`, `scheduled_only` or `held_verified`.
+
+The important constraint is negative: absence of mapping is not absence of activity, and a candidate mapping is not authority.
+
+## Validation
+
+`trust_ecosystem_monitor.toip_wgtf_registry` validates the fixture and rejects:
+
+- official-inventory claims;
+- source-owner-authority claims;
+- complete-inventory claims;
+- per-entry official-status assertions;
+- duplicate entity IDs or names;
+- unsafe provenance or mapping URLs;
+- malformed repository names;
+- silent conversion of meeting-series candidates into held meetings.
+
+`tests/test_toip_wgtf_registry.py` exercises these boundaries.
+
+## Synchronization with open issues
+
+This tranche is deliberately scoped to the #122 P1/B1-B2 direction: create the first explicit WG/TF identity scaffold for reader grouping while keeping the authority boundary honest.
+
+It does not close #80 because LFX Calendar/Zoom acquisition remains deferred. It does not close #63 because Confluence source-use authority and publication rights remain unresolved. It does not close #82 because this registry does not create live GitHub-Confluence correlations or admitted findings.
+
+## Next integration path
+
+A later PR can use the validated registry to reorganize the CY report first by WG/TF, then developments and monthly chronology. That later rendering step should still preserve:
+
+- unmapped evidence;
+- unknown group affiliation;
+- multiple candidate mappings;
+- confidence and provenance;
+- source-use and admission gates.
