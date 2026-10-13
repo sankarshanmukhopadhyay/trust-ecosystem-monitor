@@ -55,7 +55,7 @@ class ToipCyBackfillTests(unittest.TestCase):
                                 "github": {"scope": "test", "coverage_complete": True, "evidence": []},
                                 "confluence": {"coverage": "sample_only", "source_count": 0, "unavailable_count": 0, "sources": []},
                             },
-                            "observation_digest": "5cb7d266107142a5a8500ac5aa07890b8cc587c40ac7230f068c38be74f3dc98",
+                            "observation_digest": "080848931980f9bd5bfbc556a46d68277d4198f21caef04936460e25f2fdb308",
                             "temporal_basis": "retrospective-current-public-source",
                         }
                     },
