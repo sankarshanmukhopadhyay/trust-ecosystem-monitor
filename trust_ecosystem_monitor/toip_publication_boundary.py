@@ -7,6 +7,7 @@ fields into public artifacts.
 """
 from __future__ import annotations
 
+import re
 from urllib.parse import urlsplit
 
 ALLOWED_RESULT_KEYS = {
@@ -37,12 +38,12 @@ ALLOWED_RECORD_KEYS = {
     "classification",
 }
 
-DISALLOWED_KEY_PARTS = (
+DISALLOWED_KEY_TOKENS = {
     "title",
     "body",
     "content",
     "excerpt",
-    "summary_text",
+    "text",
     "storage",
     "html",
     "macro",
@@ -50,6 +51,7 @@ DISALLOWED_KEY_PARTS = (
     "creator",
     "owner",
     "account",
+    "accountid",
     "email",
     "displayname",
     "attachment",
@@ -60,7 +62,7 @@ DISALLOWED_KEY_PARTS = (
     "speaker",
     "roster",
     "avatar",
-)
+}
 
 ALLOWED_COVERAGE = {"partial", "unavailable", "not_authorized", "not_checked"}
 
@@ -69,9 +71,16 @@ def _path(parent: str, child: str) -> str:
     return f"{parent}.{child}" if parent else child
 
 
-def _contains_disallowed_key_part(key: str) -> bool:
-    normalized = key.replace("-", "_").lower()
-    return any(part in normalized for part in DISALLOWED_KEY_PARTS)
+def _key_tokens(key: str) -> set[str]:
+    """Return semantic key tokens without treating authorization as author."""
+    normalized = re.sub(r"[^0-9a-zA-Z]+", "_", key).lower()
+    parts = {part for part in normalized.split("_") if part}
+    parts.add(normalized)
+    return parts
+
+
+def _contains_disallowed_key_token(key: str) -> bool:
+    return bool(_key_tokens(key) & DISALLOWED_KEY_TOKENS)
 
 
 def _walk_for_disallowed_keys(value, *, path: str, violations: list[str]) -> None:
@@ -81,7 +90,7 @@ def _walk_for_disallowed_keys(value, *, path: str, violations: list[str]) -> Non
                 violations.append(f"{path}: non-string key")
                 continue
             child_path = _path(path, key)
-            if _contains_disallowed_key_part(key):
+            if _contains_disallowed_key_token(key):
                 violations.append(f"{child_path}: content-like or personal-data field is outside metadata boundary")
             _walk_for_disallowed_keys(child, path=child_path, violations=violations)
     elif isinstance(value, list):
