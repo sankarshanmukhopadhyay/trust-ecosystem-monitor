@@ -22,10 +22,10 @@ this monitored period and are provided here for background.</p>
 """
 
 DECISION_LIKE_DISCUSSION = """
-<h2>Delegation options</h2>
-<p>The group discussed whether delegation authority should be represented as
-a credential or as an external authorization policy reference. Participants
-agreed to continue analysis and bring alternatives back after testing
+<h2>Delegation outcome wording</h2>
+<p>The delegation protocol issue was discussed and the group agreed that
+the authorization relationship needs additional implementation evidence
+before any specification change can be treated as resolved
 <a href="https://github.com/trustoverip/dtgwg-cred-spec/issues/45">the open issue</a>.</p>
 """
 
