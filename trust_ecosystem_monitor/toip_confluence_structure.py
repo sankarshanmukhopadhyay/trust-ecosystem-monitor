@@ -82,8 +82,8 @@ class StructureParser(HTMLParser):
         self.table_depth = 0
         self.row_open = False
         self.row_cells: list[str] = []
+        self.row_links: list[str] = []
         self.cell_buffer: list[str] = []
-        self.cell_links: list[str] = []
         self.macro_depth = 0
 
     def _path(self) -> list[str]:
@@ -123,9 +123,9 @@ class StructureParser(HTMLParser):
         elif tag == "tr" and self.table_depth:
             self.row_open = True
             self.row_cells = []
+            self.row_links = []
         elif tag in ("td", "th") and self.row_open:
             self.cell_buffer = []
-            self.cell_links = []
         elif tag in ("p", "li") and self.active is None and not self.table_depth:
             self._start_active("paragraph")
         elif tag in ("h1", "h2", "h3", "h4") and self.active is None:
@@ -137,7 +137,7 @@ class StructureParser(HTMLParser):
                 if self.active is not None:
                     self.active["links"].append(url)
                 if self.row_open:
-                    self.cell_links.append(url)
+                    self.row_links.append(url)
 
     def handle_endtag(self, tag: str) -> None:
         if tag in ("script", "style") and self.skip:
@@ -157,11 +157,11 @@ class StructureParser(HTMLParser):
                     "kind": "table_row",
                     "heading_path": self._path(),
                     "text": text,
-                    "links": list(dict.fromkeys(self.cell_links)),
+                    "links": list(dict.fromkeys(self.row_links)),
                 })
             self.row_open = False
             self.row_cells = []
-            self.cell_links = []
+            self.row_links = []
         elif tag == "table" and self.table_depth:
             self.table_depth -= 1
         elif self.active and self.active.get("kind") == "heading" and tag in ("h1", "h2", "h3", "h4"):
