@@ -19,14 +19,26 @@ jobs:
           base="https://sankarshanmukhopadhyay.github.io/trust-ecosystem-monitor"
           tmp="$(mktemp -d)"
 
+          fetch_with_retry() {
+            local url="$1"
+            local output="$2"
+            local status=""
+            for attempt in 1 2 3; do
+              status="$(curl --location --silent --show-error --fail --max-time 30 --write-out '%{http_code}' --output "$output" "$url" || true)"
+              if [ "$status" = "200" ] && [ -s "$output" ]; then
+                return 0
+              fi
+              echo "retry $attempt for $url returned status ${status:-curl-failed}"
+              sleep 3
+            done
+            return 1
+          }
+
           check_route() {
             local route="$1"
             local label="$2"
             local output="$tmp/${label}.html"
-            local status
-            status="$(curl --location --silent --show-error --fail --max-time 30 --write-out '%{http_code}' --output "$output" "$base$route")"
-            test "$status" = "200"
-            test -s "$output"
+            fetch_with_retry "$base$route" "$output"
             grep -Fqi "<html" "$output"
             echo "ok $route renders non-empty HTML"
           }
@@ -46,10 +58,22 @@ jobs:
           base="https://sankarshanmukhopadhyay.github.io/trust-ecosystem-monitor"
           tmp="$(mktemp -d)"
 
-          curl --location --silent --show-error --fail --max-time 30 \
-            --output "$tmp/manifest.json" \
-            "$base/intelligence/toip/2026/data/manifest.json"
-          test -s "$tmp/manifest.json"
+          fetch_with_retry() {
+            local url="$1"
+            local output="$2"
+            local status=""
+            for attempt in 1 2 3; do
+              status="$(curl --location --silent --show-error --fail --max-time 30 --write-out '%{http_code}' --output "$output" "$url" || true)"
+              if [ "$status" = "200" ] && [ -s "$output" ]; then
+                return 0
+              fi
+              echo "retry $attempt for $url returned status ${status:-curl-failed}"
+              sleep 3
+            done
+            return 1
+          }
+
+          fetch_with_retry "$base/intelligence/toip/2026/data/manifest.json" "$tmp/manifest.json"
           grep -Fq '"schema"' "$tmp/manifest.json"
           grep -Fq 'tem-cy-intelligence-v1' "$tmp/manifest.json"
           echo "ok machine-ingestion manifest route is reachable"
