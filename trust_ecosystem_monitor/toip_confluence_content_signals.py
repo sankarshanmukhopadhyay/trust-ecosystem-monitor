@@ -14,6 +14,7 @@ from urllib.request import Request, urlopen
 from .confluence_search import BASE as SEARCH_URL
 from .toip_content_interpretation import extract
 from .toip_discussion_blocks import extract_discussions
+from .toip_confluence_structure import extract_structure
 
 HOST = "lf-toip.atlassian.net"
 HOME = "22970380"
@@ -100,6 +101,7 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
                 result["unavailable_count"] += 1
                 continue
             title = _safe_title(page.get("title"))
+            source_url = "https://" + HOST + "/wiki/spaces/HOME/pages/" + identifier
             storage = ((page.get("body") or {}).get("storage") or {})
             body = storage.get("value", "")
             if not isinstance(body, str) or len(body) > 250_000:
@@ -108,18 +110,25 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
             parser.feed(body)
             interpreted = extract(body)
             discussions = extract_discussions(body)
+            structural = extract_structure(
+                body or "<p>No extractable bounded storage body.</p>",
+                page_id=identifier,
+                source_url=source_url,
+                page_version=(page.get("version") or {}).get("number"),
+            )
             page_kind = ("administrative" if re.search(
                 r"template|calendar|standing agenda|meeting logistics|home page|"
                 r"index of meeting|instructions|code of conduct", title, re.I)
                 else "substantive" if discussions["sections"] else "content_poor")
             result["pages"].append({
                 "id": identifier, "title": title, "page_kind": page_kind,
-                "url": "https://" + HOST + "/wiki/spaces/HOME/pages/" + identifier,
+                "url": source_url,
                 "version": (page.get("version") or {}).get("number"),
                 "version_created_at": (page.get("version") or {}).get("createdAt"),
                 "topic_headings": parser.headings[:8],
                 "section_abstracts": interpreted["sections"],
                 "discussion_blocks": discussions["sections"],
+                "structural_diagnostics": structural,
                 "github_references": interpreted["github_references"],
                 "summary_method": interpreted["summary_method"],
                 "text_sections_inspected": interpreted["text_sections_inspected"],
