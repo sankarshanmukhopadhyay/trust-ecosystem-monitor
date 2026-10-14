@@ -8,13 +8,13 @@ from pathlib import Path
 from trust_ecosystem_monitor.toip_cy_backfill import (
     backfill,
     github_only_content,
-    main,
     month_range,
     previous_completed_month,
 )
 
 
 EXISTING_DIGEST = "080848931980f9bd5bfbc556a46d68277d4198f21caef04936460e25f2fdb308"
+WORKFLOW = Path(__file__).resolve().parents[1] / ".github" / "workflows" / "toip-cy-backfill.yml"
 
 
 def _write_manifest(site: Path, months: list[str]) -> None:
@@ -152,24 +152,13 @@ class ToipCyBackfillTests(unittest.TestCase):
             self.assertEqual(persisted["failed"][0]["month"], "2026-01")
             self.assertIn("rate budget exhausted", persisted["failed"][0]["error"])
 
-    def test_main_one_month_mode_uses_same_start_and_end(self):
-        with tempfile.TemporaryDirectory() as folder:
-            root = Path(folder)
-            github_dir = root / "github"
-            site = root / "site"
-            summary_path = root / "summary.json"
-            exit_code = main([
-                "--month", "2026-01",
-                "--github-dir", str(github_dir),
-                "--site", str(site),
-                "--summary", str(summary_path),
-                "--prefix", "dtgwg-",
-            ])
-            self.assertEqual(exit_code, 0)
-            summary = json.loads(summary_path.read_text(encoding="utf-8"))
-            self.assertEqual(summary["start"], "2026-01")
-            self.assertEqual(summary["end"], "2026-01")
-            self.assertEqual(summary["months_planned"], ["2026-01"])
+    def test_workflow_exposes_single_month_operator_mode(self):
+        text = WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("single_month:", text)
+        self.assertIn("args+=(--month", text)
+        self.assertIn("args+=(--start", text)
+        self.assertIn("args+=(--end", text)
+        self.assertIn("--summary monthly-prototype/cy-backfill-summary.json", text)
 
 
 if __name__ == "__main__":
