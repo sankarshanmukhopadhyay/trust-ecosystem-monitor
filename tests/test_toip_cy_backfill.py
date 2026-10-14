@@ -13,6 +13,36 @@ from trust_ecosystem_monitor.toip_cy_backfill import (
 )
 
 
+EXISTING_DIGEST = "080848931980f9bd5bfbc556a46d68277d4198f21caef04936460e25f2fdb308"
+WORKFLOW = Path(__file__).resolve().parents[1] / ".github" / "workflows" / "toip-cy-backfill.yml"
+
+
+def _write_manifest(site: Path, months: list[str]) -> None:
+    (site / "2026" / "data").mkdir(parents=True)
+    records = {}
+    for month in months:
+        records[month] = {
+            "period": month,
+            "observed_at": "2026-03-01T00:00:00+00:00",
+            "observation": {
+                "github": {"scope": "test", "coverage_complete": True, "evidence": []},
+                "confluence": {"coverage": "sample_only", "source_count": 0, "unavailable_count": 0, "sources": []},
+            },
+            "observation_digest": EXISTING_DIGEST,
+            "temporal_basis": "retrospective-current-public-source",
+        }
+    (site / "2026" / "data" / "manifest.json").write_text(
+        json.dumps({
+            "schema": "tem-cy-intelligence-v1",
+            "year": 2026,
+            "months": records,
+            "source_ledger": {},
+            "revision_notices": [],
+        }) + "\n",
+        encoding="utf-8",
+    )
+
+
 class ToipCyBackfillTests(unittest.TestCase):
     def test_month_range_is_inclusive_and_validated(self):
         self.assertEqual(month_range("2026-01", "2026-03"), ["2026-01", "2026-02", "2026-03"])
@@ -42,30 +72,11 @@ class ToipCyBackfillTests(unittest.TestCase):
             root = Path(folder)
             github_dir = root / "github"
             site = root / "site"
-            (site / "2026" / "data").mkdir(parents=True)
-            (site / "2026" / "data" / "manifest.json").write_text(
-                json.dumps({
-                    "schema": "tem-cy-intelligence-v1",
-                    "year": 2026,
-                    "months": {
-                        "2026-02": {
-                            "period": "2026-02",
-                            "observed_at": "2026-03-01T00:00:00+00:00",
-                            "observation": {
-                                "github": {"scope": "test", "coverage_complete": True, "evidence": []},
-                                "confluence": {"coverage": "sample_only", "source_count": 0, "unavailable_count": 0, "sources": []},
-                            },
-                            "observation_digest": "080848931980f9bd5bfbc556a46d68277d4198f21caef04936460e25f2fdb308",
-                            "temporal_basis": "retrospective-current-public-source",
-                        }
-                    },
-                    "source_ledger": {},
-                    "revision_notices": [],
-                }) + "\n",
-                encoding="utf-8",
-            )
+            summary_path = root / "summary" / "cy-backfill-summary.json"
+            _write_manifest(site, ["2026-02"])
             collected = []
             published = []
+            logs = []
 
             def collector(org, month, token, prefixes=None):
                 collected.append((org, month, token, prefixes))
@@ -99,14 +110,55 @@ class ToipCyBackfillTests(unittest.TestCase):
                 collector=collector,
                 publisher=publisher,
                 observed_at="2026-10-13T00:00:00+00:00",
+                summary_path=summary_path,
+                log=logs.append,
             )
 
             self.assertEqual(summary["processed"], ["2026-01", "2026-03"])
             self.assertEqual(summary["skipped_existing"], ["2026-02"])
+            self.assertEqual(summary["last_event"], "completed")
             self.assertEqual(published, ["2026-01", "2026-03"])
             self.assertEqual([item[1] for item in collected], ["2026-01", "2026-03"])
             self.assertTrue((github_dir / "2026-01.json").is_file())
             self.assertTrue((github_dir / "2026-03.md").is_file())
+            persisted = json.loads(summary_path.read_text(encoding="utf-8"))
+            self.assertEqual(persisted["last_event"], "completed")
+            self.assertIn("skip 2026-02", "\n".join(logs))
+            self.assertIn("collect GitHub evidence for 2026-01", "\n".join(logs))
+
+    def test_backfill_writes_failure_summary_before_reraising(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            summary_path = root / "summary.json"
+
+            def collector(org, month, token, prefixes=None):
+                raise RuntimeError("rate budget exhausted")
+
+            with self.assertRaisesRegex(RuntimeError, "rate budget exhausted"):
+                backfill(
+                    org="trustoverip",
+                    start="2026-01",
+                    end="2026-01",
+                    github_dir=root / "github",
+                    site=root / "site",
+                    token="token",
+                    collector=collector,
+                    publisher=lambda *a, **k: root / "index.html",
+                    summary_path=summary_path,
+                    log=lambda message: None,
+                )
+            persisted = json.loads(summary_path.read_text(encoding="utf-8"))
+            self.assertEqual(persisted["last_event"], "failed")
+            self.assertEqual(persisted["failed"][0]["month"], "2026-01")
+            self.assertIn("rate budget exhausted", persisted["failed"][0]["error"])
+
+    def test_workflow_exposes_single_month_operator_mode(self):
+        text = WORKFLOW.read_text(encoding="utf-8")
+        self.assertIn("single_month:", text)
+        self.assertIn("args+=(--month", text)
+        self.assertIn("args+=(--start", text)
+        self.assertIn("args+=(--end", text)
+        self.assertIn("--summary monthly-prototype/cy-backfill-summary.json", text)
 
 
 if __name__ == "__main__":

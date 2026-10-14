@@ -12,6 +12,7 @@ from datetime import datetime, timezone
 import json
 import os
 from pathlib import Path
+from typing import Callable
 
 from .monthly import collect_month, month_bounds, render_markdown
 from .toip_annual import publish
@@ -94,6 +95,18 @@ def _write_github_result(output: Path, month: str, result: dict) -> None:
     (output / f"{month}.md").write_text(render_markdown(result), encoding="utf-8")
 
 
+def _write_summary(path: Path | None, summary: dict) -> None:
+    """Persist a resumable partial summary if the caller requested one."""
+    if path is None:
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(summary, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _stamp() -> str:
+    return datetime.now(timezone.utc).isoformat()
+
+
 def backfill(
     *,
     org: str,
@@ -107,9 +120,17 @@ def backfill(
     collector=collect_month,
     publisher=publish,
     observed_at: str | None = None,
+    summary_path: Path | None = None,
+    log: Callable[[str], None] = print,
 ) -> dict:
-    """Collect and publish missing months, returning a machine-readable summary."""
+    """Collect and publish missing months, returning a machine-readable summary.
+
+    The summary is written after every skipped or processed month when
+    ``summary_path`` is supplied. This gives an operator enough state to resume
+    or inspect a long-running run without waiting for the final step.
+    """
     selected_prefixes = prefixes if prefixes is not None else list(DEFAULT_PREFIXES)
+    months = month_range(start, end)
     summary = {
         "org": org,
         "start": start,
@@ -119,24 +140,69 @@ def backfill(
         "processed": [],
         "skipped_existing": [],
         "github_unavailable": [],
+        "failed": [],
+        "last_event": "started",
+        "last_updated_at": _stamp(),
+        "months_planned": months,
     }
-    for month in month_range(start, end):
-        if _month_present(site, month) and not force:
-            summary["skipped_existing"].append(month)
-            continue
-        result = collector(org, month, token, prefixes=selected_prefixes)
-        if not result.get("coverage_complete"):
-            summary["github_unavailable"].append(month)
-        _write_github_result(github_dir, month, result)
-        publisher(
-            month,
-            github_dir,
-            site,
-            content_collect=github_only_content,
-            tracked_collect=lambda ids: {"pages": [], "unavailable": []},
-            observed_at=observed_at,
-        )
-        summary["processed"].append(month)
+    log(f"TEM ToIP CY backfill: org={org} months={','.join(months)} force={force}")
+    log(f"TEM ToIP CY backfill: repository prefixes={','.join(selected_prefixes)}")
+    _write_summary(summary_path, summary)
+
+    for index, month in enumerate(months, start=1):
+        summary["current_month"] = month
+        summary["last_event"] = "checking_month"
+        summary["last_updated_at"] = _stamp()
+        log(f"TEM ToIP CY backfill: [{index}/{len(months)}] check {month}")
+        _write_summary(summary_path, summary)
+
+        try:
+            if _month_present(site, month) and not force:
+                summary["skipped_existing"].append(month)
+                summary["last_event"] = "skipped_existing"
+                summary["last_updated_at"] = _stamp()
+                log(f"TEM ToIP CY backfill: [{index}/{len(months)}] skip {month}; already present")
+                _write_summary(summary_path, summary)
+                continue
+
+            log(f"TEM ToIP CY backfill: [{index}/{len(months)}] collect GitHub evidence for {month}")
+            result = collector(org, month, token, prefixes=selected_prefixes)
+            if not result.get("coverage_complete"):
+                summary["github_unavailable"].append(month)
+                log(f"TEM ToIP CY backfill: [{index}/{len(months)}] GitHub coverage incomplete for {month}")
+            _write_github_result(github_dir, month, result)
+
+            log(f"TEM ToIP CY backfill: [{index}/{len(months)}] publish annual state for {month}")
+            publisher(
+                month,
+                github_dir,
+                site,
+                content_collect=github_only_content,
+                tracked_collect=lambda ids: {"pages": [], "unavailable": []},
+                observed_at=observed_at,
+            )
+            summary["processed"].append(month)
+            summary["last_event"] = "processed_month"
+            summary["last_updated_at"] = _stamp()
+            log(f"TEM ToIP CY backfill: [{index}/{len(months)}] complete {month}")
+            _write_summary(summary_path, summary)
+        except Exception as exc:
+            summary["failed"].append({"month": month, "error": str(exc)})
+            summary["last_event"] = "failed"
+            summary["last_updated_at"] = _stamp()
+            log(f"TEM ToIP CY backfill: [{index}/{len(months)}] failed {month}: {exc}")
+            _write_summary(summary_path, summary)
+            raise
+
+    summary.pop("current_month", None)
+    summary["last_event"] = "completed"
+    summary["last_updated_at"] = _stamp()
+    _write_summary(summary_path, summary)
+    log(
+        "TEM ToIP CY backfill: completed "
+        f"processed={len(summary['processed'])} skipped={len(summary['skipped_existing'])} "
+        f"unavailable={len(summary['github_unavailable'])}"
+    )
     return summary
 
 
@@ -145,6 +211,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--org", default="trustoverip")
     parser.add_argument("--start", default="2026-01")
     parser.add_argument("--end", default=None, help="Inclusive YYYY-MM end; defaults to last closed UTC month")
+    parser.add_argument("--month", help="Process exactly one YYYY-MM month; overrides --start/--end")
     parser.add_argument("--github-dir", required=True, type=Path)
     parser.add_argument("--site", required=True, type=Path)
     parser.add_argument("--prefix", action="append", dest="prefixes", help="Repository prefix to include; repeatable")
@@ -152,20 +219,25 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--summary", type=Path, help="Optional JSON summary output path")
     args = parser.parse_args(argv)
 
-    end = args.end or previous_completed_month()
+    if args.month:
+        start = args.month
+        end = args.month
+    else:
+        start = args.start
+        end = args.end or previous_completed_month()
     summary = backfill(
         org=args.org,
-        start=args.start,
+        start=start,
         end=end,
         github_dir=args.github_dir,
         site=args.site,
         token=os.environ.get("GITHUB_TOKEN", ""),
         prefixes=args.prefixes,
         force=args.force,
+        summary_path=args.summary,
     )
     text = json.dumps(summary, indent=2, sort_keys=True) + "\n"
     if args.summary:
-        args.summary.parent.mkdir(parents=True, exist_ok=True)
         args.summary.write_text(text, encoding="utf-8")
     print(text, end="")
     return 0

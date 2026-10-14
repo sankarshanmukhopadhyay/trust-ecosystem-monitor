@@ -3,6 +3,10 @@ name: Backfill ToIP CY GitHub-only intelligence
 on:
   workflow_dispatch:
     inputs:
+      single_month:
+        description: "Optional exact month, YYYY-MM. When set, overrides start/end."
+        required: false
+        default: ""
       start_month:
         description: "Inclusive start month, YYYY-MM"
         required: true
@@ -52,8 +56,6 @@ jobs:
         run: |
           args=(
             --org trustoverip
-            --start "${{ inputs.start_month }}"
-            --end "${{ inputs.end_month }}"
             --github-dir monthly-prototype
             --site docs/intelligence/toip
             --summary monthly-prototype/cy-backfill-summary.json
@@ -63,14 +65,24 @@ jobs:
             --prefix ctwg-
             --prefix egwg-
           )
+          if [ -n "${{ inputs.single_month }}" ]; then
+            args+=(--month "${{ inputs.single_month }}")
+          else
+            args+=(--start "${{ inputs.start_month }}")
+            args+=(--end "${{ inputs.end_month }}")
+          fi
           if [ "${{ inputs.force }}" = "true" ]; then
             args+=(--force)
           fi
           python -m trust_ecosystem_monitor.toip_cy_backfill "${args[@]}"
       - name: Publish ToIP CY data-contract assets
         run: |
-          end_month="${{ inputs.end_month }}"
-          year="${end_month%%-*}"
+          if [ -n "${{ inputs.single_month }}" ]; then
+            target_month="${{ inputs.single_month }}"
+          else
+            target_month="${{ inputs.end_month }}"
+          fi
+          year="${target_month%%-*}"
           data_dir="docs/intelligence/toip/${year}/data"
           mkdir -p "$data_dir"
           cp trust_ecosystem_monitor/toip_cy_data_contract/schema.json "$data_dir/schema.json"
