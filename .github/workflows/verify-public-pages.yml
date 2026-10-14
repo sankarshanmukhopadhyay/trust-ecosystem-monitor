@@ -1,0 +1,55 @@
+name: Verify public Pages routes
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  public-pages-smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Verify public Pages routes render
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://sankarshanmukhopadhyay.github.io/trust-ecosystem-monitor"
+          tmp="$(mktemp -d)"
+
+          check_route() {
+            local route="$1"
+            local label="$2"
+            local output="$tmp/${label}.html"
+            local status
+            status="$(curl --location --silent --show-error --fail --max-time 30 --write-out '%{http_code}' --output "$output" "$base$route")"
+            test "$status" = "200"
+            test -s "$output"
+            grep -Fqi "<html" "$output"
+            echo "ok $route renders non-empty HTML"
+          }
+
+          check_route "/intelligence/" "intelligence"
+          check_route "/intelligence/toip/" "toip"
+          check_route "/intelligence/toip/2026/" "toip-2026"
+          check_route "/intelligence/toip/coverage/" "toip-coverage"
+          check_route "/intelligence/toip/methodology/" "toip-methodology"
+          check_route "/trustoverip/index.html" "trustoverip"
+          check_route "/monthly/" "monthly"
+
+      - name: Verify machine-ingestion data route
+        shell: bash
+        run: |
+          set -euo pipefail
+          base="https://sankarshanmukhopadhyay.github.io/trust-ecosystem-monitor"
+          tmp="$(mktemp -d)"
+
+          curl --location --silent --show-error --fail --max-time 30 \
+            --output "$tmp/manifest.json" \
+            "$base/intelligence/toip/2026/data/manifest.json"
+          test -s "$tmp/manifest.json"
+          grep -Fq '"schema"' "$tmp/manifest.json"
+          grep -Fq 'tem-cy-intelligence-v1' "$tmp/manifest.json"
+          echo "ok machine-ingestion manifest route is reachable"
