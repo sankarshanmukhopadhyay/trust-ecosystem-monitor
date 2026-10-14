@@ -110,6 +110,15 @@ class AnnualTests(unittest.TestCase):
             self.assertIn("source version", report.lower())
             self.assertEqual((site / "index.html").read_text().count('href="2026/"'), 1)
 
+    def test_replay_idempotence_operator_guidance_is_bound_to_current_invariants(self):
+        guide = Path("docs/toip-monthly-replay-idempotence.md").read_text(encoding="utf-8")
+        self.assertIn("same-month rerun", guide.lower())
+        self.assertIn("observation digest remains unchanged", guide)
+        self.assertIn("month_reobservation", guide)
+        self.assertIn("revision notices", guide.lower())
+        self.assertIn("generated-observations promotion", guide)
+        self.assertIn("must not introduce new Confluence admission, LFX, Zoom", guide)
+
     def test_workflows_preserve_manual_budget_and_periodic_update(self):
         historical = Path(".github/workflows/monthly-prototype.yml").read_text()
         scheduled = Path(".github/workflows/monthly-intelligence.yml").read_text()
