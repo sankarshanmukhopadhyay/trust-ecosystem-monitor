@@ -49,12 +49,21 @@ jobs:
         run: |
           python -m trust_ecosystem_monitor.toip_annual \
             --month "$MONTH" --github-dir monthly-prototype --site docs/intelligence/toip
+      - name: Publish ToIP CY data-contract assets
+        run: |
+          year="${MONTH%%-*}"
+          data_dir="docs/intelligence/toip/${year}/data"
+          mkdir -p "$data_dir"
+          cp trust_ecosystem_monitor/toip_cy_data_contract/schema.json "$data_dir/schema.json"
+          cp trust_ecosystem_monitor/toip_cy_data_contract/README.md "$data_dir/README.md"
       - name: Converge public ToIP intelligence navigation
         run: python -m trust_ecosystem_monitor.toip_navigation --site docs
       - name: Validate staged monthly page
         run: |
           test -s "docs/intelligence/toip/${MONTH%-*}/index.html"
           test -s "docs/intelligence/toip/${MONTH%-*}/data/manifest.json"
+          test -s "docs/intelligence/toip/${MONTH%-*}/data/schema.json"
+          test -s "docs/intelligence/toip/${MONTH%-*}/data/README.md"
           python -m trust_ecosystem_monitor.toip_publication_readiness --site docs
       - name: Retain validated monthly site
         run: |
