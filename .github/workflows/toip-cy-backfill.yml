@@ -69,7 +69,9 @@ jobs:
           python -m trust_ecosystem_monitor.toip_cy_backfill "${args[@]}"
       - name: Publish ToIP CY data-contract assets
         run: |
-          data_dir="docs/intelligence/toip/${{ inputs.end_month%%-* }}/data"
+          end_month="${{ inputs.end_month }}"
+          year="${end_month%%-*}"
+          data_dir="docs/intelligence/toip/${year}/data"
           mkdir -p "$data_dir"
           cp trust_ecosystem_monitor/toip_cy_data_contract/schema.json "$data_dir/schema.json"
           cp trust_ecosystem_monitor/toip_cy_data_contract/README.md "$data_dir/README.md"
