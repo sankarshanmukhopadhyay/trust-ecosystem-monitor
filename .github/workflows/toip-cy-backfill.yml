@@ -67,6 +67,12 @@ jobs:
             args+=(--force)
           fi
           python -m trust_ecosystem_monitor.toip_cy_backfill "${args[@]}"
+      - name: Publish ToIP CY data-contract assets
+        run: |
+          data_dir="docs/intelligence/toip/${{ inputs.end_month%%-* }}/data"
+          mkdir -p "$data_dir"
+          cp trust_ecosystem_monitor/toip_cy_data_contract/schema.json "$data_dir/schema.json"
+          cp trust_ecosystem_monitor/toip_cy_data_contract/README.md "$data_dir/README.md"
       - name: Converge public ToIP intelligence navigation
         run: python -m trust_ecosystem_monitor.toip_navigation --site docs
       - name: Validate Pages publication readiness
