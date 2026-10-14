@@ -11,6 +11,31 @@ def event(name, transition, title="Fix authorization validation"):
             "title": title, "event": transition, "occurred_at": "2026-08-10T12:00:00Z"}
 
 
+def fake_confluence_opener(body):
+    class Response:
+        def __init__(self, d):
+            import json
+            self.payload = json.dumps(d).encode()
+        def __enter__(self):
+            return self
+        def __exit__(self, *args):
+            return False
+        def read(self, amount):
+            return self.payload
+    calls = []
+    def fake(request, timeout):
+        url = request.full_url
+        calls.append(url)
+        if "/rest/api/search?" in url:
+            return Response({"results": [{"content": {"id": "123"}}],
+                             "totalSize": 1, "_links": {}})
+        return Response({"id": "123", "spaceId": "22970380",
+                         "title": "AIM WG Meeting",
+                         "version": {"number": 3, "createdAt": "2026-08-19T00:00:00Z"},
+                         "body": {"storage": {"value": body}}})
+    return fake, calls
+
+
 class MonthlyKnowledgeTests(unittest.TestCase):
     def test_lifecycle_consolidation_and_semantics(self):
         data = [event(1, "opened"), event(1, "merged"),
@@ -36,32 +61,38 @@ class MonthlyKnowledgeTests(unittest.TestCase):
             render_developments([bad])
 
     def test_content_signals_bound_by_space_and_source(self):
-        class Response:
-            def __init__(self, d):
-                import json
-                self.payload = json.dumps(d).encode()
-            def __enter__(self):
-                return self
-            def __exit__(self, *args):
-                return False
-            def read(self, amount):
-                return self.payload
-        calls = []
-        def fake(request, timeout):
-            url = request.full_url
-            calls.append(url)
-            if "/rest/api/search?" in url:
-                return Response({"results": [{"content": {"id": "123"}}],
-                                 "totalSize": 1, "_links": {}})
-            return Response({"id": "123", "spaceId": "22970380",
-                             "title": "AIM WG Meeting",
-                             "version": {"number": 3, "createdAt": "2026-08-19T00:00:00Z"},
-                             "body": {"storage": {"value": "<h2>Discussion of delegation</h2><p>Text not carried into report.</p>"}}})
+        fake, calls = fake_confluence_opener(
+            "<h2>Discussion of delegation</h2><p>Text not carried into report.</p>")
         result = collect("2026-08", opener=fake)
         self.assertEqual(len(result["pages"]), 1)
         self.assertEqual(result["pages"][0]["topic_headings"], ["Discussion of delegation"])
         self.assertNotIn("Text not carried", str(result))
         self.assertEqual(len(calls), 2)
+
+    def test_content_signals_include_diagnostic_structural_blocks(self):
+        fake, _ = fake_confluence_opener("""
+            <h2>Delegation agenda</h2>
+            <table><tr><th>Topic</th><th>Reference</th></tr>
+            <tr><td>Decision: review authorization proposal</td>
+            <td><a href='https://github.com/trustoverip/dtgwg-cred-spec/issues/45'>Issue 45</a></td></tr></table>
+            <div class='expand'><p>Open question about VC Data Model alignment.
+            <a href='https://www.w3.org/TR/vc-data-model-2.0/'>VC Data Model</a></p></div>
+        """)
+        page = collect("2026-08", opener=fake)["pages"][0]
+        diagnostics = page["structural_diagnostics"]
+        self.assertEqual(diagnostics["admission_state"], "diagnostic_only")
+        self.assertIn("no_decision_inferred", diagnostics["interpretation_limits"])
+        self.assertIn("discussion_blocks", page)
+        self.assertIn("section_abstracts", page)
+        self.assertIn("github_references", page)
+        blocks = diagnostics["blocks"]
+        self.assertTrue(any(b["block_kind"] == "table_row" for b in blocks))
+        self.assertTrue(any("dtgwg-cred-spec/issues/45" in str(b["github_references"]) for b in blocks))
+        self.assertTrue(any("vc-data-model-2.0" in str(b["external_references"]) for b in blocks))
+        unsupported = [claim for block in blocks for claim in block["unsupported_claims"]]
+        self.assertIn("decision_or_adoption_not_established", unsupported)
+        self.assertNotIn("outcome", diagnostics)
+        self.assertNotIn("approved", diagnostics)
 
     def test_confluence_in_render_is_topic_only(self):
         gh = {"period": "2026-08", "evidence": [event(1, "merged")]}
@@ -69,12 +100,15 @@ class MonthlyKnowledgeTests(unittest.TestCase):
               "sample_count": 1, "total_size": 1, "missing_space_count": 0}
         signal = {"month": "2026-08", "pages": [{
             "id": "123", "title": "Meeting notes", "version": 3,
-            "topic_headings": ["Discussion", "Questions"]}], "unavailable_count": 0}
+            "topic_headings": ["Discussion", "Questions"],
+            "structural_diagnostics": {"admission_state": "diagnostic_only", "blocks": []}}],
+            "unavailable_count": 0}
         html = render(gh, cf, signal)
         self.assertIn("What Confluence records describe", html)
         self.assertIn("Headings identify these recorded topics", html)
         self.assertIn("What changed: evidence-backed developments", html)
         self.assertNotIn("approved decision:", html)
+        self.assertNotIn("diagnostic_only", html)
 
 
 if __name__ == "__main__":
