@@ -1,6 +1,6 @@
 # ToIP Confluence structural parsing
 
-This document describes the first bounded B3 tranche from #122: diagnostic structural parsing for bounded ToIP Confluence HTML.
+This document describes the bounded B3 parser work from #122: diagnostic structural parsing for bounded ToIP Confluence HTML and its integration into the content-signal collector.
 
 ## Purpose
 
@@ -38,6 +38,24 @@ Each extracted block carries:
 - `interpretation_limits`.
 
 The hash basis allows later comparison without republishing full source text.
+
+## Collector integration
+
+`toip_confluence_content_signals.collect()` attaches parser output under each page as:
+
+```text
+structural_diagnostics
+```
+
+This field is diagnostic metadata. It is carried next to existing `topic_headings`, `section_abstracts`, `discussion_blocks` and `github_references`, but does not replace them and does not change existing annual reader rendering.
+
+The integration is intentionally conservative:
+
+- existing discussion-block and section-abstract behavior remains intact;
+- page classification remains based on existing discussion-block logic;
+- structural diagnostics stay `diagnostic_only`;
+- decision-like language stays an unsupported diagnostic marker;
+- reader pages do not render the diagnostic payload as an admitted finding.
 
 ## Relationship to #63 and #82
 
