@@ -140,6 +140,7 @@ def backfill(
         "processed": [],
         "skipped_existing": [],
         "github_unavailable": [],
+        "traversal_by_month": {},
         "failed": [],
         "last_event": "started",
         "last_updated_at": _stamp(),
@@ -166,7 +167,17 @@ def backfill(
                 continue
 
             log(f"TEM ToIP CY backfill: [{index}/{len(months)}] collect GitHub evidence for {month}")
-            result = collector(org, month, token, prefixes=selected_prefixes)
+            progress_state = {}
+            result = collector(
+                org, month, token, prefixes=selected_prefixes,
+                log=log, progress_state=progress_state,
+            )
+            traversal = {
+                "elapsed_seconds": result.get("collection_elapsed_seconds"),
+                "steps": result.get("traversal_diagnostics", []),
+                "last": dict(progress_state),
+            }
+            summary["traversal_by_month"][month] = traversal
             if not result.get("coverage_complete"):
                 summary["github_unavailable"].append(month)
                 log(f"TEM ToIP CY backfill: [{index}/{len(months)}] GitHub coverage incomplete for {month}")
@@ -187,7 +198,16 @@ def backfill(
             log(f"TEM ToIP CY backfill: [{index}/{len(months)}] complete {month}")
             _write_summary(summary_path, summary)
         except Exception as exc:
-            summary["failed"].append({"month": month, "error": str(exc)})
+            failure = {"month": month, "error": str(exc)}
+            if "progress_state" in locals() and progress_state:
+                failure.update({
+                    "last_repository": progress_state.get("repository"),
+                    "last_endpoint": progress_state.get("endpoint"),
+                    "last_page": progress_state.get("page"),
+                    "last_status": progress_state.get("status"),
+                    "elapsed_seconds": progress_state.get("elapsed_seconds"),
+                })
+            summary["failed"].append(failure)
             summary["last_event"] = "failed"
             summary["last_updated_at"] = _stamp()
             log(f"TEM ToIP CY backfill: [{index}/{len(months)}] failed {month}: {exc}")
