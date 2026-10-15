@@ -22,7 +22,8 @@ class ToIPPagesPersistenceTests(unittest.TestCase):
             self.assertIn("cancel-in-progress: false", workflow)
 
     def test_generated_branch_is_the_handoff(self):
-        self.assertIn('git push origin "$commit:refs/heads/generated-observations"', self.monthly)
+        self.assertIn("--force-with-lease=refs/heads/generated-observations:$parent", self.monthly)
+        self.assertIn("$commit:refs/heads/generated-observations", self.monthly)
         self.assertIn("git checkout origin/generated-observations -- data docs", self.weekly)
         self.assertIn('git read-tree "$parent"', self.monthly)
         self.assertIn("git add -A -- docs", self.monthly)
