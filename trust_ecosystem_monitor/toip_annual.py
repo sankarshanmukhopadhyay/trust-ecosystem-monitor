@@ -14,6 +14,7 @@ from .toip_monthly_knowledge import build_developments, topic_groups
 from .toip_monthly_editorial import priority
 from .toip_monthly_cross_source import correlate
 from .toip_wgtf_report import render_wgtf_first_section
+from .toip_subject_timeline import render_timelines
 
 def link(url, label):
     if not (url.startswith("https://github.com/") or
