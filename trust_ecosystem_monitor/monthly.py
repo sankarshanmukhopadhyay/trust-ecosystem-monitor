@@ -94,7 +94,8 @@ def github_pages(url: str, token: str, *, max_pages: int = 100,
 
 def collect_month(org: str, month: str, token: str, repositories: list[str] | None = None,
                   prefixes: list[str] | None = None, max_pages: int = 100,
-                  log: Callable[[str], None] | None = None) -> dict:
+                  log: Callable[[str], None] | None = None,
+                  progress_state: dict | None = None) -> dict:
     bounds = month_bounds(month)
     if not isinstance(max_pages, int) or not 1 <= max_pages <= 100:
         raise ValueError("max_pages must be between 1 and 100")
@@ -105,6 +106,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
     traversal = []
     collection_started = time.monotonic()
     emit = log or (lambda message: None)
+    live_progress = progress_state if progress_state is not None else {}
 
     def progress_for(repository: str, endpoint: str):
         record = {
@@ -120,6 +122,13 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
             record["last_page"] = int(event.get("page", 0))
             record["elapsed_seconds"] = float(event.get("elapsed_seconds", 0.0))
             record["status"] = str(event.get("status", "unknown"))
+            live_progress.update({
+                "repository": repository,
+                "endpoint": endpoint,
+                "page": record["last_page"],
+                "status": record["status"],
+                "elapsed_seconds": record["elapsed_seconds"],
+            })
             emit(
                 "TEM GitHub traversal: "
                 f"repo={repository} endpoint={endpoint} page={record['last_page']} "
@@ -158,6 +167,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
         if name in seen_repositories:
             continue
         seen_repositories.add(name)
+        live_progress.update({"repository": name, "endpoint": "repository", "page": 0, "status": "started"})
         emit(f"TEM GitHub traversal: repository [{repo_index}/{len(discovered)}] {name}")
         base = f"https://api.github.com/repos/{name}"
         status = {"repository": name, "issues": "complete", "pull_requests": "complete"}
@@ -237,7 +247,7 @@ def main(argv=None) -> int:
     parser.add_argument("--prefix", action="append", dest="prefixes", help="Select public organization repositories by name prefix; repeatable")
     parser.add_argument("--max-pages", type=int, default=100, help="Maximum GitHub REST pages per endpoint (1-100)")
     args = parser.parse_args(argv)
-    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""), repositories=args.repos, prefixes=args.prefixes, max_pages=args.max_pages)
+    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""), repositories=args.repos, prefixes=args.prefixes, max_pages=args.max_pages, log=print)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / f"{args.month}.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     (args.output / f"{args.month}.md").write_text(render_markdown(result), encoding="utf-8")
