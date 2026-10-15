@@ -63,6 +63,40 @@ class MonthlyTests(unittest.TestCase):
         self.assertEqual(continuity(first, second)[0]["classification"], "evidence_insufficient")
 
     @patch("trust_ecosystem_monitor.monthly.github_pages")
+    def test_traversal_diagnostics_record_repository_page_and_elapsed(self, pages):
+        logs = []
+        live = {}
+
+        def traversal(url, token, *, max_pages=100, progress=None):
+            if "/orgs/" in url:
+                progress({"page": 1, "items": 1, "status": "complete", "elapsed_seconds": 0.1})
+                return iter([{"full_name": "trustoverip/dtgwg-example"}])
+            if "/issues?" in url:
+                progress({"page": 1, "items": 1, "status": "complete", "elapsed_seconds": 0.2})
+                return iter([{"number": 1, "title": "Work",
+                              "html_url": "https://github.com/trustoverip/dtgwg-example/issues/1",
+                              "created_at": "2026-08-03T00:00:00Z", "closed_at": None}])
+            progress({"page": 1, "items": 0, "status": "complete", "elapsed_seconds": 0.3})
+            return iter([])
+
+        pages.side_effect = traversal
+        result = collect_month(
+            "trustoverip", "2026-08", "token", prefixes=["dtgwg-"],
+            log=logs.append, progress_state=live,
+        )
+        self.assertEqual(len(result["traversal_diagnostics"]), 3)
+        issue_diag = next(x for x in result["traversal_diagnostics"] if x["endpoint"] == "issues")
+        self.assertEqual(issue_diag["repository"], "trustoverip/dtgwg-example")
+        self.assertEqual(issue_diag["pages_fetched"], 1)
+        self.assertEqual(issue_diag["items_fetched"], 1)
+        self.assertEqual(issue_diag["elapsed_seconds"], 0.2)
+        self.assertEqual(live["repository"], "trustoverip/dtgwg-example")
+        self.assertEqual(live["endpoint"], "pull_requests")
+        self.assertEqual(live["page"], 1)
+        self.assertIn("repository [1/1] trustoverip/dtgwg-example", "\n".join(logs))
+        self.assertIn("endpoint=issues page=1", "\n".join(logs))
+
+    @patch("trust_ecosystem_monitor.monthly.github_pages")
     def test_discovery_failure_is_not_complete(self, pages):
         pages.side_effect = RuntimeError("pagination limit")
         result = collect_month("trustoverip", "2026-09", "token")
