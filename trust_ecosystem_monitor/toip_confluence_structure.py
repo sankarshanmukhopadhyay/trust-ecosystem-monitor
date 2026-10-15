@@ -276,7 +276,7 @@ def synthesize_diagnostic_evidence(structure: dict) -> dict:
             "unsupported_claims": list(block.get("unsupported_claims") or []),
             "admission_state": "diagnostic_only",
             "claim_state": "not_admitted",
-        }))
+        })
     return {
         "page_id": page_id,
         "page_version": structure.get("page_version"),
