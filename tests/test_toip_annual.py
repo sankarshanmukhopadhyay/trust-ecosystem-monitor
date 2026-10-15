@@ -5,6 +5,7 @@ import unittest
 from pathlib import Path
 from trust_ecosystem_monitor.toip_annual_state import empty, ingest, validate, write, read
 from trust_ecosystem_monitor.toip_annual import render, publish
+from trust_ecosystem_monitor.toip_tracked_sources import inspect, MAX_TRACKED
 
 def github(month="2026-08"):
     return {"period": month, "coverage_complete": True,
@@ -60,6 +61,11 @@ class AnnualTests(unittest.TestCase):
                tracked_pages=[page(3)], observed_at="2026-11-02T05:00:00Z")
         self.assertEqual(state["months"]["2026-09"]["observation"]["confluence"]["source_count"], 0)
         self.assertEqual(len(state["revision_notices"]), 1)
+
+    def test_tracked_reinspection_bound_is_enforced(self):
+        self.assertEqual(MAX_TRACKED, 80)
+        with self.assertRaises(ValueError):
+            inspect([str(i) for i in range(MAX_TRACKED + 1)])
 
     def test_reobservation_notice_without_overwrite(self):
         state = empty(2026)
@@ -122,11 +128,28 @@ class AnnualTests(unittest.TestCase):
     def test_workflows_preserve_manual_budget_and_periodic_update(self):
         historical = Path(".github/workflows/monthly-prototype.yml").read_text()
         scheduled = Path(".github/workflows/monthly-intelligence.yml").read_text()
+        backfill = Path(".github/workflows/toip-cy-backfill.yml").read_text()
         self.assertIn("toip_annual", historical)
         self.assertIn("toip_annual", scheduled)
         self.assertIn("schedule:", scheduled)
         self.assertNotIn("  push:", scheduled)
         self.assertNotIn("  schedule:", historical)
+        self.assertIn("previous_completed_month", scheduled)
+        self.assertIn("--max-pages 25", scheduled)
+        for workflow in (historical, scheduled, backfill):
+            self.assertIn("--force-with-lease=refs/heads/generated-observations:$parent", workflow)
+            self.assertIn("concurrency:", workflow)
+            self.assertIn("group: pages", workflow)
+
+    def test_monthly_operations_guide_is_bound_to_operational_guards(self):
+        guide = Path("docs/toip-monthly-operations.md").read_text(encoding="utf-8")
+        self.assertIn("previous_completed_month", guide)
+        self.assertIn("--max-pages 25", guide)
+        self.assertIn("MAX_TRACKED = 80", guide)
+        self.assertIn("--force-with-lease=refs/heads/generated-observations:$parent", guide)
+        self.assertIn("30 days", guide)
+        self.assertIn("month_reobservation", guide)
+        self.assertIn("Do not force-push", guide)
 
 if __name__ == "__main__":
     unittest.main()
