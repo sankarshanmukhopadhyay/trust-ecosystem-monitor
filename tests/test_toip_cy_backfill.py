@@ -157,6 +157,13 @@ class ToipCyBackfillTests(unittest.TestCase):
             summary_path = root / "summary.json"
 
             def collector(org, month, token, prefixes=None, log=None, progress_state=None):
+                progress_state.update({
+                    "repository": "trustoverip/dtgwg-example",
+                    "endpoint": "issues",
+                    "page": 7,
+                    "status": "failed",
+                    "elapsed_seconds": 3.5,
+                })
                 raise RuntimeError("rate budget exhausted")
 
             with self.assertRaisesRegex(RuntimeError, "rate budget exhausted"):
