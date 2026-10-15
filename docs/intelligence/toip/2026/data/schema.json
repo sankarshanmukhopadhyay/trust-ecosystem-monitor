@@ -1,0 +1,209 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://sankarshanmukhopadhyay.github.io/trust-ecosystem-monitor/intelligence/toip/2026/data/schema.json",
+  "title": "TEM ToIP CY intelligence manifest",
+  "description": "Machine-ingestion schema for the Trust Ecosystem Monitor ToIP calendar-year intelligence manifest. This schema describes observed evidence and provenance boundaries; it does not assert official ToIP authority, meeting outcomes, source-owner authorization or admitted cross-source findings.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "year", "months", "source_ledger", "revision_notices"],
+  "properties": {
+    "schema": {
+      "const": "tem-cy-intelligence-v1"
+    },
+    "year": {
+      "type": "integer",
+      "minimum": 2000,
+      "maximum": 2100
+    },
+    "months": {
+      "type": "object",
+      "description": "Map of YYYY-MM to immutable first monthly observations.",
+      "additionalProperties": {
+        "$ref": "#/$defs/monthRecord"
+      },
+      "propertyNames": {
+        "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+      }
+    },
+    "source_ledger": {
+      "type": "object",
+      "description": "Append-only observed source states keyed by source identifier.",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "$ref": "#/$defs/sourceLedgerEntry"
+        }
+      }
+    },
+    "revision_notices": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/revisionNotice"
+      }
+    }
+  },
+  "$defs": {
+    "monthRecord": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["period", "observed_at", "observation", "observation_digest", "temporal_basis"],
+      "properties": {
+        "period": {
+          "type": "string",
+          "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "observation": {
+          "$ref": "#/$defs/monthlyObservation"
+        },
+        "observation_digest": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "temporal_basis": {
+          "type": "string"
+        }
+      }
+    },
+    "monthlyObservation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["github", "confluence"],
+      "properties": {
+        "github": {
+          "$ref": "#/$defs/githubObservation"
+        },
+        "confluence": {
+          "$ref": "#/$defs/confluenceObservation"
+        }
+      }
+    },
+    "githubObservation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["scope", "coverage_complete", "evidence"],
+      "properties": {
+        "scope": {
+          "description": "Collector-defined GitHub repository scope.",
+          "type": ["object", "array", "string", "null"]
+        },
+        "coverage_complete": {
+          "type": "boolean"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/githubEvidence"
+          }
+        }
+      }
+    },
+    "githubEvidence": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "repository": {"type": "string"},
+        "url": {
+          "type": "string",
+          "pattern": "^https://github\\.com/[^/]+/[^/]+/(issues|pull)/[0-9]+$"
+        },
+        "title": {"type": "string"},
+        "event": {"type": "string"},
+        "kind": {"type": "string"},
+        "type": {"type": "string"},
+        "number": {"type": "integer"},
+        "created_at": {"type": "string"},
+        "updated_at": {"type": "string"},
+        "closed_at": {"type": ["string", "null"]},
+        "merged_at": {"type": ["string", "null"]}
+      }
+    },
+    "confluenceObservation": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["coverage", "source_count", "unavailable_count", "sources"],
+      "properties": {
+        "coverage": {"type": "string"},
+        "source_count": {"type": "integer", "minimum": 0},
+        "unavailable_count": {"type": "integer", "minimum": 0},
+        "sources": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/confluenceSource"}
+        }
+      }
+    },
+    "confluenceSource": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["id", "url", "title", "content_fingerprint"],
+      "properties": {
+        "id": {"type": "string", "pattern": "^[0-9]+$"},
+        "url": {
+          "type": "string",
+          "pattern": "^https://lf-toip\\.atlassian\\.net/wiki/spaces/HOME/pages/[0-9]+$"
+        },
+        "title": {"type": "string"},
+        "version": {},
+        "version_created_at": {},
+        "page_kind": {"type": "string"},
+        "github_references": {"type": "array", "items": {"type": "string"}},
+        "content_fingerprint": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "discussions": {"type": "array", "items": {"$ref": "#/$defs/sourceBlock"}},
+        "evidence": {"type": "array", "items": {"$ref": "#/$defs/evidenceBlock"}}
+      }
+    },
+    "sourceLedgerEntry": {
+      "allOf": [
+        {"$ref": "#/$defs/confluenceSource"},
+        {
+          "type": "object",
+          "required": ["observed_at", "observed_in"],
+          "properties": {
+            "observed_at": {"type": "string", "format": "date-time"},
+            "observed_in": {"type": "string", "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"}
+          }
+        }
+      ]
+    },
+    "sourceBlock": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "heading": {"type": "string"},
+        "summary": {"type": "string"},
+        "basis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "signal": {"type": "array"},
+        "references": {"type": "array", "items": {"type": "string"}},
+        "source_block_number": {}
+      }
+    },
+    "evidenceBlock": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "heading": {"type": "string"},
+        "abstract": {"type": "string"},
+        "basis_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "revisionNotice": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["key", "kind", "period", "observed_at", "source", "impact", "explanation"],
+      "properties": {
+        "key": {"type": "string"},
+        "kind": {"type": "string"},
+        "period": {"type": "string"},
+        "observed_at": {"type": "string", "format": "date-time"},
+        "source": {"type": "string"},
+        "prior_digest": {"type": "string"},
+        "current_digest": {"type": "string"},
+        "impact": {"type": "string"},
+        "explanation": {"type": "string"}
+      }
+    }
+  }
+}
