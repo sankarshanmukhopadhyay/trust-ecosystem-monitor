@@ -29,6 +29,17 @@ def month_bounds(month: str) -> tuple[dt.datetime, dt.datetime]:
     return first, following
 
 
+def previous_completed_month(now: dt.datetime | None = None) -> str:
+    """Return the previous completed UTC calendar month."""
+    current = now or dt.datetime.now(dt.timezone.utc)
+    if current.tzinfo is None:
+        raise ValueError("timezone-aware UTC reference required")
+    current = current.astimezone(dt.timezone.utc)
+    first = dt.datetime(current.year, current.month, 1, tzinfo=dt.timezone.utc)
+    previous_day = first - dt.timedelta(days=1)
+    return previous_day.strftime("%Y-%m")
+
+
 def in_month(value: str | None, bounds: tuple[dt.datetime, dt.datetime]) -> bool:
     if not value:
         return False
@@ -61,8 +72,11 @@ def github_pages(url: str, token: str, *, max_pages: int = 100):
     raise RuntimeError(f"GitHub pagination safety limit reached: {url}")
 
 
-def collect_month(org: str, month: str, token: str, repositories: list[str] | None = None, prefixes: list[str] | None = None) -> dict:
+def collect_month(org: str, month: str, token: str, repositories: list[str] | None = None,
+                  prefixes: list[str] | None = None, max_pages: int = 100) -> dict:
     bounds = month_bounds(month)
+    if not isinstance(max_pages, int) or not 1 <= max_pages <= 100:
+        raise ValueError("max_pages must be between 1 and 100")
     root = f"https://api.github.com/orgs/{urllib.parse.quote(org, safe='')}/repos?type=public"
     evidence = []
     coverage = []
@@ -75,7 +89,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
     else:
         repo_source = None
     try:
-        discovered = list(repo_source if repo_source is not None else github_pages(root, token))
+        discovered = list(repo_source if repo_source is not None else github_pages(root, token, max_pages=max_pages))
     except (urllib.error.HTTPError, urllib.error.URLError, TimeoutError, ValueError, RuntimeError) as exc:
         return {
             "schema_version": "1", "ecosystem": org, "period": month,
@@ -83,6 +97,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
             "evidence": [], "coverage": [{"repository": org + "/*", "issues": "not_checked", "pull_requests": "not_checked", "discovery": f"unavailable: {type(exc).__name__}: {exc}"}],
             "coverage_complete": False, "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
             "collection_scope": "repository discovery failed; no claim of completeness",
+            "collection_budget": {"max_pages_per_endpoint": max_pages, "page_size": 100},
         }
     for repo in discovered:
         name = repo["full_name"]
@@ -95,7 +110,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
         status = {"repository": name, "issues": "complete", "pull_requests": "complete"}
         for kind, endpoint in (("issues", "issues?state=all"), ("pull_requests", "pulls?state=all")):
             try:
-                for item in github_pages(f"{base}/{endpoint}", token):
+                for item in github_pages(f"{base}/{endpoint}", token, max_pages=max_pages):
                     if kind == "issues" and "pull_request" in item:
                         continue
                     for event, field in (("opened", "created_at"), ("closed", "closed_at"), ("merged", "merged_at")):
@@ -127,6 +142,7 @@ def collect_month(org: str, month: str, token: str, repositories: list[str] | No
         "coverage_complete": bool(coverage) and all(entry["issues"] == "complete" and entry["pull_requests"] == "complete" for entry in coverage),
         "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
         "collection_scope": ("explicit repositories: " + ", ".join(repositories)) if repositories is not None else ("public organization repositories matching prefixes: " + ", ".join(prefixes) if prefixes else "all public organization repositories; admission-tier filtering not yet applied"),
+        "collection_budget": {"max_pages_per_endpoint": max_pages, "page_size": 100},
     }
 
 
@@ -161,8 +177,9 @@ def main(argv=None) -> int:
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--repo", action="append", dest="repos", help="Bound collection to explicit owner/repository; repeat as needed")
     parser.add_argument("--prefix", action="append", dest="prefixes", help="Select public organization repositories by name prefix; repeatable")
+    parser.add_argument("--max-pages", type=int, default=100, help="Maximum GitHub REST pages per endpoint (1-100)")
     args = parser.parse_args(argv)
-    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""), repositories=args.repos, prefixes=args.prefixes)
+    result = collect_month(args.org, args.month, os.environ.get("GITHUB_TOKEN", ""), repositories=args.repos, prefixes=args.prefixes, max_pages=args.max_pages)
     args.output.mkdir(parents=True, exist_ok=True)
     (args.output / f"{args.month}.json").write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     (args.output / f"{args.month}.md").write_text(render_markdown(result), encoding="utf-8")

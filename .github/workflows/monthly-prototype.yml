@@ -140,7 +140,7 @@ jobs:
           parent_tree=$(git rev-parse "${parent}^{tree}")
           if [ "$tree" != "$parent_tree" ]; then
             commit=$(printf '%s\\n' "chore(monitor): persist ToIP intelligence Pages" | git commit-tree "$tree" -p "$parent")
-            git push origin "$commit:refs/heads/generated-observations"
+            git push --force-with-lease=refs/heads/generated-observations:$parent origin "$commit:refs/heads/generated-observations"
           fi
       - name: Upload public HTML preview bundle
         uses: actions/upload-artifact@v4
