@@ -3,7 +3,9 @@ import json
 import tempfile
 import unittest
 from pathlib import Path
-from trust_ecosystem_monitor.toip_annual_state import empty, ingest, validate, write, read
+from trust_ecosystem_monitor.toip_annual_state import (
+    SCHEMA, MigrationRequiredError, empty, ingest, migrate_to_current, validate, write, read
+)
 from trust_ecosystem_monitor.toip_annual import render, publish
 from trust_ecosystem_monitor.toip_tracked_sources import inspect, MAX_TRACKED
 
@@ -75,6 +77,68 @@ class AnnualTests(unittest.TestCase):
         self.assertEqual(state["months"]["2026-08"]["observation_digest"], original)
         self.assertEqual({n["kind"] for n in state["revision_notices"]},
                          {"month_reobservation", "source_version_change"})
+
+    def test_current_schema_transition_is_noop_compatible(self):
+        state = empty(2026)
+        ingest(state, github(), content(), observed_at="2026-10-11T05:00:00Z")
+        transitioned = migrate_to_current(state)
+        self.assertEqual(transitioned, state)
+        self.assertIsNot(transitioned, state)
+
+    def test_unknown_or_missing_schema_requires_explicit_migration(self):
+        state = empty(2026)
+        state["schema"] = "tem-cy-intelligence-v99"
+        with self.assertRaisesRegex(MigrationRequiredError, "explicit reviewed migration"):
+            migrate_to_current(state)
+        state.pop("schema")
+        with self.assertRaisesRegex(MigrationRequiredError, "no supported schema identifier"):
+            migrate_to_current(state)
+
+    def test_registered_transition_may_advance_container_without_rewriting_observations(self):
+        state = empty(2026)
+        ingest(state, github(), content(), observed_at="2026-10-11T05:00:00Z")
+        legacy = json.loads(json.dumps(state))
+        legacy["schema"] = "tem-cy-intelligence-test-legacy"
+
+        def migrate_legacy(value):
+            value["schema"] = SCHEMA
+            return value
+
+        transitioned = migrate_to_current(
+            legacy, migrations={"tem-cy-intelligence-test-legacy": migrate_legacy}
+        )
+        self.assertEqual(transitioned["schema"], SCHEMA)
+        self.assertEqual(
+            transitioned["months"]["2026-08"]["observation"],
+            state["months"]["2026-08"]["observation"],
+        )
+
+    def test_registered_transition_cannot_rewrite_immutable_first_observation(self):
+        state = empty(2026)
+        ingest(state, github(), content(), observed_at="2026-10-11T05:00:00Z")
+        legacy = json.loads(json.dumps(state))
+        legacy["schema"] = "tem-cy-intelligence-test-legacy"
+
+        def bad_migration(value):
+            value["schema"] = SCHEMA
+            value["months"]["2026-08"]["observation"]["github"]["evidence"] = []
+            return value
+
+        with self.assertRaisesRegex(MigrationRequiredError, "altered immutable first observation"):
+            migrate_to_current(
+                legacy, migrations={"tem-cy-intelligence-test-legacy": bad_migration}
+            )
+
+    def test_read_uses_explicit_transition_dispatch(self):
+        with tempfile.TemporaryDirectory() as folder:
+            path = Path(folder) / "manifest.json"
+            state = empty(2026)
+            path.write_text(json.dumps(state), encoding="utf-8")
+            self.assertEqual(read(path, 2026), state)
+            state["schema"] = "tem-cy-intelligence-v99"
+            path.write_text(json.dumps(state), encoding="utf-8")
+            with self.assertRaises(MigrationRequiredError):
+                read(path, 2026)
 
     def test_corrupted_manifest_fails_closed(self):
         with tempfile.TemporaryDirectory() as folder:
