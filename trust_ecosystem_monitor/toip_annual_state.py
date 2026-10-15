@@ -7,10 +7,82 @@ are immutable; later changes are separate dated ledger entries.
 from __future__ import annotations
 import hashlib
 import json
+from copy import deepcopy
+from typing import Callable
 from datetime import datetime, timezone
 from pathlib import Path
 
 SCHEMA = "tem-cy-intelligence-v1"
+Migration = Callable[[dict], dict]
+
+
+class MigrationRequiredError(ValueError):
+    """Raised when persisted annual state requires an unregistered migration."""
+
+
+def _immutable_observations(data: dict) -> dict:
+    months = data.get("months")
+    if not isinstance(months, dict):
+        return {}
+    return {
+        month: {
+            "observation": deepcopy(record.get("observation")),
+            "observation_digest": record.get("observation_digest"),
+        }
+        for month, record in months.items()
+        if isinstance(record, dict)
+    }
+
+
+def migrate_to_current(data: dict, *, migrations: dict[str, Migration] | None = None) -> dict:
+    """Return state compatible with the current schema through explicit migrations.
+
+    No historical predecessor is assumed. Unknown, missing or future schema
+    identifiers fail closed until a reviewed migration is supplied.
+
+    Registered migrations may alter container/state representation but may not
+    silently alter an existing month's immutable first observation or digest.
+    """
+    if not isinstance(data, dict):
+        raise MigrationRequiredError("annual state must be an object")
+    current = deepcopy(data)
+    migration_map = migrations or {}
+    seen = set()
+    while current.get("schema") != SCHEMA:
+        source_schema = current.get("schema")
+        if not isinstance(source_schema, str) or not source_schema:
+            raise MigrationRequiredError(
+                f"annual state has no supported schema identifier; migration to {SCHEMA} is required"
+            )
+        if source_schema in seen:
+            raise MigrationRequiredError(f"annual state migration cycle detected at {source_schema}")
+        migration = migration_map.get(source_schema)
+        if migration is None:
+            raise MigrationRequiredError(
+                f"annual state schema {source_schema!r} is not supported; "
+                f"an explicit reviewed migration to {SCHEMA} is required"
+            )
+        seen.add(source_schema)
+        immutable_before = _immutable_observations(current)
+        migrated = migration(deepcopy(current))
+        if not isinstance(migrated, dict):
+            raise MigrationRequiredError(
+                f"migration from {source_schema!r} did not return annual state"
+            )
+        immutable_after = _immutable_observations(migrated)
+        for month, prior in immutable_before.items():
+            if month not in immutable_after or immutable_after[month] != prior:
+                raise MigrationRequiredError(
+                    f"migration from {source_schema!r} altered immutable first observation for {month}"
+                )
+        target_schema = migrated.get("schema")
+        if target_schema == source_schema:
+            raise MigrationRequiredError(
+                f"migration from {source_schema!r} did not advance the schema identifier"
+            )
+        current = migrated
+    return validate(current)
+
 
 def _digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, ensure_ascii=False,
@@ -156,10 +228,11 @@ def ingest(data, github, content, *, observed_at, tracked_pages=None):
     validate(data)
     return data
 
-def read(path: Path, year: int):
+def read(path: Path, year: int, *, migrations: dict[str, Migration] | None = None):
     if not path.exists():
         return empty(year)
-    value = validate(json.loads(path.read_text(encoding="utf-8")))
+    raw = json.loads(path.read_text(encoding="utf-8"))
+    value = migrate_to_current(raw, migrations=migrations)
     if value["year"] != year:
         raise ValueError("wrong annual year")
     return value
