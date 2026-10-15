@@ -242,3 +242,51 @@ def extract_structure(body: str, *, page_id: str, source_url: str, page_version=
         "summary_method": "diagnostic_confluence_structure_v1",
         "disclosure": "Structural extraction only; no meeting, decision, adoption, approval, authority or publication-rights claim is inferred.",
     }
+
+
+def synthesize_diagnostic_evidence(structure: dict) -> dict:
+    """Create a source-linked diagnostic handoff without republishing source text."""
+    if not isinstance(structure, dict) or structure.get("admission_state") != "diagnostic_only":
+        raise ValueError("invalid diagnostic structure")
+    page_id = str(structure.get("page_id", ""))
+    source_url = canonical_url(structure.get("source_url"))
+    if not page_id.isdigit() or not source_url:
+        raise ValueError("invalid diagnostic source identity")
+    items = []
+    for block in structure.get("blocks", []):
+        if not isinstance(block, dict) or block.get("admission_state") != "diagnostic_only":
+            raise ValueError("non-diagnostic structural block")
+        basis = block.get("text_basis_sha256")
+        if not isinstance(basis, str) or not re.fullmatch(r"[0-9a-f]{64}", basis):
+            raise ValueError("invalid structural basis hash")
+        refs = list(dict.fromkeys(
+            list(block.get("github_references") or []) +
+            list(block.get("external_references") or [])
+        ))
+        items.append({
+            "evidence_id": block.get("block_id"),
+            "page_id": page_id,
+            "page_version": structure.get("page_version"),
+            "source_url": source_url,
+            "block_kind": block.get("block_kind"),
+            "heading_path": list(block.get("heading_path") or ["General"]),
+            "basis_sha256": basis,
+            "references": refs,
+            "language_signals": list(block.get("language_signals") or []),
+            "unsupported_claims": list(block.get("unsupported_claims") or []),
+            "admission_state": "diagnostic_only",
+            "claim_state": "not_admitted",
+        }))
+    return {
+        "page_id": page_id,
+        "page_version": structure.get("page_version"),
+        "source_url": source_url,
+        "admission_state": "diagnostic_only",
+        "claim_state": "not_admitted",
+        "items": items,
+        "synthesis_method": "diagnostic_evidence_handoff_v1",
+        "disclosure": (
+            "Evidence-linked diagnostic handoff only; no meeting, decision, adoption, "
+            "approval, authority or publication-rights claim is admitted."
+        ),
+    }
