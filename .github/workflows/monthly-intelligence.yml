@@ -31,15 +31,17 @@ jobs:
           python-version: '3.11'
       - name: Validate implementation
         run: python -m unittest discover -s tests
-      - name: Resolve closed month from UTC calendar
+      - name: Resolve previous completed UTC month
         run: |
-          # Calculation is verified against UTC first day of current month.
-          echo "MONTH=$(date -u -d "$(date -u +%Y-%m-01) -1 day" +%Y-%m)" >> "$GITHUB_ENV"
+          MONTH="$(python -c 'from trust_ecosystem_monitor.monthly import previous_completed_month; print(previous_completed_month())')"
+          echo "MONTH=$MONTH" >> "$GITHUB_ENV"
+          echo "Scheduled collection month: $MONTH"
       - name: Collect bounded historical GitHub evidence
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
           python -m trust_ecosystem_monitor.monthly --org trustoverip --month "$MONTH" --output monthly-prototype \
+            --max-pages 25 \
             --prefix dtgwg- --prefix tswg- --prefix aimwg- --prefix ctwg- --prefix egwg-
       - name: Restore generated site
         run: |
@@ -76,7 +78,7 @@ jobs:
           tree=$(git write-tree)
           if [ "$tree" != "$(git rev-parse "${parent}^{tree}")" ]; then
             commit=$(printf '%s\n' "chore(monitor): completed-month intelligence $MONTH" | git commit-tree "$tree" -p "$parent")
-            git push origin "$commit:refs/heads/generated-observations"
+            git push --force-with-lease=refs/heads/generated-observations:$parent origin "$commit:refs/heads/generated-observations"
           fi
       - uses: actions/upload-artifact@v4
         with:
