@@ -78,8 +78,16 @@ class ToipCyBackfillTests(unittest.TestCase):
             published = []
             logs = []
 
-            def collector(org, month, token, prefixes=None):
+            def collector(org, month, token, prefixes=None, log=None, progress_state=None):
                 collected.append((org, month, token, prefixes))
+                if progress_state is not None:
+                    progress_state.update({
+                        "repository": "trustoverip/dtgwg-example",
+                        "endpoint": "pull_requests",
+                        "page": 2,
+                        "status": "complete",
+                        "elapsed_seconds": 1.25,
+                    })
                 return {
                     "schema_version": "1",
                     "ecosystem": org,
@@ -89,6 +97,16 @@ class ToipCyBackfillTests(unittest.TestCase):
                     "evidence": [],
                     "coverage": [],
                     "external_sources": {"confluence": "not_checked", "lfx": "not_checked"},
+                    "collection_elapsed_seconds": 1.25,
+                    "traversal_diagnostics": [{
+                        "repository": "trustoverip/dtgwg-example",
+                        "endpoint": "pull_requests",
+                        "pages_fetched": 2,
+                        "items_fetched": 12,
+                        "last_page": 2,
+                        "elapsed_seconds": 1.25,
+                        "status": "complete",
+                    }],
                 }
 
             def publisher(month, gh_dir, site_dir, *, content_collect, tracked_collect, observed_at=None):
@@ -125,13 +143,20 @@ class ToipCyBackfillTests(unittest.TestCase):
             self.assertEqual(persisted["last_event"], "completed")
             self.assertIn("skip 2026-02", "\n".join(logs))
             self.assertIn("collect GitHub evidence for 2026-01", "\n".join(logs))
+            self.assertEqual(
+                summary["traversal_by_month"]["2026-01"]["last"]["repository"],
+                "trustoverip/dtgwg-example",
+            )
+            self.assertEqual(
+                summary["traversal_by_month"]["2026-01"]["steps"][0]["last_page"], 2
+            )
 
     def test_backfill_writes_failure_summary_before_reraising(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             summary_path = root / "summary.json"
 
-            def collector(org, month, token, prefixes=None):
+            def collector(org, month, token, prefixes=None, log=None, progress_state=None):
                 raise RuntimeError("rate budget exhausted")
 
             with self.assertRaisesRegex(RuntimeError, "rate budget exhausted"):
@@ -151,6 +176,12 @@ class ToipCyBackfillTests(unittest.TestCase):
             self.assertEqual(persisted["last_event"], "failed")
             self.assertEqual(persisted["failed"][0]["month"], "2026-01")
             self.assertIn("rate budget exhausted", persisted["failed"][0]["error"])
+            self.assertEqual(
+                persisted["failed"][0]["last_repository"], "trustoverip/dtgwg-example"
+            )
+            self.assertEqual(persisted["failed"][0]["last_endpoint"], "issues")
+            self.assertEqual(persisted["failed"][0]["last_page"], 7)
+            self.assertEqual(persisted["failed"][0]["elapsed_seconds"], 3.5)
 
     def test_workflow_exposes_single_month_operator_mode(self):
         text = WORKFLOW.read_text(encoding="utf-8")
