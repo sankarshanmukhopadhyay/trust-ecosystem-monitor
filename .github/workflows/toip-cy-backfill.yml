@@ -38,10 +38,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       - name: Validate implementation
@@ -105,7 +105,7 @@ jobs:
             commit=$(printf '%s\n' "chore(ToIP): backfill CY GitHub-only annual intelligence" | git commit-tree "$tree" -p "$parent")
             git push --force-with-lease=refs/heads/generated-observations:$parent origin "$commit:refs/heads/generated-observations"
           fi
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: toip-cy-github-only-backfill
           path: |

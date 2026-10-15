@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.11'
       - name: Validate source probe
@@ -47,7 +47,7 @@ jobs:
       - name: Show sanitized status summary
         run: python -c "import json; d=json.load(open('source-probe.json')); print([(r['source'],r['status'],r['http_status']) for r in d['results']])"
       - name: Upload diagnostic metadata
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: toip-public-source-reachability
           path: |
