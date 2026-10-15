@@ -143,8 +143,9 @@ def render_timelines(state: dict, *, max_timelines: int = 20) -> str:
         for transition in timeline["transitions"]:
             rows.append(
                 '<li><time datetime="' + escape(transition["occurred_at"], quote=True) + '">' +
-                escape(transition["occurred_at"]) + '</time> — ' +
-                escape(transition["event_label"]) + ' <small>(' +
+                escape(transition["occurred_at"]) + '</time> — <a href="' +
+                escape(transition["url"], quote=True) + '">' +
+                escape(transition["event_label"]) + '</a> <small>(' +
                 escape(transition["month"]) + ')</small></li>'
             )
         rows.append('</ol></article>')
