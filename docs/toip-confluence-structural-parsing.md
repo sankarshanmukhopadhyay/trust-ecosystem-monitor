@@ -66,3 +66,57 @@ B3 improves structure extraction so a later reviewed process can decide whether 
 ## Relationship to reader pages
 
 This tranche does not change the ToIP annual reader product. Reader-facing synthesis should only use these blocks after source-use, admission and review gates are satisfied.
+
+
+## Diagnostic evidence-linked synthesis
+
+The parser now exposes a deterministic diagnostic handoff through
+`synthesize_diagnostic_evidence()`. The handoff deliberately carries no source
+body, excerpt or free-form generated summary. Each item contains only source and
+structure metadata required for later review:
+
+- evidence/block identifier;
+- page identifier and source URL;
+- page version;
+- structural block kind and heading path;
+- SHA-256 basis hash;
+- permitted source references;
+- language signals and unsupported-claim markers;
+- `admission_state: diagnostic_only`;
+- `claim_state: not_admitted`.
+
+The bounded content-signal collector exposes this as
+`diagnostic_evidence_synthesis` next to `structural_diagnostics`. Existing
+reader rendering does not consume either field as an admitted finding.
+
+## Edge-case coverage
+
+Synthetic parser tests cover:
+
+- table content nested inside macro-like panels;
+- multiple references in one structural unit;
+- relative Confluence links;
+- duplicate GitHub references;
+- disallowed external hosts;
+- decision-like and meeting-like wording;
+- malformed diagnostic handoff input.
+
+This coverage is intentionally synthetic/minimized so parser assurance does not
+depend on republishing third-party Confluence bodies.
+
+## Review/admission handoff
+
+B3 parser processing ends at the diagnostic handoff. Promotion beyond
+`diagnostic_only` / `not_admitted` requires a separate reviewed process.
+
+- #63 owns source access, reuse, retention and publication-rights questions.
+- #82 owns cross-source correlation/admission and the evidentiary basis for any
+  record-level relationship or finding.
+- Reader-facing publication must not treat parser output alone as evidence that
+  a meeting occurred, a decision was made, work was adopted, or institutional
+  authority exists.
+
+With the structural parser, collector integration, edge-case fixtures and
+diagnostic evidence-linked handoff in place, B3 can be treated as complete **as
+a parser capability**. Source admission and public claim authority remain
+separate open concerns.

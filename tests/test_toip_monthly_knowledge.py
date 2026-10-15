@@ -80,6 +80,7 @@ class MonthlyKnowledgeTests(unittest.TestCase):
         """)
         page = collect("2026-08", opener=fake)["pages"][0]
         diagnostics = page["structural_diagnostics"]
+        synthesis = page["diagnostic_evidence_synthesis"]
         self.assertEqual(diagnostics["admission_state"], "diagnostic_only")
         self.assertIn("no_decision_inferred", diagnostics["interpretation_limits"])
         self.assertIn("discussion_blocks", page)
@@ -93,6 +94,11 @@ class MonthlyKnowledgeTests(unittest.TestCase):
         self.assertIn("decision_or_adoption_not_established", unsupported)
         self.assertNotIn("outcome", diagnostics)
         self.assertNotIn("approved", diagnostics)
+        self.assertEqual(synthesis["admission_state"], "diagnostic_only")
+        self.assertEqual(synthesis["claim_state"], "not_admitted")
+        self.assertTrue(synthesis["items"])
+        self.assertTrue(all(item["claim_state"] == "not_admitted" for item in synthesis["items"]))
+        self.assertFalse(any("text" in item or "excerpt" in item for item in synthesis["items"]))
 
     def test_confluence_in_render_is_topic_only(self):
         gh = {"period": "2026-08", "evidence": [event(1, "merged")]}

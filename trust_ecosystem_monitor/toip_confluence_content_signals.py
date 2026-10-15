@@ -14,7 +14,7 @@ from urllib.request import Request, urlopen
 from .confluence_search import BASE as SEARCH_URL
 from .toip_content_interpretation import extract
 from .toip_discussion_blocks import extract_discussions
-from .toip_confluence_structure import extract_structure
+from .toip_confluence_structure import extract_structure, synthesize_diagnostic_evidence
 
 HOST = "lf-toip.atlassian.net"
 HOME = "22970380"
@@ -129,6 +129,7 @@ def collect(month: str, *, opener=urlopen, max_items: int = MAX_ITEMS) -> dict:
                 "section_abstracts": interpreted["sections"],
                 "discussion_blocks": discussions["sections"],
                 "structural_diagnostics": structural,
+                "diagnostic_evidence_synthesis": synthesize_diagnostic_evidence(structural),
                 "github_references": interpreted["github_references"],
                 "summary_method": interpreted["summary_method"],
                 "text_sections_inspected": interpreted["text_sections_inspected"],
