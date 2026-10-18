@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-10-12T00:40:39.668954+00:00",
+  "generated_at": "2026-10-18T23:27:18.569155+00:00",
   "counts": {
-    "discovered": 118,
-    "included": 118,
+    "discovered": 119,
+    "included": 119,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 118,
+    "deep_monitored": 119,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -949,6 +949,30 @@
     {
       "repository": "trustoverip/egwg-learning-pathways",
       "url": "https://github.com/trustoverip/egwg-learning-pathways",
+      "portfolio": "EGWG",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/egwg-reporting-tf-prototype-mcp",
+      "url": "https://github.com/trustoverip/egwg-reporting-tf-prototype-mcp",
       "portfolio": "EGWG",
       "lifecycle": "active",
       "admission": {

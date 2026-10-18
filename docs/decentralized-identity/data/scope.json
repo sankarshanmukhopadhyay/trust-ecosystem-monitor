@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-10-12T00:40:52.898881+00:00",
+  "generated_at": "2026-10-18T23:27:35.048670+00:00",
   "counts": {
-    "discovered": 269,
-    "included": 269,
+    "discovered": 270,
+    "included": 270,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 269,
+    "deep_monitored": 270,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -327,6 +327,30 @@
       "url": "https://github.com/decentralized-identity/waci-presentation-exchange",
       "portfolio": "Claims & Credentials",
       "lifecycle": "archived",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cawg-certificate-policy",
+      "url": "https://github.com/decentralized-identity/cawg-certificate-policy",
+      "portfolio": "Creator Assertions",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -2438,7 +2462,7 @@
       "repository": "decentralized-identity/labs-legally-binding-proof-of-personhood-for-verifiable-credentials",
       "url": "https://github.com/decentralized-identity/labs-legally-binding-proof-of-personhood-for-verifiable-credentials",
       "portfolio": "Labs",
-      "lifecycle": "active",
+      "lifecycle": "dormant",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -3830,7 +3854,7 @@
       "repository": "decentralized-identity/confidential-storage",
       "url": "https://github.com/decentralized-identity/confidential-storage",
       "portfolio": "Unclassified",
-      "lifecycle": "dormant",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
