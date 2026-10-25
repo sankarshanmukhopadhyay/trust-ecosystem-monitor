@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-10-18T23:27:18.569155+00:00",
+  "generated_at": "2026-10-25T23:25:13.905532+00:00",
   "counts": {
-    "discovered": 119,
-    "included": 119,
+    "discovered": 120,
+    "included": 120,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 119,
+    "deep_monitored": 120,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -2631,6 +2631,30 @@
       "url": "https://github.com/trustoverip/toip",
       "portfolio": "Unclassified",
       "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/toip-governance",
+      "url": "https://github.com/trustoverip/toip-governance",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
