@@ -22,7 +22,7 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-10-25T23:25:29.210156+00:00",
+  "generated_at": "2026-11-02T00:57:37.241751+00:00",
   "counts": {
     "discovered": 270,
     "included": 270,
@@ -1718,7 +1718,7 @@
       "repository": "decentralized-identity/uni-resolver-driver-did-key",
       "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-key",
       "portfolio": "Identifiers & Discovery",
-      "lifecycle": "dormant",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -2030,7 +2030,7 @@
       "repository": "decentralized-identity/well-known-did-configuration",
       "url": "https://github.com/decentralized-identity/well-known-did-configuration",
       "portfolio": "Identifiers & Discovery",
-      "lifecycle": "active",
+      "lifecycle": "dormant",
       "admission": {
         "state": "included",
         "tier": "core",

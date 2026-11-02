@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-10-25T23:25:13.905532+00:00",
+  "generated_at": "2026-11-02T00:57:22.573947+00:00",
   "counts": {
-    "discovered": 120,
-    "included": 120,
+    "discovered": 121,
+    "included": 121,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 120,
+    "deep_monitored": 121,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -1885,6 +1885,30 @@
     {
       "repository": "trustoverip/tswg-did-method-webs-specification",
       "url": "https://github.com/trustoverip/tswg-did-method-webs-specification",
+      "portfolio": "TSWG",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "trustoverip"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "trustoverip/tswg-did-scid-method-spec",
+      "url": "https://github.com/trustoverip/tswg-did-scid-method-spec",
       "portfolio": "TSWG",
       "lifecycle": "active",
       "admission": {
