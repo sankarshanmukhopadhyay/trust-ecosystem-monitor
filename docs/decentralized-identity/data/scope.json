@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-11-02T00:57:37.241751+00:00",
+  "generated_at": "2026-11-09T01:06:14.709683+00:00",
   "counts": {
-    "discovered": 270,
-    "included": 270,
+    "discovered": 272,
+    "included": 272,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 270,
+    "deep_monitored": 272,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -686,7 +686,7 @@
       "repository": "decentralized-identity/did-peer-4",
       "url": "https://github.com/decentralized-identity/did-peer-4",
       "portfolio": "DID Methods",
-      "lifecycle": "dormant",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -1070,7 +1070,7 @@
       "repository": "decentralized-identity/didcomm-demo",
       "url": "https://github.com/decentralized-identity/didcomm-demo",
       "portfolio": "DIDComm",
-      "lifecycle": "dormant",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -1670,7 +1670,7 @@
       "repository": "decentralized-identity/uni-resolver-driver-did-indy",
       "url": "https://github.com/decentralized-identity/uni-resolver-driver-did-indy",
       "portfolio": "Identifiers & Discovery",
-      "lifecycle": "active",
+      "lifecycle": "dormant",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -4214,7 +4214,7 @@
       "repository": "decentralized-identity/did-registration",
       "url": "https://github.com/decentralized-identity/did-registration",
       "portfolio": "Unclassified",
-      "lifecycle": "dormant",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -4359,6 +4359,30 @@
       "url": "https://github.com/decentralized-identity/did-whois",
       "portfolio": "Unclassified",
       "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didvh",
+      "url": "https://github.com/decentralized-identity/didvh",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -6327,6 +6351,30 @@
       "url": "https://github.com/decentralized-identity/vct",
       "portfolio": "Unclassified",
       "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/vhlog",
+      "url": "https://github.com/decentralized-identity/vhlog",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
