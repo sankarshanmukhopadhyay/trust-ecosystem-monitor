@@ -22,7 +22,7 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-11-09T01:06:14.709683+00:00",
+  "generated_at": "2026-11-16T01:16:24.519375+00:00",
   "counts": {
     "discovered": 272,
     "included": 272,
@@ -1359,30 +1359,6 @@
       "url": "https://github.com/decentralized-identity/peer-did-method-spec",
       "portfolio": "Identifiers & Discovery",
       "lifecycle": "dormant",
-      "admission": {
-        "state": "included",
-        "tier": "core",
-        "rationale": [
-          "Legacy-compatible policy admits every discovered repository."
-        ],
-        "evidence": [],
-        "method": "all_discovered",
-        "deep_collection_allowed": true
-      },
-      "discovery": {
-        "sources": [
-          {
-            "type": "github_organization",
-            "value": "decentralized-identity"
-          }
-        ]
-      }
-    },
-    {
-      "repository": "decentralized-identity/thisdid",
-      "url": "https://github.com/decentralized-identity/thisdid",
-      "portfolio": "Identifiers & Discovery",
-      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
@@ -3831,6 +3807,30 @@
       "url": "https://github.com/decentralized-identity/claim-format-registry",
       "portfolio": "Unclassified",
       "lifecycle": "dormant",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/cloud-did-resolver",
+      "url": "https://github.com/decentralized-identity/cloud-did-resolver",
+      "portfolio": "Unclassified",
+      "lifecycle": "active",
       "admission": {
         "state": "included",
         "tier": "core",
