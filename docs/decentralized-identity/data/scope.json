@@ -22,14 +22,14 @@
       "repository_override_count": 0
     }
   },
-  "generated_at": "2026-11-16T01:16:24.519375+00:00",
+  "generated_at": "2026-11-23T01:53:40.196791+00:00",
   "counts": {
-    "discovered": 272,
-    "included": 272,
+    "discovered": 273,
+    "included": 273,
     "watch": 0,
     "review": 0,
     "excluded": 0,
-    "deep_monitored": 272,
+    "deep_monitored": 273,
     "watch_monitored": 0,
     "inventory_only": 0
   },
@@ -925,6 +925,30 @@
     {
       "repository": "decentralized-identity/didwebvh-test-suite",
       "url": "https://github.com/decentralized-identity/didwebvh-test-suite",
+      "portfolio": "DID Methods",
+      "lifecycle": "active",
+      "admission": {
+        "state": "included",
+        "tier": "core",
+        "rationale": [
+          "Legacy-compatible policy admits every discovered repository."
+        ],
+        "evidence": [],
+        "method": "all_discovered",
+        "deep_collection_allowed": true
+      },
+      "discovery": {
+        "sources": [
+          {
+            "type": "github_organization",
+            "value": "decentralized-identity"
+          }
+        ]
+      }
+    },
+    {
+      "repository": "decentralized-identity/didwebvh-threat-model",
+      "url": "https://github.com/decentralized-identity/didwebvh-threat-model",
       "portfolio": "DID Methods",
       "lifecycle": "active",
       "admission": {
